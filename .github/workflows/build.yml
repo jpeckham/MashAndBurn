@@ -17,15 +17,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  companion_release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    uses: ./.github/workflows/companion.yml
+  rendered_release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    uses: ./.github/workflows/render-proof.yml
+    with:
+      pair: true
   windows:
+    needs: [companion_release, rendered_release]
+    if: >-
+      always() && !cancelled() &&
+      (needs.companion_release.result == 'success' || needs.companion_release.result == 'skipped') &&
+      (needs.rendered_release.result == 'success' || needs.rendered_release.result == 'skipped')
     permissions:
       contents: write
-    uses: jpeckham/.github/.github/workflows/godot-windows-msi.yml@4cb6cb2fd6650354d6c51305e5d60696d1171b57
+    uses: jpeckham/.github/.github/workflows/godot-windows-msi.yml@1d42dcf38f6b675d824a259125bad546df5bbaeb
     with:
-      library_ref: 4cb6cb2fd6650354d6c51305e5d60696d1171b57
+      library_ref: 1d42dcf38f6b675d824a259125bad546df5bbaeb
       godot_version: '4.4.1'
       product_name: Mash & Burn
       executable: MashAndBurn.exe
       artifact_prefix: mash-and-burn
       upgrade_code: 4e16f2b9-c90a-43bd-93be-970bda650e19
       publish_release: true
+      additional_release_artifact: ${{ startsWith(github.ref, 'refs/tags/v') && 'mash-and-burn-companion-release' || '' }}
