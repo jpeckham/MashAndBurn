@@ -58,6 +58,10 @@ func click_control(control: Control) -> bool:
 	Input.parse_input_event(motion)
 	mouse = point
 	await frames(1)
+	var hovered: Control = root.gui_get_hovered_control()
+	var activations: Array = []
+	var on_pressed := func(): activations.append(true)
+	if control is Button: control.pressed.connect(on_pressed)
 	for pressed in [true,false]:
 		var event := InputEventMouseButton.new()
 		event.position = point
@@ -68,6 +72,10 @@ func click_control(control: Control) -> bool:
 		Input.parse_input_event(event)
 		await frames(1)
 	await frames(2)
+	if control is Button:
+		control.pressed.disconnect(on_pressed)
+		print("GUI_CLICK "+JSON.stringify({"text":control.text,"point":[point.x,point.y],"hovered":str(hovered.get_path()) if hovered != null else "none","target":str(control.get_path()),"disabled":control.disabled,"activations":activations.size(),"stage":game.session.state.stage,"message":game.session.message}))
+		if not check(activations.size() == 1,"mouse activates button exactly once: "+control.text): return false
 	return true
 
 func click(text: String) -> bool:
@@ -251,8 +259,11 @@ func run_proof() -> void:
 		return
 	right.pressed = true
 	Input.parse_input_event(right)
+	await frames(2)
 	look.relative = Vector2(-PI/.003,0)
 	Input.parse_input_event(look)
+	await frames(2)
+	check(absf(absf(game.camera.rotation.y)-PI) < .05,"mouse-look turns toward the rear garage")
 	right.pressed = false
 	Input.parse_input_event(right)
 	key(KEY_ESCAPE,true)
