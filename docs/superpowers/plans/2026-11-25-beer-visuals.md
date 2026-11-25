@@ -29,10 +29,10 @@
 
 ### 1. Optics and effects mapping
 
-- [ ] Add `tests/visuals/test_visuals.gd` to `tests/run_all.gd`; prove missing mapper fails on a hosted run.
-- [ ] Implement `src/visuals/beer_optics.gd`: SRM 2–50, RGB exponential absorption, haze, foam retention from protein/IBU, CO2 bubble density, temperature steam, renderer capabilities. Reject nonfinite inputs to safe defaults.
-- [ ] Cover bounds, monotonic darkening, finite color/parameters, foam/CO2/thermal relationships, fallback and read-only BatchState derivation. Grain loading/scorch/flocculation estimates are labeled estimates because v1 has no malt color/protein measurement.
-- [ ] Run focused/combined hosted suites and commit.
+- [x] Add `tests/visuals/test_visuals.gd` to `tests/run_all.gd`; prove missing mapper fails on a hosted run.
+- [x] Implement `src/visuals/beer_optics.gd`: SRM 2–50, RGB exponential absorption, haze, foam retention from protein/IBU, CO2 bubble density, temperature steam, renderer capabilities. Reject nonfinite inputs to safe defaults.
+- [x] Cover bounds, monotonic darkening, finite color/parameters, foam/CO2/thermal relationships, fallback and read-only BatchState derivation. Grain loading/scorch/flocculation estimates are labeled estimates because v1 has no malt color/protein measurement.
+- [x] Run focused/combined hosted suites and commit.
 
 ### 2. Rendered displays and garage integration
 
@@ -46,3 +46,11 @@
 - [ ] Extend hosted render workflow, reject shader/runtime errors, hash and preserve unchanged frames/logs.
 - [ ] Inspect every comparison image, fix concrete defects, document approximations and measured limits in `docs/visuals.md` and the evidence index.
 - [ ] Independent code/artifact review and fresh integrated validation before accepting this milestone.
+
+## Execution ledger
+
+- Mapper red: Windows run45672602548, source386c989,870 checks/one expected missing-mapper failure. Green: source7d54329, run45673275688,922 checks, full MSI pipeline.
+- Display red: Linux run45674575997, sourceb618c26,923 checks/one expected missing-display failure. Green: sourcebbe98c7, run45675152153,928 checks plus the single-player GUI walkthrough. This predates garage registration and reference comparisons.
+- Upgrade and notices are independently proven: source0100534, Windows run45673590122,922 checks, exact installed hashes, install/major upgrade/obsolete removal/downgrade/uninstall; matching Godot and project notices bundled. Shared library4cb6cb2. Review found inventory generation before smoke could become stale for generic callers; moved it immediately before packaging.
+- Ruling: use mesh instances and analytic vapor layers in both tiers; enable reflection probes only where supported. This makes the default fallback visible and bounded. It deliberately does not attempt a fluid solver or unsupported hardware ray tracing.
+- Current comparison run45675632245 uses sourcef4540e6. Await actual outcome and inspect unchanged frames before acceptance.
