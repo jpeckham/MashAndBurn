@@ -1,6 +1,6 @@
 extends SceneTree
 ## Run only on a permitted hosted X11/Mesa runner. Uses real GUI hit testing, not button signals.
-const OUTPUT := "res://.tools/render-proof"
+var output_path := "res://.tools/render-proof"
 var game: Node
 var checks := 0
 var failures := 0
@@ -42,6 +42,7 @@ func find_button(node: Node, text: String) -> Button:
 
 func click_control(control: Control) -> bool:
 	if not check(control != null,"click target exists"): return false
+	root.grab_focus()
 	key(KEY_ESCAPE,true)
 	key(KEY_ESCAPE,false)
 	var ancestor: Node = control.get_parent()
@@ -96,18 +97,22 @@ func metrics_scroll(down: bool) -> void:
 			await frames(1)
 	check(game.info_scroll.get_global_rect().end.y < 620,"metrics stay above station controls")
 
-func set_field(field: String, value: String) -> bool:
-	var editor: SpinBox = game.settings[field]
-	if not await click_control(editor.get_line_edit()): return false
+func enter_text(editor: LineEdit, value: String) -> bool:
+	if not await click_control(editor): return false
 	key(KEY_CTRL,true)
 	key(KEY_A,true,true)
 	key(KEY_A,false,true)
 	key(KEY_CTRL,false)
 	for character in value:
-		var code: int = character.unicode_at(0)
-		key(code,true,false,code)
+		var code: int = character.to_upper().unicode_at(0)
+		key(code,true,false,character.unicode_at(0))
 		key(code,false)
 		await frames(1)
+	return true
+
+func set_field(field: String, value: String) -> bool:
+	var editor: SpinBox = game.settings[field]
+	if not await enter_text(editor.get_line_edit(),value): return false
 	var apply: Button = editor.get_parent().get_child(editor.get_parent().get_child_count()-1)
 	if not await click_control(apply): return false
 	return check(is_equal_approx(game.session.state[field],float(value)),"GUI setting applied: "+field+"="+value)
@@ -121,10 +126,14 @@ func capture(name: String) -> void:
 	for x in range(0,image.get_width(),57):
 		for y in range(0,image.get_height(),43): colors[image.get_pixel(x,y).to_html()] = true
 	check(image.get_size() == Vector2i(1366,740) and colors.size() > 20,"rendered nonblank 1366x740 frame: "+name)
-	var path := OUTPUT+"/"+name+".png"
+	var path := output_path+"/"+name+".png"
 	check(image.save_png(path) == OK,"saved frame: "+name)
 	var s: Dictionary = game.session.state
 	captures.append({"file":name+".png","utc":Time.get_datetime_string_from_system(true),"stage":s.stage,"seed":s.seed,"tick":s.tick,"simulation_seconds":s.sim_seconds,"state_hash":game.session.sim.state_hash(s),"temperature_c":s.temp_c,"ph":s.ph,"gravity":s.gravity,"ibu":s.ibu,"co2_volumes":s.co2_volumes})
+	var module = game.get_node_or_null("Multiplayer")
+	if module != null and module.network.view.get("players",{}).has(module.network.player_id):
+		var player: Dictionary = module.network.view.players[module.network.player_id]
+		captures.back().match = {"round_id":module.network.view.round_id,"round_seed":module.network.view.seed,"tick":module.network.view.tick,"elapsed":module.network.view.elapsed,"player_id":player.id,"position":player.position.duplicate(),"health":player.health,"fire":player.fire.duplicate(true),"claim":player.claim.duplicate(true)}
 	print("CAPTURE "+JSON.stringify(captures.back()))
 
 func next_stage(expected: String) -> bool:
@@ -200,12 +209,9 @@ func batch(flawed: bool) -> bool:
 		await capture("flawed-10-defects-and-latch")
 	return true
 
-func run_proof() -> void:
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUTPUT))
-	create_timer(330).timeout.connect(func(): printerr("FAIL: render proof watchdog expired"); finish(2))
-	if not check(DisplayServer.get_name() != "headless","actual window/display driver required"):
-		finish(1)
-		return
+func setup_scene() -> bool:
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output_path))
+	if not check(DisplayServer.get_name() != "headless","actual window/display driver required"): return false
 	root.size = Vector2i(1366,740)
 	game = load("res://scenes/garage/garage.tscn").instantiate()
 	root.add_child(game)
@@ -224,6 +230,13 @@ func run_proof() -> void:
 	profile.measured_fps = float(Engine.get_frames_drawn()-rendered)*1000.0/maxi(1,Time.get_ticks_msec()-started)
 	profile.frame_time_ms = 1000.0/maxf(.001,profile.measured_fps)
 	check(RenderingServer.get_rendering_info(RenderingServer.RENDERING_INFO_TOTAL_DRAW_CALLS_IN_FRAME) > 0,"3D geometry actually rendered")
+	return true
+
+func run_proof() -> void:
+	create_timer(330).timeout.connect(func(): printerr("FAIL: render proof watchdog expired"); finish(2))
+	if not await setup_scene():
+		finish(1)
+		return
 	await capture("00-garage")
 	if not await click("01  Mash"):
 		finish(1)
@@ -287,8 +300,8 @@ func run_proof() -> void:
 	finish(1 if failures else 0)
 
 func finish(code: int) -> void:
-	var report := {"source_commit":OS.get_environment("GITHUB_SHA"),"run_id":OS.get_environment("GITHUB_RUN_ID"),"machine":OS.get_environment("RUNNER_NAME"),"operator":"GitHub Actions / Godot Input.parse_input_event automation","utc":Time.get_datetime_string_from_system(true),"command":OS.get_cmdline_args(),"profile":profile,"checks":checks,"failures":failures,"exit_code":code,"captures":captures,"observations":observations}
-	var file := FileAccess.open(OUTPUT+"/manifest.json",FileAccess.WRITE)
+	var report := {"source_commit":OS.get_environment("GITHUB_SHA"),"source_ref":OS.get_environment("GITHUB_REF"),"run_id":OS.get_environment("GITHUB_RUN_ID"),"machine":OS.get_environment("RUNNER_NAME"),"operator":"GitHub Actions / Godot Input.parse_input_event automation","utc":Time.get_datetime_string_from_system(true),"command":OS.get_cmdline_args(),"profile":profile,"checks":checks,"failures":failures,"exit_code":code,"captures":captures,"observations":observations}
+	var file := FileAccess.open(output_path+"/manifest.json",FileAccess.WRITE)
 	if file != null:
 		file.store_string(JSON.stringify(report,"\t"))
 		file.close()

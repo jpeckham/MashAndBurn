@@ -5,6 +5,11 @@ on:
     branches: ['codex/**']
     paths: ['tests/render/**', 'src/**', 'scenes/**', 'project.godot', '.github/workflows/render-proof.yml']
   workflow_dispatch:
+    inputs:
+      pair:
+        description: Run two real windows with full production-speed brewing and fire traversal
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -12,7 +17,7 @@ permissions:
 jobs:
   garage:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 20
     env:
       LIBGL_ALWAYS_SOFTWARE: '1'
       GODOT_VERSION: '4.4.1'
@@ -51,6 +56,12 @@ jobs:
           if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/walkthrough.log; then exit 1; fi
           python3 -c "import json; p=json.load(open('.tools/render-proof/manifest.json')); assert p['exit_code']==0 and p['failures']==0 and len(p['captures'])>=16, p"
           (cd .tools/render-proof && sha256sum *.png > SHA256SUMS.txt)
+      - name: Render actual host and guest multiplayer walkthrough
+        if: github.event_name == 'workflow_dispatch' && inputs.pair
+        shell: bash
+        run: |
+          set -euo pipefail
+          xvfb-run -a -s '-screen 0 3000x1000x24' bash tests/render/run_pair.sh
       - name: Preserve frames, provenance and logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -58,3 +69,10 @@ jobs:
           name: rendered-garage-proof
           path: .tools/render-proof/
           if-no-files-found: error
+      - name: Preserve multiplayer frames and role logs
+        if: always() && github.event_name == 'workflow_dispatch' && inputs.pair
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-multiplayer-proof
+          path: .tools/multiplayer-proof/
+          if-no-files-found: warn
