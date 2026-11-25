@@ -1,4 +1,3 @@
-import copy
 import math
 
 import pytest
@@ -15,9 +14,9 @@ class Clock:
         self.value += seconds
 
 
-def frame(clock, seq=1, **changes):
+def frame(clock, sequence=1, **changes):
     packet = dict(
-        type="HardwareFrame", version=1, seq=seq, tick=seq,
+        type="HardwareFrame", version=1, seq=sequence, tick=sequence,
         sent_at_unix_ms=round(clock() * 1000), step="MASH_IN",
         enabled=True, safe_state=False, heater=0.8, pump=0.5,
         target_temp_c=66.7, pump_duty=0.5, valve_states=[1, 0, 1],
