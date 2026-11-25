@@ -1,0 +1,1930 @@
+{
+	"captures": [
+		{
+			"co2_volumes": 0.85,
+			"file": "00-garage.png",
+			"gravity": 1.0,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 0.0,
+			"stage": "mash",
+			"state_hash": "da36e857a1e5fcced68808464dd44f0e20da0086930e85000dcbfb5ca68a86f0",
+			"temperature_c": 66.7,
+			"tick": 0,
+			"utc": "2026-11-25T17:45:46"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "01-controls-and-readiness.png",
+			"gravity": 1.0,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 0.0,
+			"stage": "mash",
+			"state_hash": "da36e857a1e5fcced68808464dd44f0e20da0086930e85000dcbfb5ca68a86f0",
+			"temperature_c": 66.7,
+			"tick": 0,
+			"utc": "2026-11-25T17:45:47"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "02-buick-trunk-and-exit.png",
+			"gravity": 1.0,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 0.0,
+			"stage": "mash",
+			"state_hash": "da36e857a1e5fcced68808464dd44f0e20da0086930e85000dcbfb5ca68a86f0",
+			"temperature_c": 66.7,
+			"tick": 0,
+			"utc": "2026-11-25T17:45:48"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "normal-01-mash.png",
+			"gravity": 1.06815591947294,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 3600.0,
+			"stage": "mash",
+			"state_hash": "f3226b88d35c9a3c464dc126931d2a8c3a140c3f33b99ce5cecb5fab925c73dc",
+			"temperature_c": 66.7,
+			"tick": 60,
+			"utc": "2026-11-25T17:45:48"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "normal-02-reloaded.png",
+			"gravity": 1.06846495215485,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 3660.0,
+			"stage": "mash",
+			"state_hash": "3df366ea9c0d9b4f9eb2e8fec9cb1b3e3b1d19e637c944b3999fce6efa7e0a07",
+			"temperature_c": 66.7,
+			"tick": 61,
+			"utc": "2026-11-25T17:45:51"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "normal-02b-metrics.png",
+			"gravity": 1.06846495215485,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 3660.0,
+			"stage": "mash",
+			"state_hash": "3df366ea9c0d9b4f9eb2e8fec9cb1b3e3b1d19e637c944b3999fce6efa7e0a07",
+			"temperature_c": 66.7,
+			"tick": 61,
+			"utc": "2026-11-25T17:45:53"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "normal-03-boil.png",
+			"gravity": 1.08323955672201,
+			"ibu": 14.5398729205481,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 7260.0,
+			"stage": "boil",
+			"state_hash": "23a2057ea5daa84802c090d3849b6a38b5193a6d3aaf6c3015776f51e9e1abed",
+			"temperature_c": 100.0,
+			"tick": 121,
+			"utc": "2026-11-25T17:45:56"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "normal-04-cooling.png",
+			"gravity": 1.08323955672201,
+			"ibu": 14.5398729205481,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 10860.0,
+			"stage": "cooling",
+			"state_hash": "0b8bff44e7538ee3ed9b10629a594c8a97ea0172a64c2651c1acbd6f8cccd768",
+			"temperature_c": 20.04988807088,
+			"tick": 181,
+			"utc": "2026-11-25T17:45:57"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "normal-05-fermentation.png",
+			"gravity": 1.0270995966875,
+			"ibu": 14.5398729205481,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 97260.0,
+			"stage": "fermentation",
+			"state_hash": "5f465ace616cc480166542cfc3e49a6a5a400aa4858d0732ab0e434a8dd6a11d",
+			"temperature_c": 20.0,
+			"tick": 1621,
+			"utc": "2026-11-25T17:45:59"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "normal-06-packaging.png",
+			"gravity": 1.01950187929534,
+			"ibu": 14.5398729205481,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 183660.0,
+			"stage": "packaging",
+			"state_hash": "11bf85b4913aec8d1014a24811b03aa05ce488014d1ba3fde56189f9a92de651",
+			"temperature_c": 20.0,
+			"tick": 3061,
+			"utc": "2026-11-25T17:46:02"
+		},
+		{
+			"co2_volumes": 2.67369710564644,
+			"file": "normal-07-judging-page-1.png",
+			"gravity": 1.01950187929534,
+			"ibu": 14.5398729205481,
+			"ph": 5.4,
+			"seed": 42,
+			"simulation_seconds": 183660.0,
+			"stage": "judging",
+			"state_hash": "9b0b653911ad55039e8979d14aef43ee0c1f0687034cb46460374c6e3ba0802e",
+			"temperature_c": 20.0,
+			"tick": 3061,
+			"utc": "2026-11-25T17:46:02"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "flawed-01-mash.png",
+			"gravity": 1.06602566705298,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 7200.0,
+			"stage": "mash",
+			"state_hash": "c249c06b378e4c37c2ce0c2c880e0d0c91e41a9cdfe3d2c79110053f2c6b7537",
+			"temperature_c": 66.7,
+			"tick": 120,
+			"utc": "2026-11-25T17:46:05"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "flawed-03-boil.png",
+			"gravity": 1.08027387860194,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 10800.0,
+			"stage": "boil",
+			"state_hash": "a8b3e1833f1e5eff66d3d6d4334caea562ca89f4c8c0239833dd39bab3c5030b",
+			"temperature_c": 100.0,
+			"tick": 180,
+			"utc": "2026-11-25T17:46:06"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "flawed-04-cooling.png",
+			"gravity": 1.08027387860194,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 14400.0,
+			"stage": "cooling",
+			"state_hash": "adbdeb879be2f93997f07a504a95a8f8e3a49fc76ebacc29d9e0a401681716e3",
+			"temperature_c": 20.04988807088,
+			"tick": 240,
+			"utc": "2026-11-25T17:46:07"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "flawed-05-fermentation.png",
+			"gravity": 1.05028200557423,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 100800.0,
+			"stage": "fermentation",
+			"state_hash": "13957c5fce6ed93eed6194201c12228c5c4a3e22e9c06380dd87c7886cffcad4",
+			"temperature_c": 35.0,
+			"tick": 1680,
+			"utc": "2026-11-25T17:46:10"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "flawed-06-packaging.png",
+			"gravity": 1.02067704691546,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 417600.0,
+			"stage": "packaging",
+			"state_hash": "7fd0e2540f9af7a1a3fc78fbe8dfed33a9ba3721c82ad3ac3c73952090b35bfd",
+			"temperature_c": 35.0,
+			"tick": 6960,
+			"utc": "2026-11-25T17:46:18"
+		},
+		{
+			"co2_volumes": 16.047475880387,
+			"file": "flawed-07-judging-page-1.png",
+			"gravity": 1.02067704691546,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 417600.0,
+			"stage": "judging",
+			"state_hash": "2e98dffe178e60bbdcc59f239e294f4fe372d242c957b60e092459bb0a6a2ba0",
+			"temperature_c": 35.0,
+			"tick": 6960,
+			"utc": "2026-11-25T17:46:19"
+		},
+		{
+			"co2_volumes": 16.047475880387,
+			"file": "flawed-08-feed-page-2.png",
+			"gravity": 1.02067704691546,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 417600.0,
+			"stage": "judging",
+			"state_hash": "2e98dffe178e60bbdcc59f239e294f4fe372d242c957b60e092459bb0a6a2ba0",
+			"temperature_c": 35.0,
+			"tick": 6960,
+			"utc": "2026-11-25T17:46:19"
+		},
+		{
+			"co2_volumes": 16.047475880387,
+			"file": "flawed-09-feed-page-32.png",
+			"gravity": 1.02067704691546,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 417600.0,
+			"stage": "judging",
+			"state_hash": "2e98dffe178e60bbdcc59f239e294f4fe372d242c957b60e092459bb0a6a2ba0",
+			"temperature_c": 35.0,
+			"tick": 6960,
+			"utc": "2026-11-25T17:46:29"
+		},
+		{
+			"co2_volumes": 16.047475880387,
+			"file": "flawed-10-defects-and-latch.png",
+			"gravity": 1.02067704691546,
+			"ibu": 0.0,
+			"ph": 5.4,
+			"seed": 43,
+			"simulation_seconds": 417600.0,
+			"stage": "judging",
+			"state_hash": "2e98dffe178e60bbdcc59f239e294f4fe372d242c957b60e092459bb0a6a2ba0",
+			"temperature_c": 35.0,
+			"tick": 6960,
+			"utc": "2026-11-25T17:46:31"
+		}
+	],
+	"checks": 403,
+	"command": [
+		"--script",
+		"tests/render/render_proof.gd"
+	],
+	"exit_code": 0,
+	"failures": 0,
+	"machine": "GitHub Actions 1000001559",
+	"observations": [
+		{
+			"detail": "actual window/display driver required",
+			"ok": true
+		},
+		{
+			"detail": "3D geometry actually rendered",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: 00-garage",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: 00-garage",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@329",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: 01  Mash",
+			"ok": true
+		},
+		{
+			"detail": "right-mouse motion changes camera look",
+			"ok": true
+		},
+		{
+			"detail": "actual input routing moves the garage camera",
+			"ok": true
+		},
+		{
+			"detail": "E interaction reaches station readiness feedback",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: 01-controls-and-readiness",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: 01-controls-and-readiness",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@333",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: 05  Packaging",
+			"ok": true
+		},
+		{
+			"detail": "mouse-look turns toward the rear garage",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: 02-buick-trunk-and-exit",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: 02-buick-trunk-and-exit",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@329",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: 01  Mash",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-01-mash",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-01-mash",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@115",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Pause",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@115",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Resume",
+			"ok": true
+		},
+		{
+			"detail": "GUI resume/pause advances then stops time",
+			"ok": true
+		},
+		{
+			"detail": "paused time remains stopped",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@321",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Save batch",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "batch changed after save",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@322",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Load batch",
+			"ok": true
+		},
+		{
+			"detail": "GUI reload restores exact mid-batch state",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-02-reloaded",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-02-reloaded",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @ScrollContainer@104",
+			"ok": true
+		},
+		{
+			"detail": "metrics stay above station controls",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-02b-metrics",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-02b-metrics",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @ScrollContainer@104",
+			"ok": true
+		},
+		{
+			"detail": "metrics stay above station controls",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters boil",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@271",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Add (5% AA)",
+			"ok": true
+		},
+		{
+			"detail": "GUI hop addition reaches simulation",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-03-boil",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-03-boil",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters cooling",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-04-cooling",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-04-cooling",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters fermentation",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-05-fermentation",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-05-fermentation",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "fermentation becomes ready through GUI time controls",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Package & judge",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters packaging",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-06-packaging",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-06-packaging",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI packaging opens five-category judging",
+			"ok": true
+		},
+		{
+			"detail": "visible judging includes categories and causes",
+			"ok": true
+		},
+		{
+			"detail": "expected fictional feed boundary for normal",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: normal-07-judging-page-1",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: normal-07-judging-page-1",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@342",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Back to garage",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@323",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: New batch",
+			"ok": true
+		},
+		{
+			"detail": "second GUI batch advances seed reproducibly",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @LineEdit@196",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@199",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Set",
+			"ok": true
+		},
+		{
+			"detail": "GUI setting applied: target_c=95",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @LineEdit@196",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@199",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Set",
+			"ok": true
+		},
+		{
+			"detail": "GUI setting applied: target_c=66.7",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-01-mash",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-01-mash",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters boil",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-03-boil",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-03-boil",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters cooling",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@116",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 1 hour",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-04-cooling",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-04-cooling",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters fermentation",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @LineEdit@196",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@199",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Set",
+			"ok": true
+		},
+		{
+			"detail": "GUI setting applied: target_c=35",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-05-fermentation",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-05-fermentation",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@117",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: + 4 hours",
+			"ok": true
+		},
+		{
+			"detail": "fermentation becomes ready through GUI time controls",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Package & judge",
+			"ok": true
+		},
+		{
+			"detail": "GUI enters packaging",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @LineEdit@292",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@295",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Set",
+			"ok": true
+		},
+		{
+			"detail": "GUI setting applied: priming_g=1000",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-06-packaging",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-06-packaging",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI packaging opens five-category judging",
+			"ok": true
+		},
+		{
+			"detail": "visible judging includes categories and causes",
+			"ok": true
+		},
+		{
+			"detail": "expected fictional feed boundary for flawed",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-07-judging-page-1",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-07-judging-page-1",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "GUI feed page two replaces rows",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-08-feed-page-2",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-08-feed-page-2",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@349",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next →",
+			"ok": true
+		},
+		{
+			"detail": "GUI final feed page remains bounded",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-09-feed-page-32",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-09-feed-page-32",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@342",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Back to garage",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @ScrollContainer@104",
+			"ok": true
+		},
+		{
+			"detail": "metrics stay above station controls",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: flawed-10-defects-and-latch",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: flawed-10-defects-and-latch",
+			"ok": true
+		}
+	],
+	"operator": "GitHub Actions / Godot Input.parse_input_event automation",
+	"profile": {
+		"adapter": "llvmpipe (LLVM 20.1.2, 256 bits)",
+		"display": "X11",
+		"driver": "opengl3",
+		"engine": {
+			"build": "official",
+			"hash": "49a5bc7b616bd04689a2c89e89bda41f50241464",
+			"hex": 263169,
+			"major": 4,
+			"minor": 4,
+			"patch": 1,
+			"status": "stable",
+			"string": "4.4.1-stable (official)",
+			"timestamp": 0
+		},
+		"frame_time_ms": 33.5333333333333,
+		"measured_fps": 29.8210735586481,
+		"renderer": "gl_compatibility",
+		"vendor": "Mesa"
+	},
+	"run_id": "45668068521",
+	"source_commit": "10ab1aa9a4a8adde2fb397c7355f7a535a2750eb",
+	"utc": "2026-11-25T17:46:31"
+}

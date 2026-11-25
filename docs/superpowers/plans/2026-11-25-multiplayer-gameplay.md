@@ -42,8 +42,8 @@ Files: `src/gameplay/network/match_network.gd`, `src/gameplay/network/remote_bre
 - [x] Register lobby/HUD, weapon/sabotage/claims controls, placeholder rivals/projectiles/fire feedback and existing brew-desk routing (visible usability still unverified).
 - [x] Add real 2-/8-client hosted sessions with refused extra join and authoritative round completion. Reject bad protocol/replayed input; disconnect/server loss never enables local authority.
 - [x] Verify exported-game startup and update instructions and evidence.
-- [ ] Exercise full garage UIs as the actual network endpoints and consume authoritative final judging/feed results.
-- [ ] Complete spatial staging objects and richer inspection feedback from PRD scope.
+- [x] Exercise full garage UIs as the actual network endpoints and consume authoritative final judging/feed results (hosted869-check run; visible two-window proof remains separate).
+- [x] Complete spatial staging objects and richer inspection feedback from PRD scope, including proximity/E, avatar stress, burn/valve evidence and observed transient-visual lifecycle in hosted integration tests.
 
 ### 3. Milestone evidence
 
@@ -57,10 +57,10 @@ The previous 833-check run validated raw transport endpoints and local widgets,
 but not complete garage scenes sharing final results over ENet. Remaining PRD
 scope includes the actual staging props/old Buick trunk and character-tell feedback.
 
-- [ ] Add a hosted `client` suite with full garage scenes under separate SceneMultiplayer roots; exercise the actual Set widget, lobby/start, authoritative stout judging, bounded feed pages and exact local-batch restoration.
-- [ ] Observe failures before implementation. Do not treat fixtures that jump the server clock or fabricate a packaged batch as full brewing playthrough proof.
-- [ ] RemoteBrewSession exposes an immutable final judging context only after finished results; the tasting module waits for that context and uses the exact server categories/feedback/style instead of regrading a mirrored batch.
-- [ ] Create visible receipt desk, evidence station and old Buick/trunk props at fixed world coordinates. Authority requires players within 1.25 game metres; UI/E interaction uses the same points. Each player's staged record is separate.
-- [ ] Seeded inspection records burn pattern/thermal trace, valve state and game-avatar stress. Escaping lets stress settle; no real biometric data is read.
-- [ ] Sanitizing wands leave a bounded, expiring floor patch that slows any nearby player; render it and clear stale visual nodes on leave/new matches.
-- [ ] Run combined hosted checks, inspect logs, review changes, and retain all still-missing rendered/companion/release gates.
+- [x] Add a hosted `client` suite with full garage scenes under separate SceneMultiplayer roots; exercise the actual Set widget, authoritative stout judging, bounded feed pages and exact local-batch restoration. Lobby methods are not yet tested through rendered input.
+- [x] Observe failures before implementation: run45663969698 reported nine intended failures. Fixtures that jump the server clock or fabricate a packaged batch are not full brewing playthrough proof.
+- [x] RemoteBrewSession exposes an immutable final judging context only after finished results; tasting uses exact server categories/feedback/style.
+- [x] Create receipt/evidence/Buick-trunk props at shared world points and enforce1.25m server proximity; verify E and progress over actual garage ENet endpoints.
+- [x] Seeded inspection records burn/thermal trace, valve and avatar stress; escaping lets stress settle. No real biometric data is read.
+- [x] Wands leave bounded, expiring floor patches; verify client rendering, expiry/freeing and leave cleanup.
+- [x] Combined hosted checks pass869; independent source review found no Critical/Important issue. Single-player render403checks/20frames is inspected; visible two-client proof remains the next task.

@@ -1,6 +1,6 @@
 # MAB-14 desktop proof collection
 
-Status: **awaiting owner-enabled Godot computer-use access or an owner recording**. This directory currently contains tool-availability evidence and a collection checklist, not a completed desktop demonstration.
+Current status (2026-11-25): the owner-access blocker for single-player proof has been superseded by an [inspected hosted X11 walkthrough](2026-11-25-hosted/README.md), with 20 actual frames and passing GUI input checks. No desktop access or recording is being requested from James. His PC remains off limits for game tests. The original 2026-11-24 checklist below is retained as historical context; it is not the current execution instruction. Visible multiplayer and the remaining product milestones are still incomplete.
 
 Prepared on james's Windows PC, 2026-11-24 (America/Chicago), for branch `beluga/mab-1-playable-brewing-vertical`, reviewed product commit `4acdd863ff687016052f1ebb2ecfe7df510f16cb`. Documentation commits made for collection do not change that product revision. Identify the exact revision again when recording.
 

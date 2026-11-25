@@ -1,5 +1,11 @@
 # Milestone 1 validation — 2026-11-24
 
+Historical report. The original visible-walkthrough gap below is now superseded
+by [inspected hosted normal/flawed proof](desktop/2026-11-25-hosted/README.md),
+recorded 2026-11-25 without running Godot on James's PC. Current full-game work and
+remaining gates live in `docs/AI-GOAL-PROGRESS.md`; this old report is not a new
+request for local launches or computer-use permission.
+
 Machine: james's Windows PC. Branch: `beluga/mab-1-playable-brewing-vertical`. No PR, push or merge.
 
 ## Verified
