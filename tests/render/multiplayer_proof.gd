@@ -175,6 +175,7 @@ func interact() -> void:
 
 func host_combat() -> bool:
 	if not fire_smoke_only and not await wait_until(func(): return network.view.players.size() == 2 and network.view.players.values().all(func(p): return p.batch.stage == "judging"),240,"both actual GUI recipes packaged"): return false
+	if not await wait_until(func(): return phase_exists("guest","awaiting-wand"),30,"guest is observing the short wand effect"): return false
 	if not await click("Lobby / combat / claims"): return false
 	if not await click("Use weapon"): return false
 	if not await wait_until(func(): return not network.view.spills.is_empty(),5,"wand creates server floor patch"): return false
@@ -201,6 +202,7 @@ func host_combat() -> bool:
 	return check(network.state.phase == "finished" and network.state.elapsed == 900,"host fixture finalizes the competitive 900-second clock")
 
 func guest_fire() -> bool:
+	signal_phase("awaiting-wand")
 	if not await wait_until(func(): return player().blind_until > network.view.tick*.1,240,"actual host wand effect received"): return false
 	await capture("guest-08-wand-blindness")
 	if not await wait_until(func(): return phase_exists("host","at-exit"),30,"host reached exit before fire traversal"): return false
