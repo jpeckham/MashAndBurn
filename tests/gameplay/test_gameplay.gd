@@ -58,8 +58,28 @@ func run(t) -> void:
 	var brewed: Dictionary = engine.submit(s,1,brew)
 	t.check(brewed.ok and brewed.state.players[1].batch.target_c == 70,"own batch settings are authoritative")
 	t.check(brewed.state.players[2].batch.target_c == 66.7,"own brew command cannot change rival batch")
+	t.check(brewed.state.players[1].batch.sim_seconds == s.players[1].batch.sim_seconds and brewed.state.players[1].batch.tick == s.players[1].batch.tick,"accepted settings never advance server-owned batch time")
+	t.check(brewed.state.players[1].batch.temp_c == s.players[1].batch.temp_c,"setting a target does not instantly heat the batch")
 	brew.command.value = 900
 	t.check(not engine.submit(s,1,brew).ok,"chemistry bounds apply to multiplayer")
+	var control := running(engine)
+	var spam := running(engine)
+	for tick in range(20):
+		if tick%2 == 0: spam = engine.submit(spam,1,command(spam,1,"brew",{"command":{"action":"set","field":"target_c","value":66.7}})).state
+		control = engine.advance(control,.1).state
+		spam = engine.advance(spam,.1).state
+	t.check(control.players[1].batch.sim_seconds == spam.players[1].batch.sim_seconds and control.players[1].batch.conversion == spam.players[1].batch.conversion,"input frequency cannot buy faster brewing")
+	var cooling := running(engine)
+	cooling.players[1].batch.stage = "cooling"
+	cooling.players[1].batch.temp_c = 100.0
+	cooling = engine.submit(cooling,2,command(cooling,2,"sabotage",{"kind":"chiller","target":1})).state
+	var direct: Dictionary = engine.submit(cooling,1,command(cooling,1,"brew",{"command":{"action":"set","field":"temp_c","value":20.0}}))
+	t.check(not direct.ok and direct.state.players[1].batch.temp_c == 100,"client cannot set measured temperature to bypass cooling")
+	var override: Dictionary = engine.submit(cooling,1,command(cooling,1,"brew",{"command":{"action":"set","field":"chiller","value":1.0}}))
+	t.check(not override.ok and override.state.players[1].batch.temp_c == 100,"broken chiller cannot provide one hidden cooling step")
+	var redline := running(engine)
+	redline = engine.submit(redline,2,command(redline,2,"sabotage",{"kind":"burner","target":1})).state
+	t.check(not engine.submit(redline,1,command(redline,1,"brew",{"command":{"action":"set","field":"target_c","value":20.0}})).ok,"redline constraint cannot be overridden between ticks")
 	var gone: Dictionary = engine.disconnect_peer(s,2)
 	t.check(not gone.state.players[2].connected and gone.state.players[2].batch.safe_state,"disconnect stops that bay safely")
 	t.check(not engine.join(gone.state,20,"Stolen","wrong-token",true).ok,"reconnect requires credential")

@@ -43,6 +43,16 @@ func run(t) -> void:
 	var tree = load("res://scenes/garage/garage.tscn").instantiate()
 	t.check(tree != null, "garage scene loads")
 	t.check(tree.has_method("register_module"), "module extension point")
+	t.root.add_child(tree)
+	var editing: SpinBox = tree.settings.target_c
+	editing.value = 72.3
+	for i in range(10): tree.refresh()
+	t.check(is_equal_approx(editing.value,72.3),"ongoing snapshots preserve unsent recipe edits")
+	t.check(tree.session.state.target_c == 66.7,"editing a field alone cannot change simulation")
+	var apply_button: Button = editing.get_parent().get_child(editing.get_parent().get_child_count()-1)
+	apply_button.pressed.emit()
+	t.check(is_equal_approx(tree.session.state.target_c,72.3),"Set submits the user's preserved edit")
+	t.check(tree.session.state.sim_seconds == 0,"recipe setting does not advance local simulation time")
 	tree.free()
 	var remote_path := "res://src/gameplay/network/remote_brew_session.gd"
 	if not FileAccess.file_exists(remote_path):

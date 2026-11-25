@@ -51,12 +51,13 @@ func run(t) -> void:
 	t.check(judge.evaluate(state) == judge.evaluate(state), "deterministic judging")
 	var garage = load("res://scenes/garage/garage.tscn").instantiate()
 	t.root.add_child(garage)
-	t.check(garage.modules.size() == 1, "registered tasting module initialized")
+	var tasting: Array = garage.modules.filter(func(candidate): return candidate.get_script().resource_path == "res://src/social/judging_module.gd")
+	t.check(tasting.size() == 1, "registered tasting module initialized")
 	garage.session.state = state.duplicate(true)
 	garage.session.state.batch_id = "integration-severe"
 	garage.session.state.flaws.diacetyl = .8
 	garage.refresh()
-	var module = garage.modules[0]
+	var module = tasting[0]
 	t.check(module.panel.visible and module.feed_active, "end batch opens tasting/feed UI")
 	t.check(module.rows.get_child_count() == 16, "render bounded to 16 rows")
 	module.page_index = 31
