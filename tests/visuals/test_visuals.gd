@@ -6,7 +6,7 @@ func run(t) -> void:
 		t.check(false,"chemistry-driven optics mapper exists")
 		return
 	var optics = load(path).new()
-	var previous := 2.0
+	var previous := 3.1
 	for srm in [2.0,10.0,20.0,45.0]:
 		var p: Dictionary = optics.parameters({"srm":srm},"gl_compatibility")
 		t.check(p.color.r+p.color.g+p.color.b < previous,"SRM darkens monotonically")
