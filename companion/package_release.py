@@ -9,6 +9,8 @@ import subprocess
 import time
 import zipfile
 
+from mash_burn_bridge.models import HardwareFrame
+
 
 def main():
     if os.environ.get("GITHUB_ACTIONS") != "true" or os.environ.get("RUNNER_ENVIRONMENT") != "github-hosted":
@@ -62,6 +64,7 @@ def main():
             packages.append(dict(name=name, version=distribution.version, license=distribution.metadata.get("License-Expression") or distribution.metadata.get("License"), notices=notices))
         metadata = dict(version=version, source_commit=os.environ["GITHUB_SHA"], run_id=os.environ["GITHUB_RUN_ID"], python="3.12", physical_operation=False, files=inventory, validated_environment_packages=packages, distribution="Source only; Python interpreter and dependency implementations are not vendored.")
         add("BUILD-INFO.json", json.dumps(metadata, indent=2).encode())
+        add("schema/hardware-frame-v1.json", json.dumps(HardwareFrame.model_json_schema(), indent=2).encode())
     with zipfile.ZipFile(archive) as bundle:
         assert prefix + "mash_burn_bridge/app.py" in bundle.namelist()
         assert all(not any(part.startswith(".env") or part in ("__pycache__", ".tools") for part in pathlib.PurePosixPath(name).parts) for name in bundle.namelist())

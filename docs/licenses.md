@@ -21,6 +21,9 @@ packaged into the MSI, alongside the MSI's `SHA256SUMS.txt`. Installer validatio
 checks installed file hashes, major upgrade, obsolete-file removal, downgrade
 rejection and uninstall. Updates that add assets/plugins must update this inventory.
 
-The optional companion service will have a separate dependency inventory once
-implemented; it is not currently packaged in the MSI. No physical drivers,
-credentials, private configuration or companion Python interpreter are shipped.
+The optional companion source ZIP includes a locked Python3.12 dependency set,
+generated hardware schema, source hashes and public installed-dependency license
+notices/metadata in `BUILD-INFO.json` and `third-party/`. It does not vendor Python
+or dependency implementations and is separate from the MSI. No physical drivers,
+credentials or private configuration are shipped. Packaging excludes `.env`
+files, caches, symlinks and runtime evidence.
