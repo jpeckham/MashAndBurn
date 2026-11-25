@@ -68,6 +68,11 @@ func capture(name_value: String) -> void:
 	print("VISUAL_CAPTURE "+name_value)
 
 func run() -> void:
+	var args := OS.get_cmdline_user_args()
+	if "--expected-renderer" in args and args[args.find("--expected-renderer")+1] != RenderingServer.get_current_rendering_method():
+		printerr("Requested comparison renderer unavailable; refusing a mislabeled fallback capture.")
+		quit(2)
+		return
 	if OS.get_environment("GITHUB_ACTIONS") != "true" or OS.get_environment("RUNNER_ENVIRONMENT") != "github-hosted" or DisplayServer.get_name() == "headless":
 		printerr("Visual comparisons require a disposable hosted display.")
 		quit(2)
@@ -92,8 +97,8 @@ func run() -> void:
 	light.light_energy = 1.4
 	world.add_child(light)
 	box(Vector3(0,-.16,0),Vector3(8,.2,5),Color("62767b"),.7)
-	box(Vector3(0,1.3,-.8),Vector3(7,3,.1),Color("d7d4c5"))
-	for i in range(15): box(Vector3((i-7)*.4,1.1,-.73),Vector3(.07,2.3,.03),Color("34464b"))
+	box(Vector3(0,1.3,-.8),Vector3(7,3,.1),Color("344b56"))
+	for i in range(15): box(Vector3((i-7)*.4,1.1,-.73),Vector3(.07,2.3,.03),Color("bdc6c2"))
 	camera = Camera3D.new()
 	world.add_child(camera)
 	camera.position = Vector3(0,2.4,6.8)
@@ -117,17 +122,17 @@ func run() -> void:
 		fire.position = Vector3(display.position.x,0,.45)
 		incidents.append(fire)
 		var point := camera.unproject_position(Vector3(display.position.x,0,0))
-		labels.append(label("",Vector2(point.x-150,point.y+15),300,18))
+		labels.append(label("",Vector2(point.x-90,point.y+15),180,17))
 	footer.text = "%s / %s\nRGB absorption + artistic scattering; bounded mesh nucleation and vapor; no ray tracing\nGitHub-hosted %s / source %s" % [RenderingServer.get_current_rendering_method(),RenderingServer.get_video_adapter_name(),OS.get_environment("GITHUB_RUN_ID"),OS.get_environment("GITHUB_SHA").left(8)]
 	apply([{"srm":2,"haze":0,"co2":2.5},{"srm":10,"haze":0,"co2":2.5},{"srm":20,"haze":0,"co2":2.5},{"srm":45,"haze":0,"co2":2.5}],["SRM 2 / CLEAR","SRM 10 / CLEAR","SRM 20 / CLEAR","SRM 45 / CLEAR"])
 	await capture("01-srm-2-10-20-45")
 	apply([{"srm":10,"haze":0},{"srm":10,"haze":1},{"srm":20,"haze":0},{"srm":20,"haze":1}],["SRM 10 / CLEAR","SRM 10 / HAZY","SRM 20 / CLEAR","SRM 20 / HAZY"])
 	await capture("02-haze-scattering")
-	apply([{"srm":10,"protein":0,"ibu":0,"co2":0},{"srm":10,"protein":.2,"ibu":5,"co2":1},{"srm":10,"protein":1,"ibu":80,"co2":3},{"srm":10,"protein":1,"ibu":80,"co2":0}],["FLAT / NO HEAD","LOW RETENTION","PROTEIN + IBU + CO2","PROTEIN / NO CO2"])
+	apply([{"srm":10,"protein":0,"ibu":0,"co2":0},{"srm":10,"protein":.2,"ibu":5,"co2":1},{"srm":10,"protein":1,"ibu":80,"co2":3},{"srm":10,"protein":1,"ibu":80,"co2":0}],["FLAT / NO HEAD","LOW RETENTION","PROTEIN + IBU\nCO2 3 VOLUMES","PROTEIN\nNO CO2"])
 	await capture("03-foam-nucleation")
-	apply([{"temp_c":20},{"temp_c":60},{"temp_c":80},{"temp_c":100}],["20 C / COLD","60 C / WARM","80 C / STEAM","100 C / CONDENSATE"])
+	apply([{"temp_c":20},{"temp_c":60},{"temp_c":80},{"temp_c":100}],["20 C / COLD","60 C / WARM","80 C / STEAM","100 C\nCONDENSATE"])
 	await capture("04-steam-condensation")
-	apply([{"temp_c":20},{"temp_c":20},{"temp_c":20},{"temp_c":20}],["NO INCIDENT","LOW FICTIONAL FIRE","HIGH FIRE / SMOKE","HIGH FIRE / SMOKE"],[0,.3,.7,1])
+	apply([{"temp_c":20},{"temp_c":20},{"temp_c":20},{"temp_c":20}],["NO INCIDENT","LOW FIRE\n30% HEAT","HIGH FIRE\n70% HEAT","HEAVY SMOKE\n100% HEAT"],[0,.3,.7,1])
 	await capture("05-fire-smoke")
 	var frame_times: Array = []
 	var start := Time.get_ticks_usec()

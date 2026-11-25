@@ -13,7 +13,7 @@ func parameters(input: Dictionary, renderer: String) -> Dictionary:
 	var ibu := bounded(input,"ibu",20.0,0.0,120.0)
 	var co2 := bounded(input,"co2",.85,0.0,4.0)
 	var temp := bounded(input,"temp_c",20.0,0.0,102.0)
-	var color := Color(exp(-srm*.025),exp(-srm*.11),exp(-srm*.28))
+	var color := Color(exp(-srm*.06),exp(-srm*.18),exp(-srm*.38))
 	var foam := clampf((.12+protein*.58+ibu/120.0*.30)*(co2/2.5),0.0,1.0)
 	var tier := renderer if renderer in ["forward_plus","mobile"] else "compatibility"
 	return {"srm":srm,"color":color,"haze":haze,"foam":foam,"bubbles":clampf(co2/3.0,0,1),"steam":clampf((temp-55)/45.0,0,1),"condensation":clampf((temp-25)/65.0,0,1),"tier":tier,"reflection_probe":tier != "compatibility"}

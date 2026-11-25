@@ -26,7 +26,7 @@ jobs:
       - name: Install virtual display and software rendering
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y xvfb libgl1-mesa-dri mesa-utils libxrandr2 libxi6 libxinerama1 libxcursor1
+          sudo apt-get install -y xvfb libgl1-mesa-dri mesa-vulkan-drivers vulkan-tools mesa-utils libxrandr2 libxi6 libxinerama1 libxcursor1
       - name: Install checksum-verified official Godot
         shell: bash
         run: |
@@ -71,9 +71,14 @@ jobs:
           set -euo pipefail
           mkdir -p .tools/visual-proof
           for renderer in gl_compatibility forward_plus; do
-            xvfb-run -a -s '-screen 0 1600x1000x24' timeout 150s "$GODOT" --path . --display-driver x11 --rendering-method "$renderer" --audio-driver Dummy --max-fps 60 --script tests/render/visual_comparison.gd 2>&1 | tee ".tools/visual-proof/$renderer.log"
+            if [[ "$renderer" == forward_plus ]]; then
+              mapfile -t drivers < <(compgen -G '/usr/share/vulkan/icd.d/lvp*.json')
+              test "${#drivers[@]}" -eq 1
+              export VK_ICD_FILENAMES="${drivers[0]}"
+            fi
+            xvfb-run -a -s '-screen 0 1600x1000x24' timeout 150s "$GODOT" --path . --display-driver x11 --rendering-method "$renderer" --audio-driver Dummy --max-fps 60 --script tests/render/visual_comparison.gd -- --expected-renderer "$renderer" 2>&1 | tee ".tools/visual-proof/$renderer.log"
             if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' ".tools/visual-proof/$renderer.log"; then exit 1; fi
-            python3 -c "import json; p=json.load(open('.tools/visual-proof/$renderer/manifest.json')); assert len(p['captures'])==5 and p['profile']['fps']>0, p"
+            python3 -c "import json; p=json.load(open('.tools/visual-proof/$renderer/manifest.json')); assert len(p['captures'])==5 and p['profile']['fps']>0 and p['profile']['renderer']=='$renderer', p"
             (cd ".tools/visual-proof/$renderer" && sha256sum *.png > SHA256SUMS.txt)
           done
       - name: Preserve frames, provenance and logs

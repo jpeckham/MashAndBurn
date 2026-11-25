@@ -67,6 +67,13 @@ func _ready() -> void:
 	for i in range(32): bubbles.append(Vector3(sin(i*2.4)*.2,float(i)/32,cos(i*2.4)*.2))
 	drop_mesh = particles(24,.015,surface(Color(.7,.9,1,.65)))
 	# Condensate on a cooler pane behind the hot vessel, not a temperature solver.
+	var pane := MeshInstance3D.new()
+	var glass := BoxMesh.new()
+	glass.size = Vector3(.9,1.2,.025)
+	pane.mesh = glass
+	pane.material_override = surface(Color(.45,.7,.8,.12))
+	pane.position = Vector3(0,.7,-.48)
+	add_child(pane)
 	for i in range(24):
 		var pos := Vector3(float(i%6)*.15-.375,float(i/6)*.23+.3,-.43)
 		drops.append(pos)
