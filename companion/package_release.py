@@ -67,7 +67,8 @@ def main():
         add("schema/hardware-frame-v1.json", json.dumps(HardwareFrame.model_json_schema(), indent=2).encode())
     with zipfile.ZipFile(archive) as bundle:
         assert prefix + "mash_burn_bridge/app.py" in bundle.namelist()
-        assert all(not any(part.startswith(".env") or part in ("__pycache__", ".tools") for part in pathlib.PurePosixPath(name).parts) for name in bundle.namelist())
+        forbidden = [name for name in bundle.namelist() if any(part.startswith(".env") or part in ("__pycache__", ".tools") for part in pathlib.PurePosixPath(name).parts)]
+        assert not forbidden, f"Archive contains forbidden paths: {forbidden}"
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     (output / "COMPANION-SHA256SUMS.txt").write_text(f"{digest}  {archive.name}\n")
     print(f"COMPANION_PACKAGE version={version} source_files={len(inventory)} environment_packages={len(packages)} sha256={digest}")
