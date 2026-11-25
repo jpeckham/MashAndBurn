@@ -127,6 +127,16 @@ func run(t) -> void:
 	t.check(not engine.submit(timed,1,command(timed,1,"move",{"direction":[0,0]})).ok,"finished round rejects gameplay commands")
 	var repeated: Dictionary = engine.advance(timed,.1)
 	t.check(not repeated.ok and repeated.state == timed,"finished round cannot award twice")
+	var wet := running(engine)
+	wet.players[1].position = [0.0,0.0]
+	wet.players[2].position = [.8,0.0]
+	wet = engine.submit(wet,1,command(wet,1,"attack",{"weapon":"wand","target":2})).state
+	t.check(wet.get("spills",[]).size() == 1,"sanitizing wand creates a persistent slippery floor patch")
+	wet.players[1].position = [.8,0.0]
+	wet = engine.advance(wet,.1).state
+	t.check(wet.players[1].slip_until > 0,"floor patch affects players other than the original target")
+	for i in range(90): wet = engine.advance(wet,.1).state
+	t.check(wet.get("spills",[]).is_empty(),"slippery floor patches expire")
 	check_fire(t,engine)
 
 func check_fire(t,engine) -> void:
@@ -135,9 +145,13 @@ func check_fire(t,engine) -> void:
 	t.check(fire.ok and fire.state.players[1].batch.safe_state,"fire immediately latches bay disarm")
 	t.check(fire.events.size() >= 2 and fire.events[0].kind == "disarm","disarm precedes fire presentation events")
 	t.check(fire.state.players[1].fire.remaining == 45,"staging begins with 45 server seconds")
+	var remote_staging: Dictionary = fire.state.duplicate(true)
+	remote_staging.players[1].position = [0.0,4.0]
+	t.check(not engine.submit(remote_staging,1,command(remote_staging,1,"stage",{"object":"receipt"})).ok,"staging requires reaching the actual prop")
 	var staged: Dictionary = fire.state
+	var points := {"receipt":[-4.8,-.2],"equipment":[4.8,5.5],"evidence":[4.8,-.2]}
 	for action in ["receipt","equipment","evidence"]:
-		staged.players[1].position = [0.0,0.0]
+		staged.players[1].position = points[action].duplicate()
 		staged = engine.submit(staged,1,command(staged,1,"stage",{"object":action})).state
 		for i in range(10): staged = engine.advance(staged,.1).state
 	staged.players[1].position = [0.0,5.5]
@@ -147,6 +161,17 @@ func check_fire(t,engine) -> void:
 	while staged.players[1].fire.phase == "staging": staged = engine.advance(staged,.1).state
 	t.check(staged.players[1].fire.phase == "resolved","inspection resolves staging")
 	t.check(staged.players[1].claim.passed and staged.players[1].claim.payout == 1500,"good fictional staging/escape pays 150 percent exactly")
+	var inspection: Dictionary = staged.players[1].claim.get("evidence",{})
+	t.check(inspection.has("burn_pattern") and inspection.has("valve_state") and inspection.has("character_stress"),"inspection exposes burn valve and character-tell evidence")
+	var calm: Dictionary = fire.state.duplicate(true)
+	calm.players[1].escaped = true
+	calm.players[1].stress = 0.0
+	calm.players[1].fire.objects = {"receipt":true,"equipment":true,"evidence":true}
+	var nervous: Dictionary = calm.duplicate(true)
+	nervous.players[1].stress = 1.0
+	engine.fire.inspect(calm,1,engine.emit)
+	engine.fire.inspect(nervous,1,engine.emit)
+	t.check(nervous.players[1].claim.confidence < calm.players[1].claim.confidence,"character tells affect seeded inspection confidence")
 	var money: int = staged.players[1].money
 	for i in range(30): staged = engine.advance(staged,.1).state
 	t.check(staged.players[1].money == money,"claim cannot pay more than once")
