@@ -14,7 +14,7 @@ func _initialize() -> void:
 
 func run_suites() -> void:
 	var args := OS.get_cmdline_user_args()
-	var suites := ["chemistry", "contracts", "presentation", "social", "gameplay", "network", "client", "visuals"]
+	var suites := ["chemistry", "contracts", "presentation", "social", "gameplay", "network", "client", "visuals", "hardware"]
 	if "--suite" in args:
 		suites = [args[args.find("--suite") + 1]]
 	for suite in suites:
