@@ -1,10 +1,17 @@
 # Mash & Burn — playable prototype
 
-Development continues in Codex. See [current progress and execution constraints](docs/AI-GOAL-PROGRESS.md) for the full remaining scope. **Do not run the local commands below on James's PC during this work**; Godot validation and installer checks will use GitHub-hosted runners. The commands and results below are inherited documentation, not fresh verification.
+Godot4.4.1 PC prototype with deterministic brewing, authoritative2–8player matches,
+fire/claims, beer visuals, fictional tasting/feed and an optional mock companion.
+See [current validation](docs/AI-GOAL-PROGRESS.md), [installer delivery](docs/releases.md)
+and [companion setup](companion/README.md). MSI installers are published through
+[GitHub Releases](https://github.com/jpeckham/MashAndBurn/releases).
 
 Godot 4.4.1 Mono is installed at `C:\Program Files\Godot\Godot_v4.4.1-stable_mono_win64_console.exe` (reported `4.4.1.stable.mono.official.49a5bc7b6`). GDScript requires no .NET SDK. Python 3.11.9 is available at `C:\Users\james\AppData\Local\Programs\Python\Python311\python.exe`; it is optional and not the simulation runtime. No packages or setup install is required.
 
-FFmpeg 8.1.1 is available at `C:\ffmpeg\bin\ffmpeg.exe` and resolves on PATH in the MAB-14 check. It is optional for recording and is not a game dependency. See [desktop proof collection and tool logs](evidence/desktop/README.md); recording requires owner-enabled desktop access, or owner-provided media for inspection.
+FFmpeg is optional for recording and is not a game dependency. Actual inspected
+rendered evidence is preserved for [single-player](evidence/desktop/2026-11-25-hosted/README.md),
+[multiplayer](evidence/multiplayer/2026-11-25-hosted/README.md) and
+[visual comparisons](evidence/visuals/2026-11-25-hosted/README.md).
 
 PowerShell commands (replace the executable path if installed elsewhere):
 
@@ -34,6 +41,6 @@ Focused UI checks: append `-- --suite presentation` to the headless harness comm
 
 Packaging opens the tasting room with five 20-point categories and cause-based feedback. Scores below 45 or severe diacetyl/acetaldehyde open a fictional local feed: 512 unique procedural personas, 16 posts per page, no network calls or external accounts. See [sandbox details](docs/social.md).
 
-Fresh hosted Windows validation passes **869 checks**, actual two-/eight-client ENet sessions, full-garage integration, export/startup and MSI install/uninstall. The local engine commands above remain reference instructions for a permitted machine, not a request to run them on James's PC.
+The combined game suite currently passes **1,022 checks**, including actual two-/eight-client ENet sessions and garage integration. Hosted Windows checks also exercise export/startup, MSI install/payload hashes, major upgrade, downgrade rejection and uninstall. Companion validation passes59pytest cases on Linux and Windows plus actual game/daemon/private-fake interoperability.
 
-The [inspected hosted walkthrough](evidence/desktop/2026-11-25-hosted/README.md) preserves 20 actual X11/Mesa frames and **403 passing GUI assertions**: normal/flawed full recipes, walking/look/E, pause/resume, exact save/reload and fictional feed pages 1, 2 and 32. This supersedes the old request for owner desktop access. Full-game acceptance still requires visible multiplayer proof, advanced visuals, companion integration and final release gates; see [current progress](docs/AI-GOAL-PROGRESS.md).
+The inspected single-player walkthrough preserves20X11/Mesa frames and403GUI assertions: normal/flawed recipes, walking/look/E, pause/resume, exact save/reload and feed pages1,2,32. The multiplayer session adds27inspected frames, and renderer comparisons add10. See [PRD traceability and limitations](docs/prototype-traceability.md) for precisely what this prototype demonstrates.

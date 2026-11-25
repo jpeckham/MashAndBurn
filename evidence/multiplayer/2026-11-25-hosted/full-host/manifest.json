@@ -1,0 +1,964 @@
+{
+	"captures": [
+		{
+			"co2_volumes": 0.85,
+			"file": "host-01-mash.png",
+			"gravity": 1.06932732703204,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 6.4,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 64
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 3840.0,
+			"stage": "mash",
+			"state_hash": "296acb163a39f7cf7e81e1ae8ba4f2af6564095556dfd1825ebf31e978930054",
+			"temperature_c": 66.7,
+			"tick": 64,
+			"utc": "2026-11-25T19:06:54"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "host-02-boil.png",
+			"gravity": 1.08777289493242,
+			"ibu": 14.6144587289425,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 13.4,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 134
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 8040.0,
+			"stage": "boil",
+			"state_hash": "d8500c5f11a8f67809f8fa1d0999259ef7ddbaa4a88648f6bf2522abe0f110d8",
+			"temperature_c": 100.0,
+			"tick": 134,
+			"utc": "2026-11-25T19:07:01"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "host-03-cooling.png",
+			"gravity": 1.09045617899192,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 16.7,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 167
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 10020.0,
+			"stage": "cooling",
+			"state_hash": "7fc5745342f7e1d2f4c351445f56bb0d1e6dc521632872a67a39f7f99c06a714",
+			"temperature_c": 22.8893357594147,
+			"tick": 167,
+			"utc": "2026-11-25T19:07:05"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "host-04-fermentation-start.png",
+			"gravity": 1.08977354337911,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 18.0,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 180
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 10800.0,
+			"stage": "fermentation",
+			"state_hash": "ab899beacb295ce7929c8d5f6b5505285c9704b09653f65f3e29148f6a17c0bc",
+			"temperature_c": 20.0,
+			"tick": 180,
+			"utc": "2026-11-25T19:07:06"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "host-05-fermentation-progress.png",
+			"gravity": 1.0330063684234,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 138.5,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 1385
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 83100.0,
+			"stage": "fermentation",
+			"state_hash": "e703909d2690463b5b99422ebd5f4cce0f1de9ce003f7a4ef4d73b990482e912",
+			"temperature_c": 20.0,
+			"tick": 1385,
+			"utc": "2026-11-25T19:09:07"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "host-06-packaging.png",
+			"gravity": 1.02118191008043,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 306.6,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 3066
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 183960.0,
+			"stage": "packaging",
+			"state_hash": "509775b72736e639f08cd0682961d67125162516e09a1fe0d9e09b34e9031bd9",
+			"temperature_c": 20.0,
+			"tick": 3066,
+			"utc": "2026-11-25T19:11:55"
+		},
+		{
+			"co2_volumes": 2.76661678160328,
+			"file": "host-07-packaged-awaiting-final.png",
+			"gravity": 1.02118191008043,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 307.8,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 3078
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 184260.0,
+			"stage": "judging",
+			"state_hash": "0f0a9d6dfedc28b203feb508b805ba89cfd5956d94a8fac148da8d7291418645",
+			"temperature_c": 20.0,
+			"tick": 3071,
+			"utc": "2026-11-25T19:11:56"
+		},
+		{
+			"co2_volumes": 2.76661678160328,
+			"file": "host-08-wand-floor.png",
+			"gravity": 1.02118191008043,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 403.5,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 4035
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 184260.0,
+			"stage": "judging",
+			"state_hash": "0f0a9d6dfedc28b203feb508b805ba89cfd5956d94a8fac148da8d7291418645",
+			"temperature_c": 20.0,
+			"tick": 3071,
+			"utc": "2026-11-25T19:13:32"
+		},
+		{
+			"co2_volumes": 2.76661678160328,
+			"file": "host-09-fire-claims-settled.png",
+			"gravity": 1.02118191008043,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"confidence": 0.279600000000001,
+					"evidence": {
+						"burn_pattern": "overflow",
+						"character_stress": 0.0,
+						"character_tells": "steady",
+						"fuel_remaining": 0.775000000000025,
+						"smoke_trace": 1.0,
+						"thermal_trace": 0.87999999999999,
+						"valve_state": "normal"
+					},
+					"passed": false,
+					"payout": 0,
+					"penalty": 1500,
+					"reason": "Inspection failed: escape, smoke, burn pattern, valve or staged record was inconsistent.",
+					"resolved": true
+				},
+				"elapsed": 492.3,
+				"fire": {
+					"cause": "boil_over",
+					"fuel": 0.775000000000025,
+					"heat": 0.87999999999999,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"origin": [
+						0.16690467596054,
+						5.66690467596054
+					],
+					"phase": "resolved",
+					"remaining": 0.0,
+					"smoke": 1.0,
+					"spread": true
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					0.16690467596054,
+					5.66690467596054
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 4923
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 184260.0,
+			"stage": "judging",
+			"state_hash": "2e2b402c8c92ae9b24831c71735eced00accaae49d2ca821480259c50541d29a",
+			"temperature_c": 20.0,
+			"tick": 3071,
+			"utc": "2026-11-25T19:15:01"
+		},
+		{
+			"co2_volumes": 2.76661678160328,
+			"file": "host-13-final-tasting.png",
+			"gravity": 1.02118191008043,
+			"ibu": 15.1712511364273,
+			"match": {
+				"claim": {
+					"confidence": 0.279600000000001,
+					"evidence": {
+						"burn_pattern": "overflow",
+						"character_stress": 0.0,
+						"character_tells": "steady",
+						"fuel_remaining": 0.775000000000025,
+						"smoke_trace": 1.0,
+						"thermal_trace": 0.87999999999999,
+						"valve_state": "normal"
+					},
+					"passed": false,
+					"payout": 0,
+					"penalty": 1500,
+					"reason": "Inspection failed: escape, smoke, burn pattern, valve or staged record was inconsistent.",
+					"resolved": true
+				},
+				"elapsed": 900.0,
+				"fire": {
+					"cause": "boil_over",
+					"fuel": 0.775000000000025,
+					"heat": 0.87999999999999,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"origin": [
+						0.16690467596054,
+						5.66690467596054
+					],
+					"phase": "resolved",
+					"remaining": 0.0,
+					"smoke": 1.0,
+					"spread": true
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					0.16690467596054,
+					5.66690467596054
+				],
+				"round_id": "round-1201900934",
+				"round_seed": 1201900934,
+				"tick": 9000
+			},
+			"ph": 5.4,
+			"seed": 1201901035,
+			"simulation_seconds": 184260.0,
+			"stage": "judging",
+			"state_hash": "2e2b402c8c92ae9b24831c71735eced00accaae49d2ca821480259c50541d29a",
+			"temperature_c": 20.0,
+			"tick": 3071,
+			"utc": "2026-11-25T19:15:03"
+		}
+	],
+	"checks": 107,
+	"command": [
+		"--script",
+		"tests/render/multiplayer_proof.gd"
+	],
+	"exit_code": 0,
+	"failures": 0,
+	"machine": "GitHub Actions 1000001616",
+	"observations": [
+		{
+			"detail": "actual window/display driver required",
+			"ok": true
+		},
+		{
+			"detail": "3D geometry actually rendered",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@358",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @LineEdit@366",
+			"ok": true
+		},
+		{
+			"detail": "keyboard draft matches requested text: Host",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@391",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Host",
+			"ok": true
+		},
+		{
+			"detail": "real GUI participant joined",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@396",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Toggle ready",
+			"ok": true
+		},
+		{
+			"detail": "both participants ready through GUI",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@404",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Start (host)",
+			"ok": true
+		},
+		{
+			"detail": "GUI round started",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@364",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Close",
+			"ok": true
+		},
+		{
+			"detail": "mash readiness observed",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-01-mash",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-01-mash",
+			"ok": true
+		},
+		{
+			"detail": "stage ready for boil",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "authoritative GUI enters boil",
+			"ok": true
+		},
+		{
+			"detail": "hop control cooldown clear",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@271",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Add (5% AA)",
+			"ok": true
+		},
+		{
+			"detail": "GUI hop charge accepted",
+			"ok": true
+		},
+		{
+			"detail": "boil readiness observed",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-02-boil",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-02-boil",
+			"ok": true
+		},
+		{
+			"detail": "stage ready for cooling",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "authoritative GUI enters cooling",
+			"ok": true
+		},
+		{
+			"detail": "cooling readiness observed",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-03-cooling",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-03-cooling",
+			"ok": true
+		},
+		{
+			"detail": "stage ready for fermentation",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "authoritative GUI enters fermentation",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-04-fermentation-start",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-04-fermentation-start",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-05-fermentation-progress",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-05-fermentation-progress",
+			"ok": true
+		},
+		{
+			"detail": "full fermentation readiness observed",
+			"ok": true
+		},
+		{
+			"detail": "stage ready for packaging",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Package & judge",
+			"ok": true
+		},
+		{
+			"detail": "authoritative GUI enters packaging",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-06-packaging",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-06-packaging",
+			"ok": true
+		},
+		{
+			"detail": "packaging control cooldown clear",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@113",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Next stage →",
+			"ok": true
+		},
+		{
+			"detail": "GUI packaging accepted: Server accepted input.",
+			"ok": true
+		},
+		{
+			"detail": "packaged batch waits for authoritative round judging",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-07-packaged-awaiting-final",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-07-packaged-awaiting-final",
+			"ok": true
+		},
+		{
+			"detail": "both actual GUI recipes packaged",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@358",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@423",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Use weapon",
+			"ok": true
+		},
+		{
+			"detail": "wand creates server floor patch",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@364",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Close",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-08-wand-floor",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-08-wand-floor",
+			"ok": true
+		},
+		{
+			"detail": "WASD reached world point (0.0, 5.5)",
+			"ok": true
+		},
+		{
+			"detail": "guest staged and escaped through actual input",
+			"ok": true
+		},
+		{
+			"detail": "guest claim resolved before fixture clock advance",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-09-fire-claims-settled",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-09-fire-claims-settled",
+			"ok": true
+		},
+		{
+			"detail": "guest recorded actual claim outcome",
+			"ok": true
+		},
+		{
+			"detail": "host fixture finalizes the competitive 900-second clock",
+			"ok": true
+		},
+		{
+			"detail": "both windows receive authoritative final results",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-13-final-tasting",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-13-final-tasting",
+			"ok": true
+		},
+		{
+			"detail": "actual final normal/flawed feed boundary",
+			"ok": true
+		},
+		{
+			"detail": "guest completed before host leave",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@342",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Back to garage",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@358",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@394",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Leave",
+			"ok": true
+		},
+		{
+			"detail": "actual GUI leave restores original local batch",
+			"ok": true
+		}
+	],
+	"operator": "GitHub Actions / Godot Input.parse_input_event automation",
+	"profile": {
+		"adapter": "llvmpipe (LLVM 20.1.2, 256 bits)",
+		"display": "X11",
+		"driver": "opengl3",
+		"engine": {
+			"build": "official",
+			"hash": "49a5bc7b616bd04689a2c89e89bda41f50241464",
+			"hex": 263169,
+			"major": 4,
+			"minor": 4,
+			"patch": 1,
+			"status": "stable",
+			"string": "4.4.1-stable (official)",
+			"timestamp": 0
+		},
+		"fixture_clock_advance": {
+			"from_tick": 4923,
+			"reason": "both full recipes and fire windows already observed at production speed",
+			"to_tick": 9000
+		},
+		"frame_time_ms": 94.7,
+		"measured_fps": 10.5596620908131,
+		"renderer": "gl_compatibility",
+		"role": "host",
+		"scenario": "full-brewing-fire-final",
+		"vendor": "Mesa"
+	},
+	"run_id": "45681440614",
+	"source_commit": "8962ed57b9a7e457061725a3e57e72e7b58022b5",
+	"source_ref": "refs/heads/codex/continue-mash-and-burn",
+	"utc": "2026-11-25T19:15:38"
+}

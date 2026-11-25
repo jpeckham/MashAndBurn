@@ -1,0 +1,1759 @@
+{
+  "source_commit": "5d0cbf2267b01212db7b69ab8a4f2491edd4b26b",
+  "run_id": "45700200483",
+  "python": "3.12.16 (main, Oct 26 2026, 02:50:49) [GCC 13.3.0]",
+  "telemetry_frames": 37,
+  "initial_rate_hz": 10.001967123414774,
+  "median_interval_ms": 99.98774528503418,
+  "events": [
+    {
+      "event": "independent-operator-armed",
+      "at": 1795640414.3815851,
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      },
+      "fault": ""
+    },
+    {
+      "event": "operator-estop",
+      "at": 1795640414.422571,
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      },
+      "fault": "e-stop"
+    },
+    {
+      "event": "explicit-local-rearm",
+      "at": 1795640414.9869988,
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      },
+      "fault": ""
+    },
+    {
+      "event": "game-fire-cutoff",
+      "at": 1795640416.01273,
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      },
+      "fault": "hazard"
+    },
+    {
+      "event": "game-disconnect",
+      "at": 1795640416.7366297,
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      },
+      "fault": "disconnect"
+    }
+  ],
+  "received": [
+    {
+      "at": 1795640413.2144141,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413213,
+        "seq": 1,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640413.314327,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413313,
+        "seq": 2,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640413.4142394,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413413,
+        "seq": 3,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640413.5141954,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413513,
+        "seq": 4,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640413.6141975,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413613,
+        "seq": 5,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640413.7142015,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413713,
+        "seq": 6,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640413.8142047,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413813,
+        "seq": 7,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640413.914189,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640413913,
+        "seq": 8,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.0142417,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414013,
+        "seq": 9,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.1141865,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414113,
+        "seq": 10,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.2141743,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414213,
+        "seq": 11,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.3141978,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414313,
+        "seq": 12,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.4141748,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414413,
+        "seq": 13,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.5141232,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414513,
+        "seq": 14,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.614198,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414613,
+        "seq": 15,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.714187,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414713,
+        "seq": 16,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.8141935,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414813,
+        "seq": 17,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640414.9141734,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 68.8500238891543,
+        "sent_at_unix_ms": 1795640414913,
+        "seq": 18,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 1,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.0143368,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415013,
+        "seq": 19,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.114184,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415113,
+        "seq": 20,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.2142243,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415213,
+        "seq": 21,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.3143125,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415313,
+        "seq": 22,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.4142578,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415413,
+        "seq": 23,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.5142367,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415513,
+        "seq": 24,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.6142378,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415614,
+        "seq": 25,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.7142646,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415714,
+        "seq": 26,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.8142307,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415814,
+        "seq": 27,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.9142687,
+      "schema_valid": true,
+      "accepted": true,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "none",
+        "heater": 1.0,
+        "hop_drop_hopper": null,
+        "pump": 0.85,
+        "pump_duty": 0.85,
+        "safe_state": false,
+        "sensor_ok": true,
+        "sensor_temp_c": 71.0000477783087,
+        "sent_at_unix_ms": 1795640415914,
+        "seq": 28,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 2,
+        "type": "HardwareFrame",
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "version": 1
+      },
+      "armed": true,
+      "outputs": {
+        "heater": 1.0,
+        "pump": 0.85,
+        "valve_states": [
+          1,
+          0,
+          1
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640415.99806,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "fire",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 73.150071667463,
+        "sent_at_unix_ms": 1795640415997,
+        "seq": 29,
+        "step": "MASH_IN",
+        "target_temp_c": 95.0,
+        "tick": 3,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.0976815,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416097,
+        "seq": 30,
+        "step": "MASH_IN",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.1976914,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416197,
+        "seq": 31,
+        "step": "MASH_IN",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.2977035,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416297,
+        "seq": 32,
+        "step": "MASH_IN",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.39772,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416397,
+        "seq": 33,
+        "step": "MASH_IN",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.497741,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416497,
+        "seq": 34,
+        "step": "MASH_IN",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.5977323,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": true,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416597,
+        "seq": 35,
+        "step": "MASH_IN",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.6977699,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": false,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416697,
+        "seq": 36,
+        "step": "JUDGE",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    },
+    {
+      "at": 1795640416.7313628,
+      "schema_valid": true,
+      "accepted": false,
+      "frame": {
+        "connected": true,
+        "enabled": false,
+        "estop": false,
+        "fire_phase": "idle",
+        "hazard": "hazard",
+        "heater": 0.0,
+        "hop_drop_hopper": null,
+        "pump": 0.0,
+        "pump_duty": 0.0,
+        "safe_state": true,
+        "sensor_ok": true,
+        "sensor_temp_c": 66.7,
+        "sent_at_unix_ms": 1795640416731,
+        "seq": 37,
+        "step": "JUDGE",
+        "target_temp_c": 66.7,
+        "tick": 0,
+        "type": "HardwareFrame",
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      },
+      "armed": false,
+      "outputs": {
+        "heater": 0.0,
+        "pump": 0.0,
+        "valve_states": [
+          0,
+          0,
+          0
+        ],
+        "hop_drop_hopper": null
+      }
+    }
+  ],
+  "controller_trace": [
+    {
+      "event": "disarm",
+      "reason": "new-connection",
+      "at": 78.958209492
+    },
+    {
+      "event": "explicit-local-arm",
+      "at": 80.182923006
+    },
+    {
+      "event": "disarm",
+      "reason": "e-stop",
+      "at": 80.224790446
+    },
+    {
+      "event": "disarm",
+      "reason": "e-stop",
+      "at": 80.256697938
+    },
+    {
+      "event": "disarm",
+      "reason": "e-stop",
+      "at": 80.356646446
+    },
+    {
+      "event": "disarm",
+      "reason": "e-stop",
+      "at": 80.456721206
+    },
+    {
+      "event": "disarm",
+      "reason": "e-stop",
+      "at": 80.556710387
+    },
+    {
+      "event": "disarm",
+      "reason": "e-stop",
+      "at": 80.656716633
+    },
+    {
+      "event": "disarm",
+      "reason": "e-stop-cleared",
+      "at": 80.667628592
+    },
+    {
+      "event": "explicit-local-arm",
+      "at": 80.768998764
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 81.840582851
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 81.940204726
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 82.040214703
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 82.140226783
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 82.240243351
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 82.340264356
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 82.440255561
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 82.54029327
+    },
+    {
+      "event": "disarm",
+      "reason": "hazard",
+      "at": 82.573885905
+    },
+    {
+      "event": "disarm",
+      "reason": "disconnect",
+      "at": 82.573955423
+    }
+  ],
+  "operator_credential_hidden_from_game": true,
+  "physical_operation": false,
+  "private_fake_deliveries": [
+    {
+      "payload": {
+        "event_id": "57c943126dfe8cdf6f232788c00dfab1a8f6f76e048a889dd2d485e95ad4d8d8",
+        "text": "Fictional Mash & Burn tasting: Garage batch-43 scored 45.6/100. Low bitterness for the pale-ale target: add hops earlier or increase the charge.; Butter (diacetyl): allow more yeast cleanup time.; Thin carbonation: adjust priming or regulator pressure for package temperature.",
+        "fictional": true
+      },
+      "authorization": null
+    }
+  ],
+  "notification_judge_fixture": true
+}

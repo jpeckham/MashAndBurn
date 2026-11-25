@@ -1,10 +1,66 @@
 # Mash & Burn continuation
 
+## Current checkpoint — supersedes the historical chronology below
+
+James explicitly authorized PC testing, stopped it before any launch, then
+requested resumption of work and UI testing. That latest permission governs.
+The earlier no-local-execution instructions below are historical. Beluga cleanup
+and recovery remain complete; inherited task JSON is an unchanged historical
+record, not an active scheduler or current permission source.
+
+Current game validation is **1,022 checks, zero failures**, including real
+two-/eight-client ENet sessions. This was also verified locally, after permission,
+with installed Godot4.4.1 Mono. Hosted installer checks cover export/startup,
+install/payload hashes, major upgrade, obsolete-file removal, downgrade rejection
+and uninstall. Shared release library commit is now
+`1d42dcf38f6b675d824a259125bad546df5bbaeb`, pinned in both caller references.
+
+The [full multiplayer proof](../evidence/multiplayer/2026-11-25-hosted/README.md)
+is preserved: host107/guest261 checks,27 inspected/hash-verified frames,
+scores84.5/40.5, guest claim1500, actual staging/escape, final tasting and
+feed1/2/32. A subsequent nine-frame smoke verifies corrected close-prop labels
+and staging/escape HUD. Recipes and45-second claims run at production speed;
+only the remaining final clock is explicitly advanced4923→9000. The older
+host wand-floor camera was not clear visual proof of its floor patch.
+
+[Companion run45700200483](../evidence/companion/2026-11-25-hosted/README.md),
+source5d0cbf2, passed59pytest cases on each Linux and Windows job, actual
+Godot/daemon interoperability (37frames,10.001967Hz), separate operator
+arm/E-stop/clear/rearm, actual game fire/disconnect latch and one private alert
+to a loopback fake receiver. Operator credentials are absent from the game.
+The notification uses a deliberate judging fixture, not a brewing proof.
+Tier2 is a bounded simulated Cartesian waypoint cursor, not physical robot IK.
+Companion source/schema/dependency-notices packaging now passes: metadata-only
+notice collection fixes accidental inclusion of Python `packaging/licenses` code.
+
+Authorized native Windows testing used existing Godot4.4.1 Mono,
+Compatibility/NVIDIA RTX3080Ti,30FPS, actual mash/boil mouse controls and short
+closed diagnostic processes. Desktop capture eventually timed out, including
+`activate_window` on recovery; the game remained responsive and was closed.
+Direct renderer PNGs and independent raw-pixel masks show the disputed glyphs
+are present. **The prior glyph-dropout finding is retracted**: it was a
+viewing/presentation artifact, with precise presentation cause unproven.
+Experimental font isolation has been removed; no speculative rendering fix
+remains. No installer was run on James's PC.
+
+Remaining: validate the new same-session two-rendered-client/two-mock-companion
+harness (first short smoke, then full), inspect its new frames and cutoff trace,
+record PRD traceability, publish the final tag and verify real Release assets.
+Tag builds now require successful companion and full rendered workflows before
+MSI publication. The release also includes the separate companion source ZIP and
+hashes. No final tag has been created at this checkpoint. Previous independent
+reviews have no outstanding Critical/Important findings; the new test harness
+still requires its hosted result/review. MSI is unsigned; interrupted-install
+rollback, physical calibration, PS5 and spectral/ray-traced fluid parity are
+not demonstrated prototype capabilities.
+
+## Historical chronology
+
 ## Owner requirements
 
 - Finish the existing approved Godot prototype plan, not only the vertical slice.
 - Remove this project's activity from Beluga and continue in this checkout.
-- Do not launch Godot, the game, its editor or tests on James's PC, or take over his desktop. Earlier runs reportedly locked up the PC.
+- Earlier restriction (superseded by explicit resume/UI-test permission above): no local Godot/game/editor/tests or desktop takeover after reported lockups.
 - Deliver GitHub Releases with MSI installers. Reusable Godot release tooling belongs in `../.github` (`jpeckham/.github`).
 
 ## Recovered state (2026-11-25)

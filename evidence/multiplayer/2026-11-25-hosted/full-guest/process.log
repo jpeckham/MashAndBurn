@@ -1,0 +1,664 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:360)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.5 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[446.0,70.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@392","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[420.0,277.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@392","text":"Join"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","message":"Joined as brewer 2. Ready when your recipe is set.","point":[888.0,131.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","text":"Close"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@176/@Button@199","message":"Server accepted input.","point":[1299.5,377.0],"stage":"mash","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@176/@Button@199","text":"Set"}
+PAIR_FIELD {"draft":"95.0","field":"target_c","requested":"95","tick":0,"widget":95.0}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"Server accepted input.","point":[446.0,70.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@395/@Button@396","message":"Server accepted input.","point":[402.5,319.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@395/@Button@396","text":"Toggle ready"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","message":"Server accepted input.","point":[888.0,131.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","text":"Close"}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":2,"safe":false,"stage":"mash","tick":98}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@176/@Button@199","message":"Stale, future or invalid command tick.","point":[1299.5,377.0],"stage":"mash","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@176/@Button@199","text":"Set"}
+PAIR_FIELD {"draft":"95.0","field":"target_c","requested":"66.7","tick":103,"widget":95.0}
+CAPTURE {"co2_volumes":0.85,"file":"guest-01-mash.png","gravity":1.05002963440128,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":18.8,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":188},"ph":5.4,"seed":1201901136,"simulation_seconds":11280.0,"stage":"mash","state_hash":"fb0d4b8a0e40d42c900b61efde7b697a870b69356f9f3e667d900b30e61820b0","temperature_c":66.7,"tick":188,"utc":"2026-11-25T19:07:07"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,144.0],"stage":"mash","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+CAPTURE {"co2_volumes":0.85,"file":"guest-02-boil.png","gravity":1.07528234034419,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":26.6,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":266},"ph":5.4,"seed":1201901136,"simulation_seconds":15960.0,"stage":"boil","state_hash":"5aff8e02888e14af2310b702da01380c6d5ff881cfb0bbf55bd29046f892c40b","temperature_c":100.0,"tick":266,"utc":"2026-11-25T19:07:15"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,121.0],"stage":"boil","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+CAPTURE {"co2_volumes":0.85,"file":"guest-03-cooling.png","gravity":1.08045321382059,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":30.6,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":306},"ph":5.4,"seed":1201901136,"simulation_seconds":18360.0,"stage":"cooling","state_hash":"7400fc88dbcdf4fc87ab449be3a65253b1667ef20d553c4cc350cf988b14fdee","temperature_c":22.8893357594147,"tick":306,"utc":"2026-11-25T19:07:19"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,121.0],"stage":"cooling","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@176/@Button@199","message":"Server accepted input.","point":[1299.5,377.0],"stage":"fermentation","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@176/@Button@199","text":"Set"}
+PAIR_FIELD {"draft":"20.0","field":"target_c","requested":"30","tick":345,"widget":20.0}
+CAPTURE {"co2_volumes":0.85,"file":"guest-04-fermentation-start.png","gravity":1.07805033834194,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":34.9,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":349},"ph":5.4,"seed":1201901136,"simulation_seconds":20940.0,"stage":"fermentation","state_hash":"ce5d6c1c6b3881c5ff46482fc8ce9cf277bca5da6d92309667bdd582404e47d6","temperature_c":30.0,"tick":349,"utc":"2026-11-25T19:07:23"}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":573}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":635}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":671}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":707}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":1242}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":1279}
+CAPTURE {"co2_volumes":0.85,"file":"guest-05-fermentation-progress.png","gravity":1.03916724808643,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":157.6,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":1576},"ph":5.4,"seed":1201901136,"simulation_seconds":94560.0,"stage":"fermentation","state_hash":"465d8430dc7fdb119ce40c87540f8e23ff451b3989060d307b8311a0a236eeac","temperature_c":30.0,"tick":1576,"utc":"2026-11-25T19:09:26"}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":1970}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":2044}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":2089}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":2678}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":2752}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":2798}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":3597}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"fermentation","tick":3859}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Stale, future or invalid command tick.","point":[1141.0,144.0],"stage":"fermentation","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":2,"safe":false,"stage":"fermentation","tick":3903}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@272/@Button@295","message":"Server accepted input.","point":[1299.5,545.0],"stage":"packaging","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@272/@Button@295","text":"Set"}
+PAIR_FIELD {"draft":"120","field":"priming_g","requested":"1000","tick":3985,"widget":120.0}
+CAPTURE {"co2_volumes":0.85,"file":"guest-06-packaging.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":399.0,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":3990},"ph":5.4,"seed":1201901136,"simulation_seconds":239400.0,"stage":"packaging","state_hash":"1873243856595d554e5bc7e782affca9f6575c736467f10be32f00ac2d7d610c","temperature_c":30.0,"tick":3990,"utc":"2026-11-25T19:13:28"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,144.0],"stage":"packaging","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Package & judge"}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-07-packaged-awaiting-final.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":400.8,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":4008},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:13:30"}
+PAIR_PHASE role=guest phase=packaged tick=4008
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-08-wand-blindness.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":402.3,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":4023},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:13:33"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"Server accepted input.","point":[446.0,70.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@428/@OptionButton@435","message":"Server accepted input.","point":[439.5,569.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@428/@OptionButton@435","text":"Boil-over incident"}
+PAIR_POPUP {"embedded":true,"focus":true,"item":-1,"window":0}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@428/@Button@436","message":"Server accepted input.","point":[590.0,569.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@428/@Button@436","text":"Fictional fire"}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","message":"Server accepted input.","point":[888.0,131.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","text":"Close"}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-09-fire-window.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":412.8,"fire":{"cause":"cord","fuel":0.992000000000001,"heat":0.2724,"objects":{"equipment":false,"evidence":false,"receipt":false},"origin":[-1.5,1.0],"phase":"staging","remaining":43.4,"smoke":0.106,"spread":false},"health":95.7792,"player_id":2,"position":[-1.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":4128},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:13:42"}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-10-stage-receipt.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":415.5,"fire":{"cause":"cord","fuel":0.978500000000002,"heat":0.310200000000001,"objects":{"equipment":false,"evidence":false,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":40.6999999999999,"smoke":0.2005,"spread":false},"health":87.0312,"player_id":2,"position":[-4.90918827652931,-0.287867969274521],"round_id":"round-1201900934","round_seed":1201900934,"tick":4155},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:13:44"}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-10-stage-evidence.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":419.7,"fire":{"cause":"cord","fuel":0.957500000000005,"heat":0.369000000000001,"objects":{"equipment":false,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":36.4999999999999,"smoke":0.3475,"spread":false},"health":69.366,"player_id":2,"position":[4.99081172347069,-0.287867969274521],"round_id":"round-1201900934","round_seed":1201900934,"tick":4197},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:13:49"}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-10-stage-equipment.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":423.0,"fire":{"cause":"cord","fuel":0.941000000000006,"heat":0.415200000000001,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":33.1999999999998,"smoke":0.463,"spread":false},"health":52.0212,"player_id":2,"position":[4.77867969274521,5.62426406145096],"round_id":"round-1201900934","round_seed":1201900934,"tick":4230},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:13:52"}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4236}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4237}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-11-escaped.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":423.7,"fire":{"cause":"cord","fuel":0.937500000000007,"heat":0.425000000000002,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":32.4999999999998,"smoke":0.4875,"spread":false},"health":49.7116,"player_id":2,"position":[4.77867969274521,5.62426406145096],"round_id":"round-1201900934","round_seed":1201900934,"tick":4237},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:13:53"}
+PAIR_PHASE role=guest phase=escaped tick=4237
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4238}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4241}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4242}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4243}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4244}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4246}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4246}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4247}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4249}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4251}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4252}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4253}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4254}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4255}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4256}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4257}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4258}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4259}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4260}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4261}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4262}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4263}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4264}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4265}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4266}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4268}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4269}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4270}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4271}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4272}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4273}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4274}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4276}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4277}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4279}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4280}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4281}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4282}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4283}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4284}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4285}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4286}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4287}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4288}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4289}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4291}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4292}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4293}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4294}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4295}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4296}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4297}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4298}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4300}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4301}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4302}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4304}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4305}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4306}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4307}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4308}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4309}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4310}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4311}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4312}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4313}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4314}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4315}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4316}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4317}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4318}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4319}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4320}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4321}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4322}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4323}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4324}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4326}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4329}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4330}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4331}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4332}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4333}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4334}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4335}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4336}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4337}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4338}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4340}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4341}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4342}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4343}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4344}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4345}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4348}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4349}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4350}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4351}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4352}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4353}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4354}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4355}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4356}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4357}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4358}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4360}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4361}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4362}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4363}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4364}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4365}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4366}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4367}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4368}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4369}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4370}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4371}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4372}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4373}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4374}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4377}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4399}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4409}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4416}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4420}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4422}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4424}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4425}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4426}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4428}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4429}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4430}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4431}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4432}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4433}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4435}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4436}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4437}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4438}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4439}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4440}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4441}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4444}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4445}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4446}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4447}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4448}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4449}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4450}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4451}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4452}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4453}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4454}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4455}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4457}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4458}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4459}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4460}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4461}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4462}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4463}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4464}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4465}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4466}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4467}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4468}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4470}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4471}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4472}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4473}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4474}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4475}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4477}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4478}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4479}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4480}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4481}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4482}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4484}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4485}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4486}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4487}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4488}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4489}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4491}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4492}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4493}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4494}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4495}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4496}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4497}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4498}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4500}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4501}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4502}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4503}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4504}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4505}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4506}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4507}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4508}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4510}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4511}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4512}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4514}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4515}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4516}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4517}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4518}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4519}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4520}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4522}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4523}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4524}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4525}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4526}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4527}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4528}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4529}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4531}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4532}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4533}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4534}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4535}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4537}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4538}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4539}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4540}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4541}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4542}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4543}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4545}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4546}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4547}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4548}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4549}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4551}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4552}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4553}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4554}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4556}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4557}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4558}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4559}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4560}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4561}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4562}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4563}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4565}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4566}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4567}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4568}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4569}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4570}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4571}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"This player cannot act.","point":[446.0,70.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4572}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4573}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4575}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-12-claim-outcome.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"confidence":1.0,"evidence":{"burn_pattern":"diffuse","character_stress":0.147848900000004,"character_tells":"steady","fuel_remaining":0.775000000000025,"smoke_trace":1.0,"thermal_trace":0.87999999999999,"valve_state":"normal"},"passed":true,"payout":1500,"penalty":0,"reason":"Fictional inspection accepted the staged record.","resolved":true},"elapsed":457.5,"fire":{"cause":"cord","fuel":0.775000000000025,"heat":0.87999999999999,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"resolved","remaining":0.0,"smoke":1.0,"spread":true},"health":49.7116,"player_id":2,"position":[4.77867969274521,5.62426406145096],"round_id":"round-1201900934","round_seed":1201900934,"tick":4575},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:14:26"}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4576}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4577}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4578}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4579}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4580}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4582}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4583}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4584}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","message":"This player cannot act.","point":[888.0,131.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","text":"Close"}
+PAIR_PHASE role=guest phase=claim-observed tick=4584
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4586}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4588}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4589}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4590}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4591}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4593}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4594}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4595}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4596}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4597}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4598}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4599}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4600}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4601}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4602}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4603}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4605}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4606}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4607}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4608}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4609}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4610}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4611}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4612}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4613}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4614}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4615}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4616}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4617}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4618}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4620}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4621}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4622}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4623}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4625}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4626}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4627}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4628}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4630}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4631}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4632}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4633}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4634}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4636}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4637}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4639}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4640}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4641}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4642}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4643}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4644}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4645}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4646}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4647}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4648}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4650}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4651}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4652}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4653}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4654}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4655}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4656}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4657}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4658}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4659}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4660}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4661}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4662}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4664}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4665}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4666}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4667}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4668}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4669}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4670}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4671}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4672}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4673}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4674}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4675}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4676}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4677}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4678}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4680}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4681}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4682}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4683}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4684}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4685}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4686}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4687}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4689}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4690}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4691}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4692}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4693}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4695}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4696}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4697}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4698}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4699}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4700}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4702}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4703}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4704}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4705}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4706}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4708}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4709}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4710}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4711}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4713}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4714}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4715}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4716}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4717}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4718}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4719}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4720}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4721}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4722}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4724}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4725}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4726}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4727}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4728}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4729}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4730}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4731}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4733}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4734}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4735}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4736}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4737}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4738}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4739}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4740}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4741}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4743}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4744}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4745}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4746}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4747}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4748}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4749}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4751}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4752}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4753}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4754}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4755}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4756}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4757}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4758}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4759}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4760}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4761}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4762}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4763}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4764}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4766}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4767}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4768}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4770}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4771}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4772}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4773}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4774}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4776}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4777}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4778}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4779}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4781}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4782}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4783}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4784}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4785}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4786}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4787}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4788}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4789}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4790}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4791}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4792}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4793}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4794}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4795}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4796}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4797}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4799}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4800}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4801}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4802}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4803}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4804}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4805}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4806}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4807}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4808}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4809}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4810}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4811}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4812}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4813}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4815}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4816}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4817}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4818}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4819}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4820}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4821}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4822}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4823}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4824}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4825}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4826}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4827}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4828}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4829}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4831}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4832}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4833}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4834}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4835}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4836}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4838}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4839}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4840}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4841}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4842}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4843}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4844}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4845}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4846}
+PAIR_REJECT {"message":"This player cannot act.","queued":1,"safe":true,"stage":"judging","tick":4855}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":true,"stage":"judging","tick":4900}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":true,"stage":"judging","tick":9000}
+PAIR_REJECT {"message":"The round has finished.","queued":0,"safe":true,"stage":"judging","tick":9000}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-13-final-tasting.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"confidence":1.0,"evidence":{"burn_pattern":"diffuse","character_stress":0.147848900000004,"character_tells":"steady","fuel_remaining":0.775000000000025,"smoke_trace":1.0,"thermal_trace":0.87999999999999,"valve_state":"normal"},"passed":true,"payout":1500,"penalty":0,"reason":"Fictional inspection accepted the staged record.","resolved":true},"elapsed":900.0,"fire":{"cause":"cord","fuel":0.775000000000025,"heat":0.87999999999999,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"resolved","remaining":0.0,"smoke":1.0,"spread":true},"health":49.7116,"player_id":2,"position":[4.77867969274521,5.62426406145096],"round_id":"round-1201900934","round_seed":1201900934,"tick":9000},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:15:05"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-14-feed-page-2.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"confidence":1.0,"evidence":{"burn_pattern":"diffuse","character_stress":0.147848900000004,"character_tells":"steady","fuel_remaining":0.775000000000025,"smoke_trace":1.0,"thermal_trace":0.87999999999999,"valve_state":"normal"},"passed":true,"payout":1500,"penalty":0,"reason":"Fictional inspection accepted the staged record.","resolved":true},"elapsed":900.0,"fire":{"cause":"cord","fuel":0.775000000000025,"heat":0.87999999999999,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"resolved","remaining":0.0,"smoke":1.0,"spread":true},"health":49.7116,"player_id":2,"position":[4.77867969274521,5.62426406145096],"round_id":"round-1201900934","round_seed":1201900934,"tick":9000},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:15:06"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","message":"The round has finished.","point":[1070.5,353.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@346/@Button@349","text":"Next →"}
+CAPTURE {"co2_volumes":17.4125235926067,"file":"guest-15-feed-page-32.png","gravity":1.02061521867047,"ibu":0.0,"match":{"claim":{"confidence":1.0,"evidence":{"burn_pattern":"diffuse","character_stress":0.147848900000004,"character_tells":"steady","fuel_remaining":0.775000000000025,"smoke_trace":1.0,"thermal_trace":0.87999999999999,"valve_state":"normal"},"passed":true,"payout":1500,"penalty":0,"reason":"Fictional inspection accepted the staged record.","resolved":true},"elapsed":900.0,"fire":{"cause":"cord","fuel":0.775000000000025,"heat":0.87999999999999,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"resolved","remaining":0.0,"smoke":1.0,"spread":true},"health":49.7116,"player_id":2,"position":[4.77867969274521,5.62426406145096],"round_id":"round-1201900934","round_seed":1201900934,"tick":9000},"ph":5.4,"seed":1201901136,"simulation_seconds":240240.0,"stage":"judging","state_hash":"ad9654d29bc1b71a1e0d17abc3a95b416804cfa857877243a7df012c140d80f4","temperature_c":30.0,"tick":4004,"utc":"2026-11-25T19:15:34"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@340/@Button@342","message":"The round has finished.","point":[1041.0,97.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@340/@Button@342","text":"Back to garage"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"The round has finished.","point":[446.0,70.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@394","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[570.5,277.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@394","text":"Leave"}
+PAIR_PHASE role=guest phase=complete tick=0
+RENDER_PROOF_RESULT {"captures":17,"checks":261,"exit_code":0,"failures":0,"profile":{"adapter":"llvmpipe (LLVM 20.1.2, 256 bits)","display":"X11","driver":"opengl3","engine":{"build":"official","hash":"49a5bc7b616bd04689a2c89e89bda41f50241464","hex":263169,"major":4,"minor":4,"patch":1,"status":"stable","string":"4.4.1-stable (official)","timestamp":0},"frame_time_ms":95.7333333333333,"measured_fps":10.4456824512535,"renderer":"gl_compatibility","role":"guest","scenario":"full-brewing-fire-final","vendor":"Mesa"}}

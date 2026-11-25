@@ -1,0 +1,348 @@
+{
+	"captures": [
+		{
+			"co2_volumes": 0.85,
+			"file": "host-08-wand-floor.png",
+			"gravity": 1.06187620041914,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 4.5,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 1,
+				"position": [
+					-4.5,
+					1.0
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 45
+			},
+			"ph": 5.4,
+			"seed": 2078987232,
+			"simulation_seconds": 2700.0,
+			"stage": "mash",
+			"state_hash": "99d8f6fec50c1e3df78997c55bfc4eded9c45f4c49d3b18c1ca67dd2b4461b98",
+			"temperature_c": 66.7,
+			"tick": 45,
+			"utc": "2026-11-25T19:37:28"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "host-09-fire-claims-settled.png",
+			"gravity": 1.07679999693839,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"confidence": 0.279600000000001,
+					"evidence": {
+						"burn_pattern": "overflow",
+						"character_stress": 0.0,
+						"character_tells": "steady",
+						"fuel_remaining": 0.775000000000025,
+						"smoke_trace": 1.0,
+						"thermal_trace": 0.87999999999999,
+						"valve_state": "normal"
+					},
+					"passed": true,
+					"payout": 1500,
+					"penalty": 0,
+					"reason": "Fictional inspection accepted the staged record.",
+					"resolved": true
+				},
+				"elapsed": 92.0,
+				"fire": {
+					"cause": "boil_over",
+					"fuel": 0.775000000000025,
+					"heat": 0.87999999999999,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"origin": [
+						-0.0452273547649388,
+						5.45477264523506
+					],
+					"phase": "resolved",
+					"remaining": 0.0,
+					"smoke": 1.0,
+					"spread": true
+				},
+				"health": 99.7572,
+				"player_id": 1,
+				"position": [
+					-0.0452273547649388,
+					5.45477264523506
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 920
+			},
+			"ph": 5.4,
+			"seed": 2078987232,
+			"simulation_seconds": 28080.0,
+			"stage": "mash",
+			"state_hash": "5da39a998ac0e6a37c96c0ff498ae28813e012ee96c0b6cb646c6dca5f093deb",
+			"temperature_c": 66.7,
+			"tick": 468,
+			"utc": "2026-11-25T19:38:56"
+		}
+	],
+	"checks": 50,
+	"command": [
+		"--script",
+		"tests/render/multiplayer_proof.gd"
+	],
+	"exit_code": 0,
+	"failures": 0,
+	"machine": "GitHub Actions 1000001639",
+	"observations": [
+		{
+			"detail": "actual window/display driver required",
+			"ok": true
+		},
+		{
+			"detail": "3D geometry actually rendered",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@359",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @LineEdit@367",
+			"ok": true
+		},
+		{
+			"detail": "keyboard draft matches requested text: Host",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@392",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Host",
+			"ok": true
+		},
+		{
+			"detail": "real GUI participant joined",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@397",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Toggle ready",
+			"ok": true
+		},
+		{
+			"detail": "both participants ready through GUI",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@405",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Start (host)",
+			"ok": true
+		},
+		{
+			"detail": "GUI round started",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@365",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Close",
+			"ok": true
+		},
+		{
+			"detail": "guest is observing the short wand effect",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@359",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@424",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Use weapon",
+			"ok": true
+		},
+		{
+			"detail": "wand creates server floor patch",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@365",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Close",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-08-wand-floor",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-08-wand-floor",
+			"ok": true
+		},
+		{
+			"detail": "WASD reached world point (0.0, 5.5)",
+			"ok": true
+		},
+		{
+			"detail": "guest staged and escaped through actual input",
+			"ok": true
+		},
+		{
+			"detail": "guest claim resolved before fixture clock advance",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: host-09-fire-claims-settled",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: host-09-fire-claims-settled",
+			"ok": true
+		},
+		{
+			"detail": "guest recorded actual claim outcome",
+			"ok": true
+		},
+		{
+			"detail": "guest smoke scenario completed",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@359",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@395",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Leave",
+			"ok": true
+		},
+		{
+			"detail": "fire smoke GUI leave restores local batch",
+			"ok": true
+		}
+	],
+	"operator": "GitHub Actions / Godot Input.parse_input_event automation",
+	"profile": {
+		"adapter": "llvmpipe (LLVM 20.1.2, 256 bits)",
+		"display": "X11",
+		"driver": "opengl3",
+		"engine": {
+			"build": "official",
+			"hash": "49a5bc7b616bd04689a2c89e89bda41f50241464",
+			"hex": 263169,
+			"major": 4,
+			"minor": 4,
+			"patch": 1,
+			"status": "stable",
+			"string": "4.4.1-stable (official)",
+			"timestamp": 0
+		},
+		"frame_time_ms": 76.1333333333333,
+		"measured_fps": 13.1348511383538,
+		"renderer": "gl_compatibility",
+		"role": "host",
+		"scenario": "fire-input-smoke-only; no recipe or final-clock proof",
+		"vendor": "Mesa"
+	},
+	"run_id": "45686613031",
+	"source_commit": "600ab2a19c3b2ebe7c267463dcee9188ff2b83ed",
+	"source_ref": "refs/heads/codex/continue-mash-and-burn",
+	"utc": "2026-11-25T19:38:57"
+}

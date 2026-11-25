@@ -1,0 +1,2088 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:360)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.5 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[446.0,70.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@391","message":"Hosting UDP 27841. Every brewer must ready before the host starts.","point":[371.0,277.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@391","text":"Host"}
+PAIR_PHASE role=host phase=listening tick=0
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@395/@Button@396","message":"Server accepted input.","point":[402.5,319.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@395/@Button@396","text":"Toggle ready"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@395/@Button@404","message":"Server accepted input.","point":[613.0,319.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@395/@Button@404","text":"Start (host)"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","message":"Server accepted input.","point":[888.0,131.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","text":"Close"}
+CAPTURE {"co2_volumes":0.85,"file":"host-01-mash.png","gravity":1.06932732703204,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":6.4,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":64},"ph":5.4,"seed":1201901035,"simulation_seconds":3840.0,"stage":"mash","state_hash":"296acb163a39f7cf7e81e1ae8ba4f2af6564095556dfd1825ebf31e978930054","temperature_c":66.7,"tick":64,"utc":"2026-11-25T19:06:54"}
+GUI_CLICK {"activations":1,"disabled":true,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,144.0],"stage":"boil","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@248/@Button@271","message":"Server accepted input.","point":[1178.0,480.0],"stage":"boil","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@HBoxContainer@248/@Button@271","text":"Add (5% AA)"}
+CAPTURE {"co2_volumes":0.85,"file":"host-02-boil.png","gravity":1.08777289493242,"ibu":14.6144587289425,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":13.4,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":134},"ph":5.4,"seed":1201901035,"simulation_seconds":8040.0,"stage":"boil","state_hash":"d8500c5f11a8f67809f8fa1d0999259ef7ddbaa4a88648f6bf2522abe0f110d8","temperature_c":100.0,"tick":134,"utc":"2026-11-25T19:07:01"}
+GUI_CLICK {"activations":1,"disabled":true,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,121.0],"stage":"cooling","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+CAPTURE {"co2_volumes":0.85,"file":"host-03-cooling.png","gravity":1.09045617899192,"ibu":15.1712511364273,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":16.7,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":167},"ph":5.4,"seed":1201901035,"simulation_seconds":10020.0,"stage":"cooling","state_hash":"7fc5745342f7e1d2f4c351445f56bb0d1e6dc521632872a67a39f7f99c06a714","temperature_c":22.8893357594147,"tick":167,"utc":"2026-11-25T19:07:05"}
+GUI_CLICK {"activations":1,"disabled":true,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,121.0],"stage":"fermentation","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+CAPTURE {"co2_volumes":0.85,"file":"host-04-fermentation-start.png","gravity":1.08977354337911,"ibu":15.1712511364273,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":18.0,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":180},"ph":5.4,"seed":1201901035,"simulation_seconds":10800.0,"stage":"fermentation","state_hash":"ab899beacb295ce7929c8d5f6b5505285c9704b09653f65f3e29148f6a17c0bc","temperature_c":20.0,"tick":180,"utc":"2026-11-25T19:07:06"}
+CAPTURE {"co2_volumes":0.85,"file":"host-05-fermentation-progress.png","gravity":1.0330063684234,"ibu":15.1712511364273,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":138.5,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":1385},"ph":5.4,"seed":1201901035,"simulation_seconds":83100.0,"stage":"fermentation","state_hash":"e703909d2690463b5b99422ebd5f4cce0f1de9ce003f7a4ef4d73b990482e912","temperature_c":20.0,"tick":1385,"utc":"2026-11-25T19:09:07"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,144.0],"stage":"packaging","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Package & judge"}
+CAPTURE {"co2_volumes":0.85,"file":"host-06-packaging.png","gravity":1.02118191008043,"ibu":15.1712511364273,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":306.6,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":3066},"ph":5.4,"seed":1201901035,"simulation_seconds":183960.0,"stage":"packaging","state_hash":"509775b72736e639f08cd0682961d67125162516e09a1fe0d9e09b34e9031bd9","temperature_c":20.0,"tick":3066,"utc":"2026-11-25T19:11:55"}
+GUI_CLICK {"activations":1,"disabled":true,"hovered":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","message":"Server accepted input.","point":[1141.0,144.0],"stage":"judging","target":"/root/Garage/@CanvasLayer@97/@Control@98/@PanelContainer@107/@MarginContainer@108/@ScrollContainer@109/@VBoxContainer@110/@Button@113","text":"Next stage →"}
+CAPTURE {"co2_volumes":2.76661678160328,"file":"host-07-packaged-awaiting-final.png","gravity":1.02118191008043,"ibu":15.1712511364273,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":307.8,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":3078},"ph":5.4,"seed":1201901035,"simulation_seconds":184260.0,"stage":"judging","state_hash":"0f0a9d6dfedc28b203feb508b805ba89cfd5956d94a8fac148da8d7291418645","temperature_c":20.0,"tick":3071,"utc":"2026-11-25T19:11:56"}
+PAIR_PHASE role=host phase=packaged tick=3078
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"Server accepted input.","point":[446.0,70.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@408/@Button@423","message":"Server accepted input.","point":[861.5,485.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@408/@Button@423","text":"Use weapon"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","message":"Server accepted input.","point":[888.0,131.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@362/@Button@364","text":"Close"}
+CAPTURE {"co2_volumes":2.76661678160328,"file":"host-08-wand-floor.png","gravity":1.02118191008043,"ibu":15.1712511364273,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":403.5,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":1,"position":[-4.5,1.0],"round_id":"round-1201900934","round_seed":1201900934,"tick":4035},"ph":5.4,"seed":1201901035,"simulation_seconds":184260.0,"stage":"judging","state_hash":"0f0a9d6dfedc28b203feb508b805ba89cfd5956d94a8fac148da8d7291418645","temperature_c":20.0,"tick":3071,"utc":"2026-11-25T19:13:32"}
+PAIR_PHASE role=host phase=at-exit tick=4063
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4471}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4472}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4473}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4474}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4475}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4477}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4478}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4479}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4480}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4481}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4482}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4484}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4485}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4486}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4487}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4488}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4489}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4491}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4492}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4493}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4494}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4495}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4496}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4497}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4498}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4500}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4501}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4502}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4503}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4504}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4505}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4507}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4508}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4509}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4510}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4511}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4512}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4514}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4515}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4516}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4517}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4518}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4519}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4520}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4522}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4523}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4524}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4525}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4526}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4527}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4528}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4529}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4531}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4532}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4533}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4534}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4535}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4537}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4538}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4539}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4540}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4541}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4542}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4543}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4545}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4546}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4547}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4548}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4549}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4550}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4551}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4552}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4553}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4556}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4557}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4558}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4559}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4560}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4561}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4562}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4563}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4565}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4566}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4567}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4568}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4569}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4570}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4571}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4572}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4573}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4575}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4576}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4577}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4578}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4579}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4580}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4582}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4583}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4584}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4585}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4586}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4587}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4588}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4589}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4590}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4591}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4593}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4594}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4595}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4596}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4597}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4598}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4599}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4600}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4601}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4602}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4603}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4605}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4606}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4608}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4609}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4610}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4611}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4612}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4613}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4614}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4615}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4616}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4617}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4618}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4620}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4621}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4622}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4623}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4624}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4625}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4626}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4627}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4628}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4630}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4631}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4632}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4633}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4634}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4635}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4636}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4637}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4639}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4640}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4641}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4642}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4643}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4644}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4645}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4646}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4647}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4648}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4650}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4651}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4652}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4653}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4654}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4655}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4656}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4657}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4658}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4659}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4660}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4661}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4662}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4664}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4665}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4666}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4667}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4668}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4669}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4670}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4671}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4672}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4673}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4674}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4675}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4676}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4677}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4678}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4680}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4681}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4682}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4683}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4684}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4685}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4686}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4687}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4688}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4689}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4690}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4691}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4692}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4693}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4695}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4696}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4697}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4698}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4699}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4700}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4701}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4702}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4703}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4705}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4707}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4709}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4710}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4711}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4713}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4714}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4715}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4716}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4717}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4718}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4719}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4720}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4721}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4722}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4724}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4725}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4726}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4727}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4728}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4729}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4731}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4733}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4734}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4735}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4736}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4737}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4738}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4740}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4741}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4742}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4743}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4744}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4745}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4746}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4747}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4748}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4749}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4751}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4752}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4753}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4754}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4755}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4756}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4757}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4758}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4759}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4760}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4761}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4762}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4763}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4764}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4766}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4767}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4768}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4769}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4770}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4771}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4772}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4773}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4774}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4775}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4776}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4777}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4778}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4781}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4782}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4783}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4784}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4785}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4786}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4787}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4788}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4789}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4790}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4791}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4792}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4793}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4794}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4795}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4796}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4797}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4799}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4800}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4801}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4802}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4803}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4804}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4805}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4806}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4807}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4808}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4809}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4810}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4811}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4812}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4813}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4815}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4817}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4818}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4819}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4820}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4821}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4822}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4823}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4824}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4825}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4826}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4827}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4828}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4829}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4831}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4832}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4833}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4834}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4835}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4836}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4838}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4839}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4840}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4841}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4843}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4844}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4845}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4846}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4847}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4849}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4850}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4851}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4852}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4854}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4855}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4856}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4857}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4858}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4859}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4860}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4862}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4863}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4865}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4866}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4867}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4868}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4869}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4870}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4871}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4873}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4874}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4875}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4876}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4877}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4878}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4880}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4881}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4882}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4883}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4884}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4885}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4886}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4887}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4888}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4889}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4891}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4892}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4893}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4894}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4896}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4897}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4898}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4899}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4900}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4901}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4903}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4904}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4905}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4906}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4907}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4908}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4909}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4910}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4912}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4913}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4914}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4915}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4916}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4918}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4919}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4920}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4921}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"judging","tick":4922}
+CAPTURE {"co2_volumes":2.76661678160328,"file":"host-09-fire-claims-settled.png","gravity":1.02118191008043,"ibu":15.1712511364273,"match":{"claim":{"confidence":0.279600000000001,"evidence":{"burn_pattern":"overflow","character_stress":0.0,"character_tells":"steady","fuel_remaining":0.775000000000025,"smoke_trace":1.0,"thermal_trace":0.87999999999999,"valve_state":"normal"},"passed":false,"payout":0,"penalty":1500,"reason":"Inspection failed: escape, smoke, burn pattern, valve or staged record was inconsistent.","resolved":true},"elapsed":492.3,"fire":{"cause":"boil_over","fuel":0.775000000000025,"heat":0.87999999999999,"objects":{"equipment":false,"evidence":false,"receipt":false},"origin":[0.16690467596054,5.66690467596054],"phase":"resolved","remaining":0.0,"smoke":1.0,"spread":true},"health":100.0,"player_id":1,"position":[0.16690467596054,5.66690467596054],"round_id":"round-1201900934","round_seed":1201900934,"tick":4923},"ph":5.4,"seed":1201901035,"simulation_seconds":184260.0,"stage":"judging","state_hash":"2e2b402c8c92ae9b24831c71735eced00accaae49d2ca821480259c50541d29a","temperature_c":20.0,"tick":3071,"utc":"2026-11-25T19:15:01"}
+PAIR_HOST_ONLY_CLOCK_ADVANCE {"from_tick":4923,"reason":"both full recipes and fire windows already observed at production speed","to_tick":9000}
+CAPTURE {"co2_volumes":2.76661678160328,"file":"host-13-final-tasting.png","gravity":1.02118191008043,"ibu":15.1712511364273,"match":{"claim":{"confidence":0.279600000000001,"evidence":{"burn_pattern":"overflow","character_stress":0.0,"character_tells":"steady","fuel_remaining":0.775000000000025,"smoke_trace":1.0,"thermal_trace":0.87999999999999,"valve_state":"normal"},"passed":false,"payout":0,"penalty":1500,"reason":"Inspection failed: escape, smoke, burn pattern, valve or staged record was inconsistent.","resolved":true},"elapsed":900.0,"fire":{"cause":"boil_over","fuel":0.775000000000025,"heat":0.87999999999999,"objects":{"equipment":false,"evidence":false,"receipt":false},"origin":[0.16690467596054,5.66690467596054],"phase":"resolved","remaining":0.0,"smoke":1.0,"spread":true},"health":100.0,"player_id":1,"position":[0.16690467596054,5.66690467596054],"round_id":"round-1201900934","round_seed":1201900934,"tick":9000},"ph":5.4,"seed":1201901035,"simulation_seconds":184260.0,"stage":"judging","state_hash":"2e2b402c8c92ae9b24831c71735eced00accaae49d2ca821480259c50541d29a","temperature_c":20.0,"tick":3071,"utc":"2026-11-25T19:15:03"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@340/@Button@342","message":"This player cannot act.","point":[1041.0,97.0],"stage":"judging","target":"/root/Garage/@Node@335/@CanvasLayer@337/@PanelContainer@338/@VBoxContainer@339/@HBoxContainer@340/@Button@342","text":"Back to garage"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","message":"This player cannot act.","point":[446.0,70.0],"stage":"judging","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@Button@358","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@394","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[570.5,277.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@354/@Control@355/@PanelContainer@359/@ScrollContainer@360/@VBoxContainer@361/@HBoxContainer@390/@Button@394","text":"Leave"}
+PAIR_PHASE role=host phase=complete tick=0
+RENDER_PROOF_RESULT {"captures":10,"checks":107,"exit_code":0,"failures":0,"profile":{"adapter":"llvmpipe (LLVM 20.1.2, 256 bits)","display":"X11","driver":"opengl3","engine":{"build":"official","hash":"49a5bc7b616bd04689a2c89e89bda41f50241464","hex":263169,"major":4,"minor":4,"patch":1,"status":"stable","string":"4.4.1-stable (official)","timestamp":0},"fixture_clock_advance":{"from_tick":4923,"reason":"both full recipes and fire windows already observed at production speed","to_tick":9000},"frame_time_ms":94.7,"measured_fps":10.5596620908131,"renderer":"gl_compatibility","role":"host","scenario":"full-brewing-fire-final","vendor":"Mesa"}}

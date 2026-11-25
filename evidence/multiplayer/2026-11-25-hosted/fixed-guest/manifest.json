@@ -1,0 +1,690 @@
+{
+	"captures": [
+		{
+			"co2_volumes": 0.85,
+			"file": "guest-08-wand-blindness.png",
+			"gravity": 1.06132288124277,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 4.4,
+				"fire": {
+					"cause": "",
+					"fuel": 1.0,
+					"heat": 0.0,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"phase": "idle",
+					"remaining": 0.0,
+					"smoke": 0.0,
+					"spread": false
+				},
+				"health": 100.0,
+				"player_id": 2,
+				"position": [
+					-1.5,
+					1.0
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 44
+			},
+			"ph": 5.4,
+			"seed": 2078987333,
+			"simulation_seconds": 2640.0,
+			"stage": "mash",
+			"state_hash": "cc4b313cd13289e1fdc52f6ebae21dfae14cf21bf578ffda5ae946d0b8a86eba",
+			"temperature_c": 66.7,
+			"tick": 44,
+			"utc": "2026-11-25T19:37:28"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "guest-09-fire-window.png",
+			"gravity": 1.07539982133004,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 12.2,
+				"fire": {
+					"cause": "cord",
+					"fuel": 0.994000000000001,
+					"heat": 0.2668,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": false
+					},
+					"origin": [
+						-1.5,
+						1.0
+					],
+					"phase": "staging",
+					"remaining": 43.8,
+					"smoke": 0.092,
+					"spread": false
+				},
+				"health": 96.9016,
+				"player_id": 2,
+				"position": [
+					-1.5,
+					1.0
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 122
+			},
+			"ph": 5.4,
+			"seed": 2078987333,
+			"simulation_seconds": 6600.0,
+			"stage": "mash",
+			"state_hash": "b344b3ea36642e367a7938a943d32c5504249798beecbe4692b8fb3de746fb4f",
+			"temperature_c": 66.7,
+			"tick": 110,
+			"utc": "2026-11-25T19:37:36"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "guest-10-stage-receipt.png",
+			"gravity": 1.07539982133004,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 14.7,
+				"fire": {
+					"cause": "cord",
+					"fuel": 0.981500000000002,
+					"heat": 0.3018,
+					"objects": {
+						"equipment": false,
+						"evidence": false,
+						"receipt": true
+					},
+					"origin": [
+						-1.5,
+						1.0
+					],
+					"phase": "staging",
+					"remaining": 41.2999999999999,
+					"smoke": 0.1795,
+					"spread": false
+				},
+				"health": 89.1516,
+				"player_id": 2,
+				"position": [
+					-5.17279218435287,
+					-0.272792184352874
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 147
+			},
+			"ph": 5.4,
+			"seed": 2078987333,
+			"simulation_seconds": 6600.0,
+			"stage": "mash",
+			"state_hash": "b344b3ea36642e367a7938a943d32c5504249798beecbe4692b8fb3de746fb4f",
+			"temperature_c": 66.7,
+			"tick": 110,
+			"utc": "2026-11-25T19:37:39"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "guest-10-stage-evidence.png",
+			"gravity": 1.07539982133004,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 19.1,
+				"fire": {
+					"cause": "cord",
+					"fuel": 0.959500000000004,
+					"heat": 0.363400000000001,
+					"objects": {
+						"equipment": false,
+						"evidence": true,
+						"receipt": true
+					},
+					"origin": [
+						-1.5,
+						1.0
+					],
+					"phase": "staging",
+					"remaining": 36.8999999999999,
+					"smoke": 0.3335,
+					"spread": false
+				},
+				"health": 71.2612,
+				"player_id": 2,
+				"position": [
+					5.32720781564712,
+					-0.272792184352874
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 191
+			},
+			"ph": 5.4,
+			"seed": 2078987333,
+			"simulation_seconds": 6600.0,
+			"stage": "mash",
+			"state_hash": "b344b3ea36642e367a7938a943d32c5504249798beecbe4692b8fb3de746fb4f",
+			"temperature_c": 66.7,
+			"tick": 110,
+			"utc": "2026-11-25T19:37:43"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "guest-10-stage-equipment.png",
+			"gravity": 1.07539982133004,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 21.8,
+				"fire": {
+					"cause": "cord",
+					"fuel": 0.946000000000006,
+					"heat": 0.401200000000001,
+					"objects": {
+						"equipment": true,
+						"evidence": true,
+						"receipt": true
+					},
+					"origin": [
+						-1.5,
+						1.0
+					],
+					"phase": "staging",
+					"remaining": 34.1999999999998,
+					"smoke": 0.428,
+					"spread": false
+				},
+				"health": 57.5992,
+				"player_id": 2,
+				"position": [
+					4.69081172347069,
+					5.76360390782356
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 218
+			},
+			"ph": 5.4,
+			"seed": 2078987333,
+			"simulation_seconds": 6600.0,
+			"stage": "mash",
+			"state_hash": "b344b3ea36642e367a7938a943d32c5504249798beecbe4692b8fb3de746fb4f",
+			"temperature_c": 66.7,
+			"tick": 110,
+			"utc": "2026-11-25T19:37:46"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "guest-11-escaped.png",
+			"gravity": 1.07539982133004,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"passed": false,
+					"payout": 0,
+					"penalty": 0,
+					"resolved": false
+				},
+				"elapsed": 22.4,
+				"fire": {
+					"cause": "cord",
+					"fuel": 0.943000000000006,
+					"heat": 0.409600000000001,
+					"objects": {
+						"equipment": true,
+						"evidence": true,
+						"receipt": true
+					},
+					"origin": [
+						-1.5,
+						1.0
+					],
+					"phase": "staging",
+					"remaining": 33.5999999999998,
+					"smoke": 0.449,
+					"spread": false
+				},
+				"health": 55.9552,
+				"player_id": 2,
+				"position": [
+					4.69081172347069,
+					5.76360390782356
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 224
+			},
+			"ph": 5.4,
+			"seed": 2078987333,
+			"simulation_seconds": 6600.0,
+			"stage": "mash",
+			"state_hash": "b344b3ea36642e367a7938a943d32c5504249798beecbe4692b8fb3de746fb4f",
+			"temperature_c": 66.7,
+			"tick": 110,
+			"utc": "2026-11-25T19:37:46"
+		},
+		{
+			"co2_volumes": 0.85,
+			"file": "guest-12-claim-outcome.png",
+			"gravity": 1.07539982133004,
+			"ibu": 0.0,
+			"match": {
+				"claim": {
+					"confidence": 1.0,
+					"evidence": {
+						"burn_pattern": "diffuse",
+						"character_stress": 0.118950800000004,
+						"character_tells": "steady",
+						"fuel_remaining": 0.775000000000025,
+						"smoke_trace": 1.0,
+						"thermal_trace": 0.87999999999999,
+						"valve_state": "normal"
+					},
+					"passed": true,
+					"payout": 1500,
+					"penalty": 0,
+					"reason": "Fictional inspection accepted the staged record.",
+					"resolved": true
+				},
+				"elapsed": 57.0,
+				"fire": {
+					"cause": "cord",
+					"fuel": 0.775000000000025,
+					"heat": 0.87999999999999,
+					"objects": {
+						"equipment": true,
+						"evidence": true,
+						"receipt": true
+					},
+					"origin": [
+						-1.5,
+						1.0
+					],
+					"phase": "resolved",
+					"remaining": 0.0,
+					"smoke": 1.0,
+					"spread": true
+				},
+				"health": 55.9552,
+				"player_id": 2,
+				"position": [
+					4.69081172347069,
+					5.76360390782356
+				],
+				"round_id": "round-2078987131",
+				"round_seed": 2078987131,
+				"tick": 570
+			},
+			"ph": 5.4,
+			"seed": 2078987333,
+			"simulation_seconds": 6600.0,
+			"stage": "mash",
+			"state_hash": "b344b3ea36642e367a7938a943d32c5504249798beecbe4692b8fb3de746fb4f",
+			"temperature_c": 66.7,
+			"tick": 110,
+			"utc": "2026-11-25T19:38:21"
+		}
+	],
+	"checks": 73,
+	"command": [
+		"--script",
+		"tests/render/multiplayer_proof.gd"
+	],
+	"exit_code": 0,
+	"failures": 0,
+	"machine": "GitHub Actions 1000001639",
+	"observations": [
+		{
+			"detail": "actual window/display driver required",
+			"ok": true
+		},
+		{
+			"detail": "3D geometry actually rendered",
+			"ok": true
+		},
+		{
+			"detail": "host process is listening",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@359",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @LineEdit@367",
+			"ok": true
+		},
+		{
+			"detail": "keyboard draft matches requested text: Guest",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@393",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Join",
+			"ok": true
+		},
+		{
+			"detail": "real GUI participant joined",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@397",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Toggle ready",
+			"ok": true
+		},
+		{
+			"detail": "GUI round started",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@365",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Close",
+			"ok": true
+		},
+		{
+			"detail": "actual host wand effect received",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: guest-08-wand-blindness",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: guest-08-wand-blindness",
+			"ok": true
+		},
+		{
+			"detail": "host reached exit before fire traversal",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@359",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @OptionButton@436",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Boil-over incident",
+			"ok": true
+		},
+		{
+			"detail": "keyboard focuses fictional cord menu row",
+			"ok": true
+		},
+		{
+			"detail": "actual popup selects fictional cord incident",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@437",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Fictional fire",
+			"ok": true
+		},
+		{
+			"detail": "actual fire command accepted",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@365",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Close",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: guest-09-fire-window",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: guest-09-fire-window",
+			"ok": true
+		},
+		{
+			"detail": "WASD reached world point (-4.8, -0.2)",
+			"ok": true
+		},
+		{
+			"detail": "E stages receipt at its actual prop",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: guest-10-stage-receipt",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: guest-10-stage-receipt",
+			"ok": true
+		},
+		{
+			"detail": "WASD reached world point (4.8, -0.2)",
+			"ok": true
+		},
+		{
+			"detail": "E stages evidence at its actual prop",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: guest-10-stage-evidence",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: guest-10-stage-evidence",
+			"ok": true
+		},
+		{
+			"detail": "WASD reached world point (4.8, 5.5)",
+			"ok": true
+		},
+		{
+			"detail": "E stages equipment at its actual prop",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: guest-10-stage-equipment",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: guest-10-stage-equipment",
+			"ok": true
+		},
+		{
+			"detail": "E escapes at actual exit",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: guest-11-escaped",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: guest-11-escaped",
+			"ok": true
+		},
+		{
+			"detail": "full actual fire window resolves",
+			"ok": true
+		},
+		{
+			"detail": "actual staged/escaped claim pays 150 percent once",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@359",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "rendered nonblank 1366x740 frame: guest-12-claim-outcome",
+			"ok": true
+		},
+		{
+			"detail": "saved frame: guest-12-claim-outcome",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@365",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Close",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@359",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Lobby / combat / claims",
+			"ok": true
+		},
+		{
+			"detail": "click target exists",
+			"ok": true
+		},
+		{
+			"detail": "click target is visible inside viewport: @Button@395",
+			"ok": true
+		},
+		{
+			"detail": "mouse activates button exactly once: Leave",
+			"ok": true
+		},
+		{
+			"detail": "fire smoke GUI leave restores local batch",
+			"ok": true
+		}
+	],
+	"operator": "GitHub Actions / Godot Input.parse_input_event automation",
+	"profile": {
+		"adapter": "llvmpipe (LLVM 20.1.2, 256 bits)",
+		"display": "X11",
+		"driver": "opengl3",
+		"engine": {
+			"build": "official",
+			"hash": "49a5bc7b616bd04689a2c89e89bda41f50241464",
+			"hex": 263169,
+			"major": 4,
+			"minor": 4,
+			"patch": 1,
+			"status": "stable",
+			"string": "4.4.1-stable (official)",
+			"timestamp": 0
+		},
+		"frame_time_ms": 79.0666666666667,
+		"measured_fps": 12.6475548060708,
+		"renderer": "gl_compatibility",
+		"role": "guest",
+		"scenario": "fire-input-smoke-only; no recipe or final-clock proof",
+		"vendor": "Mesa"
+	},
+	"run_id": "45686613031",
+	"source_commit": "600ab2a19c3b2ebe7c267463dcee9188ff2b83ed",
+	"source_ref": "refs/heads/codex/continue-mash-and-burn",
+	"utc": "2026-11-25T19:38:23"
+}

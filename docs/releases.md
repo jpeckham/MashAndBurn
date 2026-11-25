@@ -11,14 +11,20 @@ The stable upgrade code identifies this game across versions. User saves live
 in Godot's app-data folder and are not installed or removed with the game.
 
 When product verification is complete, a tag matching `vMAJOR.MINOR.PATCH`
-triggers the same checks before a GitHub Release is created with the MSI,
-`SHA256SUMS.txt` and `PAYLOAD-SHA256SUMS.txt`. No release is created on a failed build. No final release tag
-has been created during recovery. Current MSI packages are unsigned.
+triggers companion validation on Linux/Windows, actual game/daemon private-fake
+interoperability, the full rendered host/guest session with two mock companions,
+and the Windows installer checks. A GitHub Release is then created with the MSI,
+`SHA256SUMS.txt`, `PAYLOAD-SHA256SUMS.txt`, companion source ZIP and
+`COMPANION-SHA256SUMS.txt`. Required failed/cancelled jobs prevent publication.
+Current MSI packages are unsigned. Final tag publication is tracked in
+[current progress](AI-GOAL-PROGRESS.md).
 
-All engine, exported-game and installer checks run on disposable GitHub-hosted
-Windows runners. Nothing in the release workflow asks James to launch the game
-on his PC. A headless startup check does not establish visual usability or
-complete the outstanding visible playthrough criteria.
+Release checks run on disposable GitHub-hosted runners. Rendered input proof is
+separate from headless startup. Inspected [single-player](../evidence/desktop/2026-11-25-hosted/README.md),
+[multiplayer](../evidence/multiplayer/2026-11-25-hosted/README.md),
+[renderer](../evidence/visuals/2026-11-25-hosted/README.md) and
+[companion](../evidence/companion/2026-11-25-hosted/README.md) evidence records the
+actual scope. A short native Windows UI test was also authorized and performed.
 
 Hosted source `00203a8` passed [run45672343099](https://github.com/jpeckham/MashAndBurn/actions/runs/45672343099):
 869 checks, exported startup, clean install/hash/uninstall, and a real 0.0.0
