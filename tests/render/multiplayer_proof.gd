@@ -8,6 +8,13 @@ var connected_once := false
 var original_hash := ""
 var walking_keys: Dictionary = {}
 var input_lock_depth := 0
+var observed_replies := 0
+
+func trace_reply() -> void:
+	if network.reply_count == observed_replies: return
+	observed_replies = network.reply_count
+	if network.message != "Server accepted input.":
+		print("PAIR_REJECT "+JSON.stringify({"message":network.message,"tick":network.view.get("tick",0),"stage":player().get("batch",{}).get("stage"),"safe":player().get("batch",{}).get("safe_state"),"queued":network.queued.size()}))
 
 func acquire_input() -> void:
 	if input_lock_depth == 0:
@@ -97,8 +104,11 @@ func brew() -> bool:
 	if not await next_stage("packaging"): return false
 	if role == "guest" and not await set_field("priming_g","1000"): return false
 	await capture(role+"-06-packaging")
+	if not await wait_until(func(): return not network.pending and network.queued.is_empty() and player().cooldowns.get("brew",0.0) <= network.view.tick*.1,10,"packaging input queue and cooldown clear"): return false
 	if not await click("Package & judge"): return false
-	if not await wait_until(func(): return game.session.state.stage == "judging",5,"GUI packaging accepted"): return false
+	if not await wait_until(func(): return game.session.state.stage == "judging",10,"GUI packaging accepted: "+network.message):
+		print("PAIR_PACKAGE_FAILURE "+JSON.stringify({"message":network.message,"batch":player().batch,"pending":network.pending,"queued":network.queued}))
+		return false
 	var tasting = game.modules.filter(func(module): return module.get_script().resource_path == "res://src/social/judging_module.gd")[0]
 	check(not tasting.panel.visible,"packaged batch waits for authoritative round judging")
 	await capture(role+"-07-packaged-awaiting-final")
@@ -235,6 +245,7 @@ func run_proof() -> void:
 	profile.role = role
 	ui = game.get_node("Multiplayer")
 	network = ui.network
+	network.changed.connect(trace_reply)
 	original_hash = game.session.sim.state_hash(game.session.state)
 	if role == "guest" and not await wait_until(func(): return phase_exists("host","listening"),45,"host process is listening"): finish(1); return
 	if not await click("Lobby / combat / claims"): finish(1); return

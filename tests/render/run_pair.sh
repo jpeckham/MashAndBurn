@@ -10,8 +10,10 @@ timeout 900s "$GODOT" "${common[@]}" --position 0,0 -- --role host > .tools/mult
 host_pid=$!
 timeout 900s "$GODOT" "${common[@]}" --position 1400,0 -- --role guest > .tools/multiplayer-proof/guest/process.log 2>&1 &
 guest_pid=$!
+tail -n +1 -F .tools/multiplayer-proof/{host,guest}/process.log &
+log_pid=$!
 cleanup() {
-  kill "$host_pid" "$guest_pid" 2>/dev/null || true
+  kill "$host_pid" "$guest_pid" "$log_pid" 2>/dev/null || true
 }
 trap cleanup EXIT INT TERM
 set +e
