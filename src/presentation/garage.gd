@@ -18,6 +18,7 @@ var accumulated := 0.0
 var look_pitch := -0.12
 var settings: Dictionary = {}
 var stage_buttons: Array = []
+var batch_label: Label
 const STAGES = ["mash","boil","cooling","fermentation","packaging"]
 const COLORS = [Color("e9b660"),Color("f28b59"),Color("62c5d9"),Color("a7bc7d"),Color("b8a1d6")]
 
@@ -191,7 +192,7 @@ func build_ui() -> void:
 	label("MASH & BURN",root,30,Color("f0c36f")).position = Vector2(24,16)
 	label("GARAGE 01     /     LOCAL BREW LAB",root,13,Color("aec4c8")).position = Vector2(26,56)
 	var info := panel(root,Vector2(24,91),Vector2(300,470))
-	label("LIVE BATCH  /  SEED 42",info,16,Color("f0c36f"))
+	batch_label = label("LIVE BATCH",info,16,Color("f0c36f"))
 	status = label("",info,15)
 	status.custom_minimum_size.x = 268
 	label("MODEL: GAME APPROXIMATIONS",info,11,Color("9db1b2"))
@@ -247,7 +248,7 @@ func build_ui() -> void:
 	var saves := row(controls)
 	button("Save batch",saves,func(): session.save_to(); refresh())
 	button("Load batch",saves,func(): session.load_from(); paused = true; refresh())
-	button("New batch",saves,func(): session = Session.new(); paused = true; accumulated = 0; refresh())
+	button("New batch",saves,func(): session.new_batch(); paused = true; accumulated = 0; refresh())
 	notice = label("",controls,13,Color("f0c36f"))
 	notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	module_slot = VBoxContainer.new()
@@ -276,6 +277,7 @@ func visit_station(index: int) -> void:
 
 func refresh() -> void:
 	var s := session.state
+	batch_label.text = "LIVE BATCH  /  SEED %d" % s.seed
 	var flaws := ""
 	for k in s.flaws:
 		if s.flaws[k] > .01: flaws += "%s %.2f\n" % [k.capitalize(),s.flaws[k]]

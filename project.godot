@@ -1,5 +1,8 @@
 config_version=5
 
+[mash_burn]
+modules=["res://src/social/judging_module.gd"]
+
 [application]
 config/name="Mash & Burn"
 run/main_scene="res://scenes/garage/garage.tscn"

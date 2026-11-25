@@ -10,6 +10,9 @@ func check(ok: bool, label: String) -> void:
 		printerr("FAIL: " + label)
 
 func _initialize() -> void:
+	call_deferred("run_suites")
+
+func run_suites() -> void:
 	var args := OS.get_cmdline_user_args()
 	var suites := ["chemistry", "contracts", "presentation", "social"]
 	if "--suite" in args:

@@ -6,6 +6,11 @@ var state: Dictionary = sim.initial_state(42)
 var events: Array = []
 var message := "Welcome. Mash at 66.7 C for an hour, then move to the kettle."
 
+func new_batch() -> void:
+	state = sim.initial_state((int(state.seed) + 1) % 2147483647)
+	events = []
+	message = "New batch. " + instructions()
+
 func route(action: String, values: Dictionary = {}) -> bool:
 	var command := values.duplicate(true)
 	command.action = action

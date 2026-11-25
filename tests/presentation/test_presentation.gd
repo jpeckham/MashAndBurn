@@ -27,6 +27,12 @@ func run(t) -> void:
 	var path := "res://evidence/test-save.tmp"
 	t.check(a.save_to(path) and b.load_from(path), "save/load file IO")
 	t.check(not b.load_from("res://missing-save.json"), "missing save feedback")
+	var old_id: String = a.state.batch_id
+	var old_seed: int = a.state.seed
+	t.check(a.has_method("new_batch"), "new batch has distinct reproducible identity")
+	if a.has_method("new_batch"):
+		a.new_batch()
+		t.check(a.state.batch_id != old_id and a.state.seed == old_seed + 1, "new batch advances seed and id")
 	var tree = load("res://scenes/garage/garage.tscn").instantiate()
 	t.check(tree != null, "garage scene loads")
 	t.check(tree.has_method("register_module"), "module extension point")

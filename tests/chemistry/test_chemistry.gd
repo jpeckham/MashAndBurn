@@ -26,12 +26,20 @@ func run(t) -> void:
 		b = sim.advance(b, {}, 60.0).state
 		if tick in [0, 29, 59, 119]:
 			t.check(sim.state_hash(a) == sim.state_hash(b), "fixed tick replay " + str(tick))
+			print("REPLAY tick=%d hash=%s" % [a.tick,sim.state_hash(a)])
 	t.check(s.tick == 0 and s.conversion == 0, "advance leaves input unchanged")
 	t.check(a.conversion > .8 and a.sugar_kg <= a.grain_kg * .8, "conversion and mass limit")
 	var cold: Dictionary = s.duplicate(true)
 	cold.temp_c = 20.0
 	var warmed: Dictionary = sim.advance(cold, {"action":"set", "field":"target_c", "value":100.0}, 60).state
 	t.check((warmed.temp_c - cold.temp_c) * cold.volume_l * 4.186 <= 180.00001, "heater energy bounded by 3 kW")
+	var boiling: Dictionary = s.duplicate(true)
+	boiling.stage = "boil"
+	boiling.temp_c = 94.0
+	boiling.target_c = 100.0
+	var boiled: Dictionary = sim.advance(boiling, {}, 60).state
+	var used_energy: float = (boiled.temp_c-boiling.temp_c)*boiling.volume_l*4.186 + (boiling.volume_l-boiled.volume_l)*2257
+	t.check(used_energy <= 180.00001,"boil sensible plus latent energy cannot double spend heat")
 	for bad in [-1.0, INF, NAN]:
 		t.check(not sim.advance(s, {"action":"set", "field":"grain_kg", "value":bad}, 60).ok, "invalid amounts rejected")
 	for dt in [-1.0, 0.0, 61.0, INF, NAN]:
@@ -69,11 +77,13 @@ func run(t) -> void:
 	t.check(not sim.advance(s, {"action":"next"}, 60).ok, "premature stage transition rejected")
 	var full: Dictionary = s.duplicate(true)
 	for stage in ["mash", "boil", "cooling", "fermentation", "packaging"]:
+		t.check(full.stage == stage, "batch enters " + stage)
 		var n := 0
 		while not sim.can_next(full) and n < 20000:
 			full = sim.advance(full, {}, 60).state
 			n += 1
 		t.check(n < 20000, "stage ready " + stage)
+		print("BATCH stage=%s tick=%d simulation_seconds=%.0f hash=%s" % [stage,full.tick,full.sim_seconds,sim.state_hash(full)])
 		full = sim.advance(full, {"action":"next"}, 60).state
 	t.check(full.stage == "judging", "complete batch to judging")
 

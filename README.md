@@ -22,6 +22,12 @@ Launch the project with the first command. Hold right mouse and WASD to look/wal
 4. At fermentation, use **+ 4 hours** twelve times (48 simulated hours); Next unlocks at 95% yeast progress. Or Resume at 86,400x and Pause when ready.
 5. At packaging use 120 g priming sugar (or set a regulator pressure), then **Package & judge**. Excess priming latches a local overpressure hazard.
 
-**Save batch / Load batch** uses `user://batch-v1.json` in Godot's app data folder. Invalid/corrupted/version-mismatched saves leave the current batch intact. **New batch** restarts seed 42. Each setting's **Set** validates it; recipe quantities lock when mash begins. UI shows simulation state and approximate brewing metrics. No external services or hardware are contacted.
+**Save batch / Load batch** uses `user://batch-v1.json` in Godot's app data folder. Invalid/corrupted/version-mismatched saves leave the current batch intact. The first batch uses seed 42; **New batch** increments the seed and batch ID. Each setting's **Set** validates it; recipe quantities lock when mash begins. UI shows simulation state and approximate brewing metrics. No external services or hardware are contacted.
 
 Focused UI checks: append `-- --suite presentation` to the headless harness command. Static parsing: `--headless --editor --path . --quit`. Later render/gameplay modules can add Node scripts via project setting `mash_burn/modules`; each receives `setup(garage)` then `on_state(state)`, and may attach UI under `garage.module_slot` or scene nodes without owning the garage implementation.
+
+## Judging and validation
+
+Packaging opens the tasting room with five 20-point categories and cause-based feedback. Scores below 45 or severe diacetyl/acetaldehyde open a fictional local feed: 512 unique procedural personas, 16 posts per page, no network calls or external accounts. See [sandbox details](docs/social.md).
+
+Run all headless checks by omitting `-- --suite ...`. The recorded milestone run passed **663 checks, zero failures**. [Validation report](evidence/milestone-review.md) records tool versions, test logs and the remaining desktop-smoke approval gap. Milestone acceptance remains incomplete until that observed desktop walkthrough is recorded.

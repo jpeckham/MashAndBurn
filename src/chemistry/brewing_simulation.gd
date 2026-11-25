@@ -107,6 +107,8 @@ func advance(state: Dictionary, command: Dictionary, dt_seconds: float) -> Dicti
 	s.sim_seconds += dt_seconds
 	s.stage_seconds += dt_seconds
 	s.ph = approximate_ph(s.ions)
+	var sensible_kj := 0.0
+	var available_kj: float = 3.0*dt_seconds*(s.vigor if s.stage == "boil" else 1.0)
 	if s.safe_state:
 		return {"ok":true, "state":s,"events":events,"error":""}
 	if s.stage == "cooling":
@@ -115,8 +117,10 @@ func advance(state: Dictionary, command: Dictionary, dt_seconds: float) -> Dicti
 			s.infection_risk = 1.0 - (1.0 - s.infection_risk)*exp(-dt_seconds / 72000.0)
 	elif s.stage in ["mash", "boil", "fermentation"]:
 		# 3 kW maximum net heating/cooling; water equivalent thermal mass.
-		var limit: float = 3.0 * dt_seconds / (s.volume_l * 4.186)
+		var before: float = s.temp_c
+		var limit: float = available_kj / (s.volume_l * 4.186)
 		s.temp_c = move_toward(s.temp_c, s.target_c, limit)
+		sensible_kj = maxf(0.0,s.temp_c-before)*s.volume_l*4.186
 	match s.stage:
 		"mash":
 			var rate: float = (enzyme(s.temp_c, 70, 5) + enzyme(s.temp_c, 63, 4)) / 2400.0
@@ -132,7 +136,8 @@ func advance(state: Dictionary, command: Dictionary, dt_seconds: float) -> Dicti
 		"boil":
 			if s.temp_c >= 95:
 				# Evaporation bounded by available heat / water latent heat (2257 kJ/kg).
-				s.volume_l = maxf(0.1, s.volume_l - 3.0*s.vigor*dt_seconds/2257.0)
+				if s.temp_c >= 100.0:
+					s.volume_l = maxf(0.1, s.volume_l - maxf(0,available_kj-sensible_kj)/2257.0)
 				s.og = 1 + s.sugar_kg*0.384/s.volume_l
 				s.gravity = s.og
 				s.ibu = 0.0
