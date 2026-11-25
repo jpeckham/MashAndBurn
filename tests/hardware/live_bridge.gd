@@ -45,7 +45,16 @@ func run() -> void:
 	await create_timer(.6).timeout
 	if not bridge.producer.latched: printerr("LIVE_BRIDGE_FAIL healthy batch cleared producer latch"); quit(1); return
 	marker("healthy-after-fire-still-latched")
+	# Controlled judge fixture validates optional transport, not a brewing playthrough.
+	game.session.state.stage = "judging"
+	game.session.state.flaws.diacetyl = .8
+	game.refresh()
+	var tasting = game.modules.filter(func(module): return module.get_script().resource_path == "res://src/social/judging_module.gd")[0]
+	if not await wait_for(func(): return tasting.private_alerts.delivered_count == 1,"private fake receiver delivery"): quit(1); return
+	game.refresh()
+	game.refresh()
+	if tasting.private_alerts.sent_count != 1: printerr("LIVE_BRIDGE_FAIL repeated tasting duplicated private alert"); quit(1); return
 	bridge.stop()
 	if not await wait_for(func(): return FileAccess.file_exists(OUTPUT+"/disconnect-observed.json"),"daemon disconnect cutoff"): quit(1); return
-	print("LIVE_BRIDGE_GAME_RESULT "+JSON.stringify({"frames_sent":bridge.client.frames_sent,"operator_credential_hidden":true,"producer_latched_after_fire":bridge.producer.latched,"physical_operation":false}))
+	print("LIVE_BRIDGE_GAME_RESULT "+JSON.stringify({"frames_sent":bridge.client.frames_sent,"operator_credential_hidden":true,"producer_latched_after_fire":bridge.producer.latched,"private_fake_deliveries":tasting.private_alerts.delivered_count,"notification_judge_fixture":true,"physical_operation":false}))
 	quit(0)

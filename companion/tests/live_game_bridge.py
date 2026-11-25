@@ -10,12 +10,13 @@ import subprocess
 import sys
 import threading
 import time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import httpx
 import uvicorn
 
 from mash_burn_bridge.app import create_app
-from mash_burn_bridge.config import Settings
+from mash_burn_bridge.config import Destination, Settings
 from mash_burn_bridge.controller import BridgeController
 from mash_burn_bridge.models import HardwareFrame
 from mash_burn_bridge.transports import MockTransport
@@ -47,7 +48,18 @@ def main():
     print(f"::add-mask::{token}", flush=True)
     print(f"::add-mask::{operator}", flush=True)
     controller = RecordingController()
-    app = create_app(Settings(token=token, operator_token=operator), controller=controller)
+    class PrivateReceiver(BaseHTTPRequestHandler):
+        def do_POST(self):
+            self.server.received.append(dict(payload=json.loads(self.rfile.read(int(self.headers["Content-Length"]))), authorization=self.headers.get("Authorization")))
+            self.send_response(200)
+            self.end_headers()
+        def log_message(self, *_args):
+            pass
+    receiver = ThreadingHTTPServer(("127.0.0.1", 0), PrivateReceiver)
+    receiver.received = []
+    receiver_thread = threading.Thread(target=receiver.serve_forever, daemon=True)
+    receiver_thread.start()
+    app = create_app(Settings(token=token, operator_token=operator, notifications_enabled=True, notification_consent=True, destinations={"friends": Destination(url=f"http://127.0.0.1:{receiver.server_port}/private-fake-channel", consent=True, private=True)}), controller=controller)
     listener = socket.socket()
     listener.bind(("127.0.0.1", 0))
     listener.listen(128)
@@ -80,6 +92,8 @@ def main():
         game_env.pop("MAB_OPERATOR_TOKEN", None)
         game_env["MAB_BRIDGE_TOKEN"] = token
         game_env["MAB_BRIDGE_URL"] = f"ws://127.0.0.1:{port}/api/v1/telemetry"
+        game_env["MAB_PRIVATE_ALERTS"] = "true"
+        game_env["MAB_PRIVATE_DESTINATION"] = "friends"
         with (output / "game.log").open("w") as log:
             process = subprocess.Popen([os.environ["GODOT"], "--headless", "--path", str(project), "--rendering-method", "gl_compatibility", "--max-fps", "60", "--script", "tests/hardware/live_bridge.gd"], env=game_env, stdout=log, stderr=subprocess.STDOUT)
             wait_for(lambda: len(controller.received) >= 12, "actual game telemetry")
@@ -118,11 +132,14 @@ def main():
                 marker("disconnect-observed")
                 process.wait(timeout=10)
                 assert process.returncode == 0
+                assert len(receiver.received) == 1
+                assert receiver.received[0]["authorization"] is None
+                assert token not in json.dumps(receiver.received) and operator not in json.dumps(receiver.received)
         text = (output / "game.log").read_text()
         assert "SCRIPT ERROR:" not in text and "ERROR:" not in text, text
         assert all(row["schema_valid"] for row in controller.received)
         intervals = [b["at"] - a["at"] for a, b in zip(initial, initial[1:])]
-        report = dict(source_commit=os.environ.get("GITHUB_SHA"), run_id=os.environ.get("GITHUB_RUN_ID"), python=sys.version, telemetry_frames=len(controller.received), initial_rate_hz=rate, median_interval_ms=statistics.median(intervals) * 1000, events=events, received=controller.received, controller_trace=controller.trace, operator_credential_hidden_from_game=True, physical_operation=False)
+        report = dict(source_commit=os.environ.get("GITHUB_SHA"), run_id=os.environ.get("GITHUB_RUN_ID"), python=sys.version, telemetry_frames=len(controller.received), initial_rate_hz=rate, median_interval_ms=statistics.median(intervals) * 1000, events=events, received=controller.received, controller_trace=controller.trace, operator_credential_hidden_from_game=True, physical_operation=False, private_fake_deliveries=receiver.received, notification_judge_fixture=True)
         (output / "bridge-proof.json").write_text(json.dumps(report, indent=2))
         print("LIVE_BRIDGE_RESULT " + json.dumps({key: report[key] for key in ("telemetry_frames", "initial_rate_hz", "median_interval_ms", "operator_credential_hidden_from_game", "physical_operation")}))
     finally:
@@ -138,6 +155,9 @@ def main():
         thread.join(5)
         listener.close()
         controller.disconnect()
+        receiver.shutdown()
+        receiver.server_close()
+        receiver_thread.join(2)
 
 
 if __name__ == "__main__":
