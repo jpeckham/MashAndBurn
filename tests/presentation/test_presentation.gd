@@ -53,6 +53,12 @@ func run(t) -> void:
 	apply_button.pressed.emit()
 	t.check(is_equal_approx(tree.session.state.target_c,72.3),"Set submits the user's preserved edit")
 	t.check(tree.session.state.sim_seconds == 0,"recipe setting does not advance local simulation time")
+	editing.get_line_edit().text = "71.4"
+	editing.get_line_edit().text_changed.emit("71.4")
+	for i in range(10): tree.refresh()
+	t.check(editing.get_line_edit().text == "71.4","snapshots preserve an uncommitted typed draft")
+	apply_button.pressed.emit()
+	t.check(is_equal_approx(tree.session.state.target_c,71.4),"Set commits typed text as well as arrow-value edits")
 	tree.free()
 	var remote_path := "res://src/gameplay/network/remote_brew_session.gd"
 	if not FileAccess.file_exists(remote_path):

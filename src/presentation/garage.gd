@@ -18,6 +18,7 @@ var accumulated := 0.0
 var look_pitch := -0.12
 var settings: Dictionary = {}
 var settings_dirty: Dictionary = {}
+var settings_text_dirty: Dictionary = {}
 var stage_buttons: Array = []
 var batch_label: Label
 const STAGES = ["mash","boil","cooling","fermentation","packaging"]
@@ -182,9 +183,15 @@ func field(title: String, key: String, lo: float, hi: float, value: float, step_
 	r.add_child(input)
 	settings[key] = input
 	input.value_changed.connect(func(_value): settings_dirty[key] = true)
+	input.get_line_edit().text_changed.connect(func(_text):
+		settings_dirty[key] = true
+		settings_text_dirty[key] = true)
 	button("Set",r,func():
-		input.apply()
-		if session.route("set",{"field":key,"value":input.value}): settings_dirty.erase(key)
+		# Arrow/value edits already own a Range value; applying stale queued text can undo them.
+		if settings_text_dirty.get(key,false): input.apply()
+		if session.route("set",{"field":key,"value":input.value}):
+			settings_dirty.erase(key)
+			settings_text_dirty.erase(key)
 		refresh())
 
 func build_ui() -> void:
@@ -253,10 +260,12 @@ func build_ui() -> void:
 	var saves := row(controls)
 	button("Save batch",saves,func(): session.save_to(); refresh())
 	button("Load batch",saves,func():
-		if session.load_from(): settings_dirty.clear()
+		if session.load_from():
+			settings_dirty.clear()
+			settings_text_dirty.clear()
 		paused = true
 		refresh())
-	button("New batch",saves,func(): session.new_batch(); settings_dirty.clear(); paused = true; accumulated = 0; refresh())
+	button("New batch",saves,func(): session.new_batch(); settings_dirty.clear(); settings_text_dirty.clear(); paused = true; accumulated = 0; refresh())
 	notice = label("",controls,13,Color("f0c36f"))
 	notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	module_slot = VBoxContainer.new()
