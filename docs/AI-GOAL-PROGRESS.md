@@ -13,7 +13,7 @@ Branch: `codex/continue-mash-and-burn`. Recovered all four commits through `dc6b
 
 Beluga was not running when its offline state was edited. Removed the project's plan, 16 board tasks, three workspace registrations, histories, eight execution records, environment overrides and project statistics. Removed project discovery registration and added the root to the exclusion list. Other projects remain registered.
 
-Private recovery backup: `C:/Users/james/.codex/handoffs/mash-and-burn-20261125-102647`. Contains the original metadata and a verified Git bundle of the complete recovered branch. Backups are outside Beluga. Original Git worktree/branch are retained pending final cleanup.
+Private recovery backup: `C:/Users/james/.codex/handoffs/mash-and-burn-20261125-102647`. Contains the original metadata and a verified Git bundle of the complete recovered branch. Backups are outside Beluga. The original worktree was removed after confirming the recovered source and clean state; its historical branch remains as a recovery reference.
 
 The complete inherited scope and acceptance criteria are preserved in [the plan](handoff/inherited-plan.json) and [task records](handoff/inherited-tasks.json). These are historical records, not an active scheduler. Historical machine-local launch instructions do not override the current no-local-execution requirement.
 
@@ -31,4 +31,6 @@ The complete inherited scope and acceptance criteria are preserved in [the plan]
 
 Keep the approved Godot/GDScript stack and extension points. Use GitHub-hosted runners for Godot validation and installer checks. Do not treat headless results as proof of visual usability. Build development installer artifacts before publishing a final release.
 
-Next: implement reusable release tooling on `codex/godot-msi-releases` in `../.github`, pin the game's caller to its tested commit, and establish a remotely verified baseline. Then continue all remaining product milestones above.
+Release tooling is implemented on `codex/godot-msi-releases` in `../.github` and pushed. The game caller pins workflow and scripts to the same commit. Run `45655340031` freshly passed all 663 checks on hosted Windows with standard Godot 4.4.1. Export then failed because the preset requested missing rcedit. Resource editing is now disabled for the prototype executable; product identity is supplied by MSI metadata. The first run's checksum-byte handling failure is fixed. No passing end-to-end installer run is claimed yet.
+
+Next: inspect the latest hosted run, resolve failures, add MSI upgrade validation, and record actual evidence. Then continue all remaining product milestones above. No final release tag has been created.
