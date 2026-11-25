@@ -167,6 +167,7 @@ func flush() -> void:
 	var command: Dictionary = item.data.duplicate(true)
 	command.merge({"version":1,"round_id":view.round_id,"seq":view.players[player_id].seq+1,"tick":view.tick,"action":item.action},true)
 	pending = true
+	if OS.get_environment("PAIR_BRIDGE_ENABLED") == "true" and item.action == "brew": print("PAIR_BREW_SEND "+JSON.stringify(command))
 	if is_host:
 		var result: Dictionary = authority.submit(state,1,command)
 		if result.ok: state = result.state
@@ -201,6 +202,7 @@ func _reply(ok: bool, error: String, snapshot: Dictionary) -> void:
 
 func handle_reply(ok: bool, error: String, snapshot: Dictionary) -> void:
 	reply_count += 1
+	if OS.get_environment("PAIR_BRIDGE_ENABLED") == "true" and in_flight.get("action") == "brew": print("PAIR_BREW_REPLY "+JSON.stringify({"ok":ok,"error":error,"intent":in_flight,"tick":snapshot.get("tick"),"batch":snapshot.get("players",{}).get(player_id,{}).get("batch",{})}))
 	# A stale-clock rejection did not execute or consume the sequence. Preserve
 	# that intent once, using the trusted fresh reply, without relaxing authority.
 	var retry: bool = not ok and error == "Stale, future or invalid command tick." and not in_flight.is_empty() and in_flight.get("clock_retries",0) == 0

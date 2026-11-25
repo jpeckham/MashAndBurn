@@ -78,7 +78,10 @@ func set_field(field: String, value: String) -> bool:
 func next_stage(expected: String) -> bool:
 	if not await wait_until(func(): return game.session.sim.can_next(game.session.state),40,"stage ready for "+expected): return false
 	if not await click("Next stage"): return false
-	return await wait_until(func(): return game.session.state.stage == expected,5,"authoritative GUI enters "+expected)
+	var entered := await wait_until(func(): return game.session.state.stage == expected,5,"authoritative GUI enters "+expected)
+	if not entered:
+		print("PAIR_STAGE_FAILURE "+JSON.stringify({"expected":expected,"message":network.message,"batch":player().batch,"pending":network.pending,"queued":network.queued,"in_flight":network.in_flight,"replies":network.reply_count,"view_tick":network.view.tick}))
+	return entered
 
 func brew() -> bool:
 	if role == "guest":
