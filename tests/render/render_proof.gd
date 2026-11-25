@@ -84,14 +84,16 @@ func click(text: String) -> bool:
 func metrics_scroll(down: bool) -> void:
 	if not await click_control(game.info_scroll): return
 	for i in range(15):
-		var event := InputEventMouseButton.new()
-		event.position = mouse
-		event.global_position = mouse
-		event.button_index = MOUSE_BUTTON_WHEEL_DOWN if down else MOUSE_BUTTON_WHEEL_UP
-		event.pressed = true
-		event.factor = 1.0
-		Input.parse_input_event(event)
-		await frames(1)
+		# Viewport retains mouse focus until each wheel button is released too.
+		for pressed in [true,false]:
+			var event := InputEventMouseButton.new()
+			event.position = mouse
+			event.global_position = mouse
+			event.button_index = MOUSE_BUTTON_WHEEL_DOWN if down else MOUSE_BUTTON_WHEEL_UP
+			event.pressed = pressed
+			event.factor = 1.0
+			Input.parse_input_event(event)
+			await frames(1)
 	check(game.info_scroll.get_global_rect().end.y < 620,"metrics stay above station controls")
 
 func set_field(field: String, value: String) -> bool:
