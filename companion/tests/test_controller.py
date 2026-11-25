@@ -63,7 +63,7 @@ def test_healthy_telemetry_never_arms_automatically(bridge):
 
 
 @pytest.mark.parametrize("changes", [
-    {"version": 2}, {"type": "PlayerCommand"}, {"seq": True},
+    {"version": 2}, {"version": True}, {"version": 1.0}, {"type": "PlayerCommand"}, {"seq": True},
     {"heater": math.nan}, {"pump": math.inf}, {"target_temp_c": -1.0},
     {"target_temp_c": 101.0}, {"pump_duty": 1.1}, {"pump_duty": 0.4},
     {"step": "UNKNOWN"}, {"valve_states": [1, 1]}, {"valve_states": [1, 9, 0]},
@@ -147,6 +147,15 @@ def test_clock_regression_and_unarmed_queue_are_safe(bridge):
     clock.advance(-1)
     controller.tick()
     assert_safe(controller, transport)
+
+
+def test_hopper_field_is_edge_triggered_and_cannot_repeat_held_commands(bridge):
+    controller, _, clock = arm(bridge)
+    for sequence, hopper, expected in [(2, 2, 2), (3, 2, None), (4, None, None), (5, 2, 2)]:
+        clock.advance(0.1)
+        assert controller.ingest(frame(clock, sequence, hop_drop_hopper=hopper))
+        assert controller.tick()
+        assert controller.outputs["hop_drop_hopper"] == expected
 
 
 @pytest.mark.parametrize("kind", ["serial", "mqtt", "websocket"])
