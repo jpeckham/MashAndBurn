@@ -1,6 +1,13 @@
 extends RefCounted
 ## Fictional abstract game fields and evidence, not a model of real ignition or claims.
 const WINDOW := 45.0
+const STAGING_POINTS = {"receipt":[-4.8,-.2],"equipment":[4.8,5.5],"evidence":[4.8,-.2]}
+const STAGING_RANGE := 1.25
+
+func staging_distance(p: Dictionary, object: String) -> float:
+	if object not in STAGING_POINTS: return INF
+	var point: Array = STAGING_POINTS[object]
+	return Vector2(p.position[0],p.position[1]).distance_to(Vector2(point[0],point[1]))
 
 func initial() -> Dictionary:
 	return {"phase":"idle","remaining":0.0,"heat":0.0,"fuel":1.0,"smoke":0.0,"cause":"","spread":false,"objects":{"receipt":false,"equipment":false,"evidence":false}}
@@ -22,7 +29,9 @@ func stage(p: Dictionary, object: String) -> String:
 	if p.escaped or p.health <= 0: return "An escaped or incapacitated player cannot stage objects."
 	if object not in p.fire.objects: return "Unsupported fictional evidence object."
 	if p.fire.objects[object]: return "This object has already been staged."
+	if staging_distance(p,object) > STAGING_RANGE: return "Reach the %s prop before staging it." % object
 	p.fire.objects[object] = true
+	p.stress = clampf(p.get("stress",0.0)+.02,0,1)
 	return ""
 
 func escape(p: Dictionary) -> String:
@@ -43,8 +52,10 @@ func advance(s: Dictionary, dt: float, emit: Callable, disarm: Callable) -> void
 		p.fire.heat = clampf(p.fire.heat+dt*.014,0,1)
 		p.fire.smoke = clampf(p.fire.smoke+dt*.035,0,1)
 		if not p.escaped:
+			p.stress = clampf(p.get("stress",0.0)+dt*(.012+p.fire.smoke*.018),0,1)
 			p.health = maxf(0,p.health-dt*(2+8*p.fire.smoke))
 			if p.health == 0: p.move = [0.0,0.0]
+		else: p.stress = maxf(0,p.get("stress",0.0)-dt*.006)
 		if p.fire.heat >= .75 and not p.fire.spread:
 			p.fire.spread = true
 			for neighbor in [who-1,who+1]:
@@ -60,6 +71,11 @@ func inspect(s: Dictionary, who: int, emit: Callable) -> void:
 	var confidence := .15+.25*int(o.receipt)+.25*int(o.equipment)+.25*int(o.evidence)+.25*int(p.escaped)
 	confidence -= .25 if p.redline else 0.0
 	confidence -= .15 if p.fire.cause == "dust" else .05
+	var stress: float = clampf(p.get("stress",0.0),0,1)
+	confidence -= .2*stress+.08*p.fire.heat
+	var pattern: String = {"cord":"diffuse","dust":"focused","boil_over":"overflow"}.get(p.fire.cause,"mixed")
+	var tells := "steady" if stress < .35 else ("nervous" if stress < .65 else "agitated")
+	var evidence := {"burn_pattern":pattern,"thermal_trace":p.fire.heat,"fuel_remaining":p.fire.fuel,"smoke_trace":p.fire.smoke,"valve_state":"redline" if p.redline else "normal","character_stress":stress,"character_tells":tells}
 	var rng := RandomNumberGenerator.new()
 	rng.seed = s.seed+who*7919
 	var passed: bool = p.health > 0 and p.escaped and rng.randf() < clampf(confidence,0,1)
@@ -68,5 +84,6 @@ func inspect(s: Dictionary, who: int, emit: Callable) -> void:
 	p.money = maxi(0,p.money+payout-penalty)
 	p.bankrupt = not passed and p.money == 0
 	p.claim = {"resolved":true,"passed":passed,"payout":payout,"penalty":penalty,"confidence":clampf(confidence,0,1),"reason":"Fictional inspection accepted the staged record." if passed else "Inspection failed: escape, smoke, burn pattern, valve or staged record was inconsistent."}
+	p.claim.evidence = evidence
 	p.fire.phase = "resolved"
 	emit.call(s,"claim",who,p.claim.duplicate(true))

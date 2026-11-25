@@ -15,7 +15,7 @@ var judge := Judge.new()
 var fire := Fire.new()
 
 func initial_state(seed_value: int, host_peer: int = 1) -> Dictionary:
-	return {"version":1,"round_id":"round-%d" % seed_value,"seed":seed_value,"host_peer":host_peer,"phase":"lobby","tick":0,"elapsed":0.0,"style":"pale_ale","players":{},"peer_players":{},"credentials":{},"projectiles":[],"projectile_seq":0,"events":[],"event_id":0,"hardware_safe":false,"results":[]}
+	return {"version":1,"round_id":"round-%d" % seed_value,"seed":seed_value,"host_peer":host_peer,"phase":"lobby","tick":0,"elapsed":0.0,"style":"pale_ale","players":{},"peer_players":{},"credentials":{},"projectiles":[],"projectile_seq":0,"spills":[],"spill_seq":0,"events":[],"event_id":0,"hardware_safe":false,"results":[]}
 
 func rejected(s: Dictionary, error: String) -> Dictionary:
 	return {"ok":false,"state":s.duplicate(true),"events":[],"error":error}
@@ -65,6 +65,7 @@ func join(state: Dictionary, peer: int, player_name: String, token: String, reco
 		batch.batch_id = "%s-player-%d" % [s.round_id,who]
 		s.players[who] = {"id":who,"peer":peer,"name":player_name.strip_edges(),"connected":true,"ready":false,"seq":0,"position":[float((who-1)%4)*3.0-4.5,1.0+float((who-1)/4)*2.0],"move":[0.0,0.0],"last_move_tick":0,"health":100.0,"blind_until":0.0,"slip_until":0.0,"cooldowns":{},"redline":false,"batch":batch,"escaped":false,"fire":fire.initial(),"claim":{"resolved":false,"passed":false,"payout":0,"penalty":0},"money":1000,"replacement":1000,"bankrupt":false}
 		s.credentials[token] = who
+		s.players[who].stress = .08
 	s.peer_players[peer] = who
 	emit(s,"joined",who,{"reconnected":reconnect})
 	var result := accepted(s,state.event_id)
@@ -209,6 +210,9 @@ func attack(s: Dictionary, who: int, target: int, weapon) -> String:
 	elif weapon == "wand":
 		victim.blind_until = s.tick*TICK+2.0
 		victim.slip_until = s.tick*TICK+4.0
+		s.spill_seq += 1
+		s.spills.append({"id":s.spill_seq,"owner":who,"position":victim.position.duplicate(),"radius":1.3,"until":s.tick*TICK+8.0})
+		if s.spills.size() > 16: s.spills.pop_front()
 	else: damage(s,target,spec.damage,who,weapon)
 	p.cooldowns.attack = s.tick*TICK+spec.cooldown
 	emit(s,"attack",who,{"weapon":weapon,"target":target})
@@ -249,11 +253,14 @@ func advance(state: Dictionary, dt: float) -> Dictionary:
 	var s: Dictionary = state.duplicate(true)
 	s.tick += 1
 	s.elapsed = minf(900,s.tick*TICK)
+	s.spills = s.spills.filter(func(spill): return spill.until > s.tick*TICK)
 	for who in s.players.keys():
 		var p: Dictionary = s.players[who]
 		if p.connected and p.health > 0 and not p.escaped:
 			# Missing movement input times out; disconnect cannot leave a player walking.
 			if s.tick-p.last_move_tick > 5: p.move = [0.0,0.0]
+			for spill in s.spills:
+				if Vector2(p.position[0],p.position[1]).distance_to(Vector2(spill.position[0],spill.position[1])) <= spill.radius: p.slip_until = maxf(p.slip_until,s.tick*TICK+.3)
 			var speed := 1.2 if p.slip_until > s.tick*TICK else 3.0
 			p.position[0] = clampf(p.position[0]+p.move[0]*dt*speed,-6.5,6.5)
 			p.position[1] = clampf(p.position[1]+p.move[1]*dt*speed,-.5,6)
@@ -298,6 +305,7 @@ func advance_projectiles(s: Dictionary, dt: float) -> void:
 func finish(s: Dictionary) -> void:
 	s.phase = "finished"
 	s.projectiles.clear()
+	s.spills.clear()
 	for who in s.players:
 		var p: Dictionary = s.players[who]
 		p.move = [0.0,0.0]

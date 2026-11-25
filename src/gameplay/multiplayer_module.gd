@@ -2,6 +2,8 @@ extends Node
 ## Garage extension: ENet lobby, authoritative brew desk, combat/claims HUD and world cues.
 const Network = preload("res://src/gameplay/network/match_network.gd")
 const RemoteSession = preload("res://src/gameplay/network/remote_brew_session.gd")
+const Fire = preload("res://src/gameplay/fire/fire_claims.gd")
+const Props = preload("res://src/gameplay/staging_props.gd")
 var garage: Node
 var network: Node
 var original_session
@@ -23,6 +25,9 @@ var veil: ColorRect
 var markers: Dictionary = {}
 var projectiles: Dictionary = {}
 var fires: Dictionary = {}
+var spills: Dictionary = {}
+var staging_props: Dictionary = {}
+var last_phase := ""
 var movement_timer := 0.0
 const WEAPONS = ["wand","ladle","hydrometer","keg","bottle"]
 const STYLES = ["pale_ale","lager","stout"]
@@ -40,7 +45,8 @@ func setup(host: Node) -> void:
 	build_ui()
 	network.changed.connect(sync)
 	garage.box(Vector3(0,.02,5.7),Vector3(10,.03,.35),Color("32764b"))
-	garage.sign3d("EXIT  /  ESCAPE FROM SMOKE",Vector3(0,2.7,6),Color("b2f4c1"),28)
+	garage.sign3d("EXIT  /  ESCAPE FROM SMOKE",Vector3(0,2.7,6),Color("b2f4c1"),28).billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	staging_props = Props.build(garage)
 	sync()
 
 func build_ui() -> void:
@@ -140,7 +146,7 @@ func build_ui() -> void:
 	var staging: HBoxContainer = garage.row(controls)
 	for object in ["receipt","equipment","evidence"]:
 		var selected: String = object
-		garage.button("Stage " + object,staging,func(): network.send("stage",{"object":selected}))
+		garage.button("Hide equipment (Buick)" if object == "equipment" else "Stage " + object,staging,func(): network.send("stage",{"object":selected}))
 	garage.button("Escape (reach green exit first)",controls,func(): network.send("escape"))
 	garage.label("Fire disarms telemetry immediately. Stage fictional objects during 45 seconds,\nthen escape smoke. Server inspection grants 150% replacement or a penalty.",controls,12)
 	scoreboard = garage.label("",controls,13)
@@ -159,7 +165,7 @@ func leave() -> void:
 		garage.paused = true
 		garage.accumulated = 0.0
 		garage.refresh()
-	for collection in [markers,projectiles,fires]:
+	for collection in [markers,projectiles,fires,spills]:
 		for object in collection.values(): object.queue_free()
 		collection.clear()
 	status_line.text = ""
@@ -167,6 +173,8 @@ func leave() -> void:
 	notice.text = "Offline. Your local batch is restored."
 	scoreboard.text = ""
 	summary.text = ""
+	last_phase = ""
+	Props.show_progress(staging_props,{})
 
 func sync() -> void:
 	notice.text = network.message
@@ -184,6 +192,7 @@ func sync() -> void:
 		garage.accumulated = 0.0
 		garage.refresh()
 		var p: Dictionary = view.players[network.player_id]
+		Props.show_progress(staging_props,p.fire.objects)
 		garage.camera.position = Vector3(p.position[0],1.9,p.position[1])
 		status_line.text = "%s  %02d:%02d  ·  HP %.0f  ·  capital %d%s" % [view.phase.to_upper(),int(maxf(0,900-view.elapsed))/60,int(maxf(0,900-view.elapsed))%60,p.health,p.money,"  ·  DISARMED" if view.hardware_safe else ""]
 		veil.color = Color(0,0,0,.78) if p.blind_until > view.tick*.1 else Color(.2,.18,.15,p.fire.smoke*.25 if p.fire.phase == "staging" and not p.escaped else 0.0)
@@ -203,11 +212,16 @@ func sync() -> void:
 			var c: Dictionary = result.judge.categories
 			lines.append("%s: %.1f/100 · capital %d\nAroma %.1f / Look %.1f / Flavor %.1f / Feel %.1f / Style %.1f\n%s" % [result.name,result.judge.score,result.money,c.aroma,c.appearance,c.flavor,c.mouthfeel,c.style_accuracy," ".join(result.judge.feedback)])
 	scoreboard.text = "\n".join(lines)
+	if view.phase == "finished" and last_phase != "finished": panel.visible = false
+	last_phase = view.phase
 	render_world(view)
 
 func fire_summary(p: Dictionary) -> String:
-	if p.fire.phase == "staging": return "FIRE: %.1f seconds to inspection · Smoke %.0f%% · %s" % [p.fire.remaining,p.fire.smoke*100,"ESCAPED" if p.escaped else "Reach the green exit"]
-	if p.claim.resolved: return "Claim %s: payout %d / penalty %d. %s" % ["accepted" if p.claim.passed else "rejected",p.claim.payout,p.claim.penalty,p.claim.reason]
+	if p.fire.phase == "staging":
+		return "FIRE: %.1f seconds · Smoke %.0f%% · Avatar stress %.0f%%\n%s\nReceipt: front-left · Evidence: front-right · Buick trunk: rear-right.\nReach each prop (1.25 m), press E; then E at the green exit." % [p.fire.remaining,p.fire.smoke*100,p.get("stress",0.0)*100,"ESCAPED" if p.escaped else "Stage the record and escape"]
+	if p.claim.resolved:
+		var details: Dictionary = p.claim.get("evidence",{})
+		return "Claim %s: payout %d / penalty %d. %s\nBurn pattern: %s · Valve: %s · Character tells: %s" % ["accepted" if p.claim.passed else "rejected",p.claim.payout,p.claim.penalty,p.claim.reason,details.get("burn_pattern","unavailable"),details.get("valve_state","unavailable"),details.get("character_tells","unavailable")]
 	return "No fire incident. Keep your batch safe while competing."
 
 func mesh_marker(color: Color, projectile: bool = false) -> Node3D:
@@ -232,12 +246,17 @@ func mesh_marker(color: Color, projectile: bool = false) -> Node3D:
 	var label := Label3D.new()
 	label.name = "Nameplate"
 	label.font_size = 28
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	label.position.y = 1.9
 	body.add_child(label)
 	garage.add_child(body)
 	return body
 
 func render_world(view: Dictionary) -> void:
+	for who in fires.keys():
+		if not view.players.has(who):
+			fires[who].queue_free()
+			fires.erase(who)
 	for who in markers.keys():
 		if not view.players.has(who):
 			markers[who].queue_free()
@@ -265,6 +284,42 @@ func render_world(view: Dictionary) -> void:
 		if id not in active:
 			projectiles[id].queue_free()
 			projectiles.erase(id)
+	var wet_ids: Array = []
+	for spill in view.get("spills",[]):
+		wet_ids.append(spill.id)
+		if not spills.has(spill.id):
+			var patch := MeshInstance3D.new()
+			var plane := PlaneMesh.new()
+			plane.size = Vector2.ONE*spill.radius*2
+			patch.mesh = plane
+			var material := StandardMaterial3D.new()
+			material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+			material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+			material.albedo_color = Color(.2,.75,.85,.45)
+			patch.material_override = material
+			patch.position = Vector3(spill.position[0],.035,spill.position[1])
+			garage.add_child(patch)
+			spills[spill.id] = patch
+	for id in spills.keys():
+		if id not in wet_ids:
+			spills[id].queue_free()
+			spills.erase(id)
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not remote_mode or not network.session_connected or not event is InputEventKey: return
+	if not event.pressed or event.echo or event.keycode != KEY_E: return
+	var p: Dictionary = network.view.players.get(network.player_id,{})
+	if p.is_empty() or p.fire.phase != "staging" or p.escaped or p.health <= 0: return
+	for object in Fire.STAGING_POINTS:
+		if not p.fire.objects[object] and network.authority.fire.staging_distance(p,object) <= Fire.STAGING_RANGE:
+			network.send("stage",{"object":object})
+			get_viewport().set_input_as_handled()
+			return
+	if p.position[1] >= 4.8: network.send("escape")
+	else:
+		network.message = "Reach a staging prop or the green exit before interacting."
+		notice.text = network.message
+	get_viewport().set_input_as_handled()
 
 func _process(delta: float) -> void:
 	if not remote_mode or not network.session_connected or network.view.get("phase") not in ["running","settling"]: return

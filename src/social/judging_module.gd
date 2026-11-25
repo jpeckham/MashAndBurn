@@ -62,19 +62,30 @@ func setup(host: Node) -> void:
 	garage.label("512 procedural personas · at most 16 visible posts · no outbound dispatch",v,12,Color("a9bfc2"))
 
 func on_state(s: Dictionary) -> void:
+	if garage.session.has_method("judging_context"):
+		var context: Dictionary = garage.session.judging_context()
+		if context.is_empty():
+			show_button.visible = false
+			panel.visible = false
+			return
+		present(context.result,context.seed,context.style)
+		return
 	if s.stage != "judging":
 		show_button.visible = false
 		panel.visible = false
 		return
+	present(judge.evaluate(s),s.seed,"pale_ale")
+
+func present(result: Dictionary, seed_value: int, style_name: String) -> void:
 	show_button.visible = true
-	if observed_id == s.batch_id: return
-	observed_id = s.batch_id
-	current = judge.evaluate(s)
-	feed_active = service.submit(current,s.seed)
-	if not feed_active: feed_active = service.select_batch(current,s.seed)
+	if observed_id == result.batch_id: return
+	observed_id = result.batch_id
+	current = result.duplicate(true)
+	feed_active = service.submit(current,seed_value)
+	if not feed_active: feed_active = service.select_batch(current,seed_value)
 	page_index = 0
 	var c: Dictionary = current.categories
-	summary.text = "%.1f / 100    ·    Fictional pale-ale rubric\nAroma %.1f  /  Appearance %.1f  /  Flavor %.1f  /  Mouthfeel %.1f  /  Style %.1f\nEach category is worth 20 points." % [current.score,c.aroma,c.appearance,c.flavor,c.mouthfeel,c.style_accuracy]
+	summary.text = "%.1f / 100    ·    Fictional %s rubric\nAroma %.1f  /  Appearance %.1f  /  Flavor %.1f  /  Mouthfeel %.1f  /  Style %.1f\nEach category is worth 20 points." % [current.score,style_name.replace("_"," "),c.aroma,c.appearance,c.flavor,c.mouthfeel,c.style_accuracy]
 	feedback.text = "\n".join(current.feedback)
 	render_page()
 	panel.visible = true

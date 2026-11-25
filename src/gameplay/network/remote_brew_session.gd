@@ -1,13 +1,23 @@
 extends "res://src/presentation/brew_session.gd"
 ## Existing brew-desk controls become intents; they never simulate or load a local batch.
 var transport
+var final_context: Dictionary = {}
 
 func configure(network) -> void:
 	transport = network
 
 func apply_snapshot(snapshot: Dictionary, who: int) -> void:
+	final_context = {}
 	if snapshot.get("players",{}).has(who): state = snapshot.players[who].batch.duplicate(true)
+	if snapshot.get("phase") == "finished" and snapshot.get("players",{}).has(who):
+		for result in snapshot.get("results",[]):
+			if result.player == who:
+				final_context = {"result":result.judge.duplicate(true),"seed":state.seed,"style":snapshot.style}
+				break
 	if transport != null and transport is Node: message = transport.message
+
+func judging_context() -> Dictionary:
+	return final_context.duplicate(true)
 
 func route(action: String, values: Dictionary = {}) -> bool:
 	if transport == null:

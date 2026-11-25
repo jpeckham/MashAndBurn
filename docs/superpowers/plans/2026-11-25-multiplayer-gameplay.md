@@ -50,3 +50,17 @@ Files: `src/gameplay/network/match_network.gd`, `src/gameplay/network/remote_bre
 - [x] Run the combined suite after gameplay changes and inspect remote logs.
 - [x] Document commands, game approximations, transport behavior and unresolved visual/companion proof in docs/gameplay.md and evidence/multiplayer-hosted-2026-11-25.md. Domain fixtures use seed 812; ENet fixture logs name participant count and server clock.
 - [ ] Collect actual two-client visible evidence remotely before calling this milestone accepted. Do not substitute headless tests for this gate.
+
+## Client integration and spatial gameplay follow-through
+
+The previous 833-check run validated raw transport endpoints and local widgets,
+but not complete garage scenes sharing final results over ENet. Remaining PRD
+scope includes the actual staging props/old Buick trunk and character-tell feedback.
+
+- [ ] Add a hosted `client` suite with full garage scenes under separate SceneMultiplayer roots; exercise the actual Set widget, lobby/start, authoritative stout judging, bounded feed pages and exact local-batch restoration.
+- [ ] Observe failures before implementation. Do not treat fixtures that jump the server clock or fabricate a packaged batch as full brewing playthrough proof.
+- [ ] RemoteBrewSession exposes an immutable final judging context only after finished results; the tasting module waits for that context and uses the exact server categories/feedback/style instead of regrading a mirrored batch.
+- [ ] Create visible receipt desk, evidence station and old Buick/trunk props at fixed world coordinates. Authority requires players within 1.25 game metres; UI/E interaction uses the same points. Each player's staged record is separate.
+- [ ] Seeded inspection records burn pattern/thermal trace, valve state and game-avatar stress. Escaping lets stress settle; no real biometric data is read.
+- [ ] Sanitizing wands leave a bounded, expiring floor patch that slows any nearby player; render it and clear stale visual nodes on leave/new matches.
+- [ ] Run combined hosted checks, inspect logs, review changes, and retain all still-missing rendered/companion/release gates.
