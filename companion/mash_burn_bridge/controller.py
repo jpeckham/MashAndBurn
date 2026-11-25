@@ -163,7 +163,13 @@ class BridgeController:
 
     def connect(self):
         self.connected = True
-        self.healthy = False
+        self.trip("new-connection")
+        # A new authenticated, exclusive socket is a new stream. It starts
+        # disarmed and must supply fresh telemetry before a local arm action.
+        self.last_seq = -1
+        self.last_sent_ms = -1
+        self.frame = None
+        self.last_receive = None
 
     def emergency_stop(self):
         self.local_estop = True
