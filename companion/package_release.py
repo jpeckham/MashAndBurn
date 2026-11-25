@@ -54,7 +54,9 @@ def main():
             notices = []
             for record in distribution.files or []:
                 parts = pathlib.PurePosixPath(str(record)).parts
-                if ".." in parts or not ("licenses" in [part.lower() for part in parts] or pathlib.PurePosixPath(str(record)).name.lower() in ("license", "license.txt", "license.md", "copying", "notice", "notice.txt")):
+                # Only distribution metadata contains notices. A package such as
+                # packaging/licenses is Python implementation code, not a license.
+                if ".." in parts or not any(part.endswith(".dist-info") for part in parts) or not ("licenses" in [part.lower() for part in parts] or pathlib.PurePosixPath(str(record)).name.lower() in ("license", "license.txt", "license.md", "copying", "notice", "notice.txt")):
                     continue
                 file = pathlib.Path(distribution.locate_file(record))
                 if file.is_file() and not file.is_symlink():
