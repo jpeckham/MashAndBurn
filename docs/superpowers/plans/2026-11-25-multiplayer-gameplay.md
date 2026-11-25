@@ -28,23 +28,25 @@ Ruling: name the domain transition `disconnect_peer`, because Godot Object alrea
 
 Files: `src/gameplay/rounds/round_authority.gd`, `src/gameplay/fire/fire_claims.gd`, `tests/gameplay/test_gameplay.gd`, `tests/run_all.gd`.
 
-- [ ] Add failing tests for capacities 2–8, unsupported joins, ready/start ownership, clock boundary, replay/late/out-of-order/forged inputs, own-batch-only editing, weapons and sabotage, projectiles and disconnect/reconnect.
-- [ ] Observe failure on hosted runner before implementation.
-- [ ] Implement functional authority and fixed-step clock. Preserve existing protocol validation and chemistry.
-- [ ] Pin fire disarm ordering, 45-second boundary, escape/lethal smoke, deterministic inspection, 150% payout and no duplicate award in tests; implement fire rules.
-- [ ] Run focused/combined hosted checks; resolve failures from actual logs.
+- [x] Add failing tests for capacities 2–8, unsupported joins, ready/start ownership, clock boundary, replay/late/out-of-order/forged inputs, own-batch-only editing, weapons and sabotage, projectiles and disconnect/reconnect.
+- [x] Observe failure on hosted runner before implementation (665 checks, two intended missing-module failures in run 45657368683).
+- [x] Implement functional authority and fixed-step clock. Preserve existing protocol validation and chemistry; separate command application from integration after review.
+- [x] Pin fire disarm ordering, 45-second boundary, escape/lethal smoke, deterministic inspection, 150% payout and no duplicate award in tests; implement logical fire rules.
+- [x] Run combined hosted checks; resolve failures from actual logs. Final run 45662199180: 833 checks pass.
 
 ### 2. Transport and usable garage integration
 
 Files: `src/gameplay/network/match_network.gd`, `src/gameplay/network/remote_brew_session.gd`, `src/gameplay/multiplayer_module.gd`, `project.godot`, `tests/integration/`.
 
-- [ ] Add ENet host/join/leave, authenticated RPC identity, snapshot/ack/error delivery and reconnect lifecycle.
-- [ ] Register lobby/HUD, weapon/sabotage/claims controls, rivals/projectiles/fire feedback and existing brew-desk routing.
-- [ ] Add real 2-/8-client hosted sessions with refused extra join and authoritative round completion. Reject missing host, bad protocol, replayed input and server loss without local authority fallback.
-- [ ] Verify exported-game startup and update instructions and evidence.
+- [x] Add ENet host/join/leave, authenticated RPC identity, snapshot/ack/error delivery and reconnect lifecycle.
+- [x] Register lobby/HUD, weapon/sabotage/claims controls, placeholder rivals/projectiles/fire feedback and existing brew-desk routing (visible usability still unverified).
+- [x] Add real 2-/8-client hosted sessions with refused extra join and authoritative round completion. Reject bad protocol/replayed input; disconnect/server loss never enables local authority.
+- [x] Verify exported-game startup and update instructions and evidence.
+- [ ] Exercise full garage UIs as the actual network endpoints and consume authoritative final judging/feed results.
+- [ ] Complete spatial staging objects and richer inspection feedback from PRD scope.
 
 ### 3. Milestone evidence
 
-- [ ] Run the combined suite after gameplay changes and inspect remote logs.
-- [ ] Document reproducible seeds, commands, game approximations, transport behavior and unresolved visual/companion proof.
+- [x] Run the combined suite after gameplay changes and inspect remote logs.
+- [x] Document commands, game approximations, transport behavior and unresolved visual/companion proof in docs/gameplay.md and evidence/multiplayer-hosted-2026-11-25.md. Domain fixtures use seed 812; ENet fixture logs name participant count and server clock.
 - [ ] Collect actual two-client visible evidence remotely before calling this milestone accepted. Do not substitute headless tests for this gate.

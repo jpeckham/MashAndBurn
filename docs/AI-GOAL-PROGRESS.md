@@ -19,10 +19,10 @@ The complete inherited scope and acceptance criteria are preserved in [the plan]
 
 ## Evidence and outstanding work
 
-- Brewing/contracts, garage UI/save-load, judging and fictional feed code exists. Historical logs report 663 checks; these are inherited results, not a fresh run here.
+- Brewing/contracts, garage UI/save-load, judging and fictional feed code exists. Fresh hosted validation now passes 833 checks, including the existing chemistry/contracts and the new gameplay/network cases; see the evidence below.
 - Visible full-batch controls/save-load/feed proof remains unverified. No new desktop evidence exists.
-- Multiplayer: authoritative ENet 2–8 player 15-minute rounds; five arsenal and three sabotage categories; invalid/replayed commands, reconnect/disconnect, capacity checks.
-- Fire/claims: abstract fire/smoke, 45-second staging, escape, inspection, exactly-once 150% payout or penalties, immediate latched hardware disarm.
+- Multiplayer code is implemented: authoritative ENet 2–8 player rounds, five arsenal/three sabotage categories, bounded movement/projectiles, lobby/HUD, remote brew-desk routing and disconnect/reconnect. Actual hosted two-/eight-client tests finish the server's 900-second clock and reject overflow/money injection. Visible multi-window usability is not yet proven.
+- Logical fire/claims code is implemented and tested: abstract heat/fuel/smoke/spread, a full 45-second staging window (including late incidents), escape/lethal smoke, seeded inspection, exactly-once 150% payout/penalty and immediate disarm. Spatial receipt/equipment/trunk/evidence props and richer burn-pattern/character-tell feedback still need PRD coverage/visible proof before milestone acceptance.
 - Visuals: chemistry-driven SRM/haze/foam/nucleation, steam/condensation/fire, feature fallback and measured remote performance. Do not claim PS5 or hardware ray tracing parity.
 - Companion: mock HAL and telemetry at 10 Hz; fault/E-stop/stale-frame/thermal/fire interlocks and explicit rearm; optional authenticated private-channel notifications disabled by default.
 - Integration: combined suites, eight-client scripted and two-client visible scenarios, PRD traceability, licenses, exports, MSI install/upgrade/uninstall and GitHub Release assets.
@@ -35,4 +35,6 @@ Release tooling is implemented on `codex/godot-msi-releases` in `../.github` and
 
 Two setup issues were resolved from actual failed runs: decoding the official checksum file's byte response and disabling optional executable resource editing without rcedit. MSI supplies product identity. No final release has been published.
 
-Next: continue product implementation (authoritative multiplayer/combat/fire/claims, rendering, interlocked companion), add MSI upgrade/downgrade validation, and collect remote visible playthrough evidence. Do not let the previous desktop evidence prerequisite stall independent product work. Final release waits for all inherited acceptance criteria and installer gates. No final release tag has been created.
+Hosted [run 45662199180](https://github.com/jpeckham/MashAndBurn/actions/runs/45662199180) succeeded for source `8644e6a7f9dd47487c6b517875808ecd87edb859`: **833 checks**, real ENet sessions with two/eight clients, import/export, exported-game startup, MSI creation/install/payload hashes/uninstall. [Detailed evidence](../evidence/multiplayer-hosted-2026-11-25.md) and [independent review/fixes](../evidence/multiplayer-review-2026-11-25.md) are recorded. The review found four Important issues; regression tests reproduced them and all now pass. No Godot, game, installer or desktop automation ran on James's PC.
+
+Next: exercise full garage UIs as actual ENet endpoints, connect final authoritative judging/style/results to the fictional feed (current tasting module still judges the local mirrored batch), finish spatial staging props/inspection feedback, and collect actual remote rendered normal/flawed/two-client evidence. Then implement advanced beer/fire visuals and the interlocked companion; add MSI upgrade/downgrade validation and finish the combined PRD coverage/release gates. Do not let the old desktop-access prerequisite stall independent product work. Final release waits for all inherited acceptance criteria and installer gates. No final release tag has been created.

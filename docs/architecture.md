@@ -14,6 +14,27 @@ Simulation owns no nodes, clock, files, globals, network or hardware. Calls deep
 
 Presentation consumes protocol v1. Later modules attach through presentation registration hooks rather than owning chemistry or garage scripts. Save payloads contain the entire state, including hop charges and seed. HardwareFrame reserves an interlock contract only; no devices are driven.
 
+## Control/time boundary added during multiplayer integration
+
+`apply_command(state, command)` returns the same result envelope as `advance` but
+does not integrate heat, conversion, fermentation or elapsed time. It validates
+and applies settings, hop charges and stage transitions, increments input `seq`,
+and can immediately emit packaging/hazard interlocks. Both local BrewSession and
+the multiplayer authority use it for controls. `advance` remains the sole time
+integrator and retains its combined-command compatibility interface for existing
+fixtures. Input frequency therefore cannot accelerate a batch.
+
+The multiplayer authority narrows the generic protocol's setters to player
+controls: measured `temp_c` is not a remotely editable control. Persistent
+equipment faults are enforced before accepting settings. At 10 server ticks per
+second, each tick advances brewing by 60 simulated seconds. The competitive
+clock stops at 900 seconds, while any already-active fire/claims window finishes
+its full 45 seconds with brewing/combat stopped and every bay disarmed.
+
+Garage setting widgets preserve unsent arrow/value edits and typed drafts across
+state refreshes. Set commits a draft explicitly; snapshots do not replace it.
+See [multiplayer controls and approximations](gameplay.md).
+
 ## Visible approximations and fixture provenance
 
 This is a game model, not laboratory-grade brewing advice. Constants are directly visible in `src/chemistry/brewing_simulation.gd`. Water pH is a linear calcium/magnesium/bicarbonate heuristic, without malt buffering titration. Ion balance reports the tracked equivalent charge imbalance, not electroneutrality (sodium and other ions are omitted). Gaussian alpha/beta curves, 80% potential extract, exponential conversion and first-order yeast activity are tunable approximations. Energy is capped at 3 kW / (litres * 4.186 kJ/kg/K); evaporation uses 2257 kJ/kg latent heat with no ambient loss. At boiling, this model assigns burner energy to evaporation rather than further sensible heating.
