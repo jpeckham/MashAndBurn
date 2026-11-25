@@ -29,3 +29,21 @@ func run(t) -> void:
 	var mapped: Dictionary = optics.from_batch(state,"gl_compatibility")
 	t.check(mapped.srm >= 2 and mapped.srm <= 50,"batch maps to bounded estimated SRM")
 	t.check(sim.state_hash(state) == before,"optical snapshot consumption is read-only")
+	var display_path := "res://src/visuals/beer_display.gd"
+	if not FileAccess.file_exists(display_path):
+		t.check(false,"bounded beer and thermal display exists")
+		return
+	var display = load(display_path).new()
+	t.root.add_child(display)
+	display.configure(mapped)
+	var count: int = display.get_child_count()
+	for i in range(20): display.configure(hazy)
+	t.check(display.get_child_count() == count,"snapshot changes reuse display nodes")
+	t.check(display.bubbles.size() <= 32 and display.drops.size() <= 24,"nucleation and condensation are bounded")
+	t.check(is_equal_approx(display.material.get_shader_parameter("srm"),hazy.srm),"mapped absorption reaches live shader")
+	t.check(display.foam.visible and display.steam.visible,"foam and hot steam render in fallback")
+	display.configure(clear)
+	t.check(not display.foam.visible and not display.steam.visible,"cold flat chemistry disables foam/steam")
+	display.queue_free()
+	await t.process_frame
+	t.check(not is_instance_valid(display),"display and effect children are freed")
