@@ -98,7 +98,7 @@ func run(t) -> void:
 		server.state.elapsed = 899.9
 		server.state = server.authority.advance(server.state,.1).state
 		server.publish()
-		t.check(await wait_for(t,func(): return client.view.get("phase") == "finished"),"full client receives final results")
+		t.check(await wait_for(t,func(): return client.view.get("phase") == "finished" and feed.panel.visible),"full client applies final results to its deferred visible UI")
 		var own: Dictionary = server.state.results.filter(func(result): return result.player == 2)[0].judge
 		t.check(feed.current == own,"tasting uses exact authoritative categories feedback and score")
 		t.check(feed.summary.text.to_lower().contains("stout"),"tasting names host-selected rubric")

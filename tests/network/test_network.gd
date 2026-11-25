@@ -60,6 +60,12 @@ func run(t) -> void:
 			first.send("brew",{"command":{"action":"set","field":"target_c","value":69.0}})
 			t.check(await wait_for(t,func(): return first.reply_count > replies),"server acknowledges own-batch command")
 			t.check(await wait_for(t,func(): return server.state.players[first.player_id].batch.target_c == 69),"stale real client recovers never-applied intent using authoritative reply clock")
+			await wait_for(t,func(): return not first.pending)
+			for tick in range(40): server.state = server.authority.advance(server.state,.1).state
+			replies = first.reply_count
+			first.send("attack",{"weapon":"wand","target":clients[1].player_id})
+			t.check(await wait_for(t,func(): return first.reply_count >= replies+2 and not first.pending),"stale non-idempotent action receives rejection then one successful retry")
+			t.check(server.state.spills.size() == 1 and server.state.events.filter(func(e): return e.kind == "attack").size() == 1,"clock recovery executes a non-idempotent wand action exactly once")
 			replies = first.reply_count
 			first.send("award_money",{"amount":100000})
 			t.check(await wait_for(t,func(): return first.reply_count > replies),"malicious real client receives rejection")
