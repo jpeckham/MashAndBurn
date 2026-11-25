@@ -1,0 +1,100 @@
+[
+	{
+		"attenuation": 0.0,
+		"batch_id": "batch-42",
+		"chiller": 1.0,
+		"co2_volumes": 0.85,
+		"conversion": 0.0,
+		"fermented_kg": 0.0,
+		"flaws": {
+			"acetaldehyde": 0.0,
+			"astringency": 0.0,
+			"diacetyl": 0.0,
+			"dms": 0.0,
+			"esters": 0.0,
+			"fusels": 0.0,
+			"phenolic": 0.0
+		},
+		"flocculation": 0.0,
+		"grain_kg": 5.0,
+		"gravity": 1.0,
+		"hop_oils": 0.0,
+		"hops": [],
+		"ibu": 0.0,
+		"infected": false,
+		"infection_risk": 0.0,
+		"ions": {
+			"Ca": 50.0,
+			"Cl": 60.0,
+			"HCO3": 60.0,
+			"Mg": 10.0,
+			"SO4": 75.0
+		},
+		"og": 1.0,
+		"ph": 5.4,
+		"pressure_psi": 0.0,
+		"priming_g": 120.0,
+		"regulator_psi": 0.0,
+		"safe_state": false,
+		"seed": 42,
+		"seq": 0,
+		"sim_seconds": 0.0,
+		"stage": "mash",
+		"stage_seconds": 0.0,
+		"sugar_kg": 0.0,
+		"target_c": 66.7,
+		"temp_c": 66.7,
+		"tick": 0,
+		"type": "BatchState",
+		"version": 1,
+		"vigor": 1.0,
+		"volume_l": 20.0,
+		"yeast": "ale"
+	},
+	{
+		"action": "set",
+		"field": "target_c",
+		"seq": 1,
+		"tick": 0,
+		"type": "PlayerCommand",
+		"value": 66.7,
+		"version": 1
+	},
+	{
+		"kind": "disconnect",
+		"safe_state": true,
+		"seq": 1,
+		"tick": 0,
+		"type": "HazardEvent",
+		"version": 1
+	},
+	{
+		"enabled": false,
+		"heater": 0.0,
+		"pump": 0.0,
+		"safe_state": true,
+		"seq": 0,
+		"tick": 0,
+		"type": "HardwareFrame",
+		"version": 1
+	},
+	{
+		"batch_id": "batch-42",
+		"categories": {
+			"appearance": 15,
+			"aroma": 15,
+			"flavor": 15,
+			"mouthfeel": 15,
+			"style_accuracy": 15
+		},
+		"feedback": [
+			"A balanced fictional pale ale."
+		],
+		"score": 75,
+		"seq": 1,
+		"severe_flaws": [],
+		"tick": 100,
+		"type": "JudgeResult",
+		"version": 1
+	}
+]

@@ -1,0 +1,5 @@
+Godot Engine v4.4.1.stable.mono.official.49a5bc7b6 - https://godotengine.org
+
+FAIL: deterministic simulation implemented
+FAIL: Tinseth 60 minute fixture implemented
+RESULT: 2 checks, 2 failures

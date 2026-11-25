@@ -1,0 +1,9 @@
+.godot/
+.tools/
+*.tmp
+*.log
+*.uid
+evidence/*.png
+evidence/*.avi
+evidence/*.gif
+

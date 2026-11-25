@@ -1,0 +1,834 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mash & Burn protocol v1",
+  "description": "Structural schema; protocol.gd additionally enforces mass conservation, score sums and tick/sequence ordering at dispatch.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/BatchState"
+    },
+    {
+      "$ref": "#/$defs/PlayerCommand"
+    },
+    {
+      "$ref": "#/$defs/HazardEvent"
+    },
+    {
+      "$ref": "#/$defs/HardwareFrame"
+    },
+    {
+      "$ref": "#/$defs/JudgeResult"
+    }
+  ],
+  "$defs": {
+    "BatchState": {
+      "type": "object",
+      "required": [
+        "attenuation",
+        "batch_id",
+        "chiller",
+        "co2_volumes",
+        "conversion",
+        "fermented_kg",
+        "flaws",
+        "flocculation",
+        "grain_kg",
+        "gravity",
+        "hop_oils",
+        "hops",
+        "ibu",
+        "infected",
+        "infection_risk",
+        "ions",
+        "og",
+        "ph",
+        "pressure_psi",
+        "priming_g",
+        "regulator_psi",
+        "safe_state",
+        "seed",
+        "seq",
+        "sim_seconds",
+        "stage",
+        "stage_seconds",
+        "sugar_kg",
+        "target_c",
+        "temp_c",
+        "tick",
+        "type",
+        "version",
+        "vigor",
+        "volume_l",
+        "yeast"
+      ],
+      "properties": {
+        "attenuation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "batch_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "chiller": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "co2_volumes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "conversion": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fermented_kg": {
+          "type": "number",
+          "minimum": 0
+        },
+        "flaws": {
+          "type": "object",
+          "required": [
+            "acetaldehyde",
+            "astringency",
+            "diacetyl",
+            "dms",
+            "esters",
+            "fusels",
+            "phenolic"
+          ],
+          "properties": {
+            "acetaldehyde": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "astringency": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "diacetyl": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "dms": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "esters": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "fusels": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "phenolic": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "flocculation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "grain_kg": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "gravity": {
+          "type": "number",
+          "minimum": 0
+        },
+        "hop_oils": {
+          "type": "number",
+          "minimum": 0
+        },
+        "hops": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "required": [
+              "grams",
+              "alpha",
+              "minutes"
+            ],
+            "properties": {
+              "grams": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 500
+              },
+              "alpha": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 0.3
+              },
+              "minutes": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "ibu": {
+          "type": "number",
+          "minimum": 0
+        },
+        "infected": {
+          "type": "boolean"
+        },
+        "infection_risk": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ions": {
+          "type": "object",
+          "required": [
+            "Ca",
+            "Cl",
+            "HCO3",
+            "Mg",
+            "SO4"
+          ],
+          "properties": {
+            "Ca": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2000
+            },
+            "Cl": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2000
+            },
+            "HCO3": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2000
+            },
+            "Mg": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2000
+            },
+            "SO4": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2000
+            }
+          }
+        },
+        "og": {
+          "type": "number",
+          "minimum": 0
+        },
+        "ph": {
+          "type": "number",
+          "minimum": 0
+        },
+        "pressure_psi": {
+          "type": "number",
+          "minimum": 0
+        },
+        "priming_g": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "regulator_psi": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 60
+        },
+        "safe_state": {
+          "type": "boolean"
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "sim_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "mash",
+            "boil",
+            "cooling",
+            "fermentation",
+            "packaging",
+            "judging"
+          ]
+        },
+        "stage_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sugar_kg": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target_c": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "temp_c": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "tick": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "type": {
+          "const": "BatchState"
+        },
+        "version": {
+          "const": 1
+        },
+        "vigor": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "volume_l": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 100
+        },
+        "yeast": {
+          "type": "string",
+          "enum": [
+            "ale",
+            "lager"
+          ]
+        }
+      }
+    },
+    "PlayerCommand": {
+      "type": "object",
+      "required": [
+        "type",
+        "version",
+        "seq",
+        "tick",
+        "action"
+      ],
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "set",
+            "add_hops",
+            "next",
+            "hazard",
+            "fire",
+            "disconnect"
+          ]
+        },
+        "field": {
+          "type": "string",
+          "enum": [
+            "volume_l",
+            "grain_kg",
+            "target_c",
+            "temp_c",
+            "vigor",
+            "chiller",
+            "priming_g",
+            "regulator_psi"
+          ]
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "tick": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "type": {
+          "const": "PlayerCommand"
+        },
+        "value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "version": {
+          "const": 1
+        },
+        "grams": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500
+        },
+        "alpha": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.3
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "field",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "add_hops"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "grams",
+              "alpha"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "volume_l"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0.1,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "grain_kg"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 20
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "target_c"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "temp_c"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "vigor"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "chiller"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "priming_g"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1000
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "set"
+              },
+              "field": {
+                "const": "regulator_psi"
+              }
+            },
+            "required": [
+              "field"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 60
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HazardEvent": {
+      "type": "object",
+      "required": [
+        "kind",
+        "safe_state",
+        "seq",
+        "tick",
+        "type",
+        "version"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "hazard",
+            "fire",
+            "disconnect",
+            "overpressure"
+          ]
+        },
+        "safe_state": {
+          "const": true
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "tick": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "type": {
+          "const": "HazardEvent"
+        },
+        "version": {
+          "const": 1
+        }
+      }
+    },
+    "HardwareFrame": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "heater",
+        "pump",
+        "safe_state",
+        "seq",
+        "tick",
+        "type",
+        "version"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "heater": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "pump": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "safe_state": {
+          "type": "boolean"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "tick": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "type": {
+          "const": "HardwareFrame"
+        },
+        "version": {
+          "const": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "enabled": {
+                    "const": false
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "safe_state": {
+                    "const": true
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "heater": {
+                "const": 0
+              },
+              "pump": {
+                "const": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "JudgeResult": {
+      "type": "object",
+      "required": [
+        "batch_id",
+        "categories",
+        "feedback",
+        "score",
+        "seq",
+        "severe_flaws",
+        "tick",
+        "type",
+        "version"
+      ],
+      "properties": {
+        "batch_id": {
+          "type": "string"
+        },
+        "categories": {
+          "type": "object",
+          "required": [
+            "appearance",
+            "aroma",
+            "flavor",
+            "mouthfeel",
+            "style_accuracy"
+          ],
+          "properties": {
+            "appearance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "aroma": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "flavor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "mouthfeel": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "style_accuracy": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            }
+          }
+        },
+        "feedback": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "severe_flaws": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tick": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "type": {
+          "const": "JudgeResult"
+        },
+        "version": {
+          "const": 1
+        }
+      }
+    }
+  }
+}
