@@ -58,11 +58,19 @@ def create_app(settings, *, controller=None):
     app.state.controller = control
     app.state.dispatcher = dispatcher
 
-    def valid_token(value):
-        return isinstance(value, str) and value.isascii() and len(value) <= 263 and secrets.compare_digest(value, "Bearer " + settings.token)
+    def valid_token(value, expected):
+        return isinstance(expected, str) and isinstance(value, str) and value.isascii() and len(value) <= 263 and secrets.compare_digest(value, "Bearer " + expected)
 
-    def authorize(authorization: str | None = Header(default=None)):
-        if not valid_token(authorization):
+    def authorize_telemetry(authorization: str | None = Header(default=None)):
+        if not valid_token(authorization, settings.token):
+            raise HTTPException(401, "Telemetry authentication required")
+
+    def authorize_operator(authorization: str | None = Header(default=None)):
+        if not valid_token(authorization, settings.operator_token):
+            raise HTTPException(401, "Separate local operator authentication required")
+
+    def authorize_any(authorization: str | None = Header(default=None)):
+        if not (valid_token(authorization, settings.token) or valid_token(authorization, settings.operator_token)):
             raise HTTPException(401, "Authentication required")
 
     def local_action(request, action=None):
@@ -71,36 +79,36 @@ def create_app(settings, *, controller=None):
         if action is not None and not action.confirm:
             raise HTTPException(400, "Explicit local action required")
 
-    @app.get("/api/v1/status", dependencies=[Depends(authorize)])
+    @app.get("/api/v1/status", dependencies=[Depends(authorize_any)])
     async def status():
         return dict(armed=control.armed, fault=control.fault, outputs=control.outputs, transport=settings.transport, physical_operation=False)
 
-    @app.post("/api/v1/arm", dependencies=[Depends(authorize)])
+    @app.post("/api/v1/arm", dependencies=[Depends(authorize_operator)])
     async def arm(request: Request, action: LocalAction):
         local_action(request, action)
         if not control.arm():
             raise HTTPException(409, "Fresh healthy telemetry and verified mock safeguards required")
         return dict(armed=True)
 
-    @app.post("/api/v1/disarm", dependencies=[Depends(authorize)])
+    @app.post("/api/v1/disarm", dependencies=[Depends(authorize_operator)])
     async def disarm(request: Request):
         local_action(request)
         control.trip("explicit-local-disarm")
         return dict(armed=False)
 
-    @app.post("/api/v1/estop", dependencies=[Depends(authorize)])
+    @app.post("/api/v1/estop", dependencies=[Depends(authorize_operator)])
     async def estop(request: Request):
         local_action(request)
         control.emergency_stop()
         return dict(armed=False)
 
-    @app.post("/api/v1/estop/clear", dependencies=[Depends(authorize)])
+    @app.post("/api/v1/estop/clear", dependencies=[Depends(authorize_operator)])
     async def clear_estop(request: Request, action: LocalAction):
         local_action(request, action)
         control.clear_estop()
         return dict(armed=False, requires_fresh_frame=True)
 
-    @app.post("/api/v1/psyops/roast", dependencies=[Depends(authorize)])
+    @app.post("/api/v1/psyops/roast", dependencies=[Depends(authorize_telemetry)])
     async def private_alert(body: RoastRequest):
         result = await dispatcher.dispatch(body)
         return JSONResponse(result, status_code=202 if result["status"] == "sent" else 200)
@@ -108,7 +116,7 @@ def create_app(settings, *, controller=None):
     @app.websocket("/api/v1/telemetry")
     async def telemetry(socket: WebSocket):
         nonlocal active_socket
-        if not valid_token(socket.headers.get("authorization")) or socket.client is None or not is_loopback(socket.client.host) or active_socket is not None:
+        if not valid_token(socket.headers.get("authorization"), settings.token) or socket.client is None or not is_loopback(socket.client.host) or active_socket is not None:
             await socket.close(code=1008)
             return
         active_socket = socket  # Reserve ownership before accepting another connection.

@@ -53,6 +53,10 @@ class BridgeController:
         return False
 
     def ingest(self, packet):
+        # Check the OLD heartbeat before a fresh frame can replace its timestamp.
+        # A scheduler pause must latch stop even when the next input looks healthy.
+        if self.armed and not self.fresh():
+            self.trip("heartbeat-lost-before-frame")
         try:
             candidate = HardwareFrame.model_validate(packet)
         except (ValidationError, TypeError, ValueError):
@@ -118,8 +122,8 @@ class BridgeController:
         if now < self.last_tick:
             return self.trip("clock-regression")
         self.last_tick = now
-        if self.armed and (not self.fresh() or self.frame_fault()):
-            return self.trip(self.frame_fault() or "heartbeat-lost")
+        if self.armed and (not self.healthy or not self.fresh() or self.frame_fault()):
+            return self.trip(self.frame_fault() or "heartbeat-or-interlock-lost")
         if now + 0.000000001 < self.next_tick:
             return False
         self.next_tick = now + self.INTERVAL  # Skip missed slots; never burst stale work.
@@ -177,4 +181,4 @@ class BridgeController:
 
     def clear_estop(self):
         self.local_estop = False
-        self.healthy = False  # Require a subsequent sensor frame and explicit arm.
+        self.trip("e-stop-cleared")  # Also safe if called during armed operation.

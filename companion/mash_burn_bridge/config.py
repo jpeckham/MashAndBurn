@@ -33,6 +33,7 @@ class Destination:
 @dataclass(frozen=True)
 class Settings:
     token: str = field(repr=False)
+    operator_token: str | None = field(default=None, repr=False)
     transport: str = "mock-serial"
     notifications_enabled: bool = False
     notification_consent: bool = False
@@ -42,6 +43,8 @@ class Settings:
     def __post_init__(self):
         if not self.token.isascii() or not 32 <= len(self.token) <= 256 or any(ord(char) < 33 or ord(char) > 126 for char in self.token):
             raise ValueError("MAB_BRIDGE_TOKEN must contain32–256 characters")
+        if self.operator_token is not None and (not self.operator_token.isascii() or not 32 <= len(self.operator_token) <= 256 or any(ord(char) < 33 or ord(char) > 126 for char in self.operator_token) or self.operator_token == self.token):
+            raise ValueError("Operator credential must be a distinct32–256 character ASCII secret")
         if self.transport not in {f"{mode}-{kind}" for mode in ("mock", "physical") for kind in ("serial", "mqtt", "websocket")}:
             raise ValueError("Unsupported transport configuration")
         if type(self.notifications_enabled) is not bool or type(self.notification_consent) is not bool:
@@ -56,6 +59,7 @@ class Settings:
         channels = json.loads(os.environ.get("MAB_PRIVATE_CHANNELS_JSON", "{}"))
         return cls(
             token=os.environ.get("MAB_BRIDGE_TOKEN", ""),
+            operator_token=os.environ.get("MAB_OPERATOR_TOKEN") or None,
             transport=os.environ.get("MAB_TRANSPORT", "mock-serial"),
             notifications_enabled=os.environ.get("MAB_NOTIFICATIONS_ENABLED", "false") == "true",
             notification_consent=os.environ.get("MAB_NOTIFICATION_CONSENT", "false") == "true",

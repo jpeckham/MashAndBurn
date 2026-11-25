@@ -5,7 +5,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import pytest
 from fastapi.testclient import TestClient
 
-from test_app import AUTH, TOKEN
+from test_app import TELEMETRY_AUTH as AUTH, TOKEN
 
 
 @pytest.fixture

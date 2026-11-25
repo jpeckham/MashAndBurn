@@ -8,7 +8,9 @@ from starlette.websockets import WebSocketDisconnect
 from test_controller import Clock, frame
 
 TOKEN = "hosted-test-token-with-no-real-account-credentials"
-AUTH = {"Authorization": "Bearer " + TOKEN}
+OPERATOR_TOKEN = "hosted-test-distinct-local-operator-credential"
+TELEMETRY_AUTH = {"Authorization": "Bearer " + TOKEN}
+AUTH = {"Authorization": "Bearer " + OPERATOR_TOKEN}
 
 
 @pytest.fixture
@@ -20,7 +22,7 @@ def service():
 
     clock = Clock()
     controller = BridgeController(MockTransport(), monotonic=clock, unix_time=clock)
-    app = create_app(Settings(token=TOKEN), controller=controller)
+    app = create_app(Settings(token=TOKEN, operator_token=OPERATOR_TOKEN), controller=controller)
     with TestClient(app, client=("127.0.0.1", 12345)) as client:
         yield client, controller, clock
 
@@ -54,7 +56,7 @@ def test_auth_required_and_no_fresh_frame_cannot_arm(service):
 
 def test_real_websocket_fault_latch_rearm_and_disconnect(service):
     client, controller, clock = service
-    with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:
+    with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH) as socket:
         assert socket.receive_json()["transport"].startswith("mock-")
         socket.send_json(frame(clock))
         assert socket.receive_json()["ok"]
@@ -78,30 +80,30 @@ def test_real_websocket_fault_latch_rearm_and_disconnect(service):
 
 def test_duplicate_socket_cannot_disarm_or_replace_active_owner(service):
     client, _, clock = service
-    with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as first:
+    with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH) as first:
         first.receive_json()
         first.send_json(frame(clock))
         assert first.receive_json()["ok"]
         assert client.post("/api/v1/arm", headers=AUTH, json={"confirm": True}).status_code == 200
         with pytest.raises(WebSocketDisconnect):
-            with client.websocket_connect("/api/v1/telemetry", headers=AUTH):
+            with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH):
                 pass
         assert status(client)["armed"]
 
 
 def test_telemetry_credential_cannot_authorize_operator_actions(service):
     client, _, clock = service
-    with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:
+    with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH) as socket:
         socket.receive_json()
         socket.send_json(frame(clock))
         assert socket.receive_json()["ok"]
-        assert client.post("/api/v1/arm", headers=AUTH, json={"confirm": True}).status_code == 401
-        assert client.post("/api/v1/estop/clear", headers=AUTH, json={"confirm": True}).status_code == 401
+        assert client.post("/api/v1/arm", headers=TELEMETRY_AUTH, json={"confirm": True}).status_code == 401
+        assert client.post("/api/v1/estop/clear", headers=TELEMETRY_AUTH, json={"confirm": True}).status_code == 401
 
 
 def test_clearing_estop_while_armed_is_a_safe_disarm(service):
     client, controller, clock = service
-    with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:
+    with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH) as socket:
         socket.receive_json()
         socket.send_json(frame(clock))
         socket.receive_json()
@@ -118,7 +120,7 @@ def test_clearing_estop_while_armed_is_a_safe_disarm(service):
 
 def test_heartbeat_estop_and_fresh_local_rearm(service):
     client, controller, clock = service
-    with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:
+    with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH) as socket:
         socket.receive_json()
         socket.send_json(frame(clock))
         socket.receive_json()
@@ -149,7 +151,7 @@ def test_heartbeat_estop_and_fresh_local_rearm(service):
 def test_oversized_frame_fails_safe(service):
     client, controller, clock = service
     with pytest.raises(WebSocketDisconnect):
-        with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:
+        with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH) as socket:
             socket.receive_json()
             socket.send_json(frame(clock))
             socket.receive_json()
@@ -163,7 +165,7 @@ def test_oversized_frame_fails_safe(service):
 def test_remote_peer_cannot_arm_with_even_a_valid_token():
     from mash_burn_bridge.app import create_app
     from mash_burn_bridge.config import Settings
-    with TestClient(create_app(Settings(token=TOKEN)), client=("192.0.2.55", 12345)) as remote:
+    with TestClient(create_app(Settings(token=TOKEN, operator_token=OPERATOR_TOKEN)), client=("192.0.2.55", 12345)) as remote:
         assert remote.post("/api/v1/arm", headers=AUTH, json={"confirm": True}).status_code == 403
 
 
