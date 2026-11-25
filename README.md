@@ -1,5 +1,7 @@
 # Mash & Burn — playable prototype
 
+Development continues in Codex. See [current progress and execution constraints](docs/AI-GOAL-PROGRESS.md) for the full remaining scope. **Do not run the local commands below on James's PC during this work**; Godot validation and installer checks will use GitHub-hosted runners. The commands and results below are inherited documentation, not fresh verification.
+
 Godot 4.4.1 Mono is installed at `C:\Program Files\Godot\Godot_v4.4.1-stable_mono_win64_console.exe` (reported `4.4.1.stable.mono.official.49a5bc7b6`). GDScript requires no .NET SDK. Python 3.11.9 is available at `C:\Users\james\AppData\Local\Programs\Python\Python311\python.exe`; it is optional and not the simulation runtime. No packages or setup install is required.
 
 FFmpeg 8.1.1 is available at `C:\ffmpeg\bin\ffmpeg.exe` and resolves on PATH in the MAB-14 check. It is optional for recording and is not a game dependency. See [desktop proof collection and tool logs](evidence/desktop/README.md); recording requires owner-enabled desktop access, or owner-provided media for inspection.

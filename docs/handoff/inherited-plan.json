@@ -1,0 +1,740 @@
+[
+  {
+    "id": "pl_058178650bf9",
+    "projectId": "e74189001c",
+    "home": "ws:chat-71164648",
+    "status": "active",
+    "draftRev": 10,
+    "autonomy": "gated",
+    "maxParallel": 3,
+    "testsAt": "milestone",
+    "body": {
+      "title": "Mash & Burn: playable PC prototype and companion services",
+      "goal": "Implement docs/prompts/mash_burn_prd.md from the current PRD-only repository as a deterministic Godot PC brewing game, followed by multiplayer fire-and-claims gameplay, advanced visuals and an interlocked hardware companion, with honest capability and validation reports.",
+      "milestones": [
+        {
+          "id": "vertical-slice",
+          "title": "Playable brewing vertical slice",
+          "criteria": [
+            "A documented Godot executable launches project.godot into a controllable 3D garage; a full recipe proceeds through mash, boil, cooling, fermentation and packaging to judging.",
+            "Seeded replay produces identical state hashes at fixed ticks; unit tests cover mass/energy limits, temperature and time unit conversion, invalid inputs and supplied formula fixtures.",
+            "A score below 45/100 or severe specified off-flavors creates at least 500 fictional local feed personas, with bounded rendering and no outbound network dispatch.",
+            "Run the milestone headless suite once and record a desktop smoke demonstration of a complete batch; record actual tool versions and any unavailable tools."
+          ],
+          "tasks": [
+            {
+              "id": "contracts-chemistry",
+              "title": "Build deterministic brewing simulation and shared contracts",
+              "acceptance": [
+                "Begin with failing deterministic and formula-fixture tests, implement minimally, then run focused tests with godot --headless --path . --script tests/run_all.gd -- --suite chemistry and --suite contracts; both exit 0.",
+                "Contracts define units, bounds, versioning, ordering, simulation vs wall-clock time, hazard safe-state and malformed/unsupported message rejection; JSON examples round-trip.",
+                "Test fixed seed/tick equivalence, negative/nonfinite amounts, near-zero volume, timestep bounds, mash range 144\u2013162 F, pH target 5.2\u20135.6, increasing bitterness with boil exposure, cooling infection and overpriming.",
+                "Document Python availability and install/locate Godot without silently substituting another engine; document simplifications and reproducible fixture provenance."
+              ],
+              "blockedBy": [],
+              "goal": "Create the game foundation and complete testable brewing state transitions independent of graphics.",
+              "context": "The repository contains only docs/prompts/mash_burn_prd.md. Create project.godot and a built-in headless SceneTree test harness rather than depending on an unspecified test addon. Define protocol v1 BatchState, PlayerCommand, HazardEvent, JudgeResult and HardwareFrame schemas in src/contracts/, reserving hazard/fire/disconnect events now. BrewingSimulation.advance(state, command, dt_seconds) returns a new state plus events; all random choices take an explicit seed. Include water ion balance and approximate pH, alpha/beta enzyme temperature curves, conversion/scorching, Tinseth IBU/gravity/vigor and hop oils, cooling/infection probability, yeast attenuation/flocculation/temperature-driven esters and fusels, CO2 pressure-temperature and priming/overpressure. Parameters and approximations must be visible; no claim of laboratory-grade accuracy. Commit a short architecture/design note with the implementation, not by changing this PRD.",
+              "estimate": 5,
+              "touches": [
+                "project.godot",
+                "src/contracts/",
+                "src/chemistry/",
+                "tests/chemistry/",
+                "tests/contracts/",
+                "tests/run_all.gd",
+                "README.md",
+                ".gitignore"
+              ],
+              "issueId": "i_e167f70d75fe4f"
+            },
+            {
+              "id": "garage-loop",
+              "title": "Make brewing playable in a 3D garage",
+              "acceptance": [
+                "A new player can start, save/reload and complete a batch using onscreen controls without a developer console.",
+                "UI shows pH, ions, gravity, IBU, temperature, fermentation, carbonation and flaws from simulation state; invalid settings produce useful feedback.",
+                "Focused presentation checks cover action routing, save version validation, corrupted saves, and deterministic continuation after reload; static GDScript checks pass."
+              ],
+              "blockedBy": [
+                "contracts-chemistry"
+              ],
+              "goal": "Expose the complete brewing loop with understandable controls and status feedback.",
+              "context": "Consume protocol v1 and BrewingSimulation from contracts-chemistry. Build first-person garage interaction, mash tun/kettle/chiller/fermenter/packaging stations, recipe inputs, temperature/flow controls, visible progress, pause/time acceleration and save/load. Put presentation extension points for gameplay and render resources in src/presentation/ so later milestones can register isolated modules without editing these files concurrently. Assets must be original placeholders or have recorded licenses.",
+              "estimate": 5,
+              "touches": [
+                "src/presentation/",
+                "scenes/garage/",
+                "assets/prototype/",
+                "tests/presentation/"
+              ],
+              "issueId": "i_7f71b188d77642"
+            },
+            {
+              "id": "judging-feed",
+              "title": "Add beer judging and the fictional social feed",
+              "acceptance": [
+                "Tests pin the boundary: 44 triggers, 45 does not trigger on score alone, severe diacetyl or acetaldehyde triggers independently; one batch triggers once.",
+                "All generated accounts and imagery remain fictional, with no external platform credentials or network calls; seeded content is reproducible.",
+                "The end-of-batch UI explains category scores and brewing causes and can browse the simulated feed without freezing.",
+                "Run the whole headless suite once and a desktop full-batch smoke test; attach logs and screenshots to the milestone review."
+              ],
+              "blockedBy": [
+                "garage-loop"
+              ],
+              "goal": "Close the brewing loop with category scores, actionable tasting feedback and the PRD's sandbox consequence.",
+              "context": "Consume BatchState and emit JudgeResult with aroma, appearance, flavor, mouthfeel and style accuracy totaling 100. Implement SocialPsyopsService as a local sandbox only in this milestone; optional external delivery belongs to the companion milestone. Bound feed materialization and render virtualization while preserving at least 500 procedural personas.",
+              "estimate": 3,
+              "touches": [
+                "src/social/",
+                "scenes/social/",
+                "tests/social/",
+                "docs/social.md"
+              ],
+              "issueId": "i_5ca3ec22750d4c"
+            },
+            {
+              "id": "desktop-batch-proof",
+              "title": "Collect and inspect actual desktop batch evidence",
+              "acceptance": [
+                "Begin only after desktop-proof-access is concretely satisfied. If access/media remains unavailable, retain incomplete status and report that prerequisite; do not submit a procedure-only handoff as completed work.",
+                "Record and inspect video or ordered annotated screenshots with date, machine, operator, exact branch/commit and launch command. Index artifact paths and timestamps/frame references against criteria 1 and 4.",
+                "Observe garage geometry, WASD movement, right-mouse look, E interaction, station visits, readable controls/metrics, readiness and pause/resume or speed behavior.",
+                "Observe a complete normal recipe through mash, boil, cooling, fermentation, packaging and five-category judging/cause feedback. Demonstrate mid-batch save/reload and restored stage/settings/metrics.",
+                "Observe a deliberately flawed batch through judging and readable fictional feed pages 1, 2 and 32 with row replacement. Support bounded-rendering claims with existing tests; do not claim screenshots prove memory bounds.",
+                "Link inspected media/results from evidence/milestone-review.md and README.md. Reconcile MAB-2/MAB-3 desktop acceptance and MAB-14 outstanding items if live tools permit; otherwise identify remaining items without claiming checkbox edits. Logs and checklists alone cannot satisfy this task.",
+                "Reuse passing automated results absent product changes. If desktop testing finds defects, fix with focused regression coverage where meaningful, run relevant checks and one combined suite after changes. Submit complete inspected proof for independent recheck only when all observations exist; do not self-pass the milestone."
+              ],
+              "blockedBy": [
+                "judging-feed",
+                "desktop-proof-access",
+                "desktop-access-verification"
+              ],
+              "goal": "Fix milestone criterion 1 with observed usable garage controls and a complete visible recipe; fix criterion 4 with inspected normal/flawed batch desktop media, save/reload, judging, feed paging and provenance.",
+              "context": "STOP EXECUTION: James reports every game run locks up his whole PC. No game launch, capture, Godot tests/editor, or automatic retry. All desktop evidence remains incomplete; previous headless evidence is unchanged. Only read existing source/config/logs for diagnosis until a safer bounded approach is agreed with James. MAB-15 choice/done status does not prove access. Resume full media collection only after both the no-game-launches decision is resolved with James and effective access/media is verified. Do not submit checklist-only proof or another unchanged recheck.",
+              "estimate": 2,
+              "touches": [
+                "evidence/desktop/",
+                "evidence/milestone-review.md",
+                "README.md"
+              ],
+              "issueId": "i_54fc01178af041"
+            },
+            {
+              "id": "desktop-proof-access",
+              "title": "Enable Godot observation or supply desktop recordings",
+              "acceptance": [
+                "UNMET: supported Godot window observation succeeds after owner-enabled permission, OR actual owner media is available for inspection. Latest supported attempt was denied; selecting Enable Godot access and done status do not satisfy this item.",
+                "UNMET: the selected route yields inspectable evidence. For the access route, attach a successful authorized Godot capture with provenance; for the owner-media alternative, supply attributable recordings covering controls/save-reload/judging and flawed feed pages 1, 2 and 32. No capture/media currently exists."
+              ],
+              "blockedBy": [],
+              "goal": "Unblock milestone criteria 1 and 4 by enabling authorized Godot desktop observation or supplying actual owner-recorded complete-batch media for inspection.",
+              "context": "James selected Enable Godot access, but subsequent supported capture remained denied. He now reports every game run locks up his whole PC. Do not request a launch, new recording or retry from him as the next step. Effective access and desktop evidence remain unmet despite task status. No game launches applies across this plan until a safer approach is agreed; investigate existing source/config/logs only.",
+              "estimate": 1,
+              "assignee": "me",
+              "decision": {
+                "question": "How will you provide the desktop access or recordings needed for criteria 1 and 4?",
+                "options": [
+                  {
+                    "label": "Enable Godot access",
+                    "description": "Enable Godot through Beluga's supported Computer Use permission flow; approved observation must be confirmed."
+                  },
+                  {
+                    "label": "Provide my recordings",
+                    "description": "Supply normal and flawed batch desktop recordings following evidence/desktop/ instructions for agent inspection."
+                  }
+                ]
+              },
+              "issueId": "i_fe429ead11184c"
+            },
+            {
+              "id": "desktop-access-verification",
+              "title": "Verify effective Godot access before resuming proof",
+              "acceptance": [
+                "Use supported Computer Use access only after owner permission is effective; obtain and inspect a real Godot window capture, recording exact executable/window identity, date/machine/operator and branch/commit. A process/window listing is insufficient. Alternatively inspect actual owner-provided media with equivalent provenance.",
+                "If the permission still denies access, document the exact denial and remaining owner action, leave this task incomplete, and keep MAB-14 blocked. Do not cycle identical attempts or submit another milestone recheck based on tool logs/checklists alone.",
+                "On successful capture/media inspection, link the actual artifact and correct the MAB-15 prerequisite evidence/status using available plan/task mechanisms. If those tools cannot edit task state/checklists, explicitly identify that limitation and request reconciliation; do not falsely claim edits.",
+                "Only verified access/media releases MAB-14. Full controls, normal and flawed batches, save/reload/judging and feed page proof remain MAB-14 work, not replaced by this initial capture."
+              ],
+              "blockedBy": [],
+              "goal": "Unblock milestone criteria 1 and 4 by verifying effective authorized Godot observation or inspecting supplied owner media; prevent task status from substituting for actual access and recordings.",
+              "context": "STOP EXECUTION: James reports every game run locks up his whole PC. Do not launch Godot or attempt capture to verify permissions. No automatic retries, headless tests or editor runs. Access remains unverified and desktop proof remains incomplete. Only inspect existing source/config/logs without running Godot; agree a safer bounded approach with James before any execution. A later successful supported capture or inspected owner media is still required; owner choice/task status is insufficient.",
+              "estimate": 1,
+              "touches": [
+                "evidence/desktop/access-verification/"
+              ],
+              "issueId": "i_6db42b8b201f4f"
+            }
+          ],
+          "goal": "A launchable garage brewing game with deterministic chemistry, judging and a fictional local feed.",
+          "dependsOn": []
+        },
+        {
+          "id": "multiplayer-gameplay",
+          "title": "Multiplayer sabotage, fire and claims",
+          "criteria": [
+            "Two local clients finish a server-authoritative 15-minute round; a scripted eight-client test confirms supported capacity, and unsupported joins are rejected.",
+            "All PRD arsenal and sabotage categories produce bounded in-game effects; fire enters a 45-second staging window with escape, inspection and payout/penalty outcomes.",
+            "Disconnection, late commands, duplicate input, reconnect and malicious out-of-range input tests pass; no client can award itself damage or money.",
+            "Run the combined suite once and record a two-client desktop session with server logs."
+          ],
+          "tasks": [
+            {
+              "id": "rounds-combat",
+              "title": "Implement authoritative multiplayer rounds and brewing sabotage",
+              "acceptance": [
+                "Write failing tests for lobby capacity, round timing, command authorization and item effects before implementation.",
+                "Server owns simulation, cooldowns, damage, scoring and clock; clients cannot mutate authoritative state; missing/duplicate/reordered inputs and disconnect cleanup are tested.",
+                "All five arsenal categories and three sabotage types have deterministic effects and feedback; local scripted 2- and 8-client smoke commands are documented."
+              ],
+              "blockedBy": [],
+              "goal": "Add lobbies, timed competitive brewing, combat and rival equipment interference.",
+              "context": "Consume v1 commands/state/hazard events from vertical-slice and register via presentation extension points. Use Godot ENet authoritative host/server, 2\u20138 participants, 15-minute rounds, host-selected style and final judging. Resolve the PRD's table mentioning four players using its explicit 2\u20138 functional requirement. Arsenal includes sanitizing wand, wort ladle, hydrometer melee, keg projectile and overprimed bottle projectile; sabotage includes chiller damage, contamination and burner changes. These are fictional game mechanics only.",
+              "estimate": 5,
+              "touches": [
+                "src/gameplay/network/",
+                "src/gameplay/combat/",
+                "src/gameplay/rounds/",
+                "scenes/gameplay/",
+                "tests/gameplay/network/",
+                "tests/gameplay/combat/"
+              ],
+              "issueId": "i_1adb2f526e7d42"
+            },
+            {
+              "id": "fire-claims",
+              "title": "Implement fire propagation, staging and insurance inspection",
+              "acceptance": [
+                "Tests pin 45 seconds, one payout at 1.5 times replacement value, failed-claim penalties, valid escape and lethal smoke boundaries, and no replay/double-award exploit.",
+                "Fire and staging transitions emit disarm before further telemetry can suggest actuation; clients cannot override the latch.",
+                "UI exposes rules and outcomes while keeping the scenario fictional; run the milestone combined suite once and capture a two-client fire/claims session."
+              ],
+              "blockedBy": [
+                "rounds-combat"
+              ],
+              "goal": "Complete the fictional fire-and-claims gameplay loop and emit mandatory hardware-disarm events.",
+              "context": "Use abstract game heat/fuel/smoke fields, not real-world ignition procedures. Model PRD ignition categories, propagation, smoke inhalation, escape, and a server-timed 45-second staging window with fictional receipts/equipment/evidence objects. Adjuster uses game burn-pattern, valve and character-tell evidence with seeded verdicts; passing pays 150% replacement value, failure causes penalties/bankruptcy. Emit HazardEvent and latch disarm immediately on fire or staging entry for companion consumption.",
+              "estimate": 5,
+              "touches": [
+                "src/gameplay/fire/",
+                "src/gameplay/claims/",
+                "scenes/gameplay/fire/",
+                "scenes/gameplay/claims/",
+                "tests/gameplay/fire/",
+                "tests/gameplay/claims/",
+                "docs/gameplay.md"
+              ],
+              "issueId": "i_48654467f8cf45"
+            }
+          ],
+          "goal": "A server-authoritative playable 2\u20138 player round with fictional sabotage and claims consequences.",
+          "dependsOn": [
+            "vertical-slice"
+          ]
+        },
+        {
+          "id": "visuals-companion",
+          "title": "Beer visuals and safe companion bridge",
+          "criteria": [
+            "Representative SRM 2\u201340+, haze, foam, nucleation, steam, condensation and fire demo scenes render; renderer tier and measured FPS/frametime are documented on the actual machine.",
+            "A mock companion receives validated v1 HardwareFrame telemetry at 10 Hz and fails safely on malformed, stale, disconnected, fire, E-stop, sensor-error and thermal-cutoff inputs.",
+            "Outbound notifications remain disabled by default and pass authentication, explicit consent, deduplication and rate-limit tests against a local receiver.",
+            "Run the combined game and companion suites once and capture visual comparison and mock disconnect/E-stop evidence; physical operation is not claimed without hardware proof."
+          ],
+          "tasks": [
+            {
+              "id": "beer-rendering",
+              "title": "Implement beer optics, foam, steam and fire rendering",
+              "acceptance": [
+                "Focused tests check SRM/haze/foam mappings, clamping, finite shader inputs and GPU feature fallback.",
+                "Capture fixed-camera SRM 2, 10, 20 and 40+, clear/hazy and foam/steam/fire comparisons with licensed or original assets.",
+                "Measure frame timing and document GPU/renderer/settings and all optical/physics approximations; provide lower-feature fallback without claiming full spectral ray tracing."
+              ],
+              "blockedBy": [],
+              "goal": "Make simulation chemistry visibly affect beer and garage effects within Godot's verified capabilities.",
+              "context": "Consume read-only BatchState and generic HazardEvent via vertical-slice extension points. Create standalone fire event fixtures so work can run alongside multiplayer-gameplay. Implement parameterized SRM absorption/transmission, haze scattering approximation, protein/IBU-driven foam retention, nucleation particles, steam, condensation, metal reflections and fire/smoke. Godot Forward+ is a prototype renderer, not a promise of UE hardware ray tracing or PS5 parity.",
+              "estimate": 5,
+              "touches": [
+                "src/rendering/",
+                "shaders/",
+                "assets/rendering/",
+                "scenes/rendering/",
+                "tests/rendering/",
+                "docs/rendering.md"
+              ],
+              "issueId": "i_6b204c94693541"
+            },
+            {
+              "id": "companion-services",
+              "title": "Build mock hardware HAL and private notification service",
+              "acceptance": [
+                "Use pytest tests first for schema bounds/nonfinite values, version rejection, 10 Hz scheduling, sequence replay and stale-frame rejection.",
+                "Safety tests prove disarm is latched, outputs go safe and queued commands are discarded for every fault, temperature >=102 C and fire/staging; rearm requires a fresh explicit local action and healthy interlocks.",
+                "Hardware-free operation and all transport mock round-trips pass; real transport adapters cannot arm with unverified firmware safeguards.",
+                "Webhook tests cover disabled default, missing consent, invalid token, destination allowlist, deduplication, rate limits, bounded retries and a local fake receiver; no public bot APIs or targeting.",
+                "Run focused companion pytest and GDScript hardware checks, then the combined milestone suites once; document local launch and stop instructions."
+              ],
+              "blockedBy": [],
+              "goal": "Create a decoupled FastAPI daemon, transport adapters and fail-safe authorization boundary.",
+              "context": "Consume protocol v1 frames with step, target_temp_c, pump_duty, valve_states and hop_drop_hopper; transmit at 10 Hz with monotonic sequence, timestamp and hazard status. Implement mocked Serial/MQTT/WebSocket adapters and configurable real transport backends behind explicit arming. Tier 1 covers probes/PID relays/dosing/hop servos. Tier 2 exposes bounded waypoint planning and a simulated arm only until calibrated collision/workspace limits exist. The bridge must stop on lost heartbeat, malformed/stale frames, missing sensor data, E-stop, fire/staging, disconnection and temperature >=102 C; independently implemented firmware cutoff is mandatory before real actuation. No automatic rearm. FastAPI POST /api/v1/psyops/roast accepts authenticated local requests and forwards only to explicitly configured consenting private channels. Document configuration names without reading .env files.",
+              "estimate": 5,
+              "touches": [
+                "companion/",
+                "src/hardware/",
+                "tests/hardware/",
+                "docs/companion.md"
+              ],
+              "issueId": "i_080ae2d4cae546"
+            }
+          ],
+          "goal": "Improve renderer fidelity and expose mock telemetry and optional consenting private-channel notifications.",
+          "dependsOn": [
+            "vertical-slice"
+          ]
+        },
+        {
+          "id": "integrated-validation",
+          "title": "Validate and package the combined prototype",
+          "criteria": [
+            "Fresh-checkout instructions reproduce the game and mock companion; tests pass and no secret values or generated build products enter version control.",
+            "An end-to-end demo covers multiplayer brewing, judging/feed, sabotage/fire, the 45-second claims window and immediate companion disarm with presentation effects enabled.",
+            "The PRD coverage report distinguishes implemented, approximated, blocked by external hardware/tooling and deferred PS5/full-ray-tracing goals, with proof links."
+          ],
+          "tasks": [
+            {
+              "id": "package-proof",
+              "title": "Integrate, validate and document the playable build",
+              "acceptance": [
+                "Run godot --headless --path . --script tests/run_all.gd and companion pytest once on the combined tree; capture commands, versions, exit codes and failures honestly.",
+                "Execute a scripted eight-client session plus a desktop two-client end-to-end session with renderer and mock companion enabled; verify fire/staging disables bridge output before any subsequent actuator frame.",
+                "Provide Windows launch/test/export instructions, license inventory, seeded demo recipe and honest PRD traceability report; exclude secret values and generated artifacts.",
+                "Attach review findings and resolve material defects before moving to review; do not mark the work shipped without merge/release evidence."
+              ],
+              "blockedBy": [],
+              "goal": "Resolve integration defects and produce reviewable prototype evidence and startup instructions.",
+              "context": "Wait for both parallel milestones. Integration uses the v1 contracts and registered extension points; if a defect requires touching module files, include that exact change in this task's review. Run Superpowers verification-before-completion and request a whole-change review. Owner-only external steps such as engine license/dev-kit setup, physical wiring and account secrets remain documented prerequisites, never silently simulated as verified.",
+              "estimate": 3,
+              "touches": [
+                "tests/integration/",
+                "scripts/",
+                "docs/validation/",
+                "README.md"
+              ],
+              "issueId": "i_180594f920a34f"
+            }
+          ],
+          "goal": "Make the complete prototype reproducibly launchable and document exactly which PRD targets are demonstrated.",
+          "dependsOn": [
+            "multiplayer-gameplay",
+            "visuals-companion"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "prototype-stack",
+          "text": "Proposed implementation default: Godot 4.3+ Forward+ for the PC prototype and Python 3.11+ FastAPI for companion services. Unreal offers a stronger console and hardware-ray-tracing route but adds substantial toolchain cost to this empty repository. Godot is the PRD's explicit prototype alternative; PS5 porting, full hardware ray tracing and measured realism remain separately unverified targets.",
+          "terms": [
+            "Godot",
+            "FastAPI"
+          ]
+        },
+        {
+          "id": "simulation-contracts",
+          "text": "Use five module boundaries matching the PRD: chemistry, rendering, gameplay, simulated social, hardware. Versioned SI-unit JSON schemas and seeded fixed-step simulation separate modules; temperature uses Celsius internally, presentation can show Fahrenheit. Proposed paths below are new files; only docs/prompts/mash_burn_prd.md exists today.",
+          "terms": [
+            "versioned",
+            "fixed-step"
+          ]
+        },
+        {
+          "id": "fictional-social",
+          "text": "Keep procedural roast accounts, images and reviewer personas fictional inside the game. Optional outbound notifications go only to an explicitly consenting private test channel with authentication, consent and rate limits; do not automate targeted harassment, public bot swarms, impersonation or fabricated photos of real people.",
+          "terms": [
+            "private test channel",
+            "fictional"
+          ]
+        },
+        {
+          "id": "hardware-gate",
+          "text": "Hardware runs in mock mode by default. Real adapters remain disarmed unless the owner explicitly enables them and independent firmware E-stop, watchdog, sensor and thermal protections are demonstrated. No in-game sabotage, combat, fire or insurance actions may become physical actuator commands. No secrets are read or committed; document variable names and let the owner configure values.",
+          "terms": [
+            "mock mode",
+            "independent firmware"
+          ]
+        },
+        {
+          "id": "validation-scope",
+          "text": "Use Superpowers TDD and focused checks per task, then one combined suite and end-to-end pass at each milestone checkpoint. Do not claim PS5 certification, chemistry calibration, ray-tracing performance or physical hardware validation without measured evidence. Beluga approval starts execution in task worktrees; this conversation remains the draft plan."
+        },
+        {
+          "id": "desktop-proof-gate",
+          "text": "Vertical-slice criteria 1 and 4 require inspected desktop media. Owner-enabled Godot observation or actual owner recordings must exist before the proof task resumes. Procedures, tool logs and headless checks are insufficient; retain the unmet prerequisite instead of another procedure-only handoff.",
+          "terms": [
+            "inspected desktop media"
+          ]
+        },
+        {
+          "id": "desktop-access-unverified",
+          "text": "James selected Enable Godot access in MAB-15, but the subsequent supported capture was denied. Its done status records neither successful authorization nor desktop proof. Treat actual desktop-proof-access as unmet until a supported capture succeeds or attributable owner media is inspected. No identical milestone recheck should be submitted while this condition persists.",
+          "terms": [
+            "actual desktop-proof-access"
+          ]
+        },
+        {
+          "id": "no-game-launches",
+          "text": "James reports that every game run locks up his whole PC. Stop all Godot/game launches, desktop capture attempts and Godot test/editor invocations immediately across this plan. No automatic retry or access-verification launch is authorized. Existing desktop criteria remain incomplete. Investigate only existing source/config/logs without executing Godot; agree a safer bounded approach with James before any new run. Stop only agent-owned tracked game processes when safe.",
+          "terms": [
+            "no game launches"
+          ]
+        }
+      ]
+    },
+    "paused": false,
+    "runs": {
+      "vertical-slice": {
+        "checker": "chat-339a8643",
+        "agent": {
+          "worktree": "wt-5f2ef830-69e",
+          "branch": "beluga/mab-1-playable-brewing-vertical",
+          "at": 1795569659503,
+          "tasks": [
+            "contracts-chemistry",
+            "garage-loop",
+            "judging-feed",
+            "desktop-batch-proof",
+            "desktop-access-verification"
+          ]
+        }
+      }
+    },
+    "activity": [
+      {
+        "id": "e_669f6bf100fc",
+        "at": 1795569179789,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "started this plan"
+      },
+      {
+        "id": "e_9f38681f967e",
+        "at": 1795569326961,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "drafted",
+        "text": "wrote the plan"
+      },
+      {
+        "id": "e_d2ec4255576a",
+        "at": 1795569656966,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "approved",
+        "text": "approved the plan: 4 milestones, 8 tasks"
+      },
+      {
+        "id": "e_9729722e82ec",
+        "at": 1795569658208,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "note",
+        "text": "made the plan\u2019s branch plan/mash-burn from main"
+      },
+      {
+        "id": "e_d5afd73797f6",
+        "at": 1795569659505,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "started",
+        "text": "started one agent for \u201cPlayable brewing vertical slice\u201d (MAB-1, MAB-2, MAB-3) in a new worktree from plan/mash-burn"
+      },
+      {
+        "id": "e_de9d39846413",
+        "at": 1795569991997,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "finished",
+        "text": "finished MAB-1 \u201cBuild deterministic brewing simulation and shared contracts\u201d"
+      },
+      {
+        "id": "e_3f1d8f58d4fe",
+        "at": 1795570310005,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "finished",
+        "text": "finished MAB-2 \u201cMake brewing playable in a 3D garage\u201d"
+      },
+      {
+        "id": "e_9a37e924b56e",
+        "at": 1795570687358,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "finished",
+        "text": "finished MAB-3 \u201cAdd beer judging and the fictional social feed\u201d"
+      },
+      {
+        "id": "e_412cb8e700c1",
+        "at": 1795570687388,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "gate",
+        "text": "\u201cPlayable brewing vertical slice\u201d: every task is finished, the agent is checking its pass criteria"
+      },
+      {
+        "id": "e_da05eeb21228",
+        "at": 1795570898916,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "failed",
+        "text": "didn\u2019t pass \u201cPlayable brewing vertical slice\u201d: Independent checker verdict: FAIL \u2014 desktop complete-batch demonstration remains required and unverified. No code changed or commits created. Review performed o"
+      },
+      {
+        "id": "e_22755ee33c27",
+        "at": 1795570957092,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "drafted",
+        "text": "changed the plan \u2014 Fix failed vertical-slice criteria 1 and 4 with desktop proof; preserve passing checks and milestone requirements."
+      },
+      {
+        "id": "e_0fd607fb06cb",
+        "at": 1795572221215,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "changed",
+        "text": "applied changes: 1 new"
+      },
+      {
+        "id": "e_020654263cfa",
+        "at": 1795572221519,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "note",
+        "text": "sent the agent doing \u201cPlayable brewing vertical slice\u201d on to MAB-14 \u201cRecord and reconcile complete desktop brewing proof\u201d"
+      },
+      {
+        "id": "e_c8f9ed78f59c",
+        "at": 1795572468558,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "finished",
+        "text": "finished MAB-14 \u201cRecord and reconcile complete desktop brewing proof\u201d"
+      },
+      {
+        "id": "e_a6f50ada06c1",
+        "at": 1795572468564,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "gate",
+        "text": "\u201cPlayable brewing vertical slice\u201d: every task is finished, the agent is checking its pass criteria"
+      },
+      {
+        "id": "e_d48c41a5a80f",
+        "at": 1795572593877,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "failed",
+        "text": "didn\u2019t pass \u201cPlayable brewing vertical slice\u201d: Independent recheck of combined revision dc6bd8f4a67c168226d2f5b3d90122d4809b3e28 on james's Windows PC, 2026-11-24 America/Chicago. FAIL: desktop evidence requ"
+      },
+      {
+        "id": "e_632b725ce17b",
+        "at": 1795572649671,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "drafted",
+        "text": "changed the plan \u2014 Add owner-only access/media prerequisite; revise existing MAB-14 to require actual inspected proof for failed criteria 1 and 4."
+      },
+      {
+        "id": "e_becad425f78e",
+        "at": 1795572826800,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "changed",
+        "text": "applied changes: 1 new, 1 changed"
+      },
+      {
+        "id": "e_6db24cd48488",
+        "at": 1795572827087,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "note",
+        "text": "MAB-15 \u201cEnable Godot observation or supply desktop recordings\u201d waits for you: only you can do it, so its milestone\u2019s agent leaves it to you"
+      },
+      {
+        "id": "e_048aba5af98b",
+        "at": 1795572831911,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "finished",
+        "text": "MAB-15 decided: Enable Godot access"
+      },
+      {
+        "id": "e_7a9b30fd4a7b",
+        "at": 1795572832207,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "finished",
+        "text": "finished MAB-15 \u201cEnable Godot observation or supply desktop recordings\u201d"
+      },
+      {
+        "id": "e_fc3e94b890c8",
+        "at": 1795572832212,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "gate",
+        "text": "\u201cPlayable brewing vertical slice\u201d: every task is finished, the agent is checking its pass criteria"
+      },
+      {
+        "id": "e_43078bfe7675",
+        "at": 1795572939718,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "failed",
+        "text": "didn\u2019t pass \u201cPlayable brewing vertical slice\u201d: Independent check, 2026-11-24 local, james's Windows PC. FAIL. New plan status marks MAB-15 done but actual supported Godot observation STILL DENIED, and no ins"
+      },
+      {
+        "id": "e_e2a78a143b4d",
+        "at": 1795573111903,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "drafted",
+        "text": "changed the plan \u2014 James reports whole-PC lockups on every game run. Stop execution/capture attempts and require a safer reviewed approach before any relaunch."
+      },
+      {
+        "id": "e_31a1cf24fd1d",
+        "at": 1795581483265,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "changed",
+        "text": "applied changes: 1 new, 2 changed"
+      },
+      {
+        "id": "e_feef9995f4cf",
+        "at": 1795581483565,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "note",
+        "text": "sent the agent doing \u201cPlayable brewing vertical slice\u201d on to MAB-16 \u201cVerify effective Godot access before resuming proof\u201d"
+      }
+    ],
+    "createdAt": 1795569179789,
+    "updatedAt": 1795581483566,
+    "approvedAt": 1795569656966,
+    "epics": {
+      "plan": "i_382646e5a53342",
+      "milestones": {
+        "vertical-slice": "i_180ec0efc9c945",
+        "multiplayer-gameplay": "i_5f6122229f154e",
+        "visuals-companion": "i_c112e1acaf9442",
+        "integrated-validation": "i_ab49d9891b3346"
+      }
+    },
+    "branch": "plan/mash-burn"
+  }
+]

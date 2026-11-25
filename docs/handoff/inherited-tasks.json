@@ -1,0 +1,2125 @@
+[
+  {
+    "id": "i_e167f70d75fe4f",
+    "key": "MAB-1",
+    "number": 1,
+    "projectId": "e74189001c",
+    "title": "Build deterministic brewing simulation and shared contracts",
+    "status": "in_review",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 159000,
+    "brief": {
+      "goal": "Create the game foundation and complete testable brewing state transitions independent of graphics.",
+      "context": "The repository contains only docs/prompts/mash_burn_prd.md. Create project.godot and a built-in headless SceneTree test harness rather than depending on an unspecified test addon. Define protocol v1 BatchState, PlayerCommand, HazardEvent, JudgeResult and HardwareFrame schemas in src/contracts/, reserving hazard/fire/disconnect events now. BrewingSimulation.advance(state, command, dt_seconds) returns a new state plus events; all random choices take an explicit seed. Include water ion balance and approximate pH, alpha/beta enzyme temperature curves, conversion/scorching, Tinseth IBU/gravity/vigor and hop oils, cooling/infection probability, yeast attenuation/flocculation/temperature-driven esters and fusels, CO2 pressure-temperature and priming/overpressure. Parameters and approximations must be visible; no claim of laboratory-grade accuracy. Commit a short architecture/design note with the implementation, not by changing this PRD.",
+      "acceptance": "- [x] Began with failing deterministic/formula tests; chemistry 42 checks and contracts 24 checks exit 0 on Godot 4.4.1.\n- [x] Protocol v1 executable validator, JSON Schema and five round-trip examples define units, bounds, ordering, clocks, malformed rejection and hazard safe-state.\n- [x] Tests cover fixed tick hashes, invalid amounts/dt, near-zero volume, mash range/pH, IBU, heat/mass bounds, cooling exposure, fermentation and overpriming.\n- [x] Located Godot 4.4.1 and Python 3.11.9; documented approximations and formula-derived fixture provenance.",
+      "handoff": "Pure simulation and protocol v1 ready. Presentation should use fixed 60 s advances, can_next(), full-state saves, and explicit seq/tick commands. Pressure hazards apply only to sealed packaging/judging."
+    },
+    "revisions": [
+      {
+        "id": "r_a1df86efd11a49",
+        "at": 1795569989678,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "acceptance",
+        "before": "- [ ] Begin with failing deterministic and formula-fixture tests, implement minimally, then run focused tests with godot --headless --path . --script tests/run_all.gd -- --suite chemistry and --suite contracts; both exit 0.\n- [ ] Contracts define units, bounds, versioning, ordering, simulation vs wall-clock time, hazard safe-state and malformed/unsupported message rejection; JSON examples round-trip.\n- [ ] Test fixed seed/tick equivalence, negative/nonfinite amounts, near-zero volume, timestep bounds, mash range 144\u2013162 F, pH target 5.2\u20135.6, increasing bitterness with boil exposure, cooling infection and overpriming.\n- [ ] Document Python availability and install/locate Godot without silently substituting another engine; document simplifications and reproducible fixture provenance.",
+        "reason": "Verified focused tests and documented model limits."
+      },
+      {
+        "id": "r_a8655327ea3f4d",
+        "at": 1795569990961,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "handoff",
+        "before": "",
+        "reason": "Record interfaces and pressure correction."
+      }
+    ],
+    "worktrees": [
+      "wt-5f2ef830-69e"
+    ],
+    "proof": [
+      {
+        "kind": "file",
+        "title": "Chemistry: 42 checks, zero failures",
+        "path": "C:\\Users\\james\\.beluga\\proof\\i_e167f70d75fe4f\\p_cf01bae88f674f-mab1-chemistry.txt",
+        "id": "p_cf01bae88f674f",
+        "at": 1795569990316,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "from": "C:/Dev/BelugaWorktrees/mashandburn-e741/mab-1-playable-brewing-vertical/evidence/mab1-chemistry.txt"
+      }
+    ],
+    "activity": [
+      {
+        "id": "a_9fa58ecbe53c41",
+        "at": 1795569656933,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_9d498268395041",
+        "at": 1795569656959,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocking MAB-2"
+      },
+      {
+        "id": "a_c88c86e48bac48",
+        "at": 1795569656983,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-10"
+      },
+      {
+        "id": "a_08ba0a946ef54e",
+        "at": 1795569659482,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "worktree",
+        "text": "started worktree mab-1-playable-brewing-vertical"
+      },
+      {
+        "id": "a_86ef1ccbb0e448",
+        "at": 1795569659497,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "status",
+        "text": "moved this from Ready to In Progress",
+        "was": "Ready",
+        "now": "In Progress"
+      },
+      {
+        "id": "a_4e34b1d5449a48",
+        "at": 1795569989678,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 Verified focused tests and documented model limits."
+      },
+      {
+        "id": "a_d9a06f9930734d",
+        "at": 1795569990317,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "proof",
+        "text": "added proof: Chemistry: 42 checks, zero failures"
+      },
+      {
+        "id": "a_536cb3119d9548",
+        "at": 1795569990961,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "wrote Notes for the next agent \u2014 Record interfaces and pressure correction."
+      },
+      {
+        "id": "a_2007fed0c2234f",
+        "at": 1795569991691,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from In Progress to In Review",
+        "was": "In Progress",
+        "now": "In Review"
+      }
+    ],
+    "createdAt": 1795569656933,
+    "updatedAt": 1795569991691,
+    "origin": "plan",
+    "estimate": 5,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "vertical-slice",
+      "task": "contracts-chemistry"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_180ec0efc9c945",
+    "branch": "beluga/mab-1-playable-brewing-vertical"
+  },
+  {
+    "id": "i_7f71b188d77642",
+    "key": "MAB-2",
+    "number": 2,
+    "projectId": "e74189001c",
+    "title": "Make brewing playable in a 3D garage",
+    "status": "in_review",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [
+      "i_e167f70d75fe4f"
+    ],
+    "related": [],
+    "rank": 160000,
+    "brief": {
+      "goal": "Expose the complete brewing loop with understandable controls and status feedback.",
+      "context": "Consume protocol v1 and BrewingSimulation from contracts-chemistry. Build first-person garage interaction, mash tun/kettle/chiller/fermenter/packaging stations, recipe inputs, temperature/flow controls, visible progress, pause/time acceleration and save/load. Put presentation extension points for gameplay and render resources in src/presentation/ so later milestones can register isolated modules without editing these files concurrently. Assets must be original placeholders or have recorded licenses.",
+      "acceptance": "- [x] Implemented onscreen recipe/station controls, readiness guidance, first-person WASD/right-mouse movement, station visits, pause/speed and save/load; existing headless routing/continuation evidence is retained.\n- [x] Implemented state-bound metrics for pH, ions, gravity, IBU, temperature, fermentation, carbonation and flaws, with rejected-action feedback; this is implementation evidence, not visual acceptance.\n- [x] Existing focused presentation and static checks passed; final milestone suite passed 663 checks. No suites rerun for MAB-14 proof collection.\n- [ ] Observe a new player start/save/reload/complete a batch and readable desktop controls/metrics \u2014 not done: supported Godot desktop access or inspected owner media remains prerequisite in MAB-14. The earlier deferral does not waive milestone criteria 1 or 4.",
+      "handoff": "Garage accepts project setting mash_burn/modules scripts with setup(garage)/on_state(state). Add judging/feed to module_slot. Save restores integer counters after JSON parse; continuation hash tests pass. Desktop window runs, but sky app access was rejected; user approval requested."
+    },
+    "revisions": [
+      {
+        "id": "r_43b88130298544",
+        "at": 1795570307507,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "acceptance",
+        "before": "- [ ] A new player can start, save/reload and complete a batch using onscreen controls without a developer console.\n- [ ] UI shows pH, ions, gravity, IBU, temperature, fermentation, carbonation and flaws from simulation state; invalid settings produce useful feedback.\n- [ ] Focused presentation checks cover action routing, save version validation, corrupted saves, and deterministic continuation after reload; static GDScript checks pass.",
+        "reason": "Implementation verified; explicitly distinguish desktop approval pending from headless evidence."
+      },
+      {
+        "id": "r_ffcb28128c1245",
+        "at": 1795570308857,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "handoff",
+        "before": "",
+        "reason": "Record module API and validation limits."
+      },
+      {
+        "id": "r_d4a5d97d6e4541",
+        "at": 1795572358548,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "acceptance",
+        "before": "- [x] Added onscreen recipe/station actions, readiness guidance, first-person WASD/right-mouse movement, station visits, pause/speed and save/load; headless complete batch and routing/reload continuation checks pass.\n- [x] UI binds pH, ion concentrations/balance, gravity, IBU, temperature, fermentation, carbonation and flaws; rejected actions provide feedback.\n- [x] Focused presentation suite: 22 checks, zero failures; Godot editor static scan exits 0 without script errors.\n- [ ] Desktop usability walkthrough \u2014 deferred: integrated full-batch demonstration in MAB-3 awaits Godot computer-use approval.",
+        "reason": "MAB-14 reconciliation separates implemented/headless behavior from required observed desktop acceptance."
+      }
+    ],
+    "worktrees": [
+      "wt-5f2ef830-69e"
+    ],
+    "proof": [
+      {
+        "kind": "file",
+        "title": "Presentation: 22 checks, zero failures",
+        "path": "C:\\Users\\james\\.beluga\\proof\\i_7f71b188d77642\\p_8ac816a03bb940-mab2-presentation.txt",
+        "id": "p_8ac816a03bb940",
+        "at": 1795570308130,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "from": "C:/Dev/BelugaWorktrees/mashandburn-e741/mab-1-playable-brewing-vertical/evidence/mab2-presentation.txt"
+      }
+    ],
+    "activity": [
+      {
+        "id": "a_9188d97780f943",
+        "at": 1795569656936,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_93bc20cf7ba749",
+        "at": 1795569656958,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocked by MAB-1"
+      },
+      {
+        "id": "a_067ecbcafc1b42",
+        "at": 1795569656962,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocking MAB-3"
+      },
+      {
+        "id": "a_0bd8b316644141",
+        "at": 1795569656985,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-10"
+      },
+      {
+        "id": "a_5c99c8b42c0845",
+        "at": 1795569659493,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "worktree",
+        "text": "joined worktree mab-1-playable-brewing-vertical"
+      },
+      {
+        "id": "a_539f7b2a9f674d",
+        "at": 1795569992311,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from Ready to In Progress",
+        "was": "Ready",
+        "now": "In Progress"
+      },
+      {
+        "id": "a_992254060a794e",
+        "at": 1795570307507,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 Implementation verified; explicitly distinguish desktop approval pending from headless evidence."
+      },
+      {
+        "id": "a_3af63ff6fb8544",
+        "at": 1795570308131,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "proof",
+        "text": "added proof: Presentation: 22 checks, zero failures"
+      },
+      {
+        "id": "a_0c4db6a0c4d440",
+        "at": 1795570308857,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "wrote Notes for the next agent \u2014 Record module API and validation limits."
+      },
+      {
+        "id": "a_516efc2a32e440",
+        "at": 1795570309690,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from In Progress to In Review",
+        "was": "In Progress",
+        "now": "In Review"
+      },
+      {
+        "id": "a_637917b8252847",
+        "at": 1795572358548,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 MAB-14 reconciliation separates implemented/headless behavior from required observed desktop acceptance."
+      }
+    ],
+    "createdAt": 1795569656936,
+    "updatedAt": 1795572358548,
+    "origin": "plan",
+    "estimate": 5,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "vertical-slice",
+      "task": "garage-loop"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_180ec0efc9c945",
+    "branch": "beluga/mab-1-playable-brewing-vertical"
+  },
+  {
+    "id": "i_5ca3ec22750d4c",
+    "key": "MAB-3",
+    "number": 3,
+    "projectId": "e74189001c",
+    "title": "Add beer judging and the fictional social feed",
+    "status": "in_review",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [
+      "i_7f71b188d77642"
+    ],
+    "related": [],
+    "rank": 161000,
+    "brief": {
+      "goal": "Close the brewing loop with category scores, actionable tasting feedback and the PRD's sandbox consequence.",
+      "context": "Consume BatchState and emit JudgeResult with aroma, appearance, flavor, mouthfeel and style accuracy totaling 100. Implement SocialPsyopsService as a local sandbox only in this milestone; optional external delivery belongs to the companion milestone. Bound feed materialization and render virtualization while preserving at least 500 procedural personas.",
+      "acceptance": "- [x] Existing tests pin score 44 trigger, score 45 non-trigger, severe diacetyl/acetaldehyde triggers and once-per-batch submission.\n- [x] Implemented 512 fictional seeded personas with 16-record pages, no external dispatch code or credentials; existing automated evidence retained.\n- [x] Implemented five-category tasting feedback; existing headless integration verifies panel opening and bounded page-row replacement.\n- [x] Existing whole milestone suite passed 663 checks and static scanning passed; old logs remain preserved without rerunning for MAB-14.\n- [ ] Observe readable tasting/feed UI and a complete normal/flawed desktop batch, including later and final feed pages, with recorded artifacts \u2014 not done: MAB-14 awaits owner-enabled Godot access or inspected owner-recorded media. No milestone waiver or passed claim.",
+      "handoff": "Implementation committed on this branch. Full headless suite passed once (663 checks), static scan passed; report in evidence/milestone-review.md. Remaining requirement: enable Godot computer-use access, observe full-batch desktop walkthrough and capture screenshots; no workaround used. Milestone NOT passed. Test desktop process stopped. No PR/push/merge."
+    },
+    "revisions": [
+      {
+        "id": "r_199e9df61fe544",
+        "at": 1795570684542,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "acceptance",
+        "before": "- [ ] Tests pin the boundary: 44 triggers, 45 does not trigger on score alone, severe diacetyl or acetaldehyde triggers independently; one batch triggers once.\n- [ ] All generated accounts and imagery remain fictional, with no external platform credentials or network calls; seeded content is reproducible.\n- [ ] The end-of-batch UI explains category scores and brewing causes and can browse the simulated feed without freezing.\n- [ ] Run the whole headless suite once and a desktop full-batch smoke test; attach logs and screenshots to the milestone review.",
+        "reason": "Separate verified automated behavior from unperformed desktop acceptance."
+      },
+      {
+        "id": "r_88f6926aa4894a",
+        "at": 1795570686407,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "handoff",
+        "before": "",
+        "reason": "Record remaining user-access dependency and honest milestone status."
+      },
+      {
+        "id": "r_cbdf1be016804c",
+        "at": 1795572359891,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "acceptance",
+        "before": "- [x] Tests pin score 44 trigger, score 45 non-trigger, independent severe diacetyl/acetaldehyde, and once-per-batch submission.\n- [x] 512 unique sim_ personas and procedural initial avatars are fictional and reproducible. No network dispatch code or credentials; 16 records materialized per page.\n- [x] Tasting module shows five category scores and cause-based feedback; headless integration verifies panel opening and 16-row replacement across pages. Desktop visual inspection remains unverified.\n- [ ] Whole-suite plus desktop evidence \u2014 not done: the whole milestone suite ran once with 663 checks, zero failures, and logs are attached; observed desktop full-batch demonstration/screenshots blocked because Computer Use rejected Godot app access. User approval card is pending; milestone must not be marked passed.",
+        "reason": "MAB-14 reconciliation makes the unresolved desktop acceptance explicit while preserving existing automated results."
+      }
+    ],
+    "worktrees": [
+      "wt-5f2ef830-69e"
+    ],
+    "proof": [
+      {
+        "kind": "file",
+        "title": "Whole milestone headless: 663 checks, zero failures",
+        "path": "C:\\Users\\james\\.beluga\\proof\\i_5ca3ec22750d4c\\p_a59a61412c4242-milestone-headless.txt",
+        "id": "p_a59a61412c4242",
+        "at": 1795570685174,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "from": "C:/Dev/BelugaWorktrees/mashandburn-e741/mab-1-playable-brewing-vertical/evidence/milestone-headless.txt"
+      }
+    ],
+    "activity": [
+      {
+        "id": "a_95c4eb0307a249",
+        "at": 1795569656939,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_c9b27cbf3d2c46",
+        "at": 1795569656961,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocked by MAB-2"
+      },
+      {
+        "id": "a_e08df91c353046",
+        "at": 1795569656987,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-10"
+      },
+      {
+        "id": "a_f037dedea52148",
+        "at": 1795569659495,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "worktree",
+        "text": "joined worktree mab-1-playable-brewing-vertical"
+      },
+      {
+        "id": "a_0f02186e1b4d4c",
+        "at": 1795570310500,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from Ready to In Progress",
+        "was": "Ready",
+        "now": "In Progress"
+      },
+      {
+        "id": "a_c19640a24b4c48",
+        "at": 1795570684542,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 Separate verified automated behavior from unperformed desktop acceptance."
+      },
+      {
+        "id": "a_87899a938d9047",
+        "at": 1795570685175,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "proof",
+        "text": "added proof: Whole milestone headless: 663 checks, zero failures"
+      },
+      {
+        "id": "a_40209996be3e4c",
+        "at": 1795570686407,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "wrote Notes for the next agent \u2014 Record remaining user-access dependency and honest milestone status."
+      },
+      {
+        "id": "a_e8015208d3d046",
+        "at": 1795570687041,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from In Progress to In Review",
+        "was": "In Progress",
+        "now": "In Review"
+      },
+      {
+        "id": "a_6b0e68337aa24c",
+        "at": 1795572221212,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocking MAB-14"
+      },
+      {
+        "id": "a_8f46fb62b8f847",
+        "at": 1795572359891,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 MAB-14 reconciliation makes the unresolved desktop acceptance explicit while preserving existing automated results."
+      }
+    ],
+    "createdAt": 1795569656939,
+    "updatedAt": 1795572359891,
+    "origin": "plan",
+    "estimate": 3,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "vertical-slice",
+      "task": "judging-feed"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_180ec0efc9c945",
+    "branch": "beluga/mab-1-playable-brewing-vertical"
+  },
+  {
+    "id": "i_1adb2f526e7d42",
+    "key": "MAB-4",
+    "number": 4,
+    "projectId": "e74189001c",
+    "title": "Implement authoritative multiplayer rounds and brewing sabotage",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 174000,
+    "brief": {
+      "goal": "Add lobbies, timed competitive brewing, combat and rival equipment interference.",
+      "context": "Consume v1 commands/state/hazard events from vertical-slice and register via presentation extension points. Use Godot ENet authoritative host/server, 2\u20138 participants, 15-minute rounds, host-selected style and final judging. Resolve the PRD's table mentioning four players using its explicit 2\u20138 functional requirement. Arsenal includes sanitizing wand, wort ladle, hydrometer melee, keg projectile and overprimed bottle projectile; sabotage includes chiller damage, contamination and burner changes. These are fictional game mechanics only.",
+      "acceptance": "- [ ] Write failing tests for lobby capacity, round timing, command authorization and item effects before implementation.\n- [ ] Server owns simulation, cooldowns, damage, scoring and clock; clients cannot mutate authoritative state; missing/duplicate/reordered inputs and disconnect cleanup are tested.\n- [ ] All five arsenal categories and three sabotage types have deterministic effects and feedback; local scripted 2- and 8-client smoke commands are documented."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_046d22deeef740",
+        "at": 1795569656943,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_a0b3817ee3aa4b",
+        "at": 1795569656965,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocking MAB-5"
+      },
+      {
+        "id": "a_53b22c9cc5c24f",
+        "at": 1795569656988,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-11"
+      }
+    ],
+    "createdAt": 1795569656943,
+    "updatedAt": 1795569656988,
+    "origin": "plan",
+    "estimate": 5,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "multiplayer-gameplay",
+      "task": "rounds-combat"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_5f6122229f154e"
+  },
+  {
+    "id": "i_48654467f8cf45",
+    "key": "MAB-5",
+    "number": 5,
+    "projectId": "e74189001c",
+    "title": "Implement fire propagation, staging and insurance inspection",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [
+      "i_1adb2f526e7d42"
+    ],
+    "related": [],
+    "rank": 175000,
+    "brief": {
+      "goal": "Complete the fictional fire-and-claims gameplay loop and emit mandatory hardware-disarm events.",
+      "context": "Use abstract game heat/fuel/smoke fields, not real-world ignition procedures. Model PRD ignition categories, propagation, smoke inhalation, escape, and a server-timed 45-second staging window with fictional receipts/equipment/evidence objects. Adjuster uses game burn-pattern, valve and character-tell evidence with seeded verdicts; passing pays 150% replacement value, failure causes penalties/bankruptcy. Emit HazardEvent and latch disarm immediately on fire or staging entry for companion consumption.",
+      "acceptance": "- [ ] Tests pin 45 seconds, one payout at 1.5 times replacement value, failed-claim penalties, valid escape and lethal smoke boundaries, and no replay/double-award exploit.\n- [ ] Fire and staging transitions emit disarm before further telemetry can suggest actuation; clients cannot override the latch.\n- [ ] UI exposes rules and outcomes while keeping the scenario fictional; run the milestone combined suite once and capture a two-client fire/claims session."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_1925d4a9042344",
+        "at": 1795569656946,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_f96e22c7e6cf45",
+        "at": 1795569656963,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocked by MAB-4"
+      },
+      {
+        "id": "a_349124b924ec44",
+        "at": 1795569656989,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-11"
+      }
+    ],
+    "createdAt": 1795569656946,
+    "updatedAt": 1795569656989,
+    "origin": "plan",
+    "estimate": 5,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "multiplayer-gameplay",
+      "task": "fire-claims"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_5f6122229f154e"
+  },
+  {
+    "id": "i_6b204c94693541",
+    "key": "MAB-6",
+    "number": 6,
+    "projectId": "e74189001c",
+    "title": "Implement beer optics, foam, steam and fire rendering",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 176000,
+    "brief": {
+      "goal": "Make simulation chemistry visibly affect beer and garage effects within Godot's verified capabilities.",
+      "context": "Consume read-only BatchState and generic HazardEvent via vertical-slice extension points. Create standalone fire event fixtures so work can run alongside multiplayer-gameplay. Implement parameterized SRM absorption/transmission, haze scattering approximation, protein/IBU-driven foam retention, nucleation particles, steam, condensation, metal reflections and fire/smoke. Godot Forward+ is a prototype renderer, not a promise of UE hardware ray tracing or PS5 parity.",
+      "acceptance": "- [ ] Focused tests check SRM/haze/foam mappings, clamping, finite shader inputs and GPU feature fallback.\n- [ ] Capture fixed-camera SRM 2, 10, 20 and 40+, clear/hazy and foam/steam/fire comparisons with licensed or original assets.\n- [ ] Measure frame timing and document GPU/renderer/settings and all optical/physics approximations; provide lower-feature fallback without claiming full spectral ray tracing."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_d4b48dec49e846",
+        "at": 1795569656949,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_d9b2be223d3a47",
+        "at": 1795569656991,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-12"
+      }
+    ],
+    "createdAt": 1795569656949,
+    "updatedAt": 1795569656991,
+    "origin": "plan",
+    "estimate": 5,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "visuals-companion",
+      "task": "beer-rendering"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_c112e1acaf9442"
+  },
+  {
+    "id": "i_080ae2d4cae546",
+    "key": "MAB-7",
+    "number": 7,
+    "projectId": "e74189001c",
+    "title": "Build mock hardware HAL and private notification service",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 177000,
+    "brief": {
+      "goal": "Create a decoupled FastAPI daemon, transport adapters and fail-safe authorization boundary.",
+      "context": "Consume protocol v1 frames with step, target_temp_c, pump_duty, valve_states and hop_drop_hopper; transmit at 10 Hz with monotonic sequence, timestamp and hazard status. Implement mocked Serial/MQTT/WebSocket adapters and configurable real transport backends behind explicit arming. Tier 1 covers probes/PID relays/dosing/hop servos. Tier 2 exposes bounded waypoint planning and a simulated arm only until calibrated collision/workspace limits exist. The bridge must stop on lost heartbeat, malformed/stale frames, missing sensor data, E-stop, fire/staging, disconnection and temperature >=102 C; independently implemented firmware cutoff is mandatory before real actuation. No automatic rearm. FastAPI POST /api/v1/psyops/roast accepts authenticated local requests and forwards only to explicitly configured consenting private channels. Document configuration names without reading .env files.",
+      "acceptance": "- [ ] Use pytest tests first for schema bounds/nonfinite values, version rejection, 10 Hz scheduling, sequence replay and stale-frame rejection.\n- [ ] Safety tests prove disarm is latched, outputs go safe and queued commands are discarded for every fault, temperature >=102 C and fire/staging; rearm requires a fresh explicit local action and healthy interlocks.\n- [ ] Hardware-free operation and all transport mock round-trips pass; real transport adapters cannot arm with unverified firmware safeguards.\n- [ ] Webhook tests cover disabled default, missing consent, invalid token, destination allowlist, deduplication, rate limits, bounded retries and a local fake receiver; no public bot APIs or targeting.\n- [ ] Run focused companion pytest and GDScript hardware checks, then the combined milestone suites once; document local launch and stop instructions."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_828e932d21bb46",
+        "at": 1795569656952,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_0d8c5950355a4f",
+        "at": 1795569656993,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-12"
+      }
+    ],
+    "createdAt": 1795569656952,
+    "updatedAt": 1795569656993,
+    "origin": "plan",
+    "estimate": 5,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "visuals-companion",
+      "task": "companion-services"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_c112e1acaf9442"
+  },
+  {
+    "id": "i_180594f920a34f",
+    "key": "MAB-8",
+    "number": 8,
+    "projectId": "e74189001c",
+    "title": "Integrate, validate and document the playable build",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 178000,
+    "brief": {
+      "goal": "Resolve integration defects and produce reviewable prototype evidence and startup instructions.",
+      "context": "Wait for both parallel milestones. Integration uses the v1 contracts and registered extension points; if a defect requires touching module files, include that exact change in this task's review. Run Superpowers verification-before-completion and request a whole-change review. Owner-only external steps such as engine license/dev-kit setup, physical wiring and account secrets remain documented prerequisites, never silently simulated as verified.",
+      "acceptance": "- [ ] Run godot --headless --path . --script tests/run_all.gd and companion pytest once on the combined tree; capture commands, versions, exit codes and failures honestly.\n- [ ] Execute a scripted eight-client session plus a desktop two-client end-to-end session with renderer and mock companion enabled; verify fire/staging disables bridge output before any subsequent actuator frame.\n- [ ] Provide Windows launch/test/export instructions, license inventory, seeded demo recipe and honest PRD traceability report; exclude secret values and generated artifacts.\n- [ ] Attach review findings and resolve material defects before moving to review; do not mark the work shipped without merge/release evidence."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_1d1e777f758449",
+        "at": 1795569656955,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_ef76c8119ad64d",
+        "at": 1795569656995,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-13"
+      }
+    ],
+    "createdAt": 1795569656955,
+    "updatedAt": 1795569656995,
+    "origin": "plan",
+    "estimate": 3,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "integrated-validation",
+      "task": "package-proof"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_ab49d9891b3346"
+  },
+  {
+    "id": "i_382646e5a53342",
+    "key": "MAB-9",
+    "number": 9,
+    "projectId": "e74189001c",
+    "title": "Mash & Burn: playable PC prototype and companion services",
+    "status": "in_progress",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 41000,
+    "brief": {
+      "goal": "Implement docs/prompts/mash_burn_prd.md from the current PRD-only repository as a deterministic Godot PC brewing game, followed by multiplayer fire-and-claims gameplay, advanced visuals and an interlocked hardware companion, with honest capability and validation reports."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_9d07e8ef4ecb4f",
+        "at": 1795569656968,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_4fcadcb3ce574e",
+        "at": 1795569659502,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "a sub-task is under way: moved this from Ready to In Progress"
+      }
+    ],
+    "createdAt": 1795569656968,
+    "updatedAt": 1795569659502,
+    "origin": "plan",
+    "createdBy": {
+      "kind": "beluga"
+    }
+  },
+  {
+    "id": "i_180ec0efc9c945",
+    "key": "MAB-10",
+    "number": 10,
+    "projectId": "e74189001c",
+    "title": "Playable brewing vertical slice",
+    "status": "in_progress",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 47000,
+    "brief": {
+      "goal": "A launchable garage brewing game with deterministic chemistry, judging and a fictional local feed.",
+      "context": "A milestone of its plan: it passes when its checker finds these true.\n\nPass criteria:\n- A documented Godot executable launches project.godot into a controllable 3D garage; a full recipe proceeds through mash, boil, cooling, fermentation and packaging to judging.\n- Seeded replay produces identical state hashes at fixed ticks; unit tests cover mass/energy limits, temperature and time unit conversion, invalid inputs and supplied formula fixtures.\n- A score below 45/100 or severe specified off-flavors creates at least 500 fictional local feed personas, with bounded rendering and no outbound network dispatch.\n- Run the milestone headless suite once and record a desktop smoke demonstration of a complete batch; record actual tool versions and any unavailable tools."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [
+      {
+        "kind": "file",
+        "title": "Validation report: automated pass, desktop approval gap",
+        "path": "C:\\Users\\james\\.beluga\\proof\\i_180ec0efc9c945\\p_6ce1d195ffca43-milestone-review.md",
+        "id": "p_6ce1d195ffca43",
+        "at": 1795570685788,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "from": "C:/Dev/BelugaWorktrees/mashandburn-e741/mab-1-playable-brewing-vertical/evidence/milestone-review.md"
+      },
+      {
+        "kind": "file",
+        "title": "MAB-14 reconciliation \u2014 desktop criteria still unmet",
+        "path": "C:\\Users\\james\\.beluga\\proof\\i_180ec0efc9c945\\p_f62c676e44fa42-milestone-review.md",
+        "id": "p_f62c676e44fa42",
+        "at": 1795572466496,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "from": "C:/Dev/BelugaWorktrees/mashandburn-e741/mab-1-playable-brewing-vertical/evidence/milestone-review.md"
+      }
+    ],
+    "activity": [
+      {
+        "id": "a_dca29c2d1df543",
+        "at": 1795569656971,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_e5d44f91515c46",
+        "at": 1795569659500,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "a sub-task is under way: moved this from Ready to In Progress"
+      },
+      {
+        "id": "a_0644fca1e4f745",
+        "at": 1795570685788,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "proof",
+        "text": "added proof: Validation report: automated pass, desktop approval gap"
+      },
+      {
+        "id": "a_87812d3f80c448",
+        "at": 1795570687044,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "all 3 sub-tasks are in review or done: moved this from In Progress to In Review"
+      },
+      {
+        "id": "a_09935e0a54164e",
+        "at": 1795572221219,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "a sub-task is open again: moved this from In Review to In Progress"
+      },
+      {
+        "id": "a_67d62baeb4324c",
+        "at": 1795572466497,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "proof",
+        "text": "added proof: MAB-14 reconciliation \u2014 desktop criteria still unmet"
+      },
+      {
+        "id": "a_4a4fab4ad27b42",
+        "at": 1795572468250,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "all 4 sub-tasks are in review or done: moved this from In Progress to In Review"
+      },
+      {
+        "id": "a_73e49215890e43",
+        "at": 1795572826806,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "a sub-task is open again: moved this from In Review to In Progress"
+      },
+      {
+        "id": "a_a65b26353dcf42",
+        "at": 1795572831909,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "all 5 sub-tasks are in review or done: moved this from In Progress to In Review"
+      },
+      {
+        "id": "a_5e7d5cfda2854d",
+        "at": 1795573019158,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "status",
+        "text": "a sub-task is open again: moved this from In Review to In Progress"
+      }
+    ],
+    "createdAt": 1795569656971,
+    "updatedAt": 1795573019158,
+    "origin": "plan",
+    "parent": "i_382646e5a53342",
+    "createdBy": {
+      "kind": "beluga"
+    }
+  },
+  {
+    "id": "i_5f6122229f154e",
+    "key": "MAB-11",
+    "number": 11,
+    "projectId": "e74189001c",
+    "title": "Multiplayer sabotage, fire and claims",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 179000,
+    "brief": {
+      "goal": "A server-authoritative playable 2\u20138 player round with fictional sabotage and claims consequences.",
+      "context": "A milestone of its plan: it passes when its checker finds these true.\n\nPass criteria:\n- Two local clients finish a server-authoritative 15-minute round; a scripted eight-client test confirms supported capacity, and unsupported joins are rejected.\n- All PRD arsenal and sabotage categories produce bounded in-game effects; fire enters a 45-second staging window with escape, inspection and payout/penalty outcomes.\n- Disconnection, late commands, duplicate input, reconnect and malicious out-of-range input tests pass; no client can award itself damage or money.\n- Run the combined suite once and record a two-client desktop session with server logs."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_8875cf6d0a7341",
+        "at": 1795569656974,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      }
+    ],
+    "createdAt": 1795569656974,
+    "updatedAt": 1795569656974,
+    "origin": "plan",
+    "parent": "i_382646e5a53342",
+    "createdBy": {
+      "kind": "beluga"
+    }
+  },
+  {
+    "id": "i_c112e1acaf9442",
+    "key": "MAB-12",
+    "number": 12,
+    "projectId": "e74189001c",
+    "title": "Beer visuals and safe companion bridge",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 180000,
+    "brief": {
+      "goal": "Improve renderer fidelity and expose mock telemetry and optional consenting private-channel notifications.",
+      "context": "A milestone of its plan: it passes when its checker finds these true.\n\nPass criteria:\n- Representative SRM 2\u201340+, haze, foam, nucleation, steam, condensation and fire demo scenes render; renderer tier and measured FPS/frametime are documented on the actual machine.\n- A mock companion receives validated v1 HardwareFrame telemetry at 10 Hz and fails safely on malformed, stale, disconnected, fire, E-stop, sensor-error and thermal-cutoff inputs.\n- Outbound notifications remain disabled by default and pass authentication, explicit consent, deduplication and rate-limit tests against a local receiver.\n- Run the combined game and companion suites once and capture visual comparison and mock disconnect/E-stop evidence; physical operation is not claimed without hardware proof."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_5798ec8366824b",
+        "at": 1795569656977,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      }
+    ],
+    "createdAt": 1795569656977,
+    "updatedAt": 1795569656977,
+    "origin": "plan",
+    "parent": "i_382646e5a53342",
+    "createdBy": {
+      "kind": "beluga"
+    }
+  },
+  {
+    "id": "i_ab49d9891b3346",
+    "key": "MAB-13",
+    "number": 13,
+    "projectId": "e74189001c",
+    "title": "Validate and package the combined prototype",
+    "status": "backlog",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 181000,
+    "brief": {
+      "goal": "Make the complete prototype reproducibly launchable and document exactly which PRD targets are demonstrated.",
+      "context": "A milestone of its plan: it passes when its checker finds these true.\n\nPass criteria:\n- Fresh-checkout instructions reproduce the game and mock companion; tests pass and no secret values or generated build products enter version control.\n- An end-to-end demo covers multiplayer brewing, judging/feed, sabotage/fire, the 45-second claims window and immediate companion disarm with presentation effects enabled.\n- The PRD coverage report distinguishes implemented, approximated, blocked by external hardware/tooling and deferred PS5/full-ray-tracing goals, with proof links."
+    },
+    "revisions": [],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_83c8ca9835474c",
+        "at": 1795569656980,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      }
+    ],
+    "createdAt": 1795569656980,
+    "updatedAt": 1795569656980,
+    "origin": "plan",
+    "parent": "i_382646e5a53342",
+    "createdBy": {
+      "kind": "beluga"
+    }
+  },
+  {
+    "id": "i_54fc01178af041",
+    "key": "MAB-14",
+    "number": 14,
+    "projectId": "e74189001c",
+    "title": "Collect and inspect actual desktop batch evidence",
+    "status": "todo",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [
+      "i_5ca3ec22750d4c",
+      "i_fe429ead11184c",
+      "i_6db42b8b201f4f"
+    ],
+    "related": [],
+    "rank": 35000,
+    "brief": {
+      "goal": "Fix milestone criterion 1 with observed usable garage controls and a complete visible recipe; fix criterion 4 with inspected normal/flawed batch desktop media, save/reload, judging, feed paging and provenance.",
+      "context": "STOP EXECUTION: James reports every game run locks up his whole PC. No game launch, capture, Godot tests/editor, or automatic retry. All desktop evidence remains incomplete; previous headless evidence is unchanged. Only read existing source/config/logs for diagnosis until a safer bounded approach is agreed with James. MAB-15 choice/done status does not prove access. Resume full media collection only after both the no-game-launches decision is resolved with James and effective access/media is verified. Do not submit checklist-only proof or another unchanged recheck.",
+      "acceptance": "- [ ] Begin only after desktop-proof-access is concretely satisfied \u2014 not done: checker still received supported Godot access denial after MAB-15 was marked Done. Its decision/status is not successful observation, and no inspectable owner media has been supplied.\n- [ ] Record and inspect video or ordered annotated screenshots with machine/date/operator/exact branch/commit/launch provenance and artifact/frame index \u2014 not done: no authorized capture or inspected owner recording exists.\n- [ ] Observe geometry, WASD, right-mouse look, E interaction, station visits, readable metrics/controls, readiness and pause/resume or speed \u2014 not done: none of these desktop observations has been verified through authorized capture.\n- [ ] Observe a full normal batch through all stages and five-category judging/cause feedback, including mid-batch save/reload with restored stage/settings/metrics \u2014 not done: existing headless completion/continuation checks do not establish this visible walkthrough.\n- [ ] Observe a flawed batch through judging and readable fictional feed pages 1, 2 and 32 with row replacement \u2014 not done: no inspected desktop media demonstrates this; existing tests support bounded rendering only and screenshots would not prove memory bounds.\n- [ ] Link inspected media/results in README/report and reconcile MAB-2/MAB-3/MAB-14 desktop acceptance \u2014 not done: tool logs and collection procedures exist, but no inspected desktop artifacts can be linked. Prior checklist reconciliation does not satisfy the missing media requirement.\n- [ ] Reuse passing automated results, handle any observed defects with appropriate checks, and submit complete inspected proof for independent recheck only after all observations exist \u2014 not done: existing automated results are preserved without unchanged-suite reruns, but the required complete proof package is absent. No new procedure-only recheck or milestone pass is submitted.",
+      "handoff": "Actual desktop access remains unmet: checker still received supported Godot denial after MAB-15 was marked Done. No owner media is available for inspection. All seven current acceptance items explicitly remain unchecked with reasons. No new capture attempt, workaround, procedure-only milestone recheck, product change or test rerun in this follow-up. Retain MAB-14 as incomplete pending successful authorized observation or inspected owner media. Proposed desktop-access-verification plan changes await user approval; coordinator message is not that approval.\nSTOP directive: James reports game runs lock up his entire PC. No further Godot/game launches, desktop checks, tests, cleanup verification or execution-based diagnosis until James agrees to a safer approach. This agent has no currently tracked live game process; the earlier tracked session was stopped. Do not enumerate/kill unrelated processes or relaunch to verify cleanup. Desktop proof and actual-access acceptance remain incomplete."
+    },
+    "revisions": [
+      {
+        "id": "r_a5843759105040",
+        "at": 1795572463455,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "acceptance",
+        "before": "- [ ] Capture video or ordered annotated screenshots from authorized desktop observation, identifying machine/date/branch/commit and launch command. Owner-recorded evidence is acceptable if inspected and attributed. A running process or headless trace alone is insufficient.\n- [ ] Visibly demonstrate garage geometry, WASD movement, right-mouse look, E interaction, station visit buttons, readable brewing metrics, pause/resume or speed control and stage-readiness feedback.\n- [ ] Complete the README recipe via visible controls through mash, boil, cooling, fermentation, packaging and judging. Save and reload mid-batch and verify restored stage/settings/metrics. Capture transitions, five-category scores and cause-based feedback.\n- [ ] Complete a deliberately flawed batch; inspect the fictional feed, navigate beyond its first page and to its last page, and observe readable posts and bounded row replacement. No outbound social dispatch.\n- [ ] Link artifacts from evidence/milestone-review.md and README.md; update actual engine/renderer/tool versions and FFmpeg path availability. Distinguish existing 663-check/static evidence from new desktop observations. Preserve old logs and claim desktop completion only after proof exists.\n- [ ] Do not rerun full suites solely for proof collection. If a product defect appears, fix with focused regression coverage where meaningful, run relevant checks and one combined suite after code changes. Reconcile available task checklists honestly and submit proof for independent milestone recheck; do not self-waive or mark the milestone passed.",
+        "reason": "Settle every criterion against actual evidence; preserve the owner-access dependency without bypass or fabricated completion."
+      },
+      {
+        "id": "r_45f3515d45334c",
+        "at": 1795572467464,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "handoff",
+        "before": "",
+        "reason": "Leave concrete next steps and distinguish preparation from completed desktop proof."
+      },
+      {
+        "id": "r_e27ef9c2a10841",
+        "at": 1795572826784,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "section": "goal",
+        "before": "Fix milestone criterion 1: observe a controllable 3D garage and full recipe through judging. Fix criterion 4: attach a recorded complete desktop batch and accurate tool-availability evidence.",
+        "reason": "the plan changed"
+      },
+      {
+        "id": "r_a38f9cd0cf434b",
+        "at": 1795572826786,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "section": "context",
+        "before": "Checker passed 663 headless checks and static scanning; no code defect was asserted. Missing desktop observation alone blocks the milestone. Read README.md and evidence/milestone-review.md on combined branch beluga/mab-1-playable-brewing-vertical (reviewed commit 4acdd863ff687016052f1ebb2ecfe7df510f16cb). Godot launched but Computer Use denied 1-stable_mono_win64. Require owner-enabled Godot access through the supported permission flow before desktop automation; do not bypass the denial. If unavailable, leave the prerequisite unresolved and offer owner-recorded evidence for inspection. Godot executable: C:/Program Files/Godot/Godot_v4.4.1-stable_mono_win64_console.exe. Checker found FFmpeg 8.1.1 at C:/ffmpeg/bin/ffmpeg.exe; old report only says absent from PATH. No Mac app/npm e2e exists. Reconcile live MAB-1/2/3 briefs/checklists if available; MAB-2 deferred desktop acceptance does not waive milestone criteria.",
+        "reason": "the plan changed"
+      },
+      {
+        "id": "r_f04161a1666c44",
+        "at": 1795572826788,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "section": "acceptance",
+        "before": "- [ ] Capture video or ordered annotated screenshots from authorized desktop observation with machine/date/branch/commit/launch provenance \u2014 not done: owner-enabled Godot access remains unconfirmed; no owner recording was provided for inspection. Collection guide identifies the reviewed product revision and required provenance.\n- [ ] Visibly demonstrate geometry, WASD, right-mouse look, E interaction, station visits, readable metrics, time controls and readiness feedback \u2014 not done: no authorized desktop observation occurred in MAB-14; prior process/headless evidence is not substituted.\n- [ ] Complete the visible README recipe, mid-batch save/reload and judging with five-category scores/feedback \u2014 not done: desktop-access prerequisite unresolved; owner-recorded media is offered for inspection.\n- [ ] Complete a flawed batch and inspect readable fictional feed beyond first page and on last page, with bounded replacement \u2014 not done: desktop-access prerequisite unresolved; collection guide specifies pages 1, 2 and 32 without claiming observed results.\n- [ ] Link completed desktop artifacts and reconcile versions/availability \u2014 not done: desktop media does not yet exist. README/report link the collection index and fresh Godot/Python/FFmpeg logs; FFmpeg 8.1.1 exists at C:/ffmpeg/bin/ffmpeg.exe and currently resolves on PATH. Prior renderer output is explicitly historical. Old logs preserved.\n- [x] No full suites rerun for proof collection; no product code changed or defect asserted. Live MAB-1/2/3 briefs inspected, MAB-2/3 checklists reconciled honestly, and no milestone pass or waiver claimed.\n- [ ] Submit complete desktop proof for independent milestone recheck \u2014 not done: tool-only evidence is attached, but required desktop media remains missing.",
+        "reason": "the plan changed"
+      },
+      {
+        "id": "r_9af832b456d647",
+        "at": 1795573017736,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "acceptance",
+        "before": "- [ ] Begin only after desktop-proof-access is concretely satisfied. If access/media remains unavailable, retain incomplete status and report that prerequisite; do not submit a procedure-only handoff as completed work.\n- [ ] Record and inspect video or ordered annotated screenshots with date, machine, operator, exact branch/commit and launch command. Index artifact paths and timestamps/frame references against criteria 1 and 4.\n- [ ] Observe garage geometry, WASD movement, right-mouse look, E interaction, station visits, readable controls/metrics, readiness and pause/resume or speed behavior.\n- [ ] Observe a complete normal recipe through mash, boil, cooling, fermentation, packaging and five-category judging/cause feedback. Demonstrate mid-batch save/reload and restored stage/settings/metrics.\n- [ ] Observe a deliberately flawed batch through judging and readable fictional feed pages 1, 2 and 32 with row replacement. Support bounded-rendering claims with existing tests; do not claim screenshots prove memory bounds.\n- [ ] Link inspected media/results from evidence/milestone-review.md and README.md. Reconcile MAB-2/MAB-3 desktop acceptance and MAB-14 outstanding items if live tools permit; otherwise identify remaining items without claiming checkbox edits. Logs and checklists alone cannot satisfy this task.\n- [ ] Reuse passing automated results absent product changes. If desktop testing finds defects, fix with focused regression coverage where meaningful, run relevant checks and one combined suite after changes. Submit complete inspected proof for independent recheck only when all observations exist; do not self-pass the milestone.",
+        "reason": "Reflect coordinator/checker findings: all seven current acceptance items remain unmet; a Done access task is not access evidence."
+      },
+      {
+        "id": "r_831665a8000f41",
+        "at": 1795573018494,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "handoff",
+        "before": "Documentation/tool evidence committed on james's Windows machine. Fresh Godot/Python/FFmpeg checks; FFmpeg 8.1.1 now resolves on PATH at C:/ffmpeg/bin/ffmpeg.exe. No product changes or suite reruns. Prior computer-use denial was not bypassed; owner-enabled Godot access remains unconfirmed and no owner media was supplied. README/report link evidence/desktop/README.md with normal/flawed recording checklist. MAB-2/3 live acceptance reconciled; desktop and independent recheck remain unmet. Ask owner to enable access through supported permissions or provide a recording path for inspection. Do not mark milestone passed.",
+        "reason": "Prevent status-only unblocking and avoid another preparation-only proof submission."
+      },
+      {
+        "id": "r_997e6396a00f41",
+        "at": 1795573104582,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "section": "handoff",
+        "before": "Actual desktop access remains unmet: checker still received supported Godot denial after MAB-15 was marked Done. No owner media is available for inspection. All seven current acceptance items explicitly remain unchecked with reasons. No new capture attempt, workaround, procedure-only milestone recheck, product change or test rerun in this follow-up. Retain MAB-14 as incomplete pending successful authorized observation or inspected owner media. Proposed desktop-access-verification plan changes await user approval; coordinator message is not that approval.",
+        "reason": "Record immediate execution stop and preserve the unresolved desktop proof without further game activity."
+      },
+      {
+        "id": "r_6869a9c2ff3b4f",
+        "at": 1795581483260,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "section": "context",
+        "before": "MAB-14 at dc6bd8f4a67c168226d2f5b3d90122d4809b3e28 produced a procedure/tool reconciliation, not desktop proof. Product source unchanged from 4acdd86; checker passed 663 checks and full 13-script import. Wait for desktop-proof-access to be actually satisfied. Read README.md, evidence/milestone-review.md and evidence/desktop/ instructions on the current combined milestone revision; preserve prior logs. No product defect is inferred. FFmpeg 8.1.1 is at C:/ffmpeg/bin/ffmpeg.exe; Mac/npm e2e does not apply. Do not resubmit preparation as proof.",
+        "reason": "the plan changed"
+      }
+    ],
+    "worktrees": [
+      "wt-5f2ef830-69e"
+    ],
+    "proof": [
+      {
+        "kind": "file",
+        "title": "Collection guide and tool evidence \u2014 desktop capture still unresolved",
+        "path": "C:\\Users\\james\\.beluga\\proof\\i_54fc01178af041\\p_9c367bae366444-README.md",
+        "id": "p_9c367bae366444",
+        "at": 1795572464294,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "from": "C:/Dev/BelugaWorktrees/mashandburn-e741/mab-1-playable-brewing-vertical/evidence/desktop/README.md"
+      },
+      {
+        "kind": "file",
+        "title": "Verified FFmpeg 8.1.1 at C:/ffmpeg/bin/ffmpeg.exe",
+        "path": "C:\\Users\\james\\.beluga\\proof\\i_54fc01178af041\\p_26488435fb494f-ffmpeg-version.txt",
+        "id": "p_26488435fb494f",
+        "at": 1795572465455,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "from": "C:/Dev/BelugaWorktrees/mashandburn-e741/mab-1-playable-brewing-vertical/evidence/desktop/ffmpeg-version.txt"
+      }
+    ],
+    "activity": [
+      {
+        "id": "a_8242888301ab49",
+        "at": 1795572221205,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_f37d233e569f41",
+        "at": 1795572221210,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocked by MAB-3"
+      },
+      {
+        "id": "a_5805e3e7cc8a4f",
+        "at": 1795572221217,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-10"
+      },
+      {
+        "id": "a_c8e691d472be4f",
+        "at": 1795572221515,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "worktree",
+        "text": "joined worktree mab-1-playable-brewing-vertical"
+      },
+      {
+        "id": "a_078d9f5ac6c94e",
+        "at": 1795572250978,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from Ready to In Progress",
+        "was": "Ready",
+        "now": "In Progress"
+      },
+      {
+        "id": "a_7bf29d2f090c46",
+        "at": 1795572463455,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 Settle every criterion against actual evidence; preserve the owner-access dependency without bypass or fabricated completion."
+      },
+      {
+        "id": "a_67279ffae41b4b",
+        "at": 1795572464295,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "proof",
+        "text": "added proof: Collection guide and tool evidence \u2014 desktop capture still unresolved"
+      },
+      {
+        "id": "a_b3f65b1d817e47",
+        "at": 1795572465456,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "proof",
+        "text": "added proof: Verified FFmpeg 8.1.1 at C:/ffmpeg/bin/ffmpeg.exe"
+      },
+      {
+        "id": "a_8fe732a81bf649",
+        "at": 1795572467464,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "wrote Notes for the next agent \u2014 Leave concrete next steps and distinguish preparation from completed desktop proof."
+      },
+      {
+        "id": "a_c603f677b8094c",
+        "at": 1795572468247,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from In Progress to In Review",
+        "was": "In Progress",
+        "now": "In Review"
+      },
+      {
+        "id": "a_3889799634ee4c",
+        "at": 1795572826781,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "title",
+        "text": "renamed this to \u201cCollect and inspect actual desktop batch evidence\u201d",
+        "was": "Record and reconcile complete desktop brewing proof",
+        "now": "Collect and inspect actual desktop batch evidence"
+      },
+      {
+        "id": "a_6e82b5e9a21c43",
+        "at": 1795572826784,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "brief",
+        "text": "updated Goal \u2014 the plan changed"
+      },
+      {
+        "id": "a_d0a207a6395f46",
+        "at": 1795572826786,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "brief",
+        "text": "updated Context \u2014 the plan changed"
+      },
+      {
+        "id": "a_0c6d5cf6314141",
+        "at": 1795572826788,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 the plan changed"
+      },
+      {
+        "id": "a_ab60d9d0801541",
+        "at": 1795572826795,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocked by MAB-15"
+      },
+      {
+        "id": "a_192ee5c45b484a",
+        "at": 1795573017736,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 Reflect coordinator/checker findings: all seven current acceptance items remain unmet; a Done access task is not access evidence."
+      },
+      {
+        "id": "a_58412b9d2e6943",
+        "at": 1795573018494,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Notes for the next agent \u2014 Prevent status-only unblocking and avoid another preparation-only proof submission."
+      },
+      {
+        "id": "a_7d6436914ef744",
+        "at": 1795573019155,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from In Review to Ready",
+        "was": "In Review",
+        "now": "Ready"
+      },
+      {
+        "id": "a_58dbc791c31348",
+        "at": 1795573104582,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "brief",
+        "text": "updated Notes for the next agent \u2014 Record immediate execution stop and preserve the unresolved desktop proof without further game activity."
+      },
+      {
+        "id": "a_f901df14cb6746",
+        "at": 1795581483260,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "brief",
+        "text": "updated Context \u2014 the plan changed"
+      },
+      {
+        "id": "a_4436eedf330040",
+        "at": 1795581483264,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocked by MAB-16"
+      }
+    ],
+    "createdAt": 1795572221205,
+    "updatedAt": 1795581483264,
+    "origin": "plan",
+    "estimate": 2,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "vertical-slice",
+      "task": "desktop-batch-proof"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_180ec0efc9c945",
+    "branch": "beluga/mab-1-playable-brewing-vertical"
+  },
+  {
+    "id": "i_fe429ead11184c",
+    "key": "MAB-15",
+    "number": 15,
+    "projectId": "e74189001c",
+    "title": "Enable Godot observation or supply desktop recordings",
+    "status": "done",
+    "priority": "none",
+    "labels": [],
+    "blockedBy": [],
+    "related": [],
+    "rank": 26000,
+    "brief": {
+      "goal": "Unblock milestone criteria 1 and 4 by enabling authorized Godot desktop observation or supplying actual owner-recorded complete-batch media for inspection.",
+      "context": "James selected Enable Godot access, but subsequent supported capture remained denied. He now reports every game run locks up his whole PC. Do not request a launch, new recording or retry from him as the next step. Effective access and desktop evidence remain unmet despite task status. No game launches applies across this plan until a safer approach is agreed; investigate existing source/config/logs only.",
+      "acceptance": "- [ ] UNMET: supported Godot window observation succeeds after owner-enabled permission, OR actual owner media is available for inspection. Latest supported attempt was denied; selecting Enable Godot access and done status do not satisfy this item.\n- [ ] UNMET: the selected route yields inspectable evidence. For the access route, attach a successful authorized Godot capture with provenance; for the owner-media alternative, supply attributable recordings covering controls/save-reload/judging and flawed feed pages 1, 2 and 32. No capture/media currently exists.",
+      "decisions": "- Enable Godot access"
+    },
+    "revisions": [
+      {
+        "id": "r_9b95a886e16648",
+        "at": 1795572831903,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "section": "decisions",
+        "before": "",
+        "reason": "decided in the plan\u2019s conversation"
+      },
+      {
+        "id": "r_68714b5382bc4f",
+        "at": 1795581483261,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "section": "context",
+        "before": "Two independent checks failed because Computer Use denied 1-stable_mono_win64 and no owner media was supplied. Only james can enable access or provide recordings. Existing evidence/desktop/ instructions are preparation. Do not bypass denied access. Selecting a route alone is insufficient.",
+        "reason": "the plan changed"
+      },
+      {
+        "id": "r_4d2964dbd9e744",
+        "at": 1795581483261,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "section": "acceptance",
+        "before": "- [ ] Godot observation is actually authorized and confirmed by successful window observation, OR actual owner-recorded media is available for inspection. A choice, promise or checklist alone is insufficient.\n- [ ] Owner media includes date/machine/operator/branch/commit/launch provenance, normal controls/save-reload/judging and a flawed batch with feed pages 1, 2 and 32.",
+        "reason": "the plan changed"
+      }
+    ],
+    "worktrees": [],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_ecdde39dba9040",
+        "at": 1795572826791,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_c7a2deae05d348",
+        "at": 1795572826797,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocking MAB-14"
+      },
+      {
+        "id": "a_f759fc616f2f44",
+        "at": 1795572826804,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-10"
+      },
+      {
+        "id": "a_2840e17289e847",
+        "at": 1795572831903,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "brief",
+        "text": "wrote Decisions \u2014 decided in the plan\u2019s conversation"
+      },
+      {
+        "id": "a_e72c706f7ed34c",
+        "at": 1795572831905,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "comment",
+        "text": "commented",
+        "body": "Decided: Enable Godot access"
+      },
+      {
+        "id": "a_683c20ef500249",
+        "at": 1795572831907,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "status",
+        "text": "moved this from Ready to Done",
+        "was": "Ready",
+        "now": "Done"
+      },
+      {
+        "id": "a_7f975c8c204147",
+        "at": 1795581483261,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "brief",
+        "text": "updated Context \u2014 the plan changed"
+      },
+      {
+        "id": "a_38a456af779c40",
+        "at": 1795581483262,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "brief",
+        "text": "updated Acceptance criteria \u2014 the plan changed"
+      }
+    ],
+    "createdAt": 1795572826791,
+    "updatedAt": 1795581483262,
+    "origin": "plan",
+    "estimate": 1,
+    "assignee": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "vertical-slice",
+      "task": "desktop-proof-access"
+    },
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "parent": "i_180ec0efc9c945",
+    "closedAt": 1795572831907
+  },
+  {
+    "id": "i_6db42b8b201f4f",
+    "key": "MAB-16",
+    "number": 16,
+    "projectId": "e74189001c",
+    "title": "Verify effective Godot access before resuming proof",
+    "status": "in_progress",
+    "priority": "none",
+    "labels": [],
+    "estimate": 1,
+    "plan": {
+      "id": "pl_058178650bf9",
+      "milestone": "vertical-slice",
+      "task": "desktop-access-verification"
+    },
+    "blockedBy": [],
+    "related": [],
+    "rank": 48000,
+    "brief": {
+      "goal": "Unblock milestone criteria 1 and 4 by verifying effective authorized Godot observation or inspecting supplied owner media; prevent task status from substituting for actual access and recordings.",
+      "context": "STOP EXECUTION: James reports every game run locks up his whole PC. Do not launch Godot or attempt capture to verify permissions. No automatic retries, headless tests or editor runs. Access remains unverified and desktop proof remains incomplete. Only inspect existing source/config/logs without running Godot; agree a safer bounded approach with James before any execution. A later successful supported capture or inspected owner media is still required; owner choice/task status is insufficient.",
+      "acceptance": "- [ ] Use supported Computer Use access only after owner permission is effective; obtain and inspect a real Godot window capture, recording exact executable/window identity, date/machine/operator and branch/commit. A process/window listing is insufficient. Alternatively inspect actual owner-provided media with equivalent provenance.\n- [ ] If the permission still denies access, document the exact denial and remaining owner action, leave this task incomplete, and keep MAB-14 blocked. Do not cycle identical attempts or submit another milestone recheck based on tool logs/checklists alone.\n- [ ] On successful capture/media inspection, link the actual artifact and correct the MAB-15 prerequisite evidence/status using available plan/task mechanisms. If those tools cannot edit task state/checklists, explicitly identify that limitation and request reconciliation; do not falsely claim edits.\n- [ ] Only verified access/media releases MAB-14. Full controls, normal and flawed batches, save/reload/judging and feed page proof remain MAB-14 work, not replaced by this initial capture."
+    },
+    "revisions": [],
+    "worktrees": [
+      "wt-5f2ef830-69e"
+    ],
+    "proof": [],
+    "activity": [
+      {
+        "id": "a_c49b21457b484a",
+        "at": 1795581483262,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "created",
+        "text": "created this task from a plan"
+      },
+      {
+        "id": "a_757a9232987e43",
+        "at": 1795581483265,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "relation",
+        "text": "marked this as blocking MAB-14"
+      },
+      {
+        "id": "a_1a8227e105ec43",
+        "at": 1795581483267,
+        "by": {
+          "kind": "beluga"
+        },
+        "kind": "parent",
+        "text": "made this a sub-task of MAB-10"
+      },
+      {
+        "id": "a_79a273427d964b",
+        "at": 1795581483562,
+        "by": {
+          "kind": "person",
+          "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "name": "james"
+        },
+        "kind": "worktree",
+        "text": "joined worktree mab-1-playable-brewing-vertical"
+      },
+      {
+        "id": "a_2695df5cd34c42",
+        "at": 1795581493457,
+        "by": {
+          "kind": "claude",
+          "owner": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+          "ownerName": "james",
+          "agent": {
+            "runtime": "codex",
+            "label": "Codex"
+          }
+        },
+        "kind": "status",
+        "text": "moved this from Ready to In Progress",
+        "was": "Ready",
+        "now": "In Progress"
+      }
+    ],
+    "createdAt": 1795581483262,
+    "updatedAt": 1795581493457,
+    "createdBy": {
+      "kind": "person",
+      "id": "Dblsb8ohZOLmoGsllLuuqUCFwrOmG4EC",
+      "name": "james"
+    },
+    "origin": "plan",
+    "parent": "i_180ec0efc9c945",
+    "branch": "beluga/mab-1-playable-brewing-vertical"
+  }
+]

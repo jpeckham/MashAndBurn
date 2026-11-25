@@ -1,5 +1,8 @@
 .godot/
 .tools/
+.godot-release-library/
+build/
+dist/
 *.tmp
 *.log
 *.uid

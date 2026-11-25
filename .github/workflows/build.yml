@@ -1,0 +1,29 @@
+name: Godot validation and Windows MSI
+
+on:
+  push:
+    branches: [main, 'codex/**']
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: godot-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  windows:
+    permissions:
+      contents: write
+    uses: jpeckham/.github/.github/workflows/godot-windows-msi.yml@7e426d41c03ed05be4595b9da761f862df0d5ac0
+    with:
+      library_ref: 7e426d41c03ed05be4595b9da761f862df0d5ac0
+      godot_version: '4.4.1'
+      product_name: Mash & Burn
+      executable: MashAndBurn.exe
+      artifact_prefix: mash-and-burn
+      upgrade_code: 4e16f2b9-c90a-43bd-93be-970bda650e19
+      publish_release: true
