@@ -6,9 +6,11 @@ if [[ ${GITHUB_ACTIONS:-} != true || ${RUNNER_ENVIRONMENT:-} != github-hosted ]]
 fi
 mkdir -p .tools/multiplayer-proof/host .tools/multiplayer-proof/guest
 common=(--path . --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --max-fps 30 --script tests/render/multiplayer_proof.gd)
-timeout 900s "$GODOT" "${common[@]}" --position 0,0 -- --role host > .tools/multiplayer-proof/host/process.log 2>&1 &
+scenario=()
+if [[ ${PAIR_FIRE_SMOKE:-false} == true ]]; then scenario=(--fire-smoke-only); fi
+timeout 900s "$GODOT" "${common[@]}" --position 0,0 -- --role host "${scenario[@]}" > .tools/multiplayer-proof/host/process.log 2>&1 &
 host_pid=$!
-timeout 900s "$GODOT" "${common[@]}" --position 1400,0 -- --role guest > .tools/multiplayer-proof/guest/process.log 2>&1 &
+timeout 900s "$GODOT" "${common[@]}" --position 1400,0 -- --role guest "${scenario[@]}" > .tools/multiplayer-proof/guest/process.log 2>&1 &
 guest_pid=$!
 tail -n +1 -F .tools/multiplayer-proof/{host,guest}/process.log &
 log_pid=$!
@@ -38,7 +40,8 @@ for role in ('host', 'guest'):
     folder = pathlib.Path('.tools/multiplayer-proof') / role
     report = json.loads((folder / 'manifest.json').read_text())
     assert report['exit_code'] == 0 and report['failures'] == 0, (role, report)
-    assert len(report['captures']) >= 10, role
+    minimum = 2 if report['profile']['scenario'].startswith('fire-input-smoke-only') else 10
+    assert len(report['captures']) >= minimum, role
     assert 'SCRIPT ERROR:' not in (folder/'process.log').read_text(), role
     print('PAIR_VERIFIED', role, report['checks'], len(report['captures']))
 PY

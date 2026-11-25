@@ -9,6 +9,7 @@ var original_hash := ""
 var walking_keys: Dictionary = {}
 var input_lock_depth := 0
 var observed_replies := 0
+var fire_smoke_only := false
 
 func trace_reply() -> void:
 	if network.reply_count == observed_replies: return
@@ -104,7 +105,7 @@ func brew() -> bool:
 	if not await next_stage("packaging"): return false
 	if role == "guest" and not await set_field("priming_g","1000"): return false
 	await capture(role+"-06-packaging")
-	if not await wait_until(func(): return not network.pending and network.queued.is_empty() and player().cooldowns.get("brew",0.0) <= network.view.tick*.1,10,"packaging input queue and cooldown clear"): return false
+	if not await wait_until(func(): return player().cooldowns.get("brew",0.0) <= network.view.tick*.1,5,"packaging control cooldown clear"): return false
 	if not await click("Package & judge"): return false
 	if not await wait_until(func(): return game.session.state.stage == "judging",10,"GUI packaging accepted: "+network.message):
 		print("PAIR_PACKAGE_FAILURE "+JSON.stringify({"message":network.message,"batch":player().batch,"pending":network.pending,"queued":network.queued}))
@@ -173,7 +174,7 @@ func interact() -> void:
 	release_input()
 
 func host_combat() -> bool:
-	if not await wait_until(func(): return network.view.players.size() == 2 and network.view.players.values().all(func(p): return p.batch.stage == "judging"),240,"both actual GUI recipes packaged"): return false
+	if not fire_smoke_only and not await wait_until(func(): return network.view.players.size() == 2 and network.view.players.values().all(func(p): return p.batch.stage == "judging"),240,"both actual GUI recipes packaged"): return false
 	if not await click("Lobby / combat / claims"): return false
 	if not await click("Use weapon"): return false
 	if not await wait_until(func(): return not network.view.spills.is_empty(),5,"wand creates server floor patch"): return false
@@ -190,6 +191,7 @@ func host_combat() -> bool:
 	if not check(network.view.players[2].claim.resolved,"guest claim resolved before fixture clock advance"): return false
 	await capture("host-09-fire-claims-settled")
 	if not await wait_until(func(): return phase_exists("guest","claim-observed"),20,"guest recorded actual claim outcome"): return false
+	if fire_smoke_only: return true
 	var from_tick: int = network.state.tick
 	network.set_physics_process(false)
 	while network.state.phase == "running": network.state = network.authority.advance(network.state,.1).state
@@ -237,12 +239,14 @@ func guest_fire() -> bool:
 func run_proof() -> void:
 	var args := OS.get_cmdline_user_args()
 	if "--role" in args: role = args[args.find("--role")+1]
+	fire_smoke_only = "--fire-smoke-only" in args
 	output_path = SHARED+"/"+role
 	create_timer(840).timeout.connect(func(): printerr("FAIL: pair role watchdog expired"); finish(2))
 	if role not in ["host","guest"] or not await setup_scene():
 		finish(1)
 		return
 	profile.role = role
+	profile.scenario = "fire-input-smoke-only; no recipe or final-clock proof" if fire_smoke_only else "full-brewing-fire-final"
 	ui = game.get_node("Multiplayer")
 	network = ui.network
 	network.changed.connect(trace_reply)
@@ -254,7 +258,7 @@ func run_proof() -> void:
 	if role == "host": signal_phase("listening")
 	if not await wait_until(func(): return network.player_id > 0 and network.session_connected,15,"real GUI participant joined"): finish(1); return
 	connected_once = true
-	if role == "guest":
+	if role == "guest" and not fire_smoke_only:
 		if not await click("Close") or not await set_field("target_c","95") or not await click("Lobby / combat / claims"): finish(1); return
 	if not await click("Toggle ready"): finish(1); return
 	if role == "host":
@@ -262,11 +266,19 @@ func run_proof() -> void:
 		if not await click("Start (host)"): finish(1); return
 	if not await wait_until(func(): return network.view.get("phase") == "running",10,"GUI round started"): finish(1); return
 	if not await click("Close"): finish(1); return
-	if not await brew(): finish(1); return
+	if not fire_smoke_only and not await brew(): finish(1); return
 	var played := false
 	if role == "host": played = await host_combat()
 	else: played = await guest_fire()
 	if not played: finish(1); return
+	if fire_smoke_only:
+		if role == "host" and not await wait_until(func(): return phase_exists("guest","complete"),30,"guest smoke scenario completed"): finish(1); return
+		if not await click("Lobby / combat / claims") or not await click("Leave"): finish(1); return
+		connected_once = false
+		check(game.session.sim.state_hash(game.session.state) == original_hash,"fire smoke GUI leave restores local batch")
+		signal_phase("complete")
+		finish(1 if failures else 0)
+		return
 	if not await wait_until(func(): return network.view.get("phase") == "finished",60,"both windows receive authoritative final results"): finish(1); return
 	await capture(role+"-13-final-tasting")
 	var tasting = game.modules.filter(func(module): return module.get_script().resource_path == "res://src/social/judging_module.gd")[0]

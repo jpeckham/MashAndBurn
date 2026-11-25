@@ -10,6 +10,10 @@ on:
         description: Run two real windows with full production-speed brewing and fire traversal
         type: boolean
         default: false
+      fire_smoke:
+        description: Only lobby/combat/fire input smoke; no brewing or final judging proof
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -60,7 +64,9 @@ jobs:
           python3 -c "import json; p=json.load(open('.tools/render-proof/manifest.json')); assert p['exit_code']==0 and p['failures']==0 and len(p['captures'])>=16, p"
           (cd .tools/render-proof && sha256sum *.png > SHA256SUMS.txt)
       - name: Render actual host and guest multiplayer walkthrough
-        if: github.event_name == 'workflow_dispatch' && inputs.pair
+        if: github.event_name == 'workflow_dispatch' && (inputs.pair || inputs.fire_smoke)
+        env:
+          PAIR_FIRE_SMOKE: ${{ inputs.fire_smoke }}
         shell: bash
         run: |
           set -euo pipefail
@@ -89,7 +95,7 @@ jobs:
           path: .tools/render-proof/
           if-no-files-found: error
       - name: Preserve multiplayer frames and role logs
-        if: always() && github.event_name == 'workflow_dispatch' && inputs.pair
+        if: always() && github.event_name == 'workflow_dispatch' && (inputs.pair || inputs.fire_smoke)
         uses: actions/upload-artifact@v4
         with:
           name: rendered-multiplayer-proof
