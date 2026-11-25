@@ -1,0 +1,60 @@
+name: Hosted rendered garage proof
+
+on:
+  push:
+    branches: ['codex/**']
+    paths: ['tests/render/**', '.github/workflows/render-proof.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  garage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      GODOT_VERSION: '4.4.1'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install virtual display and software rendering
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y xvfb libgl1-mesa-dri mesa-utils libxrandr2 libxi6 libxinerama1 libxcursor1
+      - name: Install checksum-verified official Godot
+        shell: bash
+        run: |
+          set -euo pipefail
+          toolchain="$RUNNER_TEMP/godot-render"
+          mkdir -p "$toolchain" .tools/render-proof
+          cd "$toolchain"
+          asset="Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          base="https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable"
+          curl --fail --location --retry 3 "$base/$asset" -o "$asset"
+          curl --fail --location --retry 3 "$base/SHA512-SUMS.txt" -o SHA512-SUMS.txt
+          awk -v file="$asset" '$2 == file {print}' SHA512-SUMS.txt > selected-checksum.txt
+          test "$(wc -l < selected-checksum.txt)" -eq 1
+          sha512sum --check selected-checksum.txt
+          unzip -q "$asset"
+          executable="$toolchain/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          chmod +x "$executable"
+          echo "GODOT=$executable" >> "$GITHUB_ENV"
+      - name: Import and render actual UI input walkthrough
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$GODOT" --version | tee .tools/render-proof/toolchain.txt
+          timeout 90s "$GODOT" --headless --editor --path . --quit > .tools/render-proof/import.log 2>&1
+          if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/import.log; then exit 1; fi
+          xvfb-run -a -s '-screen 0 1600x1000x24' timeout 360s "$GODOT" --path . --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --max-fps 60 --script tests/render/render_proof.gd 2>&1 | tee .tools/render-proof/walkthrough.log
+          if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/walkthrough.log; then exit 1; fi
+          python3 -c "import json; p=json.load(open('.tools/render-proof/manifest.json')); assert p['exit_code']==0 and p['failures']==0 and len(p['captures'])>=16, p"
+          (cd .tools/render-proof && sha256sum *.png > SHA256SUMS.txt)
+      - name: Preserve frames, provenance and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-garage-proof
+          path: .tools/render-proof/
+          if-no-files-found: error
