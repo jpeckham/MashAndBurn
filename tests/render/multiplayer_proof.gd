@@ -173,6 +173,26 @@ func interact() -> void:
 	await frames(2)
 	release_input()
 
+func look_at_point(point: Vector3) -> bool:
+	await acquire_input()
+	root.grab_focus()
+	root.gui_release_focus()
+	mouse_capture(true)
+	await frames(2)
+	var direction := point-game.camera.global_position
+	var yaw := atan2(-direction.x,-direction.z)
+	var pitch := clampf(atan2(direction.y,Vector2(direction.x,direction.z).length()),-1.3,.7)
+	var motion := InputEventMouseMotion.new()
+	motion.position = Vector2(650,400)
+	motion.relative = Vector2(wrapf(game.camera.rotation.y-yaw,-PI,PI)/.003,(game.camera.rotation.x-pitch)/.003)
+	Input.parse_input_event(motion)
+	await frames(2)
+	mouse_capture(false)
+	key(KEY_ESCAPE,true)
+	key(KEY_ESCAPE,false)
+	release_input()
+	return check(absf(wrapf(game.camera.rotation.y-yaw,-PI,PI)) < .06 and absf(game.camera.rotation.x-pitch) < .06,"actual mouse-look frames the observed world effect")
+
 func host_combat() -> bool:
 	if not fire_smoke_only and not await wait_until(func(): return network.view.players.size() == 2 and network.view.players.values().all(func(p): return p.batch.stage == "judging"),240,"both actual GUI recipes packaged"): return false
 	if not await wait_until(func(): return phase_exists("guest","awaiting-wand"),30,"guest is observing the short wand effect"): return false
@@ -180,10 +200,17 @@ func host_combat() -> bool:
 	if not await click("Use weapon"): return false
 	if not await wait_until(func(): return not network.view.spills.is_empty(),5,"wand creates server floor patch"): return false
 	if not await click("Close"): return false
+	var rival: Dictionary = network.view.players[2]
+	if not await look_at_point(Vector3(rival.position[0],.04,rival.position[1])): return false
 	await capture("host-08-wand-floor")
 	if not await walk_to(Vector2(0,5.5)): return false
 	signal_phase("at-exit")
 	if not await wait_until(func(): return phase_exists("guest","escaped"),45,"guest staged and escaped through actual input"): return false
+	if player().fire.phase == "staging" and not player().escaped: await interact()
+	var origin: Array = network.view.players[2].fire.get("origin",network.view.players[2].position)
+	if not await look_at_point(Vector3(origin[0],1.1,origin[1])): return false
+	if not check(network.view.players[2].fire.phase == "staging","active fire window remains visible for the overview"): return false
+	await capture("host-09-active-fire-overview")
 	var deadline := Time.get_ticks_msec()+110000
 	while Time.get_ticks_msec() < deadline:
 		if player().fire.phase == "staging" and not player().escaped: await interact()

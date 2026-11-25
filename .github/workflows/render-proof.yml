@@ -50,6 +50,8 @@ jobs:
           chmod +x "$executable"
           echo "GODOT=$executable" >> "$GITHUB_ENV"
       - name: Import and render actual UI input walkthrough
+        env:
+          FIRE_INPUT_SMOKE: ${{ inputs.fire_smoke || false }}
         shell: bash
         run: |
           set -euo pipefail
@@ -59,10 +61,12 @@ jobs:
           timeout 90s "$GODOT" --headless --path . --script tests/run_all.gd 2>&1 | tee .tools/render-proof/tests.log
           if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/tests.log; then exit 1; fi
           grep -E '^RESULT: [1-9][0-9]* checks, 0 failures$' .tools/render-proof/tests.log
-          xvfb-run -a -s '-screen 0 1600x1000x24' timeout 360s "$GODOT" --path . --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --max-fps 60 --script tests/render/render_proof.gd 2>&1 | tee .tools/render-proof/walkthrough.log
-          if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/walkthrough.log; then exit 1; fi
-          python3 -c "import json; p=json.load(open('.tools/render-proof/manifest.json')); assert p['exit_code']==0 and p['failures']==0 and len(p['captures'])>=16, p"
-          (cd .tools/render-proof && sha256sum *.png > SHA256SUMS.txt)
+          if [[ "$FIRE_INPUT_SMOKE" != true ]]; then
+            xvfb-run -a -s '-screen 0 1600x1000x24' timeout 360s "$GODOT" --path . --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --max-fps 60 --script tests/render/render_proof.gd 2>&1 | tee .tools/render-proof/walkthrough.log
+            if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/walkthrough.log; then exit 1; fi
+            python3 -c "import json; p=json.load(open('.tools/render-proof/manifest.json')); assert p['exit_code']==0 and p['failures']==0 and len(p['captures'])>=16, p"
+            (cd .tools/render-proof && sha256sum *.png > SHA256SUMS.txt)
+          fi
       - name: Render actual host and guest multiplayer walkthrough
         if: github.event_name == 'workflow_dispatch' && (inputs.pair || inputs.fire_smoke)
         env:
@@ -72,6 +76,7 @@ jobs:
           set -euo pipefail
           xvfb-run -a -s '-screen 0 3000x1000x24' bash tests/render/run_pair.sh
       - name: Render fixed-camera beer and thermal comparisons
+        if: inputs.fire_smoke != true
         shell: bash
         run: |
           set -euo pipefail
