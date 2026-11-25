@@ -58,6 +58,7 @@ func run(t) -> void:
 	garage.session.state.flaws.diacetyl = .8
 	garage.refresh()
 	var module = tasting[0]
+	t.check(module.get("private_alerts") != null,"tasting module exposes disabled-by-default private notification adapter")
 	t.check(module.panel.visible and module.feed_active, "end batch opens tasting/feed UI")
 	t.check(module.rows.get_child_count() == 16, "render bounded to 16 rows")
 	module.page_index = 31
@@ -67,3 +68,20 @@ func run(t) -> void:
 	garage.refresh()
 	t.check(not module.panel.visible, "new batch closes previous tasting UI")
 	garage.free()
+	private_delivery(t)
+
+func private_delivery(t) -> void:
+	var path := "res://src/social/private_notifications.gd"
+	if not FileAccess.file_exists(path):
+		t.check(false,"opt-in private alert payload adapter exists")
+		return
+	var notify = load(path).new()
+	t.check(not notify.enabled and notify.http == null and not notify.enqueue(result(44),42),"private alerts perform no default network activity")
+	t.check(not notify.configure("ws://127.0.0.1:27842/api/v1/telemetry","hosted-fake-token-with-no-real-credentials","friends",false),"game-side explicit opt-in is required")
+	t.check(not notify.configure("ws://example.com:27842/api/v1/telemetry","hosted-fake-token-with-no-real-credentials","friends",true),"game can contact only the authenticated local bridge")
+	t.check(notify.configure("ws://127.0.0.1:27842/api/v1/telemetry","hosted-fake-token-with-no-real-credentials","friends",true) and notify.http == null,"configuration alone does not dispatch a message")
+	t.check(notify.payload(result(45),42).is_empty(),"normal batch cannot dispatch private alert")
+	var body: Dictionary = notify.payload(result(44),42)
+	t.check(body.destination == "friends" and body.event_id.length() == 64 and body.score == 44 and body.keys().size() == 5,"eligible batch creates bounded private-channel envelope")
+	t.check(not notify.payload(result(90,["diacetyl"]),42).is_empty(),"severe butter flaw preserves independent private-alert boundary")
+	notify.free()
