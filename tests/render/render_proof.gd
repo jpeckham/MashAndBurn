@@ -73,6 +73,19 @@ func click_control(control: Control) -> bool:
 func click(text: String) -> bool:
 	return await click_control(find_button(game,text))
 
+func metrics_scroll(down: bool) -> void:
+	if not await click_control(game.info_scroll): return
+	for i in range(15):
+		var event := InputEventMouseButton.new()
+		event.position = mouse
+		event.global_position = mouse
+		event.button_index = MOUSE_BUTTON_WHEEL_DOWN if down else MOUSE_BUTTON_WHEEL_UP
+		event.pressed = true
+		event.factor = 1.0
+		Input.parse_input_event(event)
+		await frames(1)
+	check(game.info_scroll.get_global_rect().end.y < 620,"metrics stay above station controls")
+
 func set_field(field: String, value: String) -> bool:
 	var editor: SpinBox = game.settings[field]
 	if not await click_control(editor.get_line_edit()): return false
@@ -135,6 +148,9 @@ func batch(flawed: bool) -> bool:
 		if not await click("Load batch"): return false
 		check(game.session.sim.state_hash(game.session.state) == saved and game.paused,"GUI reload restores exact mid-batch state")
 		await capture("normal-02-reloaded")
+		await metrics_scroll(true)
+		await capture("normal-02b-metrics")
+		await metrics_scroll(false)
 	if not await next_stage("boil"): return false
 	if not flawed:
 		if not await click("Add (5% AA)"): return false
@@ -169,6 +185,9 @@ func batch(flawed: bool) -> bool:
 			if not await click("Next →"): return false
 		check(judge.page_index == 31 and judge.rows.get_child_count() == 16,"GUI final feed page remains bounded")
 		await capture("flawed-09-feed-page-32")
+		if not await click("Back to garage"): return false
+		await metrics_scroll(true)
+		await capture("flawed-10-defects-and-latch")
 	return true
 
 func run_proof() -> void:
@@ -205,10 +224,18 @@ func run_proof() -> void:
 	right.button_index = MOUSE_BUTTON_RIGHT
 	right.pressed = true
 	Input.parse_input_event(right)
+	var yaw: float = game.camera.rotation.y
+	var look := InputEventMouseMotion.new()
+	look.position = right.position
+	look.global_position = right.position
+	look.relative = Vector2(35,-8)
+	Input.parse_input_event(look)
+	await frames(1)
+	check(absf(game.camera.rotation.y-yaw) > .01,"right-mouse motion changes camera look")
 	key(KEY_W,true)
 	await create_timer(.3).timeout
 	key(KEY_W,false)
-	right = right.duplicate()
+	right = right.duplicate() as InputEventMouseButton
 	right.pressed = false
 	Input.parse_input_event(right)
 	key(KEY_ESCAPE,true)
@@ -219,6 +246,21 @@ func run_proof() -> void:
 	await frames()
 	check(game.session.message.contains("not ready"),"E interaction reaches station readiness feedback")
 	await capture("01-controls-and-readiness")
+	if not await click("05  Packaging"):
+		finish(1)
+		return
+	right.pressed = true
+	Input.parse_input_event(right)
+	look.relative = Vector2(-PI/.003,0)
+	Input.parse_input_event(look)
+	right.pressed = false
+	Input.parse_input_event(right)
+	key(KEY_ESCAPE,true)
+	key(KEY_ESCAPE,false)
+	await capture("02-buick-trunk-and-exit")
+	if not await click("01  Mash"):
+		finish(1)
+		return
 	if not await batch(false):
 		finish(1)
 		return

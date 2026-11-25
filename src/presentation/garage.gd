@@ -4,6 +4,7 @@ const Session = preload("res://src/presentation/brew_session.gd")
 var session := Session.new()
 var camera: Camera3D
 var status: Label
+var info_scroll: ScrollContainer
 var notice: Label
 var instruction: Label
 var next_button: Button
@@ -203,9 +204,14 @@ func build_ui() -> void:
 	canvas.add_child(root)
 	label("MASH & BURN",root,30,Color("f0c36f")).position = Vector2(24,16)
 	label("GARAGE 01     /     LOCAL BREW LAB",root,13,Color("aec4c8")).position = Vector2(26,56)
-	var info := panel(root,Vector2(24,91),Vector2(300,470))
+	var info := panel(root,Vector2(24,91),Vector2(300,510))
 	batch_label = label("LIVE BATCH",info,16,Color("f0c36f"))
-	status = label("",info,15)
+	info_scroll = ScrollContainer.new()
+	info_scroll.custom_minimum_size = Vector2(268,400)
+	info_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	info_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	info.add_child(info_scroll)
+	status = label("",info_scroll,14)
 	status.custom_minimum_size.x = 268
 	label("MODEL: GAME APPROXIMATIONS",info,11,Color("9db1b2"))
 	var right := PanelContainer.new()
