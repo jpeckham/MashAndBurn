@@ -141,3 +141,16 @@ func check_fire(t,engine) -> void:
 	cutoff.players[1].position = [0.0,5.5]
 	cutoff = engine.advance(cutoff,.1).state
 	t.check(cutoff.players[1].fire.phase == "resolved","45-second boundary closes before further commands")
+	var late := running(engine)
+	late.tick = 8999
+	late.elapsed = 899.9
+	late = engine.submit(late,1,command(late,1,"ignite",{"cause":"cord"})).state
+	late = engine.advance(late,.1).state
+	t.check(not late.players[1].claim.resolved and late.players[1].fire.remaining > 44,"round end cannot truncate a late 45-second staging window")
+	t.check(late.elapsed == 900 and late.phase == "settling","brewing clock stops while active claims settle")
+	t.check(not engine.submit(late,1,command(late,1,"attack",{"weapon":"wand","target":2})).ok,"settlement cannot extend combat beyond 15 minutes")
+	var steps := 0
+	while late.phase != "finished" and steps < 1000:
+		late = engine.advance(late,.1).state
+		steps += 1
+	t.check(late.phase == "finished" and late.elapsed == 900,"late fire resolves once without extending competitive clock")
