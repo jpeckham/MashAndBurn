@@ -61,6 +61,14 @@ func run(t) -> void:
 			first.send("award_money",{"amount":100000})
 			t.check(await wait_for(t,func(): return first.reply_count > replies),"malicious real client receives rejection")
 			t.check(first.message.contains("Unsupported") and server.state.players[first.player_id].money == 1000,"remote input cannot award money")
+			var identity: int = first.player_id
+			var token: String = first.resume_token
+			first._drop_connection("Fixture disconnect")
+			t.check(await wait_for(t,func(): return not server.state.players[identity].connected),"actual disconnect reaches authoritative cleanup")
+			t.check(not first.send("move",{"direction":[0,0]}),"disconnected client cannot send through offline fallback")
+			first.connect_to("127.0.0.1",port,"Reconnect",true)
+			t.check(await wait_for(t,func(): return first.player_id == identity and server.state.players[identity].connected),"actual reconnect restores reserved identity")
+			t.check(first.resume_token == token and server.state.players[identity].batch.safe_state,"reconnect preserves credential and hazard latch")
 			# Advance the server's fixed clock in the fixture, not via a network command.
 			# Production never exposes a speed or elapsed-time RPC.
 			for tick in range(9000): server.state = server.authority.advance(server.state,.1).state
@@ -68,6 +76,9 @@ func run(t) -> void:
 			t.check(await wait_for(t,func(): return clients.all(func(c): return c.view.get("phase") == "finished")),"%d real clients finish server-owned round" % count)
 			t.check(clients.all(func(c): return c.view.elapsed == 900 and c.view.results.size() == count),"clients agree on 900-second clock and results")
 			print("ENET_SMOKE clients=%d elapsed=%s results=%d server_tick=%d" % [count,server.state.elapsed,server.state.results.size(),server.state.tick])
+			server.shutdown()
+			t.check(await wait_for(t,func(): return first.message.contains("Server disconnected")),"server loss reaches clients")
+			t.check(not first.send("move",{"direction":[0,0]}),"server loss never enables local authority")
 		for network in nodes:
 			var branch: Node = network.get_parent()
 			network.shutdown()
