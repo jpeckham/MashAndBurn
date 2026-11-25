@@ -26,6 +26,14 @@ const STAGES = ["mash","boil","cooling","fermentation","packaging"]
 const COLORS = [Color("e9b660"),Color("f28b59"),Color("62c5d9"),Color("a7bc7d"),Color("b8a1d6")]
 
 func _ready() -> void:
+	# Keep dynamic 2D text atlases independent of world Label3D glyph caches.
+	# Reuse one UI font per window, including multi-garage headless fixtures.
+	var window := get_window()
+	if not window.has_meta("mash_burn_ui_theme"):
+		var ui_theme := Theme.new()
+		ui_theme.default_font = ThemeDB.fallback_font.duplicate(true)
+		window.theme = ui_theme
+		window.set_meta("mash_burn_ui_theme",ui_theme)
 	build_world()
 	build_ui()
 	for path in ProjectSettings.get_setting("mash_burn/modules", []):

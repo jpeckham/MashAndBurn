@@ -179,7 +179,7 @@ func look_at_point(point: Vector3) -> bool:
 	root.gui_release_focus()
 	mouse_capture(true)
 	await frames(2)
-	var direction := point-game.camera.global_position
+	var direction: Vector3 = point-game.camera.global_position
 	var yaw := atan2(-direction.x,-direction.z)
 	var pitch := clampf(atan2(direction.y,Vector2(direction.x,direction.z).length()),-1.3,.7)
 	var motion := InputEventMouseMotion.new()
