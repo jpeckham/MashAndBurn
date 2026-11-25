@@ -13,6 +13,8 @@ static func build(garage: Node) -> Dictionary:
 		label.name = "PropLabel"
 		label.text = TITLES[object]+"\nE to stage nearby"
 		label.font_size = 25
+		label.pixel_size = .002
+		label.outline_size = 4
 		label.position.y = 1.4
 		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 		marker.add_child(label)
