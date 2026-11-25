@@ -18,9 +18,9 @@ jobs:
   windows:
     permissions:
       contents: write
-    uses: jpeckham/.github/.github/workflows/godot-windows-msi.yml@84765dd4877453dc01be8dcb33c8dc89f68b3e9d
+    uses: jpeckham/.github/.github/workflows/godot-windows-msi.yml@5414f1ed8aeaadbba31ef4c43949b93e5c3c3eeb
     with:
-      library_ref: 84765dd4877453dc01be8dcb33c8dc89f68b3e9d
+      library_ref: 5414f1ed8aeaadbba31ef4c43949b93e5c3c3eeb
       godot_version: '4.4.1'
       product_name: Mash & Burn
       executable: MashAndBurn.exe
