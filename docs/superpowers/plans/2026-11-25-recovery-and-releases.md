@@ -25,13 +25,14 @@ No Godot or installer execution on James's PC. No GUI takeover. Pin shared workf
 
 Files: `../.github/.github/workflows/godot-windows-msi.yml`, `../.github/scripts/godot/`, `.github/workflows/build.yml`, `export_presets.cfg`.
 
-- [x] Add configurable official Godot engine/template download with SHA512 verification (remote verification pending).
-- [x] Add bounded import/test/export steps with retained logs and explicit failure detection (remote verification pending).
-- [x] Generate MSI with a stable upgrade code, recursive payload, shortcut and major upgrade policy (remote verification pending).
-- [ ] On hosted Windows, install silently, verify payload hashes, uninstall, and verify removal. Add explicit exported-game smoke validation there.
-- [ ] Add development artifacts and version-tag-only GitHub Releases with checksum assets.
-- [ ] Push feature branches, observe remote runs, fix failures, and record actual evidence.
-- [ ] Document how another Godot project supplies its preset, tests, product name, executable, upgrade code and version.
+- [x] Add configurable official Godot engine/template download with SHA512 verification.
+- [x] Add bounded import/test/export steps with retained logs and explicit failure detection.
+- [x] Generate MSI with a stable upgrade code, recursive payload, shortcut and major upgrade policy.
+- [x] On hosted Windows, install silently, verify payload hashes, uninstall, and verify removal. Add explicit exported-game smoke validation there.
+- [x] Add development artifacts and version-tag-only GitHub Releases with checksum assets (publication remains gated on finished product).
+- [x] Push feature branches, observe remote runs, fix failures, and record actual evidence in `evidence/hosted-validation-2026-11-25.md`.
+- [x] Document how another Godot project supplies its preset, tests, product name, executable, upgrade code and version.
+- [ ] Verify major upgrades and downgrade rejection on hosted Windows before final release.
 
 ### Task 3: Continue product scope
 
