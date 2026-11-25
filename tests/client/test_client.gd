@@ -81,9 +81,57 @@ func run(t) -> void:
 		client_ui.leave()
 		t.check(client_scene.session.sim.state_hash(client_scene.session.state) == original and not client_ui.remote_mode,"leaving restores original local batch exactly")
 		print("GARAGE_ENET_SMOKE style=stout final_result=authoritative local_batch=restored")
+		await interactions(t,host_scene,client_scene,port+1)
 	for scene in [client_scene,host_scene]:
 		var branch: Node = scene.get_parent()
 		scene.get_node("Multiplayer").leave()
 		t.set_multiplayer(null,branch.get_path())
 		branch.queue_free()
 	await t.process_frame
+
+func interactions(t, host_scene, client_scene, port: int) -> void:
+	var host_ui = host_scene.get_node("Multiplayer")
+	var client_ui = client_scene.get_node("Multiplayer")
+	var server = host_ui.network
+	var client = client_ui.network
+	server.host(port,"Host")
+	client.connect_to("127.0.0.1",port,"Guest")
+	if not await wait_for(t,func(): return client.player_id == 2 and client_ui.remote_mode):
+		t.check(false,"second full garage session joins")
+		return
+	server.send("ready",{"ready":true})
+	client.send("ready",{"ready":true})
+	await wait_for(t,func(): return server.state.players.values().all(func(p): return p.ready))
+	server.start_round()
+	server.state.players[2].position = [-4.8,-.2]
+	server.publish()
+	await wait_for(t,func(): return client.view.get("phase") == "running")
+	client.send("ignite",{"cause":"cord"})
+	t.check(await wait_for(t,func(): return client.view.players[2].fire.phase == "staging"),"real client receives fire incident")
+	t.root.gui_release_focus()
+	for pressed in [true,false]:
+		var event := InputEventKey.new()
+		event.keycode = KEY_E
+		event.physical_keycode = KEY_E
+		event.pressed = pressed
+		Input.parse_input_event(event)
+	t.check(await wait_for(t,func(): return server.state.players[2].fire.objects.receipt),"E travels through real viewport and ENet to spatial staging")
+	t.check(await wait_for(t,func(): return client_ui.staging_props.receipt.get_node("PropLabel").text.contains("STAGED")),"authoritative prop progress updates real client label")
+	server.state.players[1].position = [-4.0,-.2]
+	server.publish()
+	client.send("attack",{"weapon":"wand","target":1})
+	t.check(await wait_for(t,func(): return server.state.spills.size() == 1 and client_ui.spills.size() == 1),"real client renders authoritative floor patch")
+	if not client_ui.spills.is_empty():
+		var patch = client_ui.spills.values()[0]
+		for tick in range(85): server.state = server.authority.advance(server.state,.1).state
+		server.publish()
+		t.check(await wait_for(t,func(): return client_ui.spills.is_empty()),"expired floor snapshot removes client patch")
+		await t.process_frame
+		t.check(not is_instance_valid(patch),"expired floor visual is freed")
+	t.check(client_ui.fires.has(2),"fire visual remains during its active window")
+	var flame = client_ui.fires.get(2)
+	client_ui.leave()
+	await t.process_frame
+	t.check(client_ui.fires.is_empty() and client_ui.spills.is_empty() and not is_instance_valid(flame),"leave frees transient fire/floor visuals")
+	t.check(not client_ui.staging_props.receipt.get_node("PropLabel").text.contains("STAGED"),"leave resets local prop progress for the next session")
+	print("GARAGE_INTERACTION_SMOKE staging=viewport_E floor=expired_and_freed leave=clean")
