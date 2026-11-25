@@ -1,5 +1,12 @@
 extends RefCounted
 
+class FakeAuthorityTransport:
+	extends RefCounted
+	var intents: Array = []
+	func send(action: String, data: Dictionary = {}) -> bool:
+		intents.append({"action":action,"data":data})
+		return true
+
 func run(t) -> void:
 	if not FileAccess.file_exists("res://src/presentation/brew_session.gd"):
 		t.check(false,"presentation routing and save continuation implemented")
@@ -37,3 +44,18 @@ func run(t) -> void:
 	t.check(tree != null, "garage scene loads")
 	t.check(tree.has_method("register_module"), "module extension point")
 	tree.free()
+	var remote_path := "res://src/gameplay/network/remote_brew_session.gd"
+	if not FileAccess.file_exists(remote_path):
+		t.check(false,"multiplayer brew desk routes intents without local authority")
+		return
+	var adapter = load(remote_path).new()
+	var transport := FakeAuthorityTransport.new()
+	adapter.configure(transport)
+	var original: String = adapter.sim.state_hash(adapter.state)
+	t.check(adapter.route("set",{"field":"target_c","value":69.0}),"brew desk queues multiplayer setting")
+	t.check(transport.intents.size() == 1 and transport.intents[0].action == "brew","brew desk uses authority transport")
+	t.check(adapter.sim.state_hash(adapter.state) == original,"queued input cannot mutate local batch")
+	adapter.step(240)
+	adapter.new_batch()
+	t.check(adapter.sim.state_hash(adapter.state) == original,"time skips/new batch cannot bypass multiplayer authority")
+	t.check(not adapter.save_to() and not adapter.load_from() and not adapter.decode_save(raw),"local saves cannot replace server state")
