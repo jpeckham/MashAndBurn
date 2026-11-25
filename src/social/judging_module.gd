@@ -1,6 +1,8 @@
 extends Node
 const Judge = preload("res://src/social/beer_judge.gd")
 const Feed = preload("res://src/social/social_psyops_service.gd")
+const PrivateAlerts = preload("res://src/social/private_notifications.gd")
+var private_alerts: Node
 var garage: Node
 var service := Feed.new()
 var judge := Judge.new()
@@ -17,6 +19,9 @@ var feed_active := false
 
 func setup(host: Node) -> void:
 	garage = host
+	private_alerts = PrivateAlerts.new()
+	add_child(private_alerts)
+	private_alerts.setup_environment()
 	show_button = garage.button("Open tasting & local feed",garage.module_slot,func(): panel.visible = true)
 	show_button.visible = false
 	var layer := CanvasLayer.new()
@@ -59,7 +64,7 @@ func setup(host: Node) -> void:
 	rows.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	rows.add_theme_constant_override("separation",8)
 	scroll.add_child(rows)
-	garage.label("512 procedural personas · at most 16 visible posts · no outbound dispatch",v,12,Color("a9bfc2"))
+	garage.label("512 procedural personas · at most 16 visible posts · "+("opt-in private alerts configured" if private_alerts.enabled else "no outbound dispatch"),v,12,Color("a9bfc2"))
 
 func on_state(s: Dictionary) -> void:
 	if garage.session.has_method("judging_context"):
@@ -83,6 +88,7 @@ func present(result: Dictionary, seed_value: int, style_name: String) -> void:
 	current = result.duplicate(true)
 	feed_active = service.submit(current,seed_value)
 	if not feed_active: feed_active = service.select_batch(current,seed_value)
+	if feed_active: private_alerts.enqueue(current,seed_value)
 	page_index = 0
 	var c: Dictionary = current.categories
 	summary.text = "%.1f / 100    ·    Fictional %s rubric\nAroma %.1f  /  Appearance %.1f  /  Flavor %.1f  /  Mouthfeel %.1f  /  Style %.1f\nEach category is worth 20 points." % [current.score,style_name.replace("_"," "),c.aroma,c.appearance,c.flavor,c.mouthfeel,c.style_accuracy]

@@ -13,19 +13,23 @@ func endpoint_allowed(url: String) -> bool:
 	var match_value := pattern.search(url)
 	return match_value != null and match_value.get_string(2).to_int() >= 1024 and match_value.get_string(2).to_int() <= 65535
 
+func credential_allowed(credential: String) -> bool:
+	if credential.length() < 32 or credential.length() > 256:
+		return false
+	for i in range(credential.length()):
+		if credential.unicode_at(i) < 33 or credential.unicode_at(i) > 126:
+			return false
+	return true
+
 func start(url: String, credential: String) -> bool:
 	stop()
 	error = ""
 	if not endpoint_allowed(url):
 		error = "Only an explicit loopback companion endpoint is supported."
 		return false
-	if credential.length() < 32 or credential.length() > 256:
-		error = "Configure a local telemetry credential before connecting."
+	if not credential_allowed(credential):
+		error = "Configure a valid local telemetry credential before connecting."
 		return false
-	for i in range(credential.length()):
-		if credential.unicode_at(i) < 33 or credential.unicode_at(i) > 126:
-			error = "Invalid telemetry credential format."
-			return false
 	peer = WebSocketPeer.new()
 	peer.handshake_headers = PackedStringArray(["Authorization: Bearer "+credential])
 	peer.inbound_buffer_size = 16384
