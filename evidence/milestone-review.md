@@ -18,7 +18,7 @@ Machine: james's Windows PC. Branch: `beluga/mab-1-playable-brewing-vertical`. N
 
 The required observed full-batch desktop smoke demonstration and screenshots **were not completed**. Windows Computer Use listed the actual running Godot window, then rejected access: `Computer Use was not approved to use 1-stable_mono_win64`. A user card asked to enable Godot computer-use access, with Done / Done elsewhere / Not now choices. No affirmative answer was received during implementation. No alternative automation route was used to bypass that restriction. The test desktop process was stopped.
 
-The full-batch headless trace is evidence of simulation completion, not a substitute for the desktop smoke requirement. No screenshots or video are claimed. `ffmpeg` was not found on PATH. No export templates, packaged executable export, physical hardware, multiplayer, ray tracing or external dispatch were tested or claimed. Godot launches project.godot using the documented installed executable.
+The full-batch headless trace is evidence of simulation completion, not a substitute for the desktop smoke requirement. No screenshots or video are claimed. In the original implementation session, `ffmpeg` was not found on PATH; the MAB-14 tool check below supersedes that availability result. No export templates, packaged executable export, physical hardware, multiplayer, ray tracing or external dispatch were tested or claimed. Godot launches project.godot using the documented installed executable.
 
 ## Reproduce the remaining desktop check
 
@@ -31,3 +31,13 @@ The full-batch headless trace is evidence of simulation completion, not a substi
 ## Known model/product limits
 
 Approximations and fixtures are documented in docs/architecture.md. All randomness takes explicit seed/tick. Determinism targets matching Godot/platform and identical tick/command sequences, not cross-platform floating-point identity. Fermentation and packaging are accelerated game approximations; bottle conditioning is instantaneous. Feed deduplication is per running app session; it resets on app restart. The UI uses original primitive geometry and a built-in font. Visual QA remains pending the access above.
+
+## MAB-14 proof reconciliation — 2026-11-24
+
+Product revision checked: `4acdd863ff687016052f1ebb2ecfe7df510f16cb`, branch `beluga/mab-1-playable-brewing-vertical`, james's Windows PC. Collection was prepared around 20:04 America/Chicago. No product code changed, no suite was rerun, and all previous logs were preserved.
+
+Fresh tool checks confirm Godot `4.4.1.stable.mono.official.49a5bc7b6`, Python 3.11.9, and FFmpeg `8.1.1-essentials_build-www.gyan.dev`. FFmpeg exists at `C:/ffmpeg/bin/ffmpeg.exe` and the current PATH lookup resolves there. See the [desktop proof collection index and tool logs](desktop/README.md). Renderer details above remain prior startup output; they were not newly visually verified. There is no Mac app or npm e2e to run.
+
+The supported owner-access prerequisite remains unresolved. An owner question requests Godot access enabled through the supported permission flow or an owner recording for inspection. No alternate capture/automation route has been used. No new desktop media has been collected or inspected; the collection index is a procedure, not proof of completion.
+
+Live MAB-1/2/3 briefs were read. MAB-1's implementation/headless checks remain separate from desktop proof. MAB-2's deferred desktop walkthrough remains an unmet requirement and does not waive milestone criteria 1 or 4. MAB-3's 663-check proof remains valid automated evidence; its desktop completion criterion remains unmet. MAB-14 cannot supply a complete proof package for independent milestone recheck until authorized or owner-recorded media is inspected. The milestone remains **not passed**.

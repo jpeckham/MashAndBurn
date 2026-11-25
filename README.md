@@ -2,6 +2,8 @@
 
 Godot 4.4.1 Mono is installed at `C:\Program Files\Godot\Godot_v4.4.1-stable_mono_win64_console.exe` (reported `4.4.1.stable.mono.official.49a5bc7b6`). GDScript requires no .NET SDK. Python 3.11.9 is available at `C:\Users\james\AppData\Local\Programs\Python\Python311\python.exe`; it is optional and not the simulation runtime. No packages or setup install is required.
 
+FFmpeg 8.1.1 is available at `C:\ffmpeg\bin\ffmpeg.exe` and resolves on PATH in the MAB-14 check. It is optional for recording and is not a game dependency. See [desktop proof collection and tool logs](evidence/desktop/README.md); recording requires owner-enabled desktop access, or owner-provided media for inspection.
+
 PowerShell commands (replace the executable path if installed elsewhere):
 
 ```powershell
@@ -31,3 +33,5 @@ Focused UI checks: append `-- --suite presentation` to the headless harness comm
 Packaging opens the tasting room with five 20-point categories and cause-based feedback. Scores below 45 or severe diacetyl/acetaldehyde open a fictional local feed: 512 unique procedural personas, 16 posts per page, no network calls or external accounts. See [sandbox details](docs/social.md).
 
 Run all headless checks by omitting `-- --suite ...`. The recorded milestone run passed **663 checks, zero failures**. [Validation report](evidence/milestone-review.md) records tool versions, test logs and the remaining desktop-smoke approval gap. Milestone acceptance remains incomplete until that observed desktop walkthrough is recorded.
+
+MAB-14 preserves that existing automated evidence without rerunning suites for proof collection. The [desktop checklist](evidence/desktop/README.md) covers normal and flawed batches, movement/look/interaction, save/reload and feed pages 1, 2 and 32. It is an uncompleted collection procedure; no new desktop media is claimed. Owner-recorded video or ordered screenshots are acceptable once inspected and attributed.
