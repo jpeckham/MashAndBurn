@@ -52,6 +52,9 @@ jobs:
           "$GODOT" --version | tee .tools/render-proof/toolchain.txt
           timeout 90s "$GODOT" --headless --editor --path . --quit > .tools/render-proof/import.log 2>&1
           if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/import.log; then exit 1; fi
+          timeout 90s "$GODOT" --headless --path . --script tests/run_all.gd 2>&1 | tee .tools/render-proof/tests.log
+          if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/tests.log; then exit 1; fi
+          grep -E '^RESULT: [1-9][0-9]* checks, 0 failures$' .tools/render-proof/tests.log
           xvfb-run -a -s '-screen 0 1600x1000x24' timeout 360s "$GODOT" --path . --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --max-fps 60 --script tests/render/render_proof.gd 2>&1 | tee .tools/render-proof/walkthrough.log
           if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/render-proof/walkthrough.log; then exit 1; fi
           python3 -c "import json; p=json.load(open('.tools/render-proof/manifest.json')); assert p['exit_code']==0 and p['failures']==0 and len(p['captures'])>=16, p"
