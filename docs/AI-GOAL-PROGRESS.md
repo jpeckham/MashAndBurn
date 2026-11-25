@@ -2,6 +2,15 @@
 
 ## Current checkpoint — supersedes the historical chronology below
 
+**Latest steering:** James reports that local testing appears to lock up his
+whole PC and remains concerned about performance. Stop local game/editor,
+headless and desktop automation tests; continue execution only on disposable
+GitHub-hosted runners. A scoped check found no remaining diagnostic Godot
+process. Existing System logs show no matching display/driver/hardware-reset
+event in the preceding hour, which does not rule out a stall. The cause remains
+unresolved. A frame cap and responsive-process flag do not establish whole-PC
+stability; do not describe the build as stable on this hardware.
+
 James explicitly authorized PC testing, stopped it before any launch, then
 requested resumption of work and UI testing. That latest permission governs.
 The earlier no-local-execution instructions below are historical. Beluga cleanup

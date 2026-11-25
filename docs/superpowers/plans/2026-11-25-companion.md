@@ -61,3 +61,24 @@
 - Game transport red: Linux45683697223, source50bd2aa,1002checks/one missing-client failure. Sourcef49ba43 adds the opt-in loopback-only WebSocket client/module; default startup performs no I/O. It reads only telemetry credentials. A real Godot→FastAPI interoperability fixture is added in513ccc7; await its actual hosted execution before acceptance.
 - Interoperability fixture: actual loopback ASGI/WebSocket server plus headless Godot garage, sanitized child environment with no operator credential, measured initial telemetry rate, telemetry-token arming rejection, separate operator arm/E-stop/clear/rearm, game fire, persistent latch after new batch, actual disconnect and trace/log artifacts. It is not a visible playthrough or physical hardware test.
 - Still required: prove/fix actual interoperability, document/schema/dependency inventory and release packaging, optional game-side private alert consumption, final integrated demonstration and release gates.
+
+### Continuation checkpoint
+
+The preceding checklist/ledger is historical. Core controller, API, mock
+transports, bounded simulated waypoint cursor, private notifications, game
+producer/client, configuration documentation, generated schema and source/notices
+packaging are implemented. Run45700200483 passes59pytest cases on Linux and
+Windows, actual Godot/daemon E-stop/rearm/fire/disconnect and a single real
+game-generated alert to a loopback fake. See [preserved trace](../../../evidence/companion/2026-11-25-hosted/README.md).
+
+Run45701992650 additionally passes a single rendered host/guest fire session
+against two actual mock companion endpoints: both independently armed, active
+mock output observed, explicit guest fire/shared host latch and no unsafe frame
+after cutoff. [Inspected artifacts](../../../evidence/multiplayer/2026-11-25-hosted/README.md)
+include ten PNGs and the same-session bridge report. The full recipe/final-round
+version of this combined session and final Release assets remain pending.
+
+The full-session harness distinguishes a prior packaging-overpressure latch
+from a fire-caused transition. Its short smoke requires the initial cutoff to
+match explicit fire; the full scenario also requires safe telemetry during the
+actual accepted GUI fire, even when packaging already latched the output off.
