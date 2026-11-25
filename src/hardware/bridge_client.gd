@@ -66,7 +66,8 @@ func poll() -> void:
 			stop()
 			return
 		if packet.has("protocol"):
-			if not packet.protocol is int or packet.protocol != 1 or packet.armed != false or not packet.get("transport") is String or not packet.transport.begins_with("mock-"):
+			# Godot's JSON parser represents numeric literals as floats, including 1.
+			if not (packet.protocol is int or packet.protocol is float) or packet.protocol != 1 or packet.armed != false or not packet.get("transport") is String or not packet.transport.begins_with("mock-"):
 				error = "An authenticated mock companion is required."
 				stop()
 				return
