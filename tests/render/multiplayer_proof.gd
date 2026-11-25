@@ -307,6 +307,11 @@ func run_proof() -> void:
 		if not await wait_until(func(): return network.view.players.size() == 2 and network.view.players.values().all(func(p): return p.ready),30,"both participants ready through GUI"): finish(1); return
 		if not await click("Start (host)"): finish(1); return
 	if not await wait_until(func(): return network.view.get("phase") == "running",10,"GUI round started"): finish(1); return
+	if OS.get_environment("PAIR_BRIDGE_ENABLED") == "true":
+		var bridge = game.get_node("HardwareBridge")
+		if not check(OS.get_environment("MAB_OPERATOR_TOKEN").is_empty(),"game has no operator credential"): finish(1); return
+		if not check(bridge.start(),"explicit fixture opt-in starts local mock telemetry"): finish(1); return
+		if not await wait_until(func(): return FileAccess.file_exists(SHARED+"/bridge-"+role+"-armed.json"),25,"separate mock operator armed after healthy game frames"): finish(1); return
 	if not await click("Close"): finish(1); return
 	if not fire_smoke_only and not await brew(): finish(1); return
 	var played := false

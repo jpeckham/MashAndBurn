@@ -8,9 +8,9 @@ mkdir -p .tools/multiplayer-proof/host .tools/multiplayer-proof/guest
 common=(--path . --display-driver x11 --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --max-fps 30 --script tests/render/multiplayer_proof.gd)
 scenario=()
 if [[ ${PAIR_FIRE_SMOKE:-false} == true ]]; then scenario=(--fire-smoke-only); fi
-timeout 900s "$GODOT" "${common[@]}" --position 0,0 -- --role host "${scenario[@]}" > .tools/multiplayer-proof/host/process.log 2>&1 &
+MAB_BRIDGE_URL="${PAIR_HOST_BRIDGE_URL:-}" MAB_BRIDGE_TOKEN="${PAIR_HOST_BRIDGE_TOKEN:-}" timeout 900s "$GODOT" "${common[@]}" --position 0,0 -- --role host "${scenario[@]}" > .tools/multiplayer-proof/host/process.log 2>&1 &
 host_pid=$!
-timeout 900s "$GODOT" "${common[@]}" --position 1400,0 -- --role guest "${scenario[@]}" > .tools/multiplayer-proof/guest/process.log 2>&1 &
+MAB_BRIDGE_URL="${PAIR_GUEST_BRIDGE_URL:-}" MAB_BRIDGE_TOKEN="${PAIR_GUEST_BRIDGE_TOKEN:-}" timeout 900s "$GODOT" "${common[@]}" --position 1400,0 -- --role guest "${scenario[@]}" > .tools/multiplayer-proof/guest/process.log 2>&1 &
 guest_pid=$!
 tail -n +1 -F .tools/multiplayer-proof/{host,guest}/process.log &
 log_pid=$!

@@ -82,7 +82,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          xvfb-run -a -s '-screen 0 3000x1000x24' bash tests/render/run_pair.sh
+          python3 -m venv .tools/pair-venv
+          .tools/pair-venv/bin/python -m pip install -r companion/requirements.txt
+          PYTHONPATH=companion xvfb-run -a -s '-screen 0 3000x1000x24' .tools/pair-venv/bin/python companion/tests/rendered_pair_bridge.py
       - name: Render fixed-camera beer and thermal comparisons
         if: inputs.fire_smoke != true
         shell: bash
