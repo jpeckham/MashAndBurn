@@ -14,7 +14,7 @@ func _initialize() -> void:
 
 func run_suites() -> void:
 	var args := OS.get_cmdline_user_args()
-	var suites := ["chemistry", "contracts", "presentation", "social", "gameplay"]
+	var suites := ["chemistry", "contracts", "presentation", "social", "gameplay", "network"]
 	if "--suite" in args:
 		suites = [args[args.find("--suite") + 1]]
 	for suite in suites:
@@ -26,7 +26,7 @@ func run_suites() -> void:
 		if script == null or not script.can_instantiate():
 			check(false, "suite parses " + suite)
 			continue
-		script.new().run(self)
+		await script.new().run(self)
 	print("RESULT: %d checks, %d failures" % [checks, failures])
 	quit(1 if failures else 0)
 

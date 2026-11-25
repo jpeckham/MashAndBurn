@@ -136,7 +136,7 @@ func check_fire(t,engine) -> void:
 	t.check(not failed.players[1].claim.passed and failed.players[1].bankrupt,"failed claim applies bankruptcy penalty")
 	t.check(failed.players[1].health == 0,"remaining indoors through lethal smoke kills player")
 	t.check(not engine.submit(fire.state,1,command(fire.state,1,"escape")).ok,"escape requires reaching exit")
-	var cutoff := fire.state.duplicate(true)
+	var cutoff: Dictionary = fire.state.duplicate(true)
 	cutoff.players[1].fire.remaining = .1
 	cutoff.players[1].position = [0.0,5.5]
 	cutoff = engine.advance(cutoff,.1).state
