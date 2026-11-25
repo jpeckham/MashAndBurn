@@ -24,8 +24,9 @@ func check(ok: bool, detail: String) -> bool:
 func frames(count: int = 3) -> void:
 	for i in range(count): await process_frame
 
-func key(code: int, pressed: bool, ctrl: bool = false, unicode_value: int = 0) -> void:
+func key(code: int, pressed: bool, ctrl: bool = false, unicode_value: int = 0, window_id: int = 0) -> void:
 	var event := InputEventKey.new()
+	event.window_id = window_id
 	event.keycode = code
 	event.physical_keycode = code
 	event.pressed = pressed

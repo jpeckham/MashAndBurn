@@ -207,10 +207,16 @@ func guest_fire() -> bool:
 	if not await click("Lobby / combat / claims"): return false
 	await acquire_input()
 	if not await click_control(ui.causes): return false
-	key(KEY_DOWN,true)
-	key(KEY_DOWN,false)
-	key(KEY_ENTER,true)
-	key(KEY_ENTER,false)
+	var popup: PopupMenu = ui.causes.get_popup()
+	popup.grab_focus()
+	await frames(2)
+	var window_id: int = root.get_window_id() if popup.is_embedded() else popup.get_window_id()
+	print("PAIR_POPUP "+JSON.stringify({"window":window_id,"embedded":popup.is_embedded(),"focus":popup.has_focus(),"item":popup.get_focused_item()}))
+	for code in [KEY_DOWN,KEY_ENTER]:
+		key(code,true,false,0,window_id)
+		await frames(1)
+		key(code,false,false,0,window_id)
+		await frames(1)
 	await frames(2)
 	release_input()
 	if not check(ui.causes.selected == 1,"actual popup selects fictional cord incident"): return false

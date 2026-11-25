@@ -4,7 +4,9 @@ on:
   push:
     branches: [main, 'codex/**']
     tags: ['v*']
+    paths: ['src/**', 'scenes/**', 'tests/**', 'project.godot', 'export_presets.cfg', 'licenses/**', '.github/workflows/build.yml']
   pull_request:
+    paths: ['src/**', 'scenes/**', 'tests/**', 'project.godot', 'export_presets.cfg', 'licenses/**', '.github/workflows/build.yml']
   workflow_dispatch:
 
 permissions:
