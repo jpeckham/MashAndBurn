@@ -6,6 +6,12 @@ var layer: MeshInstance3D
 var smoke: MeshInstance3D
 var light: OmniLight3D
 
+func observe_hazard(event: Dictionary) -> bool:
+	if not preload("res://src/contracts/protocol.gd").new().validate(event).is_empty(): return false
+	if event.get("type") != "HazardEvent" or event.get("kind") != "fire": return false
+	configure(1,true,.65)
+	return true
+
 func _ready() -> void:
 	material.shader = preload("res://src/visuals/vapor.gdshader")
 	smoke_material.shader = material.shader

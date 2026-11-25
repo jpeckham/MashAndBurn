@@ -4,6 +4,7 @@ const Network = preload("res://src/gameplay/network/match_network.gd")
 const RemoteSession = preload("res://src/gameplay/network/remote_brew_session.gd")
 const Fire = preload("res://src/gameplay/fire/fire_claims.gd")
 const Props = preload("res://src/gameplay/staging_props.gd")
+const Thermal = preload("res://src/visuals/thermal_effect.gd")
 var garage: Node
 var network: Node
 var original_session
@@ -268,10 +269,12 @@ func render_world(view: Dictionary) -> void:
 		markers[who].position = Vector3(p.position[0],0,p.position[1])
 		markers[who].get_node("Nameplate").text = "%s  %.0f HP%s" % [p.name,p.health," [offline]" if not p.connected else ""]
 		if p.fire.phase == "staging":
-			if not fires.has(who): fires[who] = mesh_marker(Color("f2803b"),true)
+			if not fires.has(who):
+				fires[who] = Thermal.new()
+				garage.add_child(fires[who])
 			var origin: Array = p.fire.get("origin",p.position)
-			fires[who].position = Vector3(origin[0],.6,origin[1])
-			fires[who].scale = Vector3(3,6,3)*(.5+p.fire.heat)
+			fires[who].position = Vector3(origin[0],.05,origin[1])
+			fires[who].configure(p.fire.heat,true,p.fire.smoke)
 		elif fires.has(who):
 			fires[who].queue_free()
 			fires.erase(who)

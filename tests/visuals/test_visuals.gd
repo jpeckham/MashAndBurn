@@ -44,6 +44,18 @@ func run(t) -> void:
 	t.check(display.foam.visible and display.steam.visible,"foam and hot steam render in fallback")
 	display.configure(clear)
 	t.check(not display.foam.visible and not display.steam.visible,"cold flat chemistry disables foam/steam")
+	t.check(not display.steam.observe_hazard({"kind":"fire"}) and not display.steam.visible,"malformed hazard cannot enable visual fire")
+	t.check(display.steam.observe_hazard({"type":"HazardEvent","version":1,"seq":1,"tick":1,"safe_state":true,"kind":"fire"}) and display.steam.visible,"validated generic fire event drives independent VFX")
 	display.queue_free()
 	await t.process_frame
 	t.check(not is_instance_valid(display),"display and effect children are freed")
+	var garage = load("res://scenes/garage/garage.tscn").instantiate()
+	t.root.add_child(garage)
+	var module = garage.get_node("BeerVisuals")
+	var initial_srm: float = module.display.material.get_shader_parameter("srm")
+	garage.session.state.flaws.astringency = 1.0
+	garage.refresh()
+	t.check(module.display.material.get_shader_parameter("srm") > initial_srm,"live garage chemistry changes sample absorption")
+	garage.queue_free()
+	await t.process_frame
+	t.check(not is_instance_valid(module),"garage lifetime owns visual module")

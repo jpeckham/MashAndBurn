@@ -1,7 +1,7 @@
 config_version=5
 
 [mash_burn]
-modules=["res://src/social/judging_module.gd","res://src/gameplay/multiplayer_module.gd"]
+modules=["res://src/social/judging_module.gd","res://src/gameplay/multiplayer_module.gd","res://src/visuals/visuals_module.gd"]
 
 [application]
 config/name="Mash & Burn"
