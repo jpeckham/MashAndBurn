@@ -1,7 +1,7 @@
 """Strict bridge safety envelope extending the game's common v1 HardwareFrame."""
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 Counter = Annotated[int, Field(strict=True, ge=0, le=2147483647)]
 Duty = Annotated[float, Field(ge=0, le=1)]
@@ -31,6 +31,13 @@ class HardwareFrame(BaseModel):
     estop: bool
     hazard: Literal["none", "hazard", "fire", "disconnect", "overpressure"]
     fire_phase: Literal["idle", "staging", "resolved"]
+
+    @field_validator("version", mode="before")
+    @classmethod
+    def integer_version(cls, value):
+        if type(value) is not int:
+            raise ValueError("Version must be an integer, not a boolean or float")
+        return value
 
     @model_validator(mode="after")
     def consistent_outputs(self):

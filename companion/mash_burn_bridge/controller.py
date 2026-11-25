@@ -32,6 +32,7 @@ class BridgeController:
         self.healthy = False
         self.connected = True
         self.local_estop = False
+        self.last_hopper = None
         self.transport.stop()
 
     @staticmethod
@@ -45,6 +46,7 @@ class BridgeController:
         self.outputs = safe_outputs()
         self.queue.clear()
         self.planned_waypoints.clear()
+        self.last_hopper = None
         self.transport.stop()
         self.trace.append(dict(event="disarm", reason=reason, at=self.monotonic()))
         del self.trace[:-1024]
@@ -68,6 +70,11 @@ class BridgeController:
         if reason:
             return self.trip(reason)
         self.healthy = True
+        hopper = candidate.hop_drop_hopper
+        if self.armed and hopper is not None and hopper != self.last_hopper:
+            if not self.queue_command(dict(kind="hop", hopper=hopper)):
+                return self.trip("command-queue-full")
+        self.last_hopper = hopper
         return True
 
     def frame_fault(self):
