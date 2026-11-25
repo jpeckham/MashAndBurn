@@ -1,0 +1,457 @@
+{
+	"captures": [
+		{
+			"file": "01-srm-2-10-20-45.png",
+			"inputs": [
+				{
+					"co2": 2.5,
+					"haze": 0,
+					"srm": 2
+				},
+				{
+					"co2": 2.5,
+					"haze": 0,
+					"srm": 10
+				},
+				{
+					"co2": 2.5,
+					"haze": 0,
+					"srm": 20
+				},
+				{
+					"co2": 2.5,
+					"haze": 0,
+					"srm": 45
+				}
+			],
+			"parameters": [
+				{
+					"bubbles": 0.833333333333333,
+					"color": [
+						0.88692045211792,
+						0.697676301002502,
+						0.467666417360306
+					],
+					"condensation": 0.0,
+					"foam": 0.46,
+					"haze": 0.0,
+					"reflection_probe": true,
+					"srm": 2.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.833333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.46,
+					"haze": 0.0,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.833333333333333,
+					"color": [
+						0.301194220781326,
+						0.0273237228393555,
+						0.00050045142415911
+					],
+					"condensation": 0.0,
+					"foam": 0.46,
+					"haze": 0.0,
+					"reflection_probe": true,
+					"srm": 20.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.833333333333333,
+					"color": [
+						0.067205511033535,
+						0.000303539127344266,
+						0.0000000374597064478621
+					],
+					"condensation": 0.0,
+					"foam": 0.46,
+					"haze": 0.0,
+					"reflection_probe": true,
+					"srm": 45.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				}
+			],
+			"utc": "2026-11-25T18:35:48"
+		},
+		{
+			"file": "02-haze-scattering.png",
+			"inputs": [
+				{
+					"haze": 0,
+					"srm": 10
+				},
+				{
+					"haze": 1,
+					"srm": 10
+				},
+				{
+					"haze": 0,
+					"srm": 20
+				},
+				{
+					"haze": 1,
+					"srm": 20
+				}
+			],
+			"parameters": [
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 0.0,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 1.0,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.301194220781326,
+						0.0273237228393555,
+						0.00050045142415911
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 0.0,
+					"reflection_probe": true,
+					"srm": 20.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.301194220781326,
+						0.0273237228393555,
+						0.00050045142415911
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 1.0,
+					"reflection_probe": true,
+					"srm": 20.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				}
+			],
+			"utc": "2026-11-25T18:35:49"
+		},
+		{
+			"file": "03-foam-nucleation.png",
+			"inputs": [
+				{
+					"co2": 0,
+					"ibu": 0,
+					"protein": 0,
+					"srm": 10
+				},
+				{
+					"co2": 1,
+					"ibu": 5,
+					"protein": 0.2,
+					"srm": 10
+				},
+				{
+					"co2": 3,
+					"ibu": 80,
+					"protein": 1,
+					"srm": 10
+				},
+				{
+					"co2": 0,
+					"ibu": 80,
+					"protein": 1,
+					"srm": 10
+				}
+			],
+			"parameters": [
+				{
+					"bubbles": 0.0,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.0,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.333333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.0994,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 1.0,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 1.0,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.0,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.0,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				}
+			],
+			"utc": "2026-11-25T18:35:50"
+		},
+		{
+			"file": "04-steam-condensation.png",
+			"inputs": [
+				{
+					"temp_c": 20
+				},
+				{
+					"temp_c": 60
+				},
+				{
+					"temp_c": 80
+				},
+				{
+					"temp_c": 100
+				}
+			],
+			"parameters": [
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.538461538461538,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.111111111111111,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.846153846153846,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.555555555555556,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 1.0,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 1.0,
+					"tier": "forward_plus"
+				}
+			],
+			"utc": "2026-11-25T18:35:51"
+		},
+		{
+			"file": "05-fire-smoke.png",
+			"inputs": [
+				{
+					"temp_c": 20
+				},
+				{
+					"temp_c": 20
+				},
+				{
+					"temp_c": 20
+				},
+				{
+					"temp_c": 20
+				}
+			],
+			"parameters": [
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				},
+				{
+					"bubbles": 0.283333333333333,
+					"color": [
+						0.548811614513397,
+						0.165298894047737,
+						0.0223707724362612
+					],
+					"condensation": 0.0,
+					"foam": 0.1564,
+					"haze": 0.15,
+					"reflection_probe": true,
+					"srm": 10.0,
+					"steam": 0.0,
+					"tier": "forward_plus"
+				}
+			],
+			"utc": "2026-11-25T18:35:52"
+		}
+	],
+	"limits": "Analytic RGB absorption, empirical haze/foam, mesh bubbles/droplets, camera-facing vapor layers and reflection-probe raster rendering only.",
+	"machine": "GitHub Actions 1000001582",
+	"operator": "GitHub-hosted original fixed-camera reference fixture",
+	"profile": {
+		"adapter": "llvmpipe (LLVM 20.1.2, 256 bits)",
+		"display": "X11",
+		"draw_calls": 57,
+		"driver": "vulkan",
+		"engine": {
+			"build": "official",
+			"hash": "49a5bc7b616bd04689a2c89e89bda41f50241464",
+			"hex": 263169,
+			"major": 4,
+			"minor": 4,
+			"patch": 1,
+			"status": "stable",
+			"string": "4.4.1-stable (official)",
+			"timestamp": 0
+		},
+		"fps": 11.6052744424971,
+		"frame_interval_p50_ms": 86.722,
+		"frame_interval_p95_ms": 89.436,
+		"renderer": "forward_plus",
+		"sample_frames": 120,
+		"vendor": "Unknown"
+	},
+	"run_id": "45676372839",
+	"source_commit": "7afa72b5a8cd8ea56bd2dce91181c7ab529de3d7",
+	"utc": "2026-11-25T18:36:02"
+}

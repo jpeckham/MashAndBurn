@@ -45,4 +45,7 @@ inactive/fire conditions. Hosted artifacts preserve inputs, effective parameters
 engine/driver/adapter, source/run, unchanged PNGs and SHA256 hashes. A120-frame
 interval sample reports measured FPS and p50/p95 intervals for that scene; these
 are software-runner observations, not GPU-only timings or a gaming-PC benchmark.
-Evidence will be linked here after the images have been inspected.
+See the [ten inspected and hash-verified frames](../evidence/visuals/2026-11-25-hosted/README.md)
+for both actual renderer tiers. Forward+ hues are desaturated pink/mauve in this
+fixture; colorimetry is not validated. The evidence supports visible parameter
+differentiation and documents this limitation.

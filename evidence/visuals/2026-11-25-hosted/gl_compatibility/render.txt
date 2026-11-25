@@ -1,0 +1,11 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:360)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.5 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+VISUAL_CAPTURE 01-srm-2-10-20-45
+VISUAL_CAPTURE 02-haze-scattering
+VISUAL_CAPTURE 03-foam-nucleation
+VISUAL_CAPTURE 04-steam-condensation
+VISUAL_CAPTURE 05-fire-smoke
+VISUAL_RESULT {"adapter":"llvmpipe (LLVM 20.1.2, 256 bits)","display":"X11","draw_calls":54,"driver":"opengl3","engine":{"build":"official","hash":"49a5bc7b616bd04689a2c89e89bda41f50241464","hex":263169,"major":4,"minor":4,"patch":1,"status":"stable","string":"4.4.1-stable (official)","timestamp":0},"fps":24.7352044828436,"frame_interval_p50_ms":40.689,"frame_interval_p95_ms":42.309,"renderer":"gl_compatibility","sample_frames":120,"vendor":"Mesa"}
