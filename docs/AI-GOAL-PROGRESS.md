@@ -9,32 +9,32 @@ and recovery remain complete; inherited task JSON is an unchanged historical
 record, not an active scheduler or current permission source.
 
 Current game validation is **1,022 checks, zero failures**, including real
-two-/eight-client ENet sessions. This was also verified locally, after permission,
-with installed Godot4.4.1 Mono. Hosted installer checks cover export/startup,
+two- and eight-client ENet sessions. This was also verified locally, after permission,
+with installed Godot 4.4.1 Mono. Hosted installer checks cover export/startup,
 install/payload hashes, major upgrade, obsolete-file removal, downgrade rejection
 and uninstall. Shared release library commit is now
 `1d42dcf38f6b675d824a259125bad546df5bbaeb`, pinned in both caller references.
 
 The [full multiplayer proof](../evidence/multiplayer/2026-11-25-hosted/README.md)
-is preserved: host107/guest261 checks,27 inspected/hash-verified frames,
-scores84.5/40.5, guest claim1500, actual staging/escape, final tasting and
+is preserved: host 107/guest 261 checks,27 inspected/hash-verified frames,
+scores 84.5/40.5, guest claim 1500, actual staging/escape, final tasting and
 feed1/2/32. A subsequent nine-frame smoke verifies corrected close-prop labels
 and staging/escape HUD. Recipes and45-second claims run at production speed;
 only the remaining final clock is explicitly advanced4923→9000. The older
 host wand-floor camera was not clear visual proof of its floor patch.
 
-[Companion run45700200483](../evidence/companion/2026-11-25-hosted/README.md),
-source5d0cbf2, passed59pytest cases on each Linux and Windows job, actual
-Godot/daemon interoperability (37frames,10.001967Hz), separate operator
+[Companion run 45700200483](../evidence/companion/2026-11-25-hosted/README.md),
+source 5d0cbf2, passed59 pytest cases on each Linux and Windows job, actual
+Godot/daemon interoperability (37 frames,10.001967 Hz), separate operator
 arm/E-stop/clear/rearm, actual game fire/disconnect latch and one private alert
 to a loopback fake receiver. Operator credentials are absent from the game.
 The notification uses a deliberate judging fixture, not a brewing proof.
-Tier2 is a bounded simulated Cartesian waypoint cursor, not physical robot IK.
+Tier 2 is a bounded simulated Cartesian waypoint cursor, not physical robot IK.
 Companion source/schema/dependency-notices packaging now passes: metadata-only
 notice collection fixes accidental inclusion of Python `packaging/licenses` code.
 
-Authorized native Windows testing used existing Godot4.4.1 Mono,
-Compatibility/NVIDIA RTX3080Ti,30FPS, actual mash/boil mouse controls and short
+Authorized native Windows testing used existing Godot 4.4.1 Mono,
+Compatibility/NVIDIA RTX 3080 Ti,30 FPS, actual mash/boil mouse controls and short
 closed diagnostic processes. Desktop capture eventually timed out, including
 `activate_window` on recovery; the game remained responsive and was closed.
 Direct renderer PNGs and independent raw-pixel masks show the disputed glyphs
@@ -75,7 +75,7 @@ The complete inherited scope and acceptance criteria are preserved in [the plan]
 
 ## Evidence and outstanding work
 
-- Brewing/contracts, garage UI/save-load, judging and fictional feed code exists. Fresh hosted Windows validation passes **869 checks**, actual two-/eight-client ENet, full garage UI integration, export/startup and MSI install/payload-hash/uninstall.
+- Brewing/contracts, garage UI/save-load, judging and fictional feed code exists. Fresh hosted Windows validation passes **869 checks**, actual two- and eight-client ENet, full garage UI integration, export/startup and MSI install/payload-hash/uninstall.
 - Normal/flawed single-player visible proof is now collected and inspected: [20 unchanged hosted X11/Mesa frames](../evidence/desktop/2026-11-25-hosted/README.md), **403 passing GUI input assertions**, walking/look/E, pause/resume, exact reload, five-category judging and feed pages1/2/32. This supersedes the old request for owner desktop access. No game ran on James's PC.
 - Multiplayer code includes authoritative final judging/style/feed consumption, real garage endpoints, bounded movement/projectiles, five arsenal/three sabotages, lobby/HUD, remote brew-desk routing and reconnect. Sanitizing wands create bounded, expiring floor patches. Visible multi-window playthrough remains unproven.
 - Fire/claims now includes spatial receipt/evidence/Buick-trunk props with server proximity checks and E interaction; seeded inspection exposes burn/thermal, valve and avatar-stress evidence. Hosted integration verifies E through the viewport/ENet, prop progress, floor expiry/freeing and leave cleanup. Full 45-second windows, late settlement, escape/smoke, exactly-once payouts and disarm remain covered. A visible multiplayer traversal is still required.
@@ -103,14 +103,14 @@ Next: execute [visible multiplayer plan](superpowers/plans/2026-11-25-visible-mu
 
 - Shared release library is now `4cb6cb2fd6650354d6c51305e5d60696d1171b57`, pinned in both caller references. [Run45673590122](https://github.com/jpeckham/MashAndBurn/actions/runs/45673590122), source0100534, passed922 game checks plus exported startup, real MSI install/hash/uninstall, major upgrade from0.0.0, removal of an obsolete fixture file, downgrade rejection and clean upgraded uninstall. Exact Godot engine/dependency and project notices are bundled. Release assets include an exact installed-payload hash inventory. [Inventory](licenses.md); interrupted-install rollback/code signing are separate limitations.
 - Beer/thermal rendering is implemented and independently reviewed: bounded read-only mapper, chemistry-driven sample, foam, mesh nucleation, steam, cooler-pane condensate, layered fire/smoke and supported reflection probes. [Ten inspected/hash-verified reference frames](../evidence/visuals/2026-11-25-hosted/README.md) from source7afa72b show actual OpenGL Compatibility and Vulkan Forward+. This is artistic differentiation, not calibrated SRM colorimetry; Forward+ samples look mauve. CPU comparison-scene performance and scope are recorded.
-- Visible host/guest fixtures use actual lobby/settings/stage controls, production10Hz/600x brewing and Input WASD/E traversal, with only a logged host advance after recipes/claims. Initial runs reached fermentation/packaging but exposed stale snapshot inputs. Full proof is still pending; do not accept failed/partial media as a completed multiplayer walkthrough.
+- Visible host/guest fixtures use actual lobby/settings/stage controls, production10 Hz/600× brewing and Input WASD/E traversal, with only a logged host advance after recipes/claims. Initial runs reached fermentation/packaging but exposed stale snapshot inputs. Full proof is still pending; do not accept failed/partial media as a completed multiplayer walkthrough.
 - Diagnostic run45674079545 showed stale-tick rejections. Focused [redrun45676599792](https://github.com/jpeckham/MashAndBurn/actions/runs/45676599792), source53d2414, reproduced four failures: dropped stale intents in two/eight real clients and repeated garage rebuilding for a100-view burst. Source41aa1fe coalesces UI per frame and retries a never-executed stale-clock intent once using a trusted fresh reply, retaining strict server sequence/tick checks. The next test run confirmed those regressions fixed but exposed six old assertions reading UI before its deferred update. Source0075944 awaits the visible panel and additionally checks non-idempotent wand execution exactly once. Active pair run45677348928 is authoritative; poll its actual result.
 - [Companion implementation plan](superpowers/plans/2026-11-25-companion.md) preserves the inherited scope and its current test/review ledger. Core daemon, mock HAL and opt-in private notifications are now implemented; real game interoperability and final release integration remain in progress. No final release has been published.
 
 ### Current validation and next actions
 
-- Full visible host/guest brewing **passed** [run45681440614](https://github.com/jpeckham/MashAndBurn/actions/runs/45681440614), source8962ed5: host107checks/10frames, guest261checks/17frames. Downloaded `.tools/full-pair-45681440614`; root inspected/hash-verified all10host frames, independent review all17guest frames. Host score84.5, guest40.5; guest claim1500/capital2500; actual GUI feed1/2/32. Host fixture explicitly advances4923→9000 only after complete real-time recipes and45-second claim windows. This is not an uninterrupted15-minute wall-clock proof.
+- Full visible host/guest brewing **passed** [run45681440614](https://github.com/jpeckham/MashAndBurn/actions/runs/45681440614), source8962ed5: host 107checks/10frames, guest 261checks/17frames. Downloaded `.tools/full-pair-45681440614`; root inspected/hash-verified all10host frames, independent review all17guest frames. Host score84.5, guest40.5; guest claim 1500/capital 2500; actual GUI feed1/2/32. Host fixture explicitly advances4923→9000 only after complete real-time recipes and45-second claim windows. This is not an uninterrupted15-minute wall-clock proof.
 - These older images revealed **Important close-prop label clipping** and misleading escape/await-judging text. They are runtime evidence, not final UI acceptance. Source1aa1f23 bounds/hides close3Dlabels, adds compact staging/escape HUD and stops escaped movement heartbeats; source941a538 explains the authoritative tasting wait. Five UI regressions reproduced in45682743103; source1aa1f23 then passed1001checks/403GUI assertions in45683168581. New close-range media still needs inspection. Some old images also show partial/missing glyphs in desktop widgets; do not invent a cause or claim this fully resolved without new images.
-- First short actual fire-input smoke passed45680599714 (source4cafbca): host49checks/2frames, guest73checks/7frames. All9frames/hashes inspected (root2host, reviewer7guest), but the old close-label defect remains. A later smoke missed the2-second wand transient before the guest began observing;803590b now coordinates `awaiting-wand` before firing. Its first dispatch was blocked by the intentional missing-client red test, so it did not validate the new UI. Do not dispatch more rendered runs while current suite intentionally fails.
+- First short actual fire-input smoke passed45680599714 (source4cafbca): host49checks/2frames, guest 73checks/7frames. All9frames/hashes inspected (root2host, reviewer7guest), but the old close-label defect remains. A later smoke missed the2-second wand transient before the guest began observing;803590b now coordinates `awaiting-wand` before firing. Its first dispatch was blocked by the intentional missing-client red test, so it did not validate the new UI. Do not dispatch more rendered runs while current suite intentionally fails.
 - Companion:57pytest cases passed45681412838, source8962ed5 after3review findings were reproduced and fixed. No remaining Important/Critical finding in that follow-up review. Distinct local operator authority is required for arming; game telemetry credentials cannot arm or clear E-stop. All notifications default off and tests contact only a loopback fake receiver. Physical transport stubs always refuse arming.
 - Game telemetry producer plus UI fixes passed1001combined GDScript checks. The optional loopback client/module (f49ba43) and actual game/daemon fixture (513ccc7) are newly implemented; wait for current hosted CI and diagnose actual errors. No owner-PC execution is allowed. The real interoperability fixture, game-side optional private alert routing, final combined proof/PRD traceability, dependency/source packaging, and release tag/assets remain required.

@@ -1,0 +1,262 @@
+{
+  "source_commit": "11d249a878ef004f27ba08c496f2b2effba37e92",
+  "run_id": "45701992650",
+  "physical_operation": false,
+  "operator_credentials_hidden_from_games": true,
+  "peers": {
+    "host": {
+      "telemetry_frames": 939,
+      "initial_rate_hz": 9.819412440128252,
+      "schema_errors": 0,
+      "independent_operator_armed": true,
+      "active_mock_output_seen": true,
+      "first_fault": {
+        "at": 1795641151.6966014,
+        "frame": {
+          "connected": true,
+          "enabled": true,
+          "estop": false,
+          "fire_phase": "idle",
+          "hazard": "hazard",
+          "heater": 0.0,
+          "hop_drop_hopper": null,
+          "pump": 0.0,
+          "pump_duty": 0.0,
+          "safe_state": true,
+          "sensor_ok": true,
+          "sensor_temp_c": 66.7,
+          "sent_at_unix_ms": 1795641151695,
+          "seq": 122,
+          "step": "MASH_IN",
+          "target_temp_c": 66.7,
+          "tick": 127,
+          "type": "HardwareFrame",
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "version": 1
+        },
+        "outputs": {
+          "heater": 0.0,
+          "pump": 0.0,
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "hop_drop_hopper": null
+        },
+        "armed": false
+      },
+      "explicit_fire": {
+        "frame": {
+          "connected": true,
+          "enabled": true,
+          "estop": false,
+          "fire_phase": "staging",
+          "hazard": "fire",
+          "heater": 0.0,
+          "hop_drop_hopper": null,
+          "pump": 0.0,
+          "pump_duty": 0.0,
+          "safe_state": true,
+          "sensor_ok": true,
+          "sensor_temp_c": 66.7,
+          "sent_at_unix_ms": 1795641187452,
+          "seq": 479,
+          "step": "MASH_IN",
+          "target_temp_c": 66.7,
+          "tick": 485,
+          "type": "HardwareFrame",
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "version": 1
+        },
+        "outputs": {
+          "heater": 0.0,
+          "pump": 0.0,
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "hop_drop_hopper": null
+        },
+        "armed": false
+      },
+      "safe_during_actual_fire": {
+        "frame": {
+          "connected": true,
+          "enabled": true,
+          "estop": false,
+          "fire_phase": "idle",
+          "hazard": "hazard",
+          "heater": 0.0,
+          "hop_drop_hopper": null,
+          "pump": 0.0,
+          "pump_duty": 0.0,
+          "safe_state": true,
+          "sensor_ok": true,
+          "sensor_temp_c": 66.7,
+          "sent_at_unix_ms": 1795641151758,
+          "seq": 123,
+          "step": "MASH_IN",
+          "target_temp_c": 66.7,
+          "tick": 128,
+          "type": "HardwareFrame",
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "version": 1
+        },
+        "outputs": {
+          "heater": 0.0,
+          "pump": 0.0,
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "hop_drop_hopper": null
+        },
+        "armed": false
+      },
+      "unsafe_frames_after_fault": 0,
+      "fire_caused_initial_cutoff": true
+    },
+    "guest": {
+      "telemetry_frames": 592,
+      "initial_rate_hz": 8.684596415016596,
+      "schema_errors": 0,
+      "independent_operator_armed": true,
+      "active_mock_output_seen": true,
+      "first_fault": {
+        "at": 1795641151.7466087,
+        "frame": {
+          "connected": true,
+          "enabled": true,
+          "estop": false,
+          "fire_phase": "staging",
+          "hazard": "fire",
+          "heater": 0.0,
+          "hop_drop_hopper": null,
+          "pump": 0.0,
+          "pump_duty": 0.0,
+          "safe_state": true,
+          "sensor_ok": true,
+          "sensor_temp_c": 66.7,
+          "sent_at_unix_ms": 1795641151745,
+          "seq": 117,
+          "step": "MASH_IN",
+          "target_temp_c": 66.7,
+          "tick": 127,
+          "type": "HardwareFrame",
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "version": 1
+        },
+        "outputs": {
+          "heater": 0.0,
+          "pump": 0.0,
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "hop_drop_hopper": null
+        },
+        "armed": false
+      },
+      "explicit_fire": {
+        "frame": {
+          "connected": true,
+          "enabled": true,
+          "estop": false,
+          "fire_phase": "staging",
+          "hazard": "fire",
+          "heater": 0.0,
+          "hop_drop_hopper": null,
+          "pump": 0.0,
+          "pump_duty": 0.0,
+          "safe_state": true,
+          "sensor_ok": true,
+          "sensor_temp_c": 66.7,
+          "sent_at_unix_ms": 1795641151745,
+          "seq": 117,
+          "step": "MASH_IN",
+          "target_temp_c": 66.7,
+          "tick": 127,
+          "type": "HardwareFrame",
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "version": 1
+        },
+        "outputs": {
+          "heater": 0.0,
+          "pump": 0.0,
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "hop_drop_hopper": null
+        },
+        "armed": false
+      },
+      "safe_during_actual_fire": {
+        "frame": {
+          "connected": true,
+          "enabled": true,
+          "estop": false,
+          "fire_phase": "staging",
+          "hazard": "fire",
+          "heater": 0.0,
+          "hop_drop_hopper": null,
+          "pump": 0.0,
+          "pump_duty": 0.0,
+          "safe_state": true,
+          "sensor_ok": true,
+          "sensor_temp_c": 66.7,
+          "sent_at_unix_ms": 1795641151857,
+          "seq": 119,
+          "step": "MASH_IN",
+          "target_temp_c": 66.7,
+          "tick": 127,
+          "type": "HardwareFrame",
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "version": 1
+        },
+        "outputs": {
+          "heater": 0.0,
+          "pump": 0.0,
+          "valve_states": [
+            0,
+            0,
+            0
+          ],
+          "hop_drop_hopper": null
+        },
+        "armed": false
+      },
+      "unsafe_frames_after_fault": 0,
+      "fire_caused_initial_cutoff": true
+    }
+  }
+}

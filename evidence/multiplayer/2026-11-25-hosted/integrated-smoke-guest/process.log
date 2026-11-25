@@ -1,0 +1,98 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:360)
+ERROR: Condition "err != OK" is true.
+   at: initialize (drivers/gles3/shader_gles3.cpp:810)
+ERROR: Condition "err != OK" is true.
+   at: initialize (drivers/gles3/shader_gles3.cpp:810)
+ERROR: Condition "err != OK" is true.
+   at: initialize (drivers/gles3/shader_gles3.cpp:800)
+ERROR: Condition "err != OK" is true.
+   at: initialize (drivers/gles3/shader_gles3.cpp:800)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.5 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[446.0,70.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@392/@Button@394","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[420.0,277.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@392/@Button@394","text":"Join"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@397/@Button@398","message":"Server accepted input.","point":[402.5,319.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@397/@Button@398","text":"Toggle ready"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@364/@Button@366","message":"Server accepted input.","point":[888.0,131.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@364/@Button@366","text":"Close"}
+PAIR_PHASE role=guest phase=awaiting-wand tick=5
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"mash","tick":43}
+CAPTURE {"co2_volumes":0.85,"file":"guest-08-wand-blindness.png","gravity":1.06604567775454,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":5.4,"fire":{"cause":"","fuel":1.0,"heat":0.0,"objects":{"equipment":false,"evidence":false,"receipt":false},"phase":"idle","remaining":0.0,"smoke":0.0,"spread":false},"health":100.0,"player_id":2,"position":[-1.5,1.0],"round_id":"round-68293946","round_seed":68293946,"tick":54},"ph":5.4,"seed":68294148,"simulation_seconds":3240.0,"stage":"mash","state_hash":"7da9e88a66fdc6dd4870b5341d0b3273f8aff0560f8ade5eb103975c5e6256b9","temperature_c":66.7,"tick":54,"utc":"2026-11-25T21:12:27"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","message":"Stale, future or invalid command tick.","point":[446.0,70.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","text":"Lobby / combat / claims"}
+PAIR_REJECT {"message":"Stale, future or invalid command tick.","queued":1,"safe":false,"stage":"mash","tick":84}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@430/@OptionButton@437","message":"Stale, future or invalid command tick.","point":[439.5,569.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@430/@OptionButton@437","text":"Boil-over incident"}
+PAIR_POPUP {"embedded":true,"focus":true,"item":-1,"window":0}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@430/@Button@438","message":"Server accepted input.","point":[590.0,569.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@430/@Button@438","text":"Fictional fire"}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+PAIR_PHASE role=guest phase=fire-started tick=127
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@364/@Button@366","message":"Server accepted input.","point":[888.0,131.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@364/@Button@366","text":"Close"}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+CAPTURE {"co2_volumes":0.85,"file":"guest-09-fire-window.png","gravity":1.07604594775107,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":14.0,"fire":{"cause":"cord","fuel":0.993500000000001,"heat":0.2682,"objects":{"equipment":false,"evidence":false,"receipt":false},"origin":[-1.5,1.0],"phase":"staging","remaining":43.7,"smoke":0.0955,"spread":false},"health":96.6252,"player_id":2,"position":[-1.5,1.0],"round_id":"round-68293946","round_seed":68293946,"tick":140},"ph":5.4,"seed":68294148,"simulation_seconds":7620.0,"stage":"mash","state_hash":"6743004c1bbbc60ae68d9af7ab681b3977a5a6128cea05d5d6807cb5bbbafbc9","temperature_c":66.7,"tick":127,"utc":"2026-11-25T21:12:33"}
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+WARNING: Target and up vectors are colinear. This is not advised as it may cause unwanted rotation around local Z axis.
+     at: looking_at (core/math/basis.cpp:1058)
+CAPTURE {"co2_volumes":0.85,"file":"guest-10-stage-receipt.png","gravity":1.07604594775107,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":16.3,"fire":{"cause":"cord","fuel":0.982000000000002,"heat":0.3004,"objects":{"equipment":false,"evidence":false,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":41.3999999999999,"smoke":0.176,"spread":false},"health":89.4952,"player_id":2,"position":[-5.12132030725479,0.151471877098084],"round_id":"round-68293946","round_seed":68293946,"tick":163},"ph":5.4,"seed":68294148,"simulation_seconds":7620.0,"stage":"mash","state_hash":"6743004c1bbbc60ae68d9af7ab681b3977a5a6128cea05d5d6807cb5bbbafbc9","temperature_c":66.7,"tick":127,"utc":"2026-11-25T21:12:35"}
+CAPTURE {"co2_volumes":0.85,"file":"guest-10-stage-evidence.png","gravity":1.07604594775107,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":20.5,"fire":{"cause":"cord","fuel":0.961000000000004,"heat":0.359200000000001,"objects":{"equipment":false,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":37.1999999999999,"smoke":0.323,"spread":false},"health":72.6532,"player_id":2,"position":[4.60294375419617,-0.272792184352874],"round_id":"round-68293946","round_seed":68293946,"tick":205},"ph":5.4,"seed":68294148,"simulation_seconds":7620.0,"stage":"mash","state_hash":"6743004c1bbbc60ae68d9af7ab681b3977a5a6128cea05d5d6807cb5bbbafbc9","temperature_c":66.7,"tick":127,"utc":"2026-11-25T21:12:39"}
+CAPTURE {"co2_volumes":0.85,"file":"guest-10-stage-equipment.png","gravity":1.07604594775107,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":23.3,"fire":{"cause":"cord","fuel":0.947000000000006,"heat":0.398400000000001,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":34.3999999999998,"smoke":0.421,"spread":false},"health":58.6812,"player_id":2,"position":[4.81507578492165,5.6393398463726],"round_id":"round-68293946","round_seed":68293946,"tick":233},"ph":5.4,"seed":68294148,"simulation_seconds":7620.0,"stage":"mash","state_hash":"6743004c1bbbc60ae68d9af7ab681b3977a5a6128cea05d5d6807cb5bbbafbc9","temperature_c":66.7,"tick":127,"utc":"2026-11-25T21:12:42"}
+PAIR_REJECT {"message":"This player cannot act.","queued":0,"safe":true,"stage":"mash","tick":236}
+CAPTURE {"co2_volumes":0.85,"file":"guest-11-escaped.png","gravity":1.07604594775107,"ibu":0.0,"match":{"claim":{"passed":false,"payout":0,"penalty":0,"resolved":false},"elapsed":23.8,"fire":{"cause":"cord","fuel":0.944500000000006,"heat":0.405400000000001,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"staging","remaining":33.8999999999998,"smoke":0.4385,"spread":false},"health":57.5992,"player_id":2,"position":[4.81507578492165,5.6393398463726],"round_id":"round-68293946","round_seed":68293946,"tick":238},"ph":5.4,"seed":68294148,"simulation_seconds":7620.0,"stage":"mash","state_hash":"6743004c1bbbc60ae68d9af7ab681b3977a5a6128cea05d5d6807cb5bbbafbc9","temperature_c":66.7,"tick":127,"utc":"2026-11-25T21:12:42"}
+PAIR_PHASE role=guest phase=escaped tick=238
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","message":"Claim accepted: 1500 payout.","point":[446.0,70.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","text":"Lobby / combat / claims"}
+CAPTURE {"co2_volumes":0.85,"file":"guest-12-claim-outcome.png","gravity":1.07604594775107,"ibu":0.0,"match":{"claim":{"confidence":1.0,"evidence":{"burn_pattern":"diffuse","character_stress":0.111201800000003,"character_tells":"steady","fuel_remaining":0.775000000000025,"smoke_trace":1.0,"thermal_trace":0.87999999999999,"valve_state":"normal"},"passed":true,"payout":1500,"penalty":0,"reason":"Fictional inspection accepted the staged record.","resolved":true},"elapsed":58.7,"fire":{"cause":"cord","fuel":0.775000000000025,"heat":0.87999999999999,"objects":{"equipment":true,"evidence":true,"receipt":true},"origin":[-1.5,1.0],"phase":"resolved","remaining":0.0,"smoke":1.0,"spread":true},"health":57.5992,"player_id":2,"position":[4.81507578492165,5.6393398463726],"round_id":"round-68293946","round_seed":68293946,"tick":587},"ph":5.4,"seed":68294148,"simulation_seconds":7620.0,"stage":"mash","state_hash":"6743004c1bbbc60ae68d9af7ab681b3977a5a6128cea05d5d6807cb5bbbafbc9","temperature_c":66.7,"tick":127,"utc":"2026-11-25T21:13:17"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@364/@Button@366","message":"Claim accepted: 1500 payout.","point":[888.0,131.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@364/@Button@366","text":"Close"}
+PAIR_PHASE role=guest phase=claim-observed tick=594
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","message":"Claim accepted: 1500 payout.","point":[446.0,70.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@Button@360","text":"Lobby / combat / claims"}
+GUI_CLICK {"activations":1,"disabled":false,"hovered":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@392/@Button@396","message":"Welcome. Mash at 66.7 C for an hour, then move to the kettle.","point":[570.5,277.0],"stage":"mash","target":"/root/Garage/Multiplayer/@CanvasLayer@355/@Control@356/@PanelContainer@361/@ScrollContainer@362/@VBoxContainer@363/@HBoxContainer@392/@Button@396","text":"Leave"}
+PAIR_PHASE role=guest phase=complete tick=0
+RENDER_PROOF_RESULT {"captures":7,"checks":76,"exit_code":0,"failures":0,"profile":{"adapter":"llvmpipe (LLVM 20.1.2, 256 bits)","display":"X11","driver":"opengl3","engine":{"build":"official","hash":"49a5bc7b616bd04689a2c89e89bda41f50241464","hex":263169,"major":4,"minor":4,"patch":1,"status":"stable","string":"4.4.1-stable (official)","timestamp":0},"frame_time_ms":78.7,"measured_fps":12.7064803049555,"renderer":"gl_compatibility","role":"guest","scenario":"fire-input-smoke-only; no recipe or final-clock proof","vendor":"Mesa"}}

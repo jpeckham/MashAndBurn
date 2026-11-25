@@ -1,6 +1,6 @@
 # Mash & Burn — playable prototype
 
-Godot4.4.1 PC prototype with deterministic brewing, authoritative2–8player matches,
+Godot 4.4.1 PC prototype with deterministic brewing, authoritative2–8 player matches,
 fire/claims, beer visuals, fictional tasting/feed and an optional mock companion.
 See [current validation](docs/AI-GOAL-PROGRESS.md), [installer delivery](docs/releases.md)
 and [companion setup](companion/README.md). MSI installers are published through
@@ -41,6 +41,6 @@ Focused UI checks: append `-- --suite presentation` to the headless harness comm
 
 Packaging opens the tasting room with five 20-point categories and cause-based feedback. Scores below 45 or severe diacetyl/acetaldehyde open a fictional local feed: 512 unique procedural personas, 16 posts per page, no network calls or external accounts. See [sandbox details](docs/social.md).
 
-The combined game suite currently passes **1,022 checks**, including actual two-/eight-client ENet sessions and garage integration. Hosted Windows checks also exercise export/startup, MSI install/payload hashes, major upgrade, downgrade rejection and uninstall. Companion validation passes59pytest cases on Linux and Windows plus actual game/daemon/private-fake interoperability.
+The combined game suite currently passes **1,022 checks**, including actual two- and eight-client ENet sessions and garage integration. Hosted Windows checks also exercise export/startup, MSI install/payload hashes, major upgrade, downgrade rejection and uninstall. Companion validation passes59 pytest cases on Linux and Windows plus actual game/daemon/private-fake interoperability.
 
 The inspected single-player walkthrough preserves20X11/Mesa frames and403GUI assertions: normal/flawed recipes, walking/look/E, pause/resume, exact save/reload and feed pages1,2,32. The multiplayer session adds27inspected frames, and renderer comparisons add10. See [PRD traceability and limitations](docs/prototype-traceability.md) for precisely what this prototype demonstrates.
