@@ -89,6 +89,33 @@ def test_duplicate_socket_cannot_disarm_or_replace_active_owner(service):
         assert status(client)["armed"]
 
 
+def test_telemetry_credential_cannot_authorize_operator_actions(service):
+    client, _, clock = service
+    with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:
+        socket.receive_json()
+        socket.send_json(frame(clock))
+        assert socket.receive_json()["ok"]
+        assert client.post("/api/v1/arm", headers=AUTH, json={"confirm": True}).status_code == 401
+        assert client.post("/api/v1/estop/clear", headers=AUTH, json={"confirm": True}).status_code == 401
+
+
+def test_clearing_estop_while_armed_is_a_safe_disarm(service):
+    client, controller, clock = service
+    with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:
+        socket.receive_json()
+        socket.send_json(frame(clock))
+        socket.receive_json()
+        assert client.post("/api/v1/arm", headers=AUTH, json={"confirm": True}).status_code == 200
+        clock.advance(0.11)
+        socket.send_json(frame(clock, 2))
+        socket.receive_json()
+        wait_output(client)
+        assert client.post("/api/v1/estop/clear", headers=AUTH, json={"confirm": True}).status_code == 200
+        assert not status(client)["armed"]
+        assert controller.outputs == controller.safe_outputs()
+        assert client.post("/api/v1/arm", headers=AUTH, json={"confirm": True}).status_code == 409
+
+
 def test_heartbeat_estop_and_fresh_local_rearm(service):
     client, controller, clock = service
     with client.websocket_connect("/api/v1/telemetry", headers=AUTH) as socket:

@@ -133,10 +133,17 @@ def test_scheduler_is_10hz_and_does_not_burst_after_a_pause(bridge):
     clock.advance(0.011)
     assert controller.tick()
     assert len(transport.writes) == count + 1
+    assert controller.queue_command({"kind": "hop", "hopper": 1})
     clock.advance(0.8)
     assert controller.ingest(frame(clock, 2))
+    assert not controller.armed
+    assert controller.queue == []
+    assert not controller.tick()
+    assert controller.arm()  # A fresh frame cannot hide the missed heartbeat.
+    clock.advance(0.1)
     assert controller.tick()
-    assert len(transport.writes) == count + 2
+    assert len(transport.writes) == count + 3  # Includes the immediate safe-stop write.
+    assert controller.outputs["hop_drop_hopper"] is None
     assert not controller.tick()
 
 
