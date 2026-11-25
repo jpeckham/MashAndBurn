@@ -1,0 +1,15 @@
+Mash & Burn prototype asset inventory
+
+Garage geometry, lighting, procedural character markers, staging props, cars,
+UI, fictional personas and visual effects are original code-generated assets
+authored for this project. No external models, music, audio, photographs,
+textures or separately downloaded fonts are bundled.
+
+Godot Engine and its bundled components, including its default font, are
+covered by the accompanying GODOT_LICENSE.txt and GODOT_COPYRIGHT.txt files.
+These files are fetched from the exact engine stable source tag during the
+hosted build and installed beside this notice.
+
+These third-party notices do not assign a new license to the game's own code
+or assets. The original concept credits are Eric Wika, Mike Dunham and Robert
+Peckham, as recorded in the project requirements.
