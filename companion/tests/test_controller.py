@@ -199,3 +199,31 @@ def test_arm_planning_is_simulated_bounded_and_cleared_on_fault(bridge):
     controller.emergency_stop()
     assert_safe(controller, transport)
     assert controller.planned_waypoints == []
+
+
+def test_simulated_arm_follows_bounded_waypoints_and_freezes_on_stop(bridge):
+    controller, _, clock = arm(bridge)
+    controller.plan_waypoints([[0.04, 0.0, 0.2]])
+    previous = list(controller.simulated_arm_position)
+    path = [previous]
+    for sequence in range(2, 5):
+        clock.advance(0.1)
+        assert controller.ingest(frame(clock, sequence))
+        controller.tick()
+        current = list(controller.simulated_arm_position)
+        distance = math.dist(previous, current)
+        assert 0 < distance <= 0.010001
+        path.append(current)
+        previous = current
+    assert previous[0] > 0
+    controller.emergency_stop()
+    controller.clear_estop()
+    clock.advance(0.1)
+    assert controller.ingest(frame(clock, 5))
+    controller.tick()
+    assert controller.simulated_arm_position == previous
+    assert controller.planned_waypoints == []
+    from pathlib import Path
+    folder = Path(".tools/evidence")
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "simulated-arm.json").write_text(__import__("json").dumps(dict(path=path, max_speed_m_s=0.1, stopped=previous, physical_operation=False), indent=2))

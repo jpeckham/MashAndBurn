@@ -173,3 +173,17 @@ def test_service_refuses_missing_auth_configuration():
     from mash_burn_bridge.config import Settings
     with pytest.raises(ValueError):
         Settings(token="")
+
+
+def test_only_local_operator_can_plan_the_simulated_arm(service):
+    client, _, clock = service
+    points = {"points": [[0.02, 0.0, 0.2]]}
+    with client.websocket_connect("/api/v1/telemetry", headers=TELEMETRY_AUTH) as socket:
+        socket.receive_json()
+        socket.send_json(frame(clock))
+        socket.receive_json()
+        assert client.post("/api/v1/arm", headers=AUTH, json={"confirm": True}).status_code == 200
+        assert client.post("/api/v1/arm/plan", headers=TELEMETRY_AUTH, json=points).status_code == 401
+        response = client.post("/api/v1/arm/plan", headers=AUTH, json=points)
+        assert response.status_code == 200 and response.json()["simulated"]
+        assert client.post("/api/v1/arm/plan", headers=AUTH, json={"points": [[9.0, 0.0, 0.2]]}).status_code == 422
