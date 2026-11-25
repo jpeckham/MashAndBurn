@@ -21,13 +21,16 @@ These are prototype approximations:
   this is an artistic proxy, not a humidity/dew-point calculation.
 - Fire/smoke uses layered moving opacity and bounded lighting, driven by the
   abstract game heat/smoke fields. It is not a physical combustion model.
+  Multiplayer effects end with the authoritative staging window. A local generic
+  fire event remains visibly latched until a new batch, matching its safe-state latch.
 - All meshes, shaders and effects are original procedural assets. No external
   textures, models or particle sheets are required.
 
 The default Compatibility renderer retains glass, foam, nucleation, steam,
 condensate and flame. It does not enable reflection probes or volumetric fog.
 Forward+/Mobile enable one bounded reflection probe for raster reflections.
-The reference fixture exercises Compatibility and Forward+ separately; it does
+The reference fixture requests Compatibility and Forward+ separately and rejects
+an unavailable tier before saving media. It does
 not imply equivalent hardware support or performance on every machine.
 
 These choices follow the official [spatial shader transparency limitations](https://docs.godotengine.org/en/4.4/tutorials/shaders/shader_reference/spatial_shader.html)

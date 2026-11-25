@@ -56,6 +56,12 @@ func run(t) -> void:
 	garage.session.state.flaws.astringency = 1.0
 	garage.refresh()
 	t.check(module.display.material.get_shader_parameter("srm") > initial_srm,"live garage chemistry changes sample absorption")
+	t.check(garage.session.route("fire"),"local fixture creates validated generic hazard")
+	garage.refresh()
+	t.check(module.incident.visible and module.incident.material.get_shader_parameter("kind") == 1,"session fire event reaches live visual module")
+	garage.session.new_batch()
+	garage.refresh()
+	t.check(not module.incident.visible,"new batch clears latched visual incident")
 	garage.queue_free()
 	await t.process_frame
 	t.check(not is_instance_valid(module),"garage lifetime owns visual module")

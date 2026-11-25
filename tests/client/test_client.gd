@@ -163,6 +163,9 @@ func interactions(t, host_scene, client_scene, port: int) -> void:
 		t.check(not is_instance_valid(patch),"expired floor visual is freed")
 	t.check(client_ui.fires.has(2),"fire visual remains during its active window")
 	var flame = client_ui.fires.get(2)
+	if flame != null:
+		t.check(flame.get_script().resource_path == "res://src/visuals/thermal_effect.gd" and flame.material.get_shader_parameter("kind") == 1,"authoritative remote fire uses layered flame renderer")
+		t.check(is_equal_approx(flame.material.get_shader_parameter("strength"),client.view.players[2].fire.heat),"server heat reaches remote fire shader without new authority")
 	client_ui.leave()
 	await t.process_frame
 	t.check(client_ui.fires.is_empty() and client_ui.spills.is_empty() and not is_instance_valid(flame),"leave frees transient fire/floor visuals")
