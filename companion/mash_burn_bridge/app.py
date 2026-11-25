@@ -4,11 +4,12 @@ import contextlib
 import ipaddress
 import json
 import secrets
+from typing import Annotated
 from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 from .controller import BridgeController
 from .notifications import NotificationDispatcher, RoastRequest
@@ -18,6 +19,11 @@ from .transports import MockTransport, PhysicalTransport
 class LocalAction(BaseModel):
     model_config = ConfigDict(strict=True, extra="forbid")
     confirm: bool
+
+
+class Waypoints(BaseModel):
+    model_config = ConfigDict(strict=True, extra="forbid", allow_inf_nan=False)
+    points: Annotated[list[list[float]], Field(min_length=1, max_length=16)]
 
 
 def is_loopback(host):
@@ -54,7 +60,7 @@ def create_app(settings, *, controller=None):
                 await task
             await dispatcher.close()
 
-    app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None)
+    app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
     app.state.controller = control
     app.state.dispatcher = dispatcher
 
@@ -81,7 +87,7 @@ def create_app(settings, *, controller=None):
 
     @app.get("/api/v1/status", dependencies=[Depends(authorize_any)])
     async def status():
-        return dict(armed=control.armed, fault=control.fault, outputs=control.outputs, transport=settings.transport, physical_operation=False)
+        return dict(armed=control.armed, fault=control.fault, outputs=control.outputs, transport=settings.transport, simulated_arm_position=control.simulated_arm_position, physical_operation=False)
 
     @app.post("/api/v1/arm", dependencies=[Depends(authorize_operator)])
     async def arm(request: Request, action: LocalAction):
@@ -95,6 +101,15 @@ def create_app(settings, *, controller=None):
         local_action(request)
         control.trip("explicit-local-disarm")
         return dict(armed=False)
+
+    @app.post("/api/v1/arm/plan", dependencies=[Depends(authorize_operator)])
+    async def plan_arm(request: Request, body: Waypoints):
+        local_action(request)
+        try:
+            points = control.plan_waypoints(body.points)
+        except ValueError:
+            raise HTTPException(422, "Healthy armed mock and bounded simulated waypoints required") from None
+        return dict(simulated=True, waypoints=points, max_speed_m_s=0.1)
 
     @app.post("/api/v1/estop", dependencies=[Depends(authorize_operator)])
     async def estop(request: Request):

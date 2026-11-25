@@ -1,3 +1,4 @@
+import json
 import math
 
 import pytest
@@ -226,4 +227,4 @@ def test_simulated_arm_follows_bounded_waypoints_and_freezes_on_stop(bridge):
     from pathlib import Path
     folder = Path(".tools/evidence")
     folder.mkdir(parents=True, exist_ok=True)
-    (folder / "simulated-arm.json").write_text(__import__("json").dumps(dict(path=path, max_speed_m_s=0.1, stopped=previous, physical_operation=False), indent=2))
+    (folder / "simulated-arm.json").write_text(json.dumps(dict(path=path, max_speed_m_s=0.1, stopped=previous, physical_operation=False), indent=2))

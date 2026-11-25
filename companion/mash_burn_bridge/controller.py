@@ -22,6 +22,8 @@ class BridgeController:
         self.outputs = safe_outputs()
         self.queue = []
         self.planned_waypoints = []
+        self.simulated_arm_position = [0.0, 0.0, 0.2]
+        self.arm_trace = []
         self.trace = []
         self.frame = None
         self.last_seq = -1
@@ -138,6 +140,15 @@ class BridgeController:
             if command["kind"] == "hop":
                 self.outputs["hop_drop_hopper"] = command["hopper"]
         self.transport.write(self.outputs)
+        if self.planned_waypoints:
+            target = self.planned_waypoints[0]
+            distance = math.dist(self.simulated_arm_position, target)
+            fraction = min(1.0, 0.01 / distance) if distance else 1.0
+            self.simulated_arm_position = [current + (goal - current) * fraction for current, goal in zip(self.simulated_arm_position, target)]
+            if distance <= 0.010000001:
+                self.planned_waypoints.pop(0)
+            self.arm_trace.append(dict(at=now, position=list(self.simulated_arm_position)))
+            del self.arm_trace[:-1024]
         return True
 
     def queue_command(self, command):
