@@ -72,7 +72,7 @@ func join(state: Dictionary, peer: int, player_name: String, token: String, reco
 	result.resume_token = token
 	return result
 
-func disconnect(state: Dictionary, peer: int) -> Dictionary:
+func disconnect_peer(state: Dictionary, peer: int) -> Dictionary:
 	if not state.peer_players.has(peer): return rejected(state,"Unknown peer.")
 	var s: Dictionary = state.duplicate(true)
 	var who: int = s.peer_players[peer]

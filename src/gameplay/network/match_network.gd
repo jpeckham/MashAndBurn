@@ -103,7 +103,7 @@ func _peer_disconnected(peer: int) -> void:
 	unauthenticated.erase(peer)
 	request_rates.erase(peer)
 	if state.get("peer_players",{}).has(peer):
-		var result: Dictionary = authority.disconnect(state,peer)
+		var result: Dictionary = authority.disconnect_peer(state,peer)
 		state = result.state
 		publish()
 

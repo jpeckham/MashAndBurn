@@ -60,14 +60,14 @@ func run(t) -> void:
 	t.check(brewed.state.players[2].batch.target_c == 66.7,"own brew command cannot change rival batch")
 	brew.command.value = 900
 	t.check(not engine.submit(s,1,brew).ok,"chemistry bounds apply to multiplayer")
-	var gone: Dictionary = engine.disconnect(s,2)
+	var gone: Dictionary = engine.disconnect_peer(s,2)
 	t.check(not gone.state.players[2].connected and gone.state.players[2].batch.safe_state,"disconnect stops that bay safely")
 	t.check(not engine.join(gone.state,20,"Stolen","wrong-token",true).ok,"reconnect requires credential")
 	var back: Dictionary = engine.join(gone.state,20,"Ignored","private-token-2",true)
 	t.check(back.ok and back.player_id == 2 and back.state.players[2].seq == s.players[2].seq,"reconnect preserves identity/order")
 	t.check(back.state.players[2].batch.safe_state,"reconnect cannot clear safety latch")
 	t.check(not engine.submit(back.state,2,command(back.state,2,"move",{"direction":[0,0]})).ok,"old peer loses authority after reconnect")
-	var freed: Dictionary = engine.disconnect(lobby(engine),2)
+	var freed: Dictionary = engine.disconnect_peer(lobby(engine),2)
 	t.check(freed.state.players.size() == 1,"lobby disconnect releases slot")
 	for weapon in ["wand","ladle","hydrometer","keg","bottle"]:
 		var fight := running(engine)
