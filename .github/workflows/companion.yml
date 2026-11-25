@@ -3,9 +3,9 @@ name: Companion safety and private notifications
 on:
   push:
     branches: [main, 'codex/**']
-    paths: ['companion/**', '.github/workflows/companion.yml']
+    paths: ['companion/**', 'src/hardware/**', 'tests/hardware/**', 'project.godot', '.github/workflows/companion.yml']
   pull_request:
-    paths: ['companion/**', '.github/workflows/companion.yml']
+    paths: ['companion/**', 'src/hardware/**', 'tests/hardware/**', 'project.godot', '.github/workflows/companion.yml']
   workflow_dispatch:
   workflow_call:
 
@@ -39,4 +39,51 @@ jobs:
         with:
           name: companion-safety-evidence
           path: companion/.tools/evidence/
+          if-no-files-found: warn
+  game-bridge:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    env:
+      GODOT_VERSION: '4.4.1'
+      PYTHONPATH: companion
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: companion/requirements*.txt
+      - name: Install pinned bridge dependencies
+        run: python -m pip install -r companion/requirements-dev.txt
+      - name: Install checksum-verified headless Godot
+        shell: bash
+        run: |
+          set -euo pipefail
+          folder="$RUNNER_TEMP/godot-bridge"
+          mkdir -p "$folder" .tools/bridge-proof
+          cd "$folder"
+          asset="Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          base="https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable"
+          curl --fail --location --retry 3 "$base/$asset" -o "$asset"
+          curl --fail --location --retry 3 "$base/SHA512-SUMS.txt" -o SHA512-SUMS.txt
+          awk -v file="$asset" '$2 == file {print}' SHA512-SUMS.txt > selected-checksum.txt
+          test "$(wc -l < selected-checksum.txt)" -eq 1
+          sha512sum --check selected-checksum.txt
+          unzip -q "$asset"
+          executable="$folder/Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          chmod +x "$executable"
+          echo "GODOT=$executable" >> "$GITHUB_ENV"
+      - name: Import game and validate actual game-to-daemon interoperability
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout 90s "$GODOT" --headless --editor --path . --quit > .tools/bridge-proof/import.log 2>&1
+          if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' .tools/bridge-proof/import.log; then exit 1; fi
+          timeout 90s python companion/tests/live_game_bridge.py
+      - name: Preserve actual bridge evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-game-bridge-evidence
+          path: .tools/bridge-proof/
           if-no-files-found: warn
