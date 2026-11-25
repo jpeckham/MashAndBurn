@@ -258,6 +258,7 @@ func guest_fire() -> bool:
 	if not check(ui.causes.selected == 1,"actual popup selects fictional cord incident"): return false
 	if not await click("Fictional fire"): return false
 	if not await wait_until(func(): return player().fire.phase == "staging",5,"actual fire command accepted"): return false
+	signal_phase("fire-started")
 	if not await click("Close"): return false
 	await capture("guest-09-fire-window")
 	for object in ["receipt","evidence","equipment"]:
