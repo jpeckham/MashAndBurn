@@ -79,5 +79,8 @@ func advance(delta: float, state: Dictionary, context: Dictionary, unix_ms: int)
 		return [make_frame(state,context,unix_ms)]
 	accumulated += delta
 	if accumulated+.0000001 < .1: return []
-	accumulated = fposmod(accumulated,.1)
+	# An epsilon-accepted boundary must not leave .099999... as the remainder:
+	# that would emit again on the next render frame instead of the next slot.
+	var completed_slots := maxi(1,int(floor((accumulated+.0000001)/.1)))
+	accumulated = maxf(0,accumulated-completed_slots*.1)
 	return [make_frame(state,context,unix_ms)]

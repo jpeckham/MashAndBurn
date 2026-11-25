@@ -126,6 +126,7 @@ def main():
         (output / "bridge-proof.json").write_text(json.dumps(report, indent=2))
         print("LIVE_BRIDGE_RESULT " + json.dumps({key: report[key] for key in ("telemetry_frames", "initial_rate_hz", "median_interval_ms", "operator_credential_hidden_from_game", "physical_operation")}))
     finally:
+        (output / "diagnostics.json").write_text(json.dumps(dict(source_commit=os.environ.get("GITHUB_SHA"), run_id=os.environ.get("GITHUB_RUN_ID"), received=controller.received, controller_trace=controller.trace, outputs=controller.outputs, physical_operation=False), indent=2))
         if process is not None and process.poll() is None:
             process.terminate()
             try:

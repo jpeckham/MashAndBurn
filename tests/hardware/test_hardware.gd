@@ -52,6 +52,11 @@ func run(t) -> void:
 	packet = hops.make_frame(state,{},1000100)
 	t.check(packet.hop_drop_hopper == 0,"new hop event requests one bounded hopper")
 	t.check(hops.make_frame(state,{},1000200).hop_drop_hopper == null,"held chemistry state cannot repeatedly drop hops")
+	var fractional = script.new()
+	fractional.set_enabled(true)
+	var fractional_count := 0
+	for i in range(600): fractional_count += fractional.advance(1.0/60.0,state,{},1000000+int((i+1)*1000.0/60.0)).size()
+	t.check(fractional_count == 100,"60FPS fractional deltas cannot double the 10Hz telemetry rate")
 	var client_path := "res://src/hardware/bridge_client.gd"
 	if not FileAccess.file_exists(client_path):
 		t.check(false,"optional loopback-only companion transport exists")
