@@ -11,6 +11,7 @@ func ignite(s: Dictionary, who: int, cause: String, emit: Callable, disarm: Call
 	if p.fire.phase != "idle": return "This bay already has a fire incident."
 	p.fire = initial()
 	p.fire.merge({"phase":"staging","remaining":WINDOW,"heat":.25,"smoke":.05,"cause":cause},true)
+	p.fire.origin = p.position.duplicate()
 	# Hardware consumers must observe the latch before any visual or claims event.
 	disarm.call(s,who,"fire")
 	emit.call(s,"fire",who,{"cause":cause,"window_seconds":WINDOW})

@@ -124,9 +124,10 @@ func submit(state: Dictionary, peer: int, command) -> Dictionary:
 	for key in command:
 		if key not in ["version","round_id","seq","tick","action"] and key not in allowed[action]: return rejected(state,"Unsupported command field.")
 	if state.phase == "finished": return rejected(state,"The round has finished.")
+	if state.phase == "settling" and action not in ["move","stage","escape"]: return rejected(state,"Competition ended; only staging and escape remain.")
 	if action == "ready":
 		if state.phase != "lobby" or not command.get("ready") is bool: return rejected(state,"Ready status requires a lobby and boolean.")
-	elif state.phase != "running" and action != "brew": return rejected(state,"Wait for the host to start the round.")
+	elif state.phase not in ["running","settling"] and action != "brew": return rejected(state,"Wait for the host to start the round.")
 	elif player.health <= 0 or player.escaped or not player.connected: return rejected(state,"This player cannot act.")
 	var s: Dictionary = state.duplicate(true)
 	var p: Dictionary = s.players[who]
@@ -152,9 +153,9 @@ func submit(state: Dictionary, peer: int, command) -> Dictionary:
 			error = fire.ignite(s,who,command.cause,emit,disarm)
 		"stage":
 			if not command.get("object") is String: return rejected(state,"Invalid staging object.")
-			if s.elapsed < p.cooldowns.get("stage",0.0): return rejected(state,"Staging cooldown is active.")
+			if s.tick*TICK < p.cooldowns.get("stage",0.0): return rejected(state,"Staging cooldown is active.")
 			error = fire.stage(p,command.object)
-			if error.is_empty(): p.cooldowns.stage = s.elapsed+1
+			if error.is_empty(): p.cooldowns.stage = s.tick*TICK+1
 		"escape": error = fire.escape(p)
 	if not error.is_empty(): return rejected(state,error)
 	p.seq = int(command.seq)
@@ -168,7 +169,7 @@ func brew(s: Dictionary, who: int, input) -> String:
 	var fields: Array = {"set":["action","field","value"],"add_hops":["action","grams","alpha"],"next":["action"]}[input.action]
 	for key in input:
 		if key not in fields: return "Unsupported brewing field."
-	if s.elapsed < p.cooldowns.get("brew",0.0): return "Brewing command cooldown is active."
+	if s.tick*TICK < p.cooldowns.get("brew",0.0): return "Brewing command cooldown is active."
 	if s.phase == "lobby":
 		if input.action != "set": return "Only recipe settings can change in the lobby."
 		var c: Dictionary = input.duplicate(true)
@@ -184,7 +185,7 @@ func brew(s: Dictionary, who: int, input) -> String:
 		# Broken cooling equipment cannot be repaired by sending an arbitrary setting.
 		if p.get("broken_chiller",false): p.batch.chiller = 0.0
 		if p.redline: p.batch.target_c = 100.0 if p.batch.stage in ["mash","boil"] else p.batch.target_c
-	p.cooldowns.brew = s.elapsed+.2
+	p.cooldowns.brew = s.tick*TICK+.2
 	return ""
 
 func attack(s: Dictionary, who: int, target: int, weapon) -> String:
@@ -193,7 +194,7 @@ func attack(s: Dictionary, who: int, target: int, weapon) -> String:
 	var victim: Dictionary = s.players[target]
 	var spec: Dictionary = WEAPONS[weapon]
 	if distance(p,victim) > spec.range: return "Target is out of weapon range."
-	if s.elapsed < p.cooldowns.get("attack",0.0): return "Weapon cooldown is active."
+	if s.tick*TICK < p.cooldowns.get("attack",0.0): return "Weapon cooldown is active."
 	if weapon in ["keg","bottle"]:
 		if s.projectiles.filter(func(projectile): return projectile.owner == who).size() >= 2: return "Too many active projectiles."
 		var origin := Vector2(p.position[0],p.position[1])
@@ -202,10 +203,10 @@ func attack(s: Dictionary, who: int, target: int, weapon) -> String:
 		s.projectile_seq += 1
 		s.projectiles.append({"id":s.projectile_seq,"owner":who,"weapon":weapon,"position":[origin.x,1.2,origin.y],"velocity":[direction.x*8,2.0,direction.y*8],"age":0.0})
 	elif weapon == "wand":
-		victim.blind_until = s.elapsed+2.0
-		victim.slip_until = s.elapsed+4.0
+		victim.blind_until = s.tick*TICK+2.0
+		victim.slip_until = s.tick*TICK+4.0
 	else: damage(s,target,spec.damage,who,weapon)
-	p.cooldowns.attack = s.elapsed+spec.cooldown
+	p.cooldowns.attack = s.tick*TICK+spec.cooldown
 	emit(s,"attack",who,{"weapon":weapon,"target":target})
 	return ""
 
@@ -214,7 +215,7 @@ func sabotage(s: Dictionary, who: int, target: int, kind) -> String:
 	var p: Dictionary = s.players[who]
 	var victim: Dictionary = s.players[target]
 	if distance(p,victim) > 3: return "Move within three game metres of the rival."
-	if s.elapsed < p.cooldowns.get("sabotage",0.0): return "Sabotage cooldown is active."
+	if s.tick*TICK < p.cooldowns.get("sabotage",0.0): return "Sabotage cooldown is active."
 	match kind:
 		"chiller":
 			victim.batch.chiller = 0.0
@@ -226,7 +227,7 @@ func sabotage(s: Dictionary, who: int, target: int, kind) -> String:
 			victim.redline = true
 			victim.batch.target_c = 100.0
 			victim.batch.vigor = 1.0
-	p.cooldowns.sabotage = s.elapsed+5.0
+	p.cooldowns.sabotage = s.tick*TICK+5.0
 	emit(s,"sabotage",who,{"kind":kind,"target":target})
 	return ""
 
@@ -240,7 +241,7 @@ func damage(s: Dictionary, target: int, amount: float, owner: int, weapon: Strin
 
 func advance(state: Dictionary, dt: float) -> Dictionary:
 	if not is_finite(dt) or not is_equal_approx(dt,TICK): return rejected(state,"Expected one fixed 0.1-second server tick.")
-	if state.phase != "running": return rejected(state,"Only a running round advances.")
+	if state.phase not in ["running","settling"]: return rejected(state,"Only a running round or active claims settlement advances.")
 	var s: Dictionary = state.duplicate(true)
 	s.tick += 1
 	s.elapsed = minf(900,s.tick*TICK)
@@ -249,18 +250,26 @@ func advance(state: Dictionary, dt: float) -> Dictionary:
 		if p.connected and p.health > 0 and not p.escaped:
 			# Missing movement input times out; disconnect cannot leave a player walking.
 			if s.tick-p.last_move_tick > 5: p.move = [0.0,0.0]
-			var speed := 1.2 if p.slip_until > s.elapsed else 3.0
+			var speed := 1.2 if p.slip_until > s.tick*TICK else 3.0
 			p.position[0] = clampf(p.position[0]+p.move[0]*dt*speed,-6.5,6.5)
 			p.position[1] = clampf(p.position[1]+p.move[1]*dt*speed,-.5,6)
-			if not p.batch.safe_state and p.batch.stage != "judging":
+			if s.phase == "running" and not p.batch.safe_state and p.batch.stage != "judging":
 				var result: Dictionary = sim.advance(p.batch,{},60.0)
 				if result.ok: p.batch = result.state
 				else: disarm(s,who,"hazard")
 				for hazard in result.events: disarm(s,who,hazard.kind)
-			if p.redline and p.batch.stage == "boil" and p.batch.temp_c >= 95 and p.fire.phase == "idle": fire.ignite(s,who,"boil_over",emit,disarm)
-	advance_projectiles(s,dt)
+			if s.phase == "running" and p.redline and p.batch.stage == "boil" and p.batch.temp_c >= 95 and p.fire.phase == "idle": fire.ignite(s,who,"boil_over",emit,disarm)
+	if s.phase == "running": advance_projectiles(s,dt)
 	fire.advance(s,dt,emit,disarm)
-	if s.tick >= ROUND_TICKS: finish(s)
+	if s.tick >= ROUND_TICKS:
+		if s.players.values().any(func(p): return p.fire.phase == "staging"):
+			if s.phase != "settling":
+				s.phase = "settling"
+				s.projectiles.clear()
+				for who in s.players:
+					if not s.players[who].batch.safe_state: disarm(s,who,"disconnect")
+				emit(s,"round_clock_expired",0,{"claims_pending":true})
+		else: finish(s)
 	return accepted(s,state.event_id)
 
 func advance_projectiles(s: Dictionary, dt: float) -> void:
@@ -288,7 +297,6 @@ func finish(s: Dictionary) -> void:
 	for who in s.players:
 		var p: Dictionary = s.players[who]
 		p.move = [0.0,0.0]
-		if p.fire.phase == "staging": fire.inspect(s,who,emit)
 		var result: Dictionary = judge.evaluate(p.batch)
 		var target: Dictionary = STYLES[s.style]
 		result.categories.style_accuracy = snappedf(clampf(20-absf(p.batch.ibu-target.ibu)*.25-absf(p.batch.og-target.og)*150-(1-p.batch.attenuation)*8,0,20),.1)

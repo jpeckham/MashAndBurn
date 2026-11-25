@@ -10,6 +10,7 @@ var resume_token := ""
 var message := "Offline. Host or join a trusted local/LAN session."
 var reply_count := 0
 var is_host := false
+var session_connected := false
 var pending := false
 var queued: Array = []
 var connection_name := "Brewer"
@@ -42,6 +43,7 @@ func host(port: int = 27841, player_name: String = "Host", playing: bool = true)
 		return error
 	multiplayer.multiplayer_peer = peer
 	is_host = true
+	session_connected = true
 	var seed_value: int = Crypto.new().generate_random_bytes(4).decode_u32(0)%2147483647
 	state = authority.initial_state(seed_value)
 	if playing:
@@ -90,6 +92,7 @@ func _server_disconnected() -> void:
 func _drop_connection(reason: String) -> void:
 	if multiplayer.multiplayer_peer: multiplayer.multiplayer_peer.close()
 	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
+	session_connected = false
 	pending = false
 	queued.clear()
 	message = reason
@@ -131,11 +134,15 @@ func _welcome(id: int, token: String, error: String, snapshot: Dictionary) -> vo
 		_drop_connection(error)
 		return
 	player_id = id
+	session_connected = true
 	resume_token = token
 	message = "Joined as brewer %d. Ready when your recipe is set." % id
 	accept_view(snapshot)
 
 func send(action: String, data: Dictionary = {}) -> bool:
+	if not session_connected:
+		message = "Disconnected; reconnect or leave."
+		return false
 	if player_id == 0 or not view.get("players",{}).has(player_id) or not view.players[player_id].connected:
 		message = "No connected brewer identity."
 		return false
@@ -238,10 +245,10 @@ func _physics_process(delta: float) -> void:
 		if Time.get_ticks_msec()-unauthenticated[peer] > 5000:
 			multiplayer.multiplayer_peer.disconnect_peer(peer)
 			unauthenticated.erase(peer)
-	if state.get("phase") != "running": return
+	if state.get("phase") not in ["running","settling"]: return
 	accumulator += delta
 	var steps := 0
-	while accumulator >= .1 and steps < 5 and state.phase == "running":
+	while accumulator >= .1 and steps < 5 and state.phase in ["running","settling"]:
 		state = authority.advance(state,.1).state
 		accumulator -= .1
 		steps += 1
@@ -251,6 +258,7 @@ func shutdown() -> void:
 	if multiplayer.multiplayer_peer: multiplayer.multiplayer_peer.close()
 	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
 	is_host = false
+	session_connected = false
 	player_id = 0
 	resume_token = ""
 	pending = false
