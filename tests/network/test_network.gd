@@ -53,10 +53,13 @@ func run(t) -> void:
 			t.check(server.start_round("pale_ale"),"host starts authoritative 15-minute round")
 			t.check(await wait_for(t,func(): return clients.all(func(c): return c.view.get("phase") == "running")),"all clients receive running snapshot")
 			var first = clients[0]
+			# A slow rendered client may miss several snapshots. The server must keep
+			# rejecting stale ticks, while transport preserves a never-applied intent.
+			for tick in range(40): server.state = server.authority.advance(server.state,.1).state
 			var replies: int = first.reply_count
 			first.send("brew",{"command":{"action":"set","field":"target_c","value":69.0}})
 			t.check(await wait_for(t,func(): return first.reply_count > replies),"server acknowledges own-batch command")
-			t.check(server.state.players[first.player_id].batch.target_c == 69,"real client cannot bypass authoritative brewing")
+			t.check(await wait_for(t,func(): return server.state.players[first.player_id].batch.target_c == 69),"stale real client recovers never-applied intent using authoritative reply clock")
 			replies = first.reply_count
 			first.send("award_money",{"amount":100000})
 			t.check(await wait_for(t,func(): return first.reply_count > replies),"malicious real client receives rejection")
