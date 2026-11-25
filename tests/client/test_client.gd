@@ -1,5 +1,37 @@
 extends RefCounted
 
+class CountingGarage:
+	extends "res://src/presentation/garage.gd"
+	var refresh_count := 0
+	func refresh() -> void:
+		refresh_count += 1
+		super.refresh()
+
+func snapshot_burst(t) -> void:
+	var branch := Node.new()
+	branch.name = "BurstHost"
+	t.root.add_child(branch)
+	var api := SceneMultiplayer.new()
+	api.root_path = branch.get_path()
+	t.set_multiplayer(api,branch.get_path())
+	var scene := CountingGarage.new()
+	branch.add_child(scene)
+	var ui = scene.get_node("Multiplayer")
+	ui.network.set_physics_process(false)
+	t.check(ui.network.host(26100+OS.get_process_id()%300,"Burst") == OK,"snapshot burst fixture hosts")
+	var before := scene.refresh_count
+	for i in range(100):
+		ui.network.state.players[1].batch.target_c = 60+float(i)/10
+		ui.network.publish()
+	t.check(scene.refresh_count-before <= 1,"snapshot burst does not rebuild garage for every obsolete intermediate view")
+	await t.process_frame
+	await t.process_frame
+	t.check(scene.refresh_count-before <= 1 and is_equal_approx(scene.session.state.target_c,69.9),"one garage application presents newest burst snapshot")
+	ui.leave()
+	t.set_multiplayer(null,branch.get_path())
+	branch.queue_free()
+	await t.process_frame
+
 func wait_for(tree, predicate: Callable, seconds: float = 4.0) -> bool:
 	var deadline := Time.get_ticks_msec()+int(seconds*1000)
 	while Time.get_ticks_msec() < deadline:
@@ -22,6 +54,7 @@ func tasting(scene):
 	return scene.modules.filter(func(module): return module.get_script().resource_path == "res://src/social/judging_module.gd")[0]
 
 func run(t) -> void:
+	await snapshot_burst(t)
 	var host_scene = garage(t,"IntegratedHost")
 	var client_scene = garage(t,"IntegratedClient")
 	var host_ui = host_scene.get_node("Multiplayer")
