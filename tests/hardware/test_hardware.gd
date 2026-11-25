@@ -52,3 +52,22 @@ func run(t) -> void:
 	packet = hops.make_frame(state,{},1000100)
 	t.check(packet.hop_drop_hopper == 0,"new hop event requests one bounded hopper")
 	t.check(hops.make_frame(state,{},1000200).hop_drop_hopper == null,"held chemistry state cannot repeatedly drop hops")
+	var client_path := "res://src/hardware/bridge_client.gd"
+	if not FileAccess.file_exists(client_path):
+		t.check(false,"optional loopback-only companion transport exists")
+		return
+	var client = load(client_path).new()
+	t.check(not client.ready and client.peer == null,"companion transport performs no startup connection")
+	for address in ["ws://127.0.0.1:27842/api/v1/telemetry","ws://[::1]:27842/api/v1/telemetry"]:
+		t.check(client.endpoint_allowed(address),"explicit loopback telemetry endpoint allowed")
+	for address in ["ws://example.com:27842/api/v1/telemetry","ws://127.0.0.1:1023/api/v1/telemetry","ws://127.0.0.1:70000/api/v1/telemetry","ws://127.0.0.1:27842/api/v1/telemetry?token=x","ws://user@127.0.0.1:27842/api/v1/telemetry"]:
+		t.check(not client.start(address,"hosted-fake-token-with-no-real-credentials") and client.peer == null,"invalid/nonlocal endpoint cannot open a connection")
+	t.check(not client.start("ws://127.0.0.1:27842/api/v1/telemetry","short\r\nInjected: header") and client.peer == null,"invalid credential cannot reach handshake headers")
+	t.check(not client.send_frame(packet),"disabled transport cannot send actuator requests")
+	var garage = load("res://scenes/garage/garage.tscn").instantiate()
+	t.root.add_child(garage)
+	var bridge = garage.get_node_or_null("HardwareBridge")
+	t.check(bridge != null,"garage exposes optional companion module")
+	if bridge != null: t.check(not bridge.activated and bridge.client.peer == null,"game defaults to no companion connection")
+	garage.queue_free()
+	await t.process_frame
