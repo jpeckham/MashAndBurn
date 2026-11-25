@@ -13,6 +13,7 @@ var is_host := false
 var session_connected := false
 var pending := false
 var queued: Array = []
+var in_flight: Dictionary = {}
 var connection_name := "Brewer"
 var reconnecting := false
 var accumulator := 0.0
@@ -162,6 +163,7 @@ func send(action: String, data: Dictionary = {}) -> bool:
 func flush() -> void:
 	if pending or queued.is_empty() or not view.get("players",{}).has(player_id): return
 	var item: Dictionary = queued.pop_front()
+	in_flight = item
 	var command: Dictionary = item.data.duplicate(true)
 	command.merge({"version":1,"round_id":view.round_id,"seq":view.players[player_id].seq+1,"tick":view.tick,"action":item.action},true)
 	pending = true
@@ -199,9 +201,17 @@ func _reply(ok: bool, error: String, snapshot: Dictionary) -> void:
 
 func handle_reply(ok: bool, error: String, snapshot: Dictionary) -> void:
 	reply_count += 1
+	# A stale-clock rejection did not execute or consume the sequence. Preserve
+	# that intent once, using the trusted fresh reply, without relaxing authority.
+	var retry: bool = not ok and error == "Stale, future or invalid command tick." and not in_flight.is_empty() and in_flight.get("clock_retries",0) == 0
+	var rejected_intent: Dictionary = in_flight
+	in_flight = {}
 	pending = false
 	message = "Server accepted input." if ok else error
 	accept_view(snapshot)
+	if retry and session_connected:
+		rejected_intent.clock_retries = 1
+		queued.push_front(rejected_intent)
 	flush()
 
 @rpc("authority","call_remote","reliable",1)
@@ -263,6 +273,7 @@ func shutdown() -> void:
 	resume_token = ""
 	pending = false
 	queued.clear()
+	in_flight.clear()
 	unauthenticated.clear()
 	request_rates.clear()
 	view = {}

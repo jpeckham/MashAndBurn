@@ -10,6 +10,7 @@ var network: Node
 var original_session
 var remote_session
 var remote_mode := false
+var sync_pending := false
 var panel: PanelContainer
 var summary: Label
 var scoreboard: Label
@@ -44,7 +45,7 @@ func setup(host: Node) -> void:
 	add_child(network)
 	garage.button("Multiplayer lobby / match",garage.module_slot,func(): panel.visible = not panel.visible)
 	build_ui()
-	network.changed.connect(sync)
+	network.changed.connect(schedule_sync)
 	garage.box(Vector3(0,.02,5.7),Vector3(10,.03,.35),Color("32764b"))
 	garage.sign3d("EXIT  /  ESCAPE FROM SMOKE",Vector3(0,2.7,6),Color("b2f4c1"),28).billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	staging_props = Props.build(garage)
@@ -176,6 +177,16 @@ func leave() -> void:
 	summary.text = ""
 	last_phase = ""
 	Props.show_progress(staging_props,{})
+
+func schedule_sync() -> void:
+	# Polling can deliver many snapshots in one frame. Render only the newest view.
+	if sync_pending: return
+	sync_pending = true
+	apply_latest_view.call_deferred()
+
+func apply_latest_view() -> void:
+	sync_pending = false
+	sync()
 
 func sync() -> void:
 	notice.text = network.message

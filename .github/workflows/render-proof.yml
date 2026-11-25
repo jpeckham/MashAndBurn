@@ -3,7 +3,7 @@ name: Hosted rendered garage proof
 on:
   push:
     branches: ['codex/**']
-    paths: ['tests/render/**', 'src/**', 'scenes/**', 'project.godot', '.github/workflows/render-proof.yml']
+    paths: ['tests/**', 'src/**', 'scenes/**', 'project.godot', '.github/workflows/render-proof.yml']
   workflow_dispatch:
     inputs:
       pair:
