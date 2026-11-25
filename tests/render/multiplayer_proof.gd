@@ -7,6 +7,30 @@ var network: Node
 var connected_once := false
 var original_hash := ""
 var walking_keys: Dictionary = {}
+var input_lock_depth := 0
+
+func acquire_input() -> void:
+	if input_lock_depth == 0:
+		while DirAccess.make_dir_absolute(ProjectSettings.globalize_path(SHARED+"/input-lock")) != OK:
+			await create_timer(.05).timeout
+	input_lock_depth += 1
+
+func release_input() -> void:
+	input_lock_depth -= 1
+	if input_lock_depth == 0: DirAccess.remove_absolute(ProjectSettings.globalize_path(SHARED+"/input-lock"))
+
+func click_control(control: Control) -> bool:
+	await acquire_input()
+	var accepted := await super.click_control(control)
+	release_input()
+	return accepted
+
+func enter_text(editor: LineEdit, value: String) -> bool:
+	await acquire_input()
+	var accepted := await super.enter_text(editor,value)
+	if accepted: accepted = check(editor.text == value,"keyboard draft matches requested text: "+value)
+	release_input()
+	return accepted
 
 func player() -> Dictionary:
 	return network.view.get("players",{}).get(network.player_id,{})
@@ -32,9 +56,15 @@ func phase_exists(actor: String, phase: String) -> bool:
 func set_field(field: String, value: String) -> bool:
 	if not await wait_until(func(): return player().get("cooldowns",{}).get("brew",0.0) <= network.view.tick*.1,5,"brewing control cooldown clear"): return false
 	var editor: SpinBox = game.settings[field]
-	if not await enter_text(editor.get_line_edit(),value): return false
+	await acquire_input()
+	if not await enter_text(editor.get_line_edit(),value):
+		release_input()
+		return false
 	var apply: Button = editor.get_parent().get_child(editor.get_parent().get_child_count()-1)
-	if not await click_control(apply): return false
+	var accepted := await click_control(apply)
+	print("PAIR_FIELD "+JSON.stringify({"field":field,"requested":value,"widget":editor.value,"draft":editor.get_line_edit().text,"tick":network.view.tick}))
+	release_input()
+	if not accepted: return false
 	return await wait_until(func(): return is_equal_approx(game.session.state[field],float(value)),5,"authoritative GUI field "+field+"="+value)
 
 func next_stage(expected: String) -> bool:
@@ -92,6 +122,12 @@ func stop_walking() -> void:
 	key(KEY_ESCAPE,false)
 
 func walk_to(point: Vector2) -> bool:
+	await acquire_input()
+	var reached := await walk_with_focus(point)
+	release_input()
+	return reached
+
+func walk_with_focus(point: Vector2) -> bool:
 	root.grab_focus()
 	if ui.panel.visible and not await click("Close"): return false
 	root.gui_release_focus()
@@ -118,11 +154,13 @@ func walk_to(point: Vector2) -> bool:
 	return check(false,"WASD traversal timed out: "+str(point))
 
 func interact() -> void:
+	await acquire_input()
 	root.grab_focus()
 	root.gui_release_focus()
 	key(KEY_E,true)
 	key(KEY_E,false)
 	await frames(2)
+	release_input()
 
 func host_combat() -> bool:
 	if not await wait_until(func(): return network.view.players.size() == 2 and network.view.players.values().all(func(p): return p.batch.stage == "judging"),240,"both actual GUI recipes packaged"): return false
@@ -155,12 +193,14 @@ func guest_fire() -> bool:
 	await capture("guest-08-wand-blindness")
 	if not await wait_until(func(): return phase_exists("host","at-exit"),30,"host reached exit before fire traversal"): return false
 	if not await click("Lobby / combat / claims"): return false
+	await acquire_input()
 	if not await click_control(ui.causes): return false
 	key(KEY_DOWN,true)
 	key(KEY_DOWN,false)
 	key(KEY_ENTER,true)
 	key(KEY_ENTER,false)
 	await frames(2)
+	release_input()
 	if not check(ui.causes.selected == 1,"actual popup selects fictional cord incident"): return false
 	if not await click("Fictional fire"): return false
 	if not await wait_until(func(): return player().fire.phase == "staging",5,"actual fire command accepted"): return false
