@@ -14,7 +14,7 @@ func new_batch() -> void:
 func route(action: String, values: Dictionary = {}) -> bool:
 	var command := values.duplicate(true)
 	command.action = action
-	var result := sim.advance(state, command, 60.0)
+	var result := sim.apply_command(state, command)
 	if not result.ok:
 		message = result.error
 		return false

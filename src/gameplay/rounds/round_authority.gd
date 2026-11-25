@@ -169,6 +169,10 @@ func brew(s: Dictionary, who: int, input) -> String:
 	var fields: Array = {"set":["action","field","value"],"add_hops":["action","grams","alpha"],"next":["action"]}[input.action]
 	for key in input:
 		if key not in fields: return "Unsupported brewing field."
+	if input.action == "set":
+		if input.get("field") not in ["volume_l","grain_kg","target_c","vigor","chiller","priming_g","regulator_psi"]: return "Only player controls can be set; measured chemistry belongs to the server."
+		if p.get("broken_chiller",false) and input.field == "chiller" and input.get("value") != 0: return "The damaged chiller cannot be enabled."
+		if p.redline and p.batch.stage in ["mash","boil"] and input.field in ["target_c","vigor"]: return "The sabotaged burner cannot be overridden."
 	if s.tick*TICK < p.cooldowns.get("brew",0.0): return "Brewing command cooldown is active."
 	if s.phase == "lobby":
 		if input.action != "set": return "Only recipe settings can change in the lobby."
@@ -178,7 +182,7 @@ func brew(s: Dictionary, who: int, input) -> String:
 		if not error.is_empty(): return error
 		p.batch[input.field] = input.value
 	else:
-		var result: Dictionary = sim.advance(p.batch,input,60.0)
+		var result: Dictionary = sim.apply_command(p.batch,input)
 		if not result.ok: return result.error
 		p.batch = result.state
 		for hazard in result.events: disarm(s,who,hazard.kind)

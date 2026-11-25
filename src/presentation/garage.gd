@@ -17,6 +17,7 @@ var speed := 60.0
 var accumulated := 0.0
 var look_pitch := -0.12
 var settings: Dictionary = {}
+var settings_dirty: Dictionary = {}
 var stage_buttons: Array = []
 var batch_label: Label
 const STAGES = ["mash","boil","cooling","fermentation","packaging"]
@@ -180,7 +181,11 @@ func field(title: String, key: String, lo: float, hi: float, value: float, step_
 	input.custom_minimum_size.x = 112
 	r.add_child(input)
 	settings[key] = input
-	button("Set",r,func(): session.route("set",{"field":key,"value":input.value}); refresh())
+	input.value_changed.connect(func(_value): settings_dirty[key] = true)
+	button("Set",r,func():
+		input.apply()
+		if session.route("set",{"field":key,"value":input.value}): settings_dirty.erase(key)
+		refresh())
 
 func build_ui() -> void:
 	var canvas := CanvasLayer.new()
@@ -247,8 +252,11 @@ func build_ui() -> void:
 	field("Regulator / psi","regulator_psi",0,60,0,1)
 	var saves := row(controls)
 	button("Save batch",saves,func(): session.save_to(); refresh())
-	button("Load batch",saves,func(): session.load_from(); paused = true; refresh())
-	button("New batch",saves,func(): session.new_batch(); paused = true; accumulated = 0; refresh())
+	button("Load batch",saves,func():
+		if session.load_from(): settings_dirty.clear()
+		paused = true
+		refresh())
+	button("New batch",saves,func(): session.new_batch(); settings_dirty.clear(); paused = true; accumulated = 0; refresh())
 	notice = label("",controls,13,Color("f0c36f"))
 	notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	module_slot = VBoxContainer.new()
@@ -287,7 +295,8 @@ func refresh() -> void:
 	next_button.text = "Package & judge" if s.stage == "packaging" else "Next stage →"
 	next_button.disabled = not session.sim.can_next(s)
 	pause_button.text = "Resume" if paused else "Pause"
-	for key in settings: settings[key].set_value_no_signal(s[key])
+	for key in settings:
+		if not settings_dirty.get(key,false) and not settings[key].get_line_edit().has_focus(): settings[key].set_value_no_signal(s[key])
 	for i in range(5):
 		stage_buttons[i].modulate = COLORS[i] if s.stage == STAGES[i] else Color.WHITE
 	for module in modules:

@@ -204,7 +204,7 @@ func handle_reply(ok: bool, error: String, snapshot: Dictionary) -> void:
 	accept_view(snapshot)
 	flush()
 
-@rpc("authority","call_remote","unreliable_ordered",1)
+@rpc("authority","call_remote","reliable",1)
 func _snapshot(snapshot: Dictionary) -> void:
 	if not is_host: accept_view(snapshot)
 

@@ -55,6 +55,61 @@ func can_next(s: Dictionary) -> bool:
 		"packaging": return true
 	return false
 
+func apply_command(state: Dictionary, command: Dictionary) -> Dictionary:
+	# Inputs change controls/stages; only advance() integrates heat, chemistry or time.
+	var err := Protocol.new().validate(state)
+	if not err.is_empty() or command.is_empty():
+		return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Invalid state or empty command. " + err}
+	var s := state.duplicate(true)
+	var events: Array = []
+	var c := command.duplicate(true)
+	c.merge({"type":"PlayerCommand", "version":1,"seq":s.seq + 1,"tick":s.tick}, false)
+	err = Protocol.new().validate(c)
+	if not err.is_empty() or c.tick != s.tick or c.seq != s.seq + 1:
+		return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Rejected command: " + err + " (check tick/sequence)"}
+	match c.action:
+		"set":
+			if c.field in ["grain_kg", "volume_l"] and (s.stage != "mash" or s.stage_seconds > 0):
+				return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Recipe quantities lock after mash begins."}
+			s[c.field] = c.value
+		"add_hops":
+			if s.stage != "boil" or s.hops.size() >= 32:
+				return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Add up to 32 hop charges during boil."}
+			s.hops.append({"grams":c.grams,"alpha":c.alpha,"minutes":0.0})
+			s.hop_oils += c.grams * 0.02
+		"next":
+			if not can_next(s):
+				return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Stage not ready. Follow the station instructions."}
+			s.stage = STAGES[STAGES.find(s.stage) + 1]
+			s.stage_seconds = 0.0
+			match s.stage:
+				"boil": s.target_c = 100.0
+				"fermentation":
+					s.target_c = YEAST[s.yeast].optimum_c
+					var rng := RandomNumberGenerator.new()
+					rng.seed = s.seed + s.tick * 7919
+					s.infected = rng.randf() < s.infection_risk
+				"judging":
+					s.co2_volumes = 0.85 + s.priming_g / (4.0 * s.volume_l)
+					if s.regulator_psi > 0:
+						var lo := 0.0
+						var hi := 8.0
+						for i in range(24):
+							var mid := (lo + hi) / 2
+							if pressure_psi(s.temp_c, mid) < s.regulator_psi: lo = mid
+							else: hi = mid
+						s.co2_volumes = (lo + hi) / 2
+		"hazard", "fire", "disconnect":
+			s.safe_state = true
+			events.append(hazard(s, c.action))
+	s.seq = c.seq
+	if s.stage == "judging":
+		s.pressure_psi = pressure_psi(s.temp_c,s.co2_volumes)
+		if not s.safe_state and (s.co2_volumes > 3.5 or s.pressure_psi > 60):
+			s.safe_state = true
+			events.append(hazard(s,"overpressure"))
+	return {"ok":true,"state":s,"events":events,"error":""}
+
 func advance(state: Dictionary, command: Dictionary, dt_seconds: float) -> Dictionary:
 	var err := Protocol.new().validate(state)
 	if not err.is_empty() or not is_finite(dt_seconds) or dt_seconds <= 0 or dt_seconds > 60:
@@ -62,47 +117,10 @@ func advance(state: Dictionary, command: Dictionary, dt_seconds: float) -> Dicti
 	var s := state.duplicate(true)
 	var events: Array = []
 	if not command.is_empty():
-		var c := command.duplicate(true)
-		c.merge({"type":"PlayerCommand", "version":1,"seq":s.seq + 1,"tick":s.tick}, false)
-		err = Protocol.new().validate(c)
-		if not err.is_empty() or c.tick != s.tick or c.seq != s.seq + 1:
-			return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Rejected command: " + err + " (check tick/sequence)"}
-		match c.action:
-			"set":
-				if c.field in ["grain_kg", "volume_l"] and (s.stage != "mash" or s.stage_seconds > 0):
-					return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Recipe quantities lock after mash begins."}
-				s[c.field] = c.value
-			"add_hops":
-				if s.stage != "boil" or s.hops.size() >= 32:
-					return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Add up to 32 hop charges during boil."}
-				s.hops.append({"grams":c.grams,"alpha":c.alpha,"minutes":0.0})
-				s.hop_oils += c.grams * 0.02
-			"next":
-				if not can_next(s):
-					return {"ok":false,"state":state.duplicate(true),"events":[],"error":"Stage not ready. Follow the station instructions."}
-				s.stage = STAGES[STAGES.find(s.stage) + 1]
-				s.stage_seconds = 0.0
-				match s.stage:
-					"boil": s.target_c = 100.0
-					"fermentation":
-						s.target_c = YEAST[s.yeast].optimum_c
-						var rng := RandomNumberGenerator.new()
-						rng.seed = s.seed + s.tick * 7919
-						s.infected = rng.randf() < s.infection_risk
-					"judging":
-						s.co2_volumes = 0.85 + s.priming_g / (4.0 * s.volume_l)
-						if s.regulator_psi > 0:
-							var lo := 0.0
-							var hi := 8.0
-							for i in range(24):
-								var mid := (lo + hi) / 2
-								if pressure_psi(s.temp_c, mid) < s.regulator_psi: lo = mid
-								else: hi = mid
-							s.co2_volumes = (lo + hi) / 2
-			"hazard", "fire", "disconnect":
-				s.safe_state = true
-				events.append(hazard(s, c.action))
-		s.seq = c.seq
+		var applied := apply_command(state,command)
+		if not applied.ok: return applied
+		s = applied.state
+		events = applied.events
 	s.tick += 1
 	s.sim_seconds += dt_seconds
 	s.stage_seconds += dt_seconds
