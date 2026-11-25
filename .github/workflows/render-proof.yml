@@ -65,6 +65,17 @@ jobs:
         run: |
           set -euo pipefail
           xvfb-run -a -s '-screen 0 3000x1000x24' bash tests/render/run_pair.sh
+      - name: Render fixed-camera beer and thermal comparisons
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .tools/visual-proof
+          for renderer in gl_compatibility forward_plus; do
+            xvfb-run -a -s '-screen 0 1600x1000x24' timeout 150s "$GODOT" --path . --display-driver x11 --rendering-method "$renderer" --audio-driver Dummy --max-fps 60 --script tests/render/visual_comparison.gd 2>&1 | tee ".tools/visual-proof/$renderer.log"
+            if grep -E 'SCRIPT ERROR:|Parse Error:|^ERROR:' ".tools/visual-proof/$renderer.log"; then exit 1; fi
+            python3 -c "import json; p=json.load(open('.tools/visual-proof/$renderer/manifest.json')); assert len(p['captures'])==5 and p['profile']['fps']>0, p"
+            (cd ".tools/visual-proof/$renderer" && sha256sum *.png > SHA256SUMS.txt)
+          done
       - name: Preserve frames, provenance and logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -78,4 +89,11 @@ jobs:
         with:
           name: rendered-multiplayer-proof
           path: .tools/multiplayer-proof/
+          if-no-files-found: warn
+      - name: Preserve optics and thermal comparison evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-visual-comparisons
+          path: .tools/visual-proof/
           if-no-files-found: warn
