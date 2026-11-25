@@ -2,6 +2,14 @@ config_version=5
 
 [application]
 config/name="Mash & Burn"
+run/main_scene="res://scenes/garage/garage.tscn"
+
+[display]
+window/size/viewport_width=1366
+window/size/viewport_height=740
+window/size/window_width_override=1366
+window/size/window_height_override=740
+window/stretch/mode="canvas_items"
 
 [rendering]
 renderer/rendering_method="gl_compatibility"
