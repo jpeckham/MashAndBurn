@@ -19,6 +19,10 @@ func apply_snapshot(snapshot: Dictionary, who: int) -> void:
 func judging_context() -> Dictionary:
 	return final_context.duplicate(true)
 
+func instructions() -> String:
+	if state.stage == "judging" and final_context.is_empty(): return "Batch packaged. Await the server's final round result."
+	return super.instructions()
+
 func route(action: String, values: Dictionary = {}) -> bool:
 	if transport == null:
 		message = "Multiplayer transport is unavailable."
