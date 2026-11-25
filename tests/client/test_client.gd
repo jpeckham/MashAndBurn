@@ -150,6 +150,13 @@ func interactions(t, host_scene, client_scene, port: int) -> void:
 		Input.parse_input_event(event)
 	t.check(await wait_for(t,func(): return server.state.players[2].fire.objects.receipt),"E travels through real viewport and ENet to spatial staging")
 	t.check(await wait_for(t,func(): return client_ui.staging_props.receipt.get_node("PropLabel").text.contains("STAGED")),"authoritative prop progress updates real client label")
+	for object in client_ui.staging_props:
+		var world_label: Label3D = client_ui.staging_props[object].get_node("PropLabel")
+		t.check(world_label.fixed_size and world_label.visibility_range_begin >= 1.5,"world prop label stays bounded and yields to nearby interaction HUD: "+object)
+	var interaction_line = client_ui.get("interaction_line")
+	t.check(interaction_line is Label,"nearby staging progress has a bounded screen-space HUD")
+	if interaction_line is Label:
+		t.check(interaction_line.text.contains("Receipt DONE") and interaction_line.get_global_rect().end.x < 940,"actual E staging updates compact progress inside playable center")
 	server.state.players[1].position = [-4.0,-.2]
 	server.publish()
 	client.send("attack",{"weapon":"wand","target":1})
@@ -166,6 +173,17 @@ func interactions(t, host_scene, client_scene, port: int) -> void:
 	if flame != null:
 		t.check(flame.get_script().resource_path == "res://src/visuals/thermal_effect.gd" and flame.material.get_shader_parameter("kind") == 1,"authoritative remote fire uses layered flame renderer")
 		t.check(is_equal_approx(flame.material.get_shader_parameter("strength"),client.view.players[2].fire.heat),"server heat reaches remote fire shader without new authority")
+	client_ui.set_process(false)
+	server.state.players[2].position = [4.8,5.5]
+	server.publish()
+	await wait_for(t,func(): return client.view.players[2].position[1] >= 4.8)
+	client.send("escape")
+	t.check(await wait_for(t,func(): return client.view.players[2].escaped),"UI escape-feedback fixture reaches authoritative escape")
+	await wait_for(t,func(): return not client.pending and client.queued.is_empty())
+	client_ui._process(.2)
+	t.check(not client.pending and client.queued.is_empty(),"escaped actors stop movement heartbeats instead of overwriting escape feedback with rejection")
+	if interaction_line is Label:
+		t.check(await wait_for(t,func(): return interaction_line.text.contains("ESCAPED")),"escape has explicit visible confirmation")
 	client_ui.leave()
 	await t.process_frame
 	t.check(client_ui.fires.is_empty() and client_ui.spills.is_empty() and not is_instance_valid(flame),"leave frees transient fire/floor visuals")
