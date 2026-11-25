@@ -15,6 +15,7 @@ var panel: PanelContainer
 var summary: Label
 var scoreboard: Label
 var status_line: Label
+var interaction_line: Label
 var notice: Label
 var name_input: LineEdit
 var address: LineEdit
@@ -67,6 +68,14 @@ func build_ui() -> void:
 	root.add_child(veil)
 	status_line = garage.label("",root,14,Color("f0c36f"))
 	status_line.position = Vector2(350,18)
+	interaction_line = garage.label("",root,14,Color("c9ead4"))
+	interaction_line.position = Vector2(350,96)
+	interaction_line.custom_minimum_size = Vector2(580,60)
+	interaction_line.size = Vector2(580,60)
+	interaction_line.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	interaction_line.clip_text = true
+	interaction_line.add_theme_constant_override("outline_size",3)
+	interaction_line.add_theme_color_override("font_outline_color",Color("101e27"))
 	var toggle: Button = garage.button("Lobby / combat / claims",root,func(): panel.visible = not panel.visible)
 	toggle.position = Vector2(350,53)
 	panel = PanelContainer.new()
@@ -171,6 +180,7 @@ func leave() -> void:
 		for object in collection.values(): object.queue_free()
 		collection.clear()
 	status_line.text = ""
+	interaction_line.text = ""
 	veil.color = Color(0,0,0,0)
 	notice.text = "Offline. Your local batch is restored."
 	scoreboard.text = ""
@@ -200,11 +210,15 @@ func sync() -> void:
 			garage.session = remote_session
 			remote_mode = true
 		remote_session.apply_snapshot(view,network.player_id)
+		var p: Dictionary = view.players[network.player_id]
+		if p.escaped:
+			remote_session.message = "Escaped. Awaiting the fictional inspection." if not p.claim.resolved else ("Claim accepted: %d payout." % p.claim.payout if p.claim.passed else "Inspection rejected the claim.")
+			notice.text = remote_session.message
 		garage.paused = true
 		garage.accumulated = 0.0
 		garage.refresh()
-		var p: Dictionary = view.players[network.player_id]
 		Props.show_progress(staging_props,p.fire.objects)
+		interaction_line.text = interaction_summary(p)
 		garage.camera.position = Vector3(p.position[0],1.9,p.position[1])
 		status_line.text = "%s  %02d:%02d  ·  HP %.0f  ·  capital %d%s" % [view.phase.to_upper(),int(maxf(0,900-view.elapsed))/60,int(maxf(0,900-view.elapsed))%60,p.health,p.money,"  ·  DISARMED" if view.hardware_safe else ""]
 		veil.color = Color(0,0,0,.78) if p.blind_until > view.tick*.1 else Color(.2,.18,.15,p.fire.smoke*.25 if p.fire.phase == "staging" and not p.escaped else 0.0)
@@ -227,6 +241,28 @@ func sync() -> void:
 	if view.phase == "finished" and last_phase != "finished": panel.visible = false
 	last_phase = view.phase
 	render_world(view)
+
+func interaction_summary(p: Dictionary) -> String:
+	var objects: Dictionary = p.fire.objects
+	var progress := "Receipt %s · Evidence %s · Trunk %s" % ["DONE" if objects.receipt else "TODO","DONE" if objects.evidence else "TODO","DONE" if objects.equipment else "TODO"]
+	if p.health <= 0: return "INCAPACITATED — waiting for the round result."
+	if p.escaped:
+		var state := "ESCAPED — inspection in %.1f seconds" % p.fire.remaining
+		if p.claim.resolved: state = "ESCAPED — claim accepted: %d payout" % p.claim.payout if p.claim.passed else "ESCAPED — inspection rejected the claim"
+		return state+"\n"+progress
+	var nearby := ""
+	var distance := 1.75
+	for object in Fire.STAGING_POINTS:
+		var candidate: float = network.authority.fire.staging_distance(p,object)
+		if candidate < distance:
+			distance = candidate
+			nearby = object
+	if p.fire.phase != "staging": return Props.TITLES[nearby]+" · staging available during a fire window" if not nearby.is_empty() else ""
+	var prompt := "Reach a marked prop and press E; the green exit is behind you."
+	if not nearby.is_empty():
+		prompt = Props.TITLES[nearby]+" staged — reach the next marker." if objects[nearby] else ("E · Stage "+Props.TITLES[nearby] if distance <= Fire.STAGING_RANGE else "Move closer to "+Props.TITLES[nearby])
+	if p.position[1] >= 4.8 and (nearby.is_empty() or objects.get(nearby,false)): prompt = "E · Escape the smoke through the green exit."
+	return "FIRE %.1fs · Smoke %.0f%%\n%s\n%s" % [p.fire.remaining,p.fire.smoke*100,progress,prompt]
 
 func fire_summary(p: Dictionary) -> String:
 	if p.fire.phase == "staging":
@@ -337,6 +373,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	if not remote_mode or not network.session_connected or network.view.get("phase") not in ["running","settling"]: return
+	var player: Dictionary = network.view.get("players",{}).get(network.player_id,{})
+	if player.is_empty() or player.escaped or player.health <= 0: return
 	movement_timer += delta
 	if movement_timer < .1: return
 	movement_timer = 0.0

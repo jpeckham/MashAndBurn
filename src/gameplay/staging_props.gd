@@ -14,6 +14,8 @@ static func build(garage: Node) -> Dictionary:
 		label.text = TITLES[object]+"\nE to stage nearby"
 		label.font_size = 25
 		label.pixel_size = .002
+		label.fixed_size = true
+		label.visibility_range_begin = 1.7
 		label.outline_size = 4
 		label.position.y = 1.4
 		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
