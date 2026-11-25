@@ -15,6 +15,8 @@ class Destination:
 
     def __post_init__(self):
         parsed = urlsplit(self.url)
+        if len(self.url) > 2048 or (parsed.port is not None and not 1 <= parsed.port <= 65535):
+            raise ValueError("Invalid private destination configuration")
         if parsed.username or parsed.password or parsed.fragment or not parsed.hostname:
             raise ValueError("Invalid private destination configuration")
         loopback = parsed.hostname == "localhost"
@@ -38,7 +40,7 @@ class Settings:
     rate_per_minute: int = 5
 
     def __post_init__(self):
-        if not 32 <= len(self.token) <= 256:
+        if not self.token.isascii() or not 32 <= len(self.token) <= 256 or any(ord(char) < 33 or ord(char) > 126 for char in self.token):
             raise ValueError("MAB_BRIDGE_TOKEN must contain32–256 characters")
         if self.transport not in {f"{mode}-{kind}" for mode in ("mock", "physical") for kind in ("serial", "mqtt", "websocket")}:
             raise ValueError("Unsupported transport configuration")

@@ -59,7 +59,7 @@ def create_app(settings, *, controller=None):
     app.state.dispatcher = dispatcher
 
     def valid_token(value):
-        return isinstance(value, str) and len(value) <= 263 and secrets.compare_digest(value, "Bearer " + settings.token)
+        return isinstance(value, str) and value.isascii() and len(value) <= 263 and secrets.compare_digest(value, "Bearer " + settings.token)
 
     def authorize(authorization: str | None = Header(default=None)):
         if not valid_token(authorization):
@@ -72,30 +72,30 @@ def create_app(settings, *, controller=None):
             raise HTTPException(400, "Explicit local action required")
 
     @app.get("/api/v1/status", dependencies=[Depends(authorize)])
-    def status():
+    async def status():
         return dict(armed=control.armed, fault=control.fault, outputs=control.outputs, transport=settings.transport, physical_operation=False)
 
     @app.post("/api/v1/arm", dependencies=[Depends(authorize)])
-    def arm(request: Request, action: LocalAction):
+    async def arm(request: Request, action: LocalAction):
         local_action(request, action)
         if not control.arm():
             raise HTTPException(409, "Fresh healthy telemetry and verified mock safeguards required")
         return dict(armed=True)
 
     @app.post("/api/v1/disarm", dependencies=[Depends(authorize)])
-    def disarm(request: Request):
+    async def disarm(request: Request):
         local_action(request)
         control.trip("explicit-local-disarm")
         return dict(armed=False)
 
     @app.post("/api/v1/estop", dependencies=[Depends(authorize)])
-    def estop(request: Request):
+    async def estop(request: Request):
         local_action(request)
         control.emergency_stop()
         return dict(armed=False)
 
     @app.post("/api/v1/estop/clear", dependencies=[Depends(authorize)])
-    def clear_estop(request: Request, action: LocalAction):
+    async def clear_estop(request: Request, action: LocalAction):
         local_action(request, action)
         control.clear_estop()
         return dict(armed=False, requires_fresh_frame=True)
@@ -117,7 +117,14 @@ def create_app(settings, *, controller=None):
             control.connect()
             await socket.send_json(dict(transport=settings.transport, armed=False, protocol=1))
             while True:
-                raw = await socket.receive_text()
+                message = await socket.receive()
+                if message["type"] == "websocket.disconnect":
+                    return
+                raw = message.get("text")
+                if not isinstance(raw, str):
+                    control.trip("malformed-frame")
+                    await socket.send_json(dict(ok=False, armed=False, fault=control.fault))
+                    continue
                 if len(raw.encode()) > 4096:
                     control.trip("oversized-frame")
                     await socket.close(code=1009)
