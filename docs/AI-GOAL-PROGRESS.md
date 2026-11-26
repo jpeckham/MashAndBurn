@@ -1,5 +1,8 @@
 # Mash & Burn continuation
 
+**Reboot resume point:** [REBOOT-HANDOFF.md](handoff/REBOOT-HANDOFF.md) records
+the latest constraints, commits, inspected evidence and pending failure diagnosis.
+
 ## Current checkpoint — supersedes the historical chronology below
 
 **Latest steering:** James reports that local testing appears to lock up his
